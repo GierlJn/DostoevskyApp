@@ -8,18 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */; };
-		B9DF3C8826DD624D0052B466 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C8726DD624D0052B466 /* ContentView.swift */; };
 		B9DF3C8A26DD624E0052B466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DF3C8926DD624E0052B466 /* Assets.xcassets */; };
 		B9DF3C8D26DD624E0052B466 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DF3C8C26DD624E0052B466 /* Preview Assets.xcassets */; };
+		B9DF3C9726DD62700052B466 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DF3C9626DD62700052B466 /* CloudKit.framework */; };
+		B9DF3C9926DD62D40052B466 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C9826DD62D40052B466 /* MainListView.swift */; };
+		B9DF3C9B26DD62F60052B466 /* DLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C9A26DD62F60052B466 /* DLocations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B9DF3C8226DD624D0052B466 /* Dostoevsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dostoevsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DostoevskyApp.swift; sourceTree = "<group>"; };
-		B9DF3C8726DD624D0052B466 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9DF3C8926DD624E0052B466 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9DF3C8C26DD624E0052B466 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9DF3C8E26DD624E0052B466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9DF3C9426DD626A0052B466 /* Dostoevsky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dostoevsky.entitlements; sourceTree = "<group>"; };
+		B9DF3C9626DD62700052B466 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		B9DF3C9826DD62D40052B466 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
+		B9DF3C9A26DD62F60052B466 /* DLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLocations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9DF3C9726DD62700052B466 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +44,7 @@
 			children = (
 				B9DF3C8426DD624D0052B466 /* Dostoevsky */,
 				B9DF3C8326DD624D0052B466 /* Products */,
+				B9DF3C9526DD62700052B466 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,11 +59,13 @@
 		B9DF3C8426DD624D0052B466 /* Dostoevsky */ = {
 			isa = PBXGroup;
 			children = (
+				B9DF3C9426DD626A0052B466 /* Dostoevsky.entitlements */,
 				B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */,
-				B9DF3C8726DD624D0052B466 /* ContentView.swift */,
 				B9DF3C8926DD624E0052B466 /* Assets.xcassets */,
 				B9DF3C8E26DD624E0052B466 /* Info.plist */,
 				B9DF3C8B26DD624E0052B466 /* Preview Content */,
+				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
+				B9DF3C9A26DD62F60052B466 /* DLocations.swift */,
 			);
 			path = Dostoevsky;
 			sourceTree = "<group>";
@@ -67,6 +76,14 @@
 				B9DF3C8C26DD624E0052B466 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B9DF3C9526DD62700052B466 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9DF3C9626DD62700052B466 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9DF3C8826DD624D0052B466 /* ContentView.swift in Sources */,
+				B9DF3C9B26DD62F60052B466 /* DLocations.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
+				B9DF3C9926DD62D40052B466 /* MainListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Dostoevsky/Dostoevsky.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Dostoevsky/Preview Content\"";
 				DEVELOPMENT_TEAM = V9453FD64D;
@@ -289,6 +308,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Dostoevsky/Dostoevsky.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Dostoevsky/Preview Content\"";
 				DEVELOPMENT_TEAM = V9453FD64D;
