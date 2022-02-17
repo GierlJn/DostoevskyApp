@@ -5,10 +5,63 @@
 //  Created by Julian Gierl on 30.08.21.
 //
 
-import Foundation
+import CloudKit
+import UIKit
 
 struct DLocation: Identifiable, Hashable{
-    var id: ObjectIdentifier
     
+    enum Keys{
+        static let category = "category"
+        static let description = "description"
+        static let location = "location"
+        static let name = "name"
+        static let place = "place"
+        static let previewImage = "previewImage"
+        static let streetName = "streetName"
+        static let time = "time"
+    }
+    
+    var id: CKRecord.ID
+    var category: Int
+    var description: String
+    var location: CLLocation
+    var name: String
+    var place: Int
+    var previewImage: CKAsset
+    var streetName: String
+    var time: String
+    
+    init(record: CKRecord){
+        id = record.recordID
+        category = record[DLocation.Keys.category] as? Int ?? 0
+        description = record[DLocation.Keys.description] as? String ?? ""
+        location = record[DLocation.Keys.location] as? CLLocation ?? CLLocation()
+        name = record[DLocation.Keys.name] as? String ?? ""
+        place = record[DLocation.Keys.place] as? Int ?? 0
+        previewImage = record[DLocation.Keys.previewImage] as! CKAsset
+        streetName = record[DLocation.Keys.streetName] as? String ?? ""
+        time = record[DLocation.Keys.time] as? String ?? ""
+    }
+    
+    func createImage() -> UIImage{
+        //guard let previewImage = previewImage else { return UIImage(systemName: "person")! }
+        return previewImage.convertToUIImage()
+    }
     
 }
+
+extension CKAsset{
+    func convertToUIImage() -> UIImage {
+        let placeholder = UIImage(systemName: "person")!
+        
+        guard let fileUrl = self.fileURL else { return UIImage(systemName: "person")! }
+        
+        do{
+            let data = try Data(contentsOf: fileUrl)
+            return UIImage(data: data) ?? placeholder
+        }catch{
+            return placeholder
+        }
+    }
+}
+

@@ -13,6 +13,10 @@
 		B9DF3C9726DD62700052B466 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DF3C9626DD62700052B466 /* CloudKit.framework */; };
 		B9DF3C9926DD62D40052B466 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C9826DD62D40052B466 /* MainListView.swift */; };
 		B9DF3C9B26DD62F60052B466 /* DLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C9A26DD62F60052B466 /* DLocations.swift */; };
+		B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C9C26DD6A820052B466 /* MockData.swift */; };
+		B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */; };
+		B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */; };
+		B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		B9DF3C9626DD62700052B466 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		B9DF3C9826DD62D40052B466 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
 		B9DF3C9A26DD62F60052B466 /* DLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLocations.swift; sourceTree = "<group>"; };
+		B9DF3C9C26DD6A820052B466 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,10 @@
 				B9DF3C8B26DD624E0052B466 /* Preview Content */,
 				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
 				B9DF3C9A26DD62F60052B466 /* DLocations.swift */,
+				B9DF3C9C26DD6A820052B466 /* MockData.swift */,
+				B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */,
+				B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */,
+				B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */,
 			);
 			path = Dostoevsky;
 			sourceTree = "<group>";
@@ -156,6 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DF3C9B26DD62F60052B466 /* DLocations.swift in Sources */,
+				B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */,
+				B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */,
+				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
+				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
 				B9DF3C9926DD62D40052B466 /* MainListView.swift in Sources */,
 			);

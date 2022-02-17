@@ -11,7 +11,15 @@ import SwiftUI
 struct DostoevskyApp: App {
     var body: some Scene {
         WindowGroup {
-            MainListView()
+            TabView{
+                
+                NavigationView{
+                    MainListView()
+                }.tabItem {
+                    Label("Locations", systemImage: "person")
+                }
+            }
+            
         }
     }
 }

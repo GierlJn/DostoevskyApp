@@ -9,14 +9,31 @@ import SwiftUI
 
 struct MainListView: View {
     
-    var locations = [DLocation]()
+    @State var locations = [DLocation(record: MockData.createLocationRecord()), DLocation(record: MockData.createLocationRecord()), DLocation(record: MockData.createLocationRecord())]
     
     var body: some View {
         List{
             ForEach(locations, id: (\.self)){ location in
+                NavigationLink(
+                    destination: LocationDetailView(location: location),
+                    label: {
+                        LocationCell(location: location)
+                    })
                 
             }
-        }
+        }.onAppear(perform: {
+            CloudKitManager.shared.getLocations { result in
+                DispatchQueue.main.async {
+                    switch result{
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    case .success(let locations):
+                        self.locations = locations
+                    }
+                }
+                
+            }
+        })
     }
 }
 
