@@ -44,7 +44,7 @@ struct DLocation: Identifiable, Hashable{
     }
     
     func createImage() -> UIImage{
-        //guard let previewImage = previewImage else { return UIImage(systemName: "person")! }
+
         return previewImage.convertToUIImage()
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FF7FE27C41C5800EC3884 /* DMapView.swift */; };
 		B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */; };
 		B9DF3C8A26DD624E0052B466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DF3C8926DD624E0052B466 /* Assets.xcassets */; };
 		B9DF3C8D26DD624E0052B466 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DF3C8C26DD624E0052B466 /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B97FF7FE27C41C5800EC3884 /* DMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapView.swift; sourceTree = "<group>"; };
 		B9DF3C8226DD624D0052B466 /* Dostoevsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dostoevsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DostoevskyApp.swift; sourceTree = "<group>"; };
 		B9DF3C8926DD624E0052B466 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */,
 				B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */,
 				B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */,
+				B97FF7FE27C41C5800EC3884 /* DMapView.swift */,
 			);
 			path = Dostoevsky;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
+				B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */,
 				B9DF3C9926DD62D40052B466 /* MainListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
