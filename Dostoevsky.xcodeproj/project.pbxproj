@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		B929627027C4D87800391364 /* MapBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929626F27C4D87800391364 /* MapBalloon.swift */; };
 		B929627227C4D9F300391364 /* DAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627127C4D9F300391364 /* DAnnotation.swift */; };
+		B929627427C4ED3600391364 /* DMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627327C4ED3600391364 /* DMapViewModel.swift */; };
+		B929627627C4EE2800391364 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627527C4EE2800391364 /* LocationDetailViewModel.swift */; };
+		B929627827C4EECB00391364 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627727C4EECB00391364 /* LocationManager.swift */; };
+		B929629C27C5014F00391364 /* Color.Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929629B27C5014F00391364 /* Color.Ext.swift */; };
+		B929629E27C5023600391364 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929629D27C5023600391364 /* AppTabView.swift */; };
 		B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FF7FE27C41C5800EC3884 /* DMapView.swift */; };
 		B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */; };
 		B9DF3C8A26DD624E0052B466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DF3C8926DD624E0052B466 /* Assets.xcassets */; };
@@ -25,6 +30,11 @@
 /* Begin PBXFileReference section */
 		B929626F27C4D87800391364 /* MapBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBalloon.swift; sourceTree = "<group>"; };
 		B929627127C4D9F300391364 /* DAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAnnotation.swift; sourceTree = "<group>"; };
+		B929627327C4ED3600391364 /* DMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapViewModel.swift; sourceTree = "<group>"; };
+		B929627527C4EE2800391364 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
+		B929627727C4EECB00391364 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B929629B27C5014F00391364 /* Color.Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.Ext.swift; sourceTree = "<group>"; };
+		B929629D27C5023600391364 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		B97FF7FE27C41C5800EC3884 /* DMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapView.swift; sourceTree = "<group>"; };
 		B9DF3C8226DD624D0052B466 /* Dostoevsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dostoevsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DostoevskyApp.swift; sourceTree = "<group>"; };
@@ -53,6 +63,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B929629F27C502FD00391364 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B92962A127C5066D00391364 /* LocationDetailView */,
+				B92962A027C5066000391364 /* MapView */,
+				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B92962A027C5066000391364 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				B929627327C4ED3600391364 /* DMapViewModel.swift */,
+				B97FF7FE27C41C5800EC3884 /* DMapView.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		B92962A127C5066D00391364 /* LocationDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */,
+				B929627527C4EE2800391364 /* LocationDetailViewModel.swift */,
+			);
+			path = LocationDetailView;
+			sourceTree = "<group>";
+		};
 		B9DF3C7926DD624D0052B466 = {
 			isa = PBXGroup;
 			children = (
@@ -73,20 +111,21 @@
 		B9DF3C8426DD624D0052B466 /* Dostoevsky */ = {
 			isa = PBXGroup;
 			children = (
+				B929629F27C502FD00391364 /* Screens */,
 				B9DF3C9426DD626A0052B466 /* Dostoevsky.entitlements */,
 				B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */,
 				B9DF3C8926DD624E0052B466 /* Assets.xcassets */,
 				B9DF3C8E26DD624E0052B466 /* Info.plist */,
 				B9DF3C8B26DD624E0052B466 /* Preview Content */,
-				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
 				B9DF3C9A26DD62F60052B466 /* DLocations.swift */,
 				B9DF3C9C26DD6A820052B466 /* MockData.swift */,
 				B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */,
 				B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */,
-				B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */,
-				B97FF7FE27C41C5800EC3884 /* DMapView.swift */,
 				B929626F27C4D87800391364 /* MapBalloon.swift */,
 				B929627127C4D9F300391364 /* DAnnotation.swift */,
+				B929627727C4EECB00391364 /* LocationManager.swift */,
+				B929629B27C5014F00391364 /* Color.Ext.swift */,
+				B929629D27C5023600391364 /* AppTabView.swift */,
 			);
 			path = Dostoevsky;
 			sourceTree = "<group>";
@@ -176,16 +215,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B929627427C4ED3600391364 /* DMapViewModel.swift in Sources */,
 				B9DF3C9B26DD62F60052B466 /* DLocations.swift in Sources */,
 				B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */,
 				B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */,
+				B929629C27C5014F00391364 /* Color.Ext.swift in Sources */,
+				B929627627C4EE2800391364 /* LocationDetailViewModel.swift in Sources */,
 				B929627227C4D9F300391364 /* DAnnotation.swift in Sources */,
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
+				B929629E27C5023600391364 /* AppTabView.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
 				B929627027C4D87800391364 /* MapBalloon.swift in Sources */,
 				B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */,
 				B9DF3C9926DD62D40052B466 /* MainListView.swift in Sources */,
+				B929627827C4EECB00391364 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

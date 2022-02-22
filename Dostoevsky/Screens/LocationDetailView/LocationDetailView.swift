@@ -8,20 +8,21 @@ import SwiftUI
 
 struct LocationDetailView: View {
 
-    var location: DLocation
+    
+    @ObservedObject var viewModel: LocationDetailViewModel
     
     var body: some View {
         ZStack {
             VStack(spacing: 16) {
-                BannerImageView(image: location.createImage())
+                BannerImageView(image: viewModel.location.createImage())
                 
                 HStack {
-                    AddressView(address: location.streetName)
+                    AddressView(address: viewModel.location.streetName)
                     Spacer()
                 }
                 .padding(.horizontal)
                 
-                DescriptionView(text: location.description)
+                DescriptionView(text: viewModel.location.description)
                 
                 ZStack {
                     Capsule()
@@ -36,7 +37,7 @@ struct LocationDetailView: View {
         }
 
      
-        .navigationTitle(location.name)
+            .navigationTitle(viewModel.location.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -76,5 +77,13 @@ struct DescriptionView: View {
             .minimumScaleFactor(0.75)
             .frame(height: 70)
             .padding(.horizontal)
+    }
+}
+
+struct LocationDetailView_Previews: PreviewProvider{
+    static var previews: some View{
+        NavigationView{
+            LocationDetailView(viewModel: LocationDetailViewModel(location: DLocation(record: MockData.createLocationRecord())))
+        }
     }
 }
