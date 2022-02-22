@@ -15,21 +15,21 @@ struct DMapview: View{
     
     var body: some View{
         Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: locations) { location in
+            MapAnnotation(coordinate: location.location.coordinate) {
+                DAnnotation().onTapGesture {
+                    print("click")
+                }
+            }
             
-            AnyMapAnnotationProtocol(MapAnnotation(coordinate: location.location.coordinate) {
-                            HStack {
-                                Image("byeByeDidSelect")
-                                    .resizable()
-                                    .frame(width: 45, height: 40)
-                                    .clipShape(Capsule())
-                                Text("This annotation can be tapped.")
-                                    .foregroundColor(.black)
-                            }
-                            .onTapGesture {
-                                print("Test tapping")
-                            }
-                        })
-                
+//            AnyMapAnnotationProtocol(MapAnnotation(coordinate: location.location.coordinate) {
+//                    Image("dostoAnno")
+//                        .resizable()
+//                        .frame(width: 45, height: 70)
+//                            .onTapGesture {
+//                                print("Test tapping")
+//                            }
+//                        })
+//
             
             
         }.onAppear(perform: {
@@ -49,12 +49,12 @@ struct DMapview: View{
     
 }
 
-struct AnyMapAnnotationProtocol: MapAnnotationProtocol {
-  let _annotationData: _MapAnnotationData
-  let value: Any
-
-  init<WrappedType: MapAnnotationProtocol>(_ value: WrappedType) {
-    self.value = value
-    _annotationData = value._annotationData
-  }
-}
+//struct AnyMapAnnotationProtocol: MapAnnotationProtocol {
+//  let _annotationData: _MapAnnotationData
+//  let value: Any
+//
+//  init<WrappedType: MapAnnotationProtocol>(_ value: WrappedType) {
+//    self.value = value
+//    _annotationData = value._annotationData
+//  }
+//}

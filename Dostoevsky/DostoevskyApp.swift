@@ -11,20 +11,21 @@ import SwiftUI
 struct DostoevskyApp: App {
     var body: some Scene {
         WindowGroup {
-            TabView{
-                TabView{
-                    NavigationView{
-                        MainListView()
-                    }.tabItem {
-                        Label("Locations", systemImage: "person")
-                    }
-                    DMapview()
-                        .tabItem{
-                            Label("Map", systemImage: "map")
-                        }
-                }
-                
-            }
+            DMapview()
+//            TabView{
+//                TabView{
+//                    NavigationView{
+//                        MainListView()
+//                    }.tabItem {
+//                        Label("Locations", systemImage: "person")
+//                    }
+//                    DMapview()
+//                        .tabItem{
+//                            Label("Map", systemImage: "map")
+//                        }
+//                }
+//
+//            }
             
         }
     }
