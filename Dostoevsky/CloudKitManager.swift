@@ -30,6 +30,17 @@ final class CloudKitManager{
             let locations = records.map { DLocation(record: $0) }
             completed(.success(locations))
         }
-        
+    }
+    
+    
+    func save(record: CKRecord, completed: @escaping (Result<CKRecord, Error>) -> Void){
+        CKContainer.default().publicCloudDatabase.save(record) { record, error in
+            guard let record = record, error == nil else {
+                completed(.failure(error!))
+                return
+            }
+            completed(.success(record))
+            return
+        }
     }
 }

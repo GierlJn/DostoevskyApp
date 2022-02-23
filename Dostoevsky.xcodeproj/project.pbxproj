@@ -16,6 +16,7 @@
 		B929629E27C5023600391364 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929629D27C5023600391364 /* AppTabView.swift */; };
 		B92962A327C50F2700391364 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A227C50F2700391364 /* Constants.swift */; };
 		B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A427C50FAC00391364 /* CKAsset+Ext.swift */; };
+		B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DC0A927C63F56008EC3E9 /* OnBoardView.swift */; };
 		B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FF7FE27C41C5800EC3884 /* DMapView.swift */; };
 		B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */; };
 		B9DF3C8A26DD624E0052B466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DF3C8926DD624E0052B466 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		B929629D27C5023600391364 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		B92962A227C50F2700391364 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B92962A427C50FAC00391364 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
+		B95DC0A927C63F56008EC3E9 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		B97FF7FE27C41C5800EC3884 /* DMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapView.swift; sourceTree = "<group>"; };
 		B9DF3C8226DD624D0052B466 /* Dostoevsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dostoevsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DostoevskyApp.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		B9DF3C7926DD624D0052B466 = {
 			isa = PBXGroup;
 			children = (
+				B95DC0A927C63F56008EC3E9 /* OnBoardView.swift */,
 				B9DF3C8426DD624D0052B466 /* Dostoevsky */,
 				B9DF3C8326DD624D0052B466 /* Products */,
 				B9DF3C9526DD62700052B466 /* Frameworks */,
@@ -229,6 +232,7 @@
 				B929627627C4EE2800391364 /* LocationDetailViewModel.swift in Sources */,
 				B929627227C4D9F300391364 /* DAnnotation.swift in Sources */,
 				B92962A327C50F2700391364 /* Constants.swift in Sources */,
+				B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */,
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B929629E27C5023600391364 /* AppTabView.swift in Sources */,
