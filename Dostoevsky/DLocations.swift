@@ -19,6 +19,7 @@ struct DLocation: Identifiable, Hashable{
         static let previewImage = "previewImage"
         static let streetName = "streetName"
         static let time = "time"
+        static let rating = "rating"
     }
     
     var id: CKRecord.ID
@@ -30,6 +31,7 @@ struct DLocation: Identifiable, Hashable{
     var previewImage: CKAsset!
     var streetName: String
     var time: String
+    var rating: Int
     
     init(record: CKRecord){
         id = record.recordID
@@ -41,6 +43,7 @@ struct DLocation: Identifiable, Hashable{
         previewImage = record[DLocation.Keys.previewImage] as? CKAsset
         streetName = record[DLocation.Keys.streetName] as? String ?? ""
         time = record[DLocation.Keys.time] as? String ?? ""
+        rating = record[DLocation.Keys.rating] as? Int ?? 0
     }
     
     func createBannerImage() -> UIImage{
