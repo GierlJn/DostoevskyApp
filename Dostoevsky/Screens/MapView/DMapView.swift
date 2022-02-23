@@ -26,7 +26,9 @@ struct DMapview: View{
         .accentColor(.white)
 
         .sheet(isPresented: $viewModel.isShowingDetailView){
-            LocationDetailView(viewModel: LocationDetailViewModel(location: locationManager.selectedLocation!))
+            NavigationView{
+                LocationDetailView(viewModel: LocationDetailViewModel(location: locationManager.selectedLocation!))
+            }
         }
         .onAppear{
             if(locationManager.locations.isEmpty){

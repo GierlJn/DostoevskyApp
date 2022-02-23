@@ -7,40 +7,61 @@
 import SwiftUI
 
 struct LocationDetailView: View {
-
+    
     
     @ObservedObject var viewModel: LocationDetailViewModel
     
     var body: some View {
         ZStack {
-            VStack(spacing: 16) {
-                BannerImageView(image: viewModel.location.createImage())
+            VStack(spacing: 32) {
+                BannerImageView(image: viewModel.location.createBannerImage())
+                    .padding(.top,32)
+                    .padding(.bottom,16)
                 
                 HStack {
-                    AddressView(address: viewModel.location.streetName)
+                    Button {
+                        viewModel.getDirectionsToLocation()
+                    } label: {
+                        AddressView(address: viewModel.location.streetName)
+                    }
+                    
                     Spacer()
+                    
                 }
                 .padding(.horizontal)
                 
                 DescriptionView(text: viewModel.location.description)
-                
+                Spacer()
                 ZStack {
                     Capsule()
                         .frame(height: 80)
                         .foregroundColor(Color(.secondarySystemBackground))
                     
-
-                .padding(.horizontal)
-
-                Spacer()
+                    HStack(spacing: 20) {
+                        
+                        Button {
+                        } label: {
+                            LocationActionButton(color: .brandPrimary, imageName: "minus")
+                        }
+                        
+                        InfoView(color: .brandPrimary, text: "12")
+                        
+                        Button {
+                        } label: {
+                            LocationActionButton(color: .brandPrimary, imageName: "plus")
+                        }
+                    }
+                    .padding(.horizontal)
+                    
+                }
+                
             }
-        }
-
-     
-            .navigationTitle(viewModel.location.name)
-        .navigationBarTitleDisplayMode(.inline)
+            
+            
+            
+        }   .navigationTitle(viewModel.location.name)
+            .navigationBarTitleDisplayMode(.inline)
     }
-}
 }
 
 
@@ -66,6 +87,48 @@ struct AddressView: View {
             .foregroundColor(.secondary)
     }
 }
+
+
+struct LocationActionButton: View {
+    
+    var color: Color
+    var imageName: String
+    
+    var body: some View {
+        ZStack {
+            Circle()
+                .foregroundColor(color)
+                .frame(width: 60, height: 60)
+            
+            Image(systemName: imageName)
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.white)
+                .frame(width: 22, height: 22)
+            
+        }
+    }
+}
+
+struct InfoView: View {
+    
+    var color: Color
+    var text: String
+    
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 12)
+                .foregroundColor(color)
+                .frame(width: 70, height: 50)
+            
+            Text(text)
+                .foregroundColor(.white)
+                .frame(width: 22, height: 22)
+            
+        }
+    }
+}
+
 
 struct DescriptionView: View {
     

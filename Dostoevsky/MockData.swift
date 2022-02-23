@@ -21,7 +21,7 @@ struct MockData{
         record[DLocation.Keys.location] = CLLocation(latitude: 37, longitude: -121)
         record[DLocation.Keys.name] = "Red Palace"
         record[DLocation.Keys.place] = 1
-        record[DLocation.Keys.previewImage] = UIImage(systemName: "person")?.convertToCKAsset()
+        record[DLocation.Keys.previewImage] = PlaceholderImage.banner.convertToCKAsset()
         record[DLocation.Keys.streetName] = "Skt. Georgrn Str. 26"
         record[DLocation.Keys.time] = "May 4 1999"
         return record

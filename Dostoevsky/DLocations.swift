@@ -27,7 +27,7 @@ struct DLocation: Identifiable, Hashable{
     var location: CLLocation
     var name: String
     var place: Int
-    var previewImage: CKAsset
+    var previewImage: CKAsset!
     var streetName: String
     var time: String
     
@@ -38,30 +38,16 @@ struct DLocation: Identifiable, Hashable{
         location = record[DLocation.Keys.location] as? CLLocation ?? CLLocation()
         name = record[DLocation.Keys.name] as? String ?? ""
         place = record[DLocation.Keys.place] as? Int ?? 0
-        previewImage = record[DLocation.Keys.previewImage] as! CKAsset
+        previewImage = record[DLocation.Keys.previewImage] as? CKAsset
         streetName = record[DLocation.Keys.streetName] as? String ?? ""
         time = record[DLocation.Keys.time] as? String ?? ""
     }
     
-    func createImage() -> UIImage{
-
-        return previewImage.convertToUIImage()
+    func createBannerImage() -> UIImage{
+        guard let asset = previewImage else { return PlaceholderImage.banner }
+        return asset.convertToUIImage()
     }
     
 }
 
-extension CKAsset{
-    func convertToUIImage() -> UIImage {
-        let placeholder = UIImage(systemName: "person")!
-        
-        guard let fileUrl = self.fileURL else { return UIImage(systemName: "person")! }
-        
-        do{
-            let data = try Data(contentsOf: fileUrl)
-            return UIImage(data: data) ?? placeholder
-        }catch{
-            return placeholder
-        }
-    }
-}
 

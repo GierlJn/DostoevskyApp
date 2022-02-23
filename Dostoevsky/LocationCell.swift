@@ -13,7 +13,7 @@ struct LocationCell: View {
     
     var body: some View {
         HStack{
-            Image(uiImage: location.createImage())
+            Image(uiImage: location.createBannerImage())
                 .resizable()
                 .scaledToFit()
                 .frame(width: 80, height: 80)
