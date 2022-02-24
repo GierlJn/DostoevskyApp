@@ -22,11 +22,11 @@ class LocationDetailViewModel: ObservableObject{
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking])
     }
     
-    func updateRating(_ rating: Int){
+    func updateLocationRating(){
         CloudKitManager.shared.fetchRecord(with: location.id) { [self] result in
             switch result{
             case .success(let record):
-                record[DLocation.Keys.rating] = rating
+                record[DLocation.Keys.rating] = location.rating
                 CloudKitManager.shared.save(record: record) { result in
                     DispatchQueue.main.async {
                         switch result{

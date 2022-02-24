@@ -40,8 +40,8 @@ struct LocationDetailView: View {
                     HStack(spacing: 20) {
                         
                         Button {
-                            let rating = viewModel.location.rating
-                            viewModel.updateRating(rating - 1)
+                            viewModel.location.rating -= 1
+                            viewModel.updateLocationRating()
                         } label: {
                             LocationActionButton(color: .brandPrimary, imageName: "minus")
                         }
@@ -49,8 +49,8 @@ struct LocationDetailView: View {
                         InfoView(color: .brandPrimary, text: "\(viewModel.location.rating)")
                         
                         Button {
-                            let rating = viewModel.location.rating
-                            viewModel.updateRating(rating + 1)
+                            viewModel.location.rating += 1
+                            viewModel.updateLocationRating()
                         } label: {
                             LocationActionButton(color: .brandPrimary, imageName: "plus")
                         }
