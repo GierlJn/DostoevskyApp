@@ -14,10 +14,20 @@ class LocationDetailViewModel: ObservableObject{
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.933181, longitude: 30.338418), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     @Published var isShowingDetailView = false
     @Published var locations = [DLocation]()
-    //@Published var locationManager = LocationManager()
+    @Published var ratingState = 0{
+        didSet{
+            guard let selectedLocation = selectedLocation else {
+                return
+            }
+            UserDefaults.standard.set(ratingState, forKey: selectedLocation.name)
+        }
+    }
+    @Published var disableRating = false
+    
     
     func setup(location: DLocation) {
         self.selectedLocation = location
+        self.ratingState = UserDefaults.standard.integer(forKey: location.name)
     }
     
     func getLocations(){
@@ -49,6 +59,7 @@ class LocationDetailViewModel: ObservableObject{
         guard let selectedLocation = selectedLocation else {
             return
         }
+        disableRating = true
  
         CloudKitManager.shared.fetchRecord(with: selectedLocation.id) { [self] result in
             switch result{
@@ -57,12 +68,14 @@ class LocationDetailViewModel: ObservableObject{
                 CloudKitManager.shared.save(record: record) { result in
                     DispatchQueue.main.async {
                         switch result{
+
                         case .success(let record):
                             self.selectedLocation = DLocation(record: record)
                             print("success")
                         case .failure(let error):
                             print(error)
                         }
+                        disableRating = false
                     }
                     
                 }

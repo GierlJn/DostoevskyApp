@@ -8,7 +8,6 @@ import SwiftUI
 
 struct LocationDetailView: View {
     
-    
     @ObservedObject var viewModel: LocationDetailViewModel
     
     var body: some View {
@@ -40,21 +39,57 @@ struct LocationDetailView: View {
                     HStack(spacing: 20) {
                         
                         Button {
-                            viewModel.selectedLocation!.rating -= 1
+                            if viewModel.disableRating {
+                                return
+                            }
+                            switch viewModel.ratingState{
+                            case -1:
+                                viewModel.selectedLocation!.rating += 1
+                                viewModel.ratingState = 0
+                            case 0:
+                                viewModel.selectedLocation!.rating -= 1
+                                viewModel.ratingState = -1
+                            case 1:
+                                viewModel.selectedLocation!.rating -= 1
+                                viewModel.ratingState = 0
+                            default:
+                                print("not")
+                            }
+
+                            
+                            
                             viewModel.updateSelectedLocation()
                             viewModel.updateLocationRating()
                         } label: {
-                            LocationActionButton(color: .brandPrimary, imageName: "minus")
+                            LocationActionButton(color: .brandPrimary, imageName: "minus").opacity(viewModel.ratingState == -1 ? 0.5 : 1)
                         }
                         
                         InfoView(color: .brandPrimary, text: "\(viewModel.selectedLocation!.rating)")
                         
                         Button {
-                            viewModel.selectedLocation!.rating += 1
+                            if viewModel.disableRating {
+                                return
+                            }
+                            
+                            switch viewModel.ratingState{
+                            case -1:
+                                viewModel.selectedLocation!.rating += 1
+                                viewModel.ratingState = 0
+                            case 0:
+                                viewModel.selectedLocation!.rating += 1
+                                viewModel.ratingState = 1
+                            case 1:
+                                viewModel.selectedLocation!.rating -= 1
+                                viewModel.ratingState = 0
+                            default:
+                                print("not")
+                            }
+                            
+                            
                             viewModel.updateSelectedLocation()
                             viewModel.updateLocationRating()
                         } label: {
-                            LocationActionButton(color: .brandPrimary, imageName: "plus")
+                            LocationActionButton(color: .brandPrimary, imageName: "plus").opacity(viewModel.ratingState == 1 ? 0.5 : 1)
                         }
                     }
                     .padding(.horizontal)
