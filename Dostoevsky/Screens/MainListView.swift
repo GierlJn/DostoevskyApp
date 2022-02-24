@@ -15,7 +15,7 @@ struct MainListView: View {
         List{
             ForEach(locations, id: (\.self)){ location in
                 NavigationLink(
-                    destination: LocationDetailView(viewModel: LocationDetailViewModel(location: location)),
+                    destination: LocationDetailView(viewModel: LocationDetailViewModel()),
                     label: {
                         LocationCell(location: location)
                     })

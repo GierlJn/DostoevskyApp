@@ -10,29 +10,30 @@ import MapKit
 
 struct DMapview: View{
     
-    @EnvironmentObject private var locationManager: LocationManager
-    @StateObject private var viewModel = DMapViewModel()
+    //@EnvironmentObject private var locationManager: LocationManager
+    @StateObject var viewModel = LocationDetailViewModel()
 
     var body: some View{
-        Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: locationManager.locations) { location in
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: viewModel.locations) { location in
             MapAnnotation(coordinate: location.location.coordinate) {
                 DAnnotation()
                     .onTapGesture {
-                        locationManager.selectedLocation = location
+                        viewModel.selectedLocation = location
+                        viewModel.setup(location: location)
                         viewModel.isShowingDetailView = true
                 }
             }
         }
         .accentColor(.white)
 
-        .sheet(isPresented: $viewModel.isShowingDetailView){
+        .sheet(isPresented: $viewModel.isShowingDetailView, onDismiss: {}){
             NavigationView{
-                LocationDetailView(viewModel: LocationDetailViewModel(location: locationManager.selectedLocation!))
+                LocationDetailView(viewModel: viewModel)
             }
         }
         .onAppear{
-            if(locationManager.locations.isEmpty){
-                viewModel.getLocations(for: locationManager)
+            if(viewModel.locations.isEmpty){
+                viewModel.getLocations()
             }
         }
         

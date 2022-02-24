@@ -11,7 +11,7 @@ import SwiftUI
 struct DostoevskyApp: App {
     var body: some Scene {
         WindowGroup {
-            DMapview().environmentObject(LocationManager())
+            DMapview()
             
         }
     }

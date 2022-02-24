@@ -14,7 +14,7 @@ struct LocationDetailView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 32) {
-                BannerImageView(image: viewModel.location.createBannerImage())
+                BannerImageView(image: viewModel.selectedLocation!.createBannerImage())
                     .padding(.top,32)
                     .padding(.bottom,16)
                 
@@ -22,7 +22,7 @@ struct LocationDetailView: View {
                     Button {
                         viewModel.getDirectionsToLocation()
                     } label: {
-                        AddressView(address: viewModel.location.streetName)
+                        AddressView(address: viewModel.selectedLocation!.streetName)
                     }
                     
                     Spacer()
@@ -30,7 +30,7 @@ struct LocationDetailView: View {
                 }
                 .padding(.horizontal)
                 
-                DescriptionView(text: viewModel.location.description)
+                DescriptionView(text: viewModel.selectedLocation!.description)
                 Spacer()
                 ZStack {
                     Capsule()
@@ -40,16 +40,18 @@ struct LocationDetailView: View {
                     HStack(spacing: 20) {
                         
                         Button {
-                            viewModel.location.rating -= 1
+                            viewModel.selectedLocation!.rating -= 1
+                            viewModel.updateSelectedLocation()
                             viewModel.updateLocationRating()
                         } label: {
                             LocationActionButton(color: .brandPrimary, imageName: "minus")
                         }
                         
-                        InfoView(color: .brandPrimary, text: "\(viewModel.location.rating)")
+                        InfoView(color: .brandPrimary, text: "\(viewModel.selectedLocation!.rating)")
                         
                         Button {
-                            viewModel.location.rating += 1
+                            viewModel.selectedLocation!.rating += 1
+                            viewModel.updateSelectedLocation()
                             viewModel.updateLocationRating()
                         } label: {
                             LocationActionButton(color: .brandPrimary, imageName: "plus")
@@ -63,7 +65,7 @@ struct LocationDetailView: View {
             
             
             
-        }   .navigationTitle(viewModel.location.name)
+        }   .navigationTitle(viewModel.selectedLocation!.name)
             .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -150,7 +152,7 @@ struct DescriptionView: View {
 struct LocationDetailView_Previews: PreviewProvider{
     static var previews: some View{
         NavigationView{
-            LocationDetailView(viewModel: LocationDetailViewModel(location: DLocation(record: MockData.createLocationRecord())))
+            LocationDetailView(viewModel: LocationDetailViewModel())
         }
     }
 }
