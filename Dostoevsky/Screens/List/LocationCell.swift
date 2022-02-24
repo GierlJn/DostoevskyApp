@@ -16,7 +16,7 @@ struct LocationCell: View {
             Image(uiImage: location.createBannerImage())
                 .resizable()
                 .scaledToFit()
-                .frame(width: 80, height: 80)
+                .frame(width: 30, height: 30)
                 .clipShape(Circle())
                 .padding(.vertical, 8)
             

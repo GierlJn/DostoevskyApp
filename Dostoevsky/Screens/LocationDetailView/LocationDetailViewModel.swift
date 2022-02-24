@@ -23,6 +23,7 @@ class LocationDetailViewModel: ObservableObject{
         }
     }
     @Published var disableRating = false
+    @Published var isLoadingData = false
     
     
     func setup(location: DLocation) {
@@ -31,8 +32,10 @@ class LocationDetailViewModel: ObservableObject{
     }
     
     func getLocations(){
+        isLoadingData = true
         CloudKitManager.shared.getLocations { [self] result in
             DispatchQueue.main.async {
+                isLoadingData = false
                 switch(result){
                 case .success(let locations):
                     self.locations = locations
@@ -60,6 +63,7 @@ class LocationDetailViewModel: ObservableObject{
             return
         }
         disableRating = true
+        
  
         CloudKitManager.shared.fetchRecord(with: selectedLocation.id) { [self] result in
             switch result{

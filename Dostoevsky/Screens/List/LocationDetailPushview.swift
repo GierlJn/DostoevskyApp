@@ -6,12 +6,13 @@
 //
 import SwiftUI
 
-struct LocationDetailView: View {
+struct LocationDetailPushView: View {
     
     @ObservedObject var viewModel: LocationDetailViewModel
-    var selectedLocation: DLocation?
+    var selectedLocation: DLocation
     
     var body: some View {
+
         ZStack {
             if viewModel.selectedLocation != nil{
                 VStack(spacing: 32) {
@@ -105,13 +106,12 @@ struct LocationDetailView: View {
             
             
         }
+        
         .navigationTitle(viewModel.selectedLocation?.name ?? "")
-        .navigationBarTitleDisplayMode(.inline)
-        .accentColor(.white)
+        .navigationBarTitleDisplayMode(.automatic)
+        
+        
         .onAppear(perform: {
-            guard let selectedLocation = selectedLocation else {
-                return
-            }
             viewModel.setup(location: selectedLocation)
         })
     }
@@ -196,10 +196,10 @@ private struct DescriptionView: View {
     }
 }
 
-struct LocationDetailView_Previews: PreviewProvider{
+struct LocationDetailPushView_Previews: PreviewProvider{
     static var previews: some View{
         NavigationView{
-            LocationDetailView(viewModel: LocationDetailViewModel())
+            LocationDetailPushView(viewModel: LocationDetailViewModel(), selectedLocation: DLocation(record: MockData.createLocationRecord()))
         }
     }
 }

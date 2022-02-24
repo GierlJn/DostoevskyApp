@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B91641DE27C7C4170026C4D7 /* LocationDetailPushview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */; };
+		B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DF27C7C79C0026C4D7 /* LoadingView.swift */; };
 		B929627027C4D87800391364 /* MapBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929626F27C4D87800391364 /* MapBalloon.swift */; };
 		B929627227C4D9F300391364 /* DAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627127C4D9F300391364 /* DAnnotation.swift */; };
 		B929627427C4ED3600391364 /* DMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627327C4ED3600391364 /* DMapViewModel.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailPushview.swift; sourceTree = "<group>"; };
+		B91641DF27C7C79C0026C4D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B929626F27C4D87800391364 /* MapBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBalloon.swift; sourceTree = "<group>"; };
 		B929627127C4D9F300391364 /* DAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAnnotation.swift; sourceTree = "<group>"; };
 		B929627327C4ED3600391364 /* DMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapViewModel.swift; sourceTree = "<group>"; };
@@ -75,9 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				B929629D27C5023600391364 /* AppTabView.swift */,
+				B9D68BD327C7937300CB4AA9 /* List */,
 				B92962A127C5066D00391364 /* LocationDetailView */,
 				B92962A027C5066000391364 /* MapView */,
-				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -100,9 +104,20 @@
 			path = LocationDetailView;
 			sourceTree = "<group>";
 		};
+		B9D68BD327C7937300CB4AA9 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
+				B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */,
+				B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		B9DF3C7926DD624D0052B466 = {
 			isa = PBXGroup;
 			children = (
+				B91641DF27C7C79C0026C4D7 /* LoadingView.swift */,
 				B9D68BD127C788A200CB4AA9 /* RatingManager.swift */,
 				B95DC0A927C63F56008EC3E9 /* OnBoardView.swift */,
 				B9DF3C8426DD624D0052B466 /* Dostoevsky */,
@@ -130,7 +145,6 @@
 				B9DF3C8B26DD624E0052B466 /* Preview Content */,
 				B9DF3C9A26DD62F60052B466 /* DLocations.swift */,
 				B9DF3C9C26DD6A820052B466 /* MockData.swift */,
-				B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */,
 				B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */,
 				B929626F27C4D87800391364 /* MapBalloon.swift */,
 				B929627127C4D9F300391364 /* DAnnotation.swift */,
@@ -232,6 +246,7 @@
 				B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */,
 				B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */,
 				B929629C27C5014F00391364 /* Color.Ext.swift in Sources */,
+				B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */,
 				B929627627C4EE2800391364 /* LocationDetailViewModel.swift in Sources */,
 				B929627227C4D9F300391364 /* DAnnotation.swift in Sources */,
 				B92962A327C50F2700391364 /* Constants.swift in Sources */,
@@ -241,6 +256,7 @@
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B929629E27C5023600391364 /* AppTabView.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
+				B91641DE27C7C4170026C4D7 /* LocationDetailPushview.swift in Sources */,
 				B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */,
 				B929627027C4D87800391364 /* MapBalloon.swift in Sources */,
 				B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */,

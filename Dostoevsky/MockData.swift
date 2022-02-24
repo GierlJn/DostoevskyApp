@@ -24,6 +24,7 @@ struct MockData{
         record[DLocation.Keys.previewImage] = PlaceholderImage.banner.convertToCKAsset()
         record[DLocation.Keys.streetName] = "Skt. Georgrn Str. 26"
         record[DLocation.Keys.time] = "May 4 1999"
+        record[DLocation.Keys.rating] = 1
         return record
     }
 }

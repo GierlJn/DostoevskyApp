@@ -26,6 +26,7 @@ struct AppTabView: View {
                 viewModel.getLocations()
             }
         }
+        .overlay(viewModel.isLoadingData ? LoadingView() : nil)
     }
 }
 
