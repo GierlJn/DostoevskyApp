@@ -8,28 +8,35 @@
 import SwiftUI
 
 struct DAnnotation: View {
+    
+    var location: DLocation
+    
     var body: some View {
-        VStack{
             ZStack{
-//                MapBalloon()
-//                    .frame(width: 100, height: 70)
-//                    .foregroundColor(.purple)
+
                 Image("dostoAnno")
                     .resizable()
                     .frame(width: 45, height: 70)
                 
+                Text("\(location.rating)")
+                    .font(.system(size: 11, weight: .bold))
+                    .frame(width: 26, height: 18)
+                    .background(Color.red)
+                    .clipShape(Capsule())
+                    .offset(x: 20, y: -28)
+                
             }
             
-            
-            Text("Test ")
-                .font(.caption)
-                .fontWeight(.semibold)
-        }
+//
+//            Text("Test ")
+//                .font(.caption)
+//                .fontWeight(.semibold)
+        
     }
 }
 
 struct DAnnotation_Previews: PreviewProvider {
     static var previews: some View {
-        DAnnotation()
+        DAnnotation(location: DLocation(record: MockData.createLocationRecord()))
     }
 }

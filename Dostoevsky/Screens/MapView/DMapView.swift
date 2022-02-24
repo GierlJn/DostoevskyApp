@@ -16,7 +16,7 @@ struct DMapview: View{
     var body: some View{
         Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: viewModel.locations) { location in
             MapAnnotation(coordinate: location.location.coordinate) {
-                DAnnotation()
+                DAnnotation(location: location)
                     .onTapGesture {
                         viewModel.selectedLocation = location
                         viewModel.setup(location: location)
