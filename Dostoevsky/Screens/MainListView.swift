@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MainListView: View {
     
-    @State var locations = [DLocation(record: MockData.createLocationRecord()), DLocation(record: MockData.createLocationRecord()), DLocation(record: MockData.createLocationRecord())]
+    @State var locations = [DLocation]()
+    @ObservedObject var viewModel = LocationDetailViewModel()
     
     var body: some View {
         List{

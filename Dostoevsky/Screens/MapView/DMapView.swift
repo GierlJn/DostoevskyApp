@@ -10,8 +10,7 @@ import MapKit
 
 struct DMapview: View{
     
-    //@EnvironmentObject private var locationManager: LocationManager
-    @StateObject var viewModel = LocationDetailViewModel()
+    @ObservedObject var viewModel = LocationDetailViewModel()
 
     var body: some View{
         Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: viewModel.locations) { location in
@@ -31,11 +30,7 @@ struct DMapview: View{
                 LocationDetailView(viewModel: viewModel)
             }
         }
-        .onAppear{
-            if(viewModel.locations.isEmpty){
-                viewModel.getLocations()
-            }
-        }
+        
         
     }
 }

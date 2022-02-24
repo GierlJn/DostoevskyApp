@@ -74,6 +74,7 @@
 		B929629F27C502FD00391364 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B929629D27C5023600391364 /* AppTabView.swift */,
 				B92962A127C5066D00391364 /* LocationDetailView */,
 				B92962A027C5066000391364 /* MapView */,
 				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
@@ -135,7 +136,6 @@
 				B929627127C4D9F300391364 /* DAnnotation.swift */,
 				B929627727C4EECB00391364 /* LocationManager.swift */,
 				B929629B27C5014F00391364 /* Color.Ext.swift */,
-				B929629D27C5023600391364 /* AppTabView.swift */,
 				B92962A227C50F2700391364 /* Constants.swift */,
 				B92962A427C50FAC00391364 /* CKAsset+Ext.swift */,
 			);
