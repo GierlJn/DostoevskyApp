@@ -13,13 +13,14 @@ struct AppTabView: View {
     
     var body: some View {
         TabView{
-            DMapview(viewModel: viewModel)
-                .tabItem {
-                    Label("Map", systemImage: "map")
-                }
             MainListView(viewModel: viewModel)
                 .tabItem {
                     Label("Locations", systemImage: "building")
+                }
+            
+            DMapview(viewModel: viewModel)
+                .tabItem {
+                    Label("Map", systemImage: "map")
                 }
         }.onAppear{
             if(viewModel.locations.isEmpty){

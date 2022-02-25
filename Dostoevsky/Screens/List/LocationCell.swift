@@ -13,12 +13,22 @@ struct LocationCell: View {
     
     var body: some View {
         HStack{
-            Image(uiImage: location.createBannerImage())
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30, height: 30)
-                .clipShape(Circle())
-                .padding(.vertical, 8)
+            ZStack{
+                Image(uiImage: location.createBannerImage())
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .clipShape(Circle())
+                    .padding(.vertical, 8)
+                
+                    Text("\(location.rating)")
+                        .font(.system(size: 11, weight: .bold))
+                        .frame(width: 26, height: 18)
+                        .background(Color.red)
+                        .clipShape(Capsule())
+                        .offset(x: 20, y: -28)
+    
+            }
+            
             
             VStack(alignment: .leading){
                 Text(location.name)
@@ -26,6 +36,14 @@ struct LocationCell: View {
                     .fontWeight(.semibold)
                     .lineLimit(1)
                     .minimumScaleFactor(0.75)
+                
+                if location.time != ""{
+                    Text(location.time)
+                        .font(.body)
+                        .fontWeight(.none)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.6)
+                }
 
             }.padding(.leading)
         }

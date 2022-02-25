@@ -21,6 +21,7 @@ struct MainListView: View {
                     
                     Spacer()
                     
+                    Text("Sort by: ")
                     Picker("Sort", selection: $viewModel.sort) {
                         Text("Date").tag(SortType.date)
                         Text("Rating").tag(SortType.rating)
@@ -29,6 +30,8 @@ struct MainListView: View {
                     
                     
                 }
+                .padding(.top)
+                .padding(.trailing)
                 List{
                     Section(header: HStack{
                         Text("Before Exile")

@@ -38,8 +38,8 @@ struct DLocation: Identifiable, Hashable{
         category = record[DLocation.Keys.category] as? Int ?? 0
         description = record[DLocation.Keys.description] as? String ?? ""
         location = record[DLocation.Keys.location] as? CLLocation ?? CLLocation()
-        name = record[DLocation.Keys.name] as? String ?? ""
-        place = record[DLocation.Keys.place] as? Int ?? 0
+            name = record[DLocation.Keys.name] as? String ?? ""
+            place = record[DLocation.Keys.place] as? Int ?? 0
         previewImage = record[DLocation.Keys.previewImage] as? CKAsset
         streetName = record[DLocation.Keys.streetName] as? String ?? ""
         time = record[DLocation.Keys.time] as? String ?? ""
