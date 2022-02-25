@@ -18,9 +18,16 @@ struct MainListView: View {
             VStack{
                 HStack{
                     Spacer()
-                    Button("Sort"){
-                        print("test")
-                    }.padding()
+                    
+                    Spacer()
+                    
+                    Picker("Sort", selection: $viewModel.sort) {
+                        Text("Date").tag(SortType.date)
+                        Text("Rating").tag(SortType.rating)
+                    }
+
+                    
+                    
                 }
                 List{
                     Section(header: HStack{

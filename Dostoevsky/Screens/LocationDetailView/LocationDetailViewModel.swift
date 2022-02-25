@@ -8,6 +8,10 @@
 import MapKit
 import CloudKit
 
+enum SortType{
+    case date, rating
+}
+
 class LocationDetailViewModel: ObservableObject{
     
     @Published var selectedLocation: DLocation?
@@ -24,11 +28,22 @@ class LocationDetailViewModel: ObservableObject{
     }
     @Published var disableRating = false
     @Published var isLoadingData = false
-    
+    @Published var sort: SortType = .date{
+        didSet{
+            sortLocationsBy(sort)
+        }
+    }
+        
     
     func setup(location: DLocation) {
         self.selectedLocation = location
         self.ratingState = UserDefaults.standard.integer(forKey: location.name)
+    }
+    
+    func sortLocationsBy(_ sortType: SortType){
+        locations = locations.sorted(by: { (lhs, rhs) -> Bool in
+            sortType == .rating ? (lhs.rating > rhs.rating) : (lhs.place > lhs.place)
+        })
     }
     
     func getLocations(){

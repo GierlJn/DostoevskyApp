@@ -13,10 +13,20 @@ struct DAnnotation: View {
     
     var body: some View {
             ZStack{
-
-                Image("dostoAnno")
-                    .resizable()
-                    .frame(width: 45, height: 70)
+                if location.category == 1{
+                    Image("dostoIconGreen")
+                        .resizable()
+                        .frame(width: 45, height: 70)
+                }else if location.category == 2{
+                    Image("dostoIconGray")
+                        .resizable()
+                        .frame(width: 45, height: 70)
+                }else if location.category == 3{
+                    Image("dostoIconDarkGreen")
+                        .resizable()
+                        .frame(width: 45, height: 70)
+                }
+                
                 
                 Text("\(location.rating)")
                     .font(.system(size: 11, weight: .bold))
