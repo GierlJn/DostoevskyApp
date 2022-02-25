@@ -14,7 +14,12 @@ struct LocationDetailView: View {
     
     var body: some View {
         if viewModel.selectedLocation != nil{
-            VStack(spacing: 16) {
+            VStack(){
+                
+                ScrollView{
+                    
+                VStack(spacing: 16){
+                    
                 ZStack{
                     BannerImageView(image: viewModel.selectedLocation!.createBannerImage())
                     VStack{
@@ -42,9 +47,26 @@ struct LocationDetailView: View {
                     
                 }
                 .padding(.horizontal)
+                    
+                    if (viewModel.selectedLocation!.time != ""){
+                        HStack {
+                            Button {
+                                //
+                            } label: {
+                                DateView(date: viewModel.selectedLocation!.time)
+                            }
+                            
+                            Spacer()
+                            
+                        }
+                        .padding(.horizontal)
+                    }
+                    
                 
                 DescriptionView(text: viewModel.selectedLocation!.description)
-                Spacer()
+                
+                    }
+                }
                 ZStack {
                     Capsule()
                         .frame(height: 80)
@@ -155,6 +177,17 @@ private struct AddressView: View {
     }
 }
 
+private struct DateView: View {
+    
+    var date: String
+    
+    var body: some View {
+        Label(date, systemImage: "calendar")
+            .font(.caption)
+            .foregroundColor(.secondary)
+    }
+}
+
 
 private struct LocationActionButton: View {
     
@@ -203,10 +236,7 @@ private struct DescriptionView: View {
     
     var body: some View {
         Text(text)
-            .lineLimit(3)
-            .minimumScaleFactor(0.75)
-            .frame(height: 70)
-            .padding(.horizontal)
+            .padding(.horizontal, 16)
     }
 }
 
