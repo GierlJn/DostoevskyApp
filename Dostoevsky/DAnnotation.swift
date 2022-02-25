@@ -13,19 +13,23 @@ struct DAnnotation: View {
     
     var body: some View {
             ZStack{
-                if location.category == 1{
+                switch location.category{
+                case 1:
                     Image("dostoIconGreen")
                         .resizable()
                         .frame(width: 45, height: 70)
-                }else if location.category == 2{
-                    Image("dostoIconGray")
-                        .resizable()
-                        .frame(width: 45, height: 70)
-                }else if location.category == 3{
+                case 2:
                     Image("dostoIconDarkGreen")
                         .resizable()
                         .frame(width: 45, height: 70)
+                case 3:
+                    Image("dostoIconGray")
+                        .resizable()
+                        .frame(width: 45, height: 70)
+                default:
+                    EmptyView()
                 }
+
                 
                 
                 Text("\(location.rating)")

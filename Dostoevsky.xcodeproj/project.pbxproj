@@ -10,12 +10,12 @@
 		B91641DE27C7C4170026C4D7 /* LocationDetailPushview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */; };
 		B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DF27C7C79C0026C4D7 /* LoadingView.swift */; };
 		B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641E127C7D6FE0026C4D7 /* DismissButton.swift */; };
+		B928219A27C9270900000E3B /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B928219927C9270900000E3B /* Color+Ext.swift */; };
 		B929627027C4D87800391364 /* MapBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929626F27C4D87800391364 /* MapBalloon.swift */; };
 		B929627227C4D9F300391364 /* DAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627127C4D9F300391364 /* DAnnotation.swift */; };
 		B929627427C4ED3600391364 /* DMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627327C4ED3600391364 /* DMapViewModel.swift */; };
 		B929627627C4EE2800391364 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627527C4EE2800391364 /* LocationDetailViewModel.swift */; };
 		B929627827C4EECB00391364 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627727C4EECB00391364 /* LocationManager.swift */; };
-		B929629C27C5014F00391364 /* Color.Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929629B27C5014F00391364 /* Color.Ext.swift */; };
 		B929629E27C5023600391364 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929629D27C5023600391364 /* AppTabView.swift */; };
 		B92962A327C50F2700391364 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A227C50F2700391364 /* Constants.swift */; };
 		B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A427C50FAC00391364 /* CKAsset+Ext.swift */; };
@@ -38,12 +38,12 @@
 		B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailPushview.swift; sourceTree = "<group>"; };
 		B91641DF27C7C79C0026C4D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B91641E127C7D6FE0026C4D7 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		B928219927C9270900000E3B /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		B929626F27C4D87800391364 /* MapBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBalloon.swift; sourceTree = "<group>"; };
 		B929627127C4D9F300391364 /* DAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAnnotation.swift; sourceTree = "<group>"; };
 		B929627327C4ED3600391364 /* DMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapViewModel.swift; sourceTree = "<group>"; };
 		B929627527C4EE2800391364 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
 		B929627727C4EECB00391364 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		B929629B27C5014F00391364 /* Color.Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.Ext.swift; sourceTree = "<group>"; };
 		B929629D27C5023600391364 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		B92962A227C50F2700391364 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B92962A427C50FAC00391364 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
@@ -119,6 +119,7 @@
 		B9DF3C7926DD624D0052B466 = {
 			isa = PBXGroup;
 			children = (
+				B928219927C9270900000E3B /* Color+Ext.swift */,
 				B91641E127C7D6FE0026C4D7 /* DismissButton.swift */,
 				B91641DF27C7C79C0026C4D7 /* LoadingView.swift */,
 				B9D68BD127C788A200CB4AA9 /* RatingManager.swift */,
@@ -152,7 +153,6 @@
 				B929626F27C4D87800391364 /* MapBalloon.swift */,
 				B929627127C4D9F300391364 /* DAnnotation.swift */,
 				B929627727C4EECB00391364 /* LocationManager.swift */,
-				B929629B27C5014F00391364 /* Color.Ext.swift */,
 				B92962A227C50F2700391364 /* Constants.swift */,
 				B92962A427C50FAC00391364 /* CKAsset+Ext.swift */,
 			);
@@ -248,7 +248,6 @@
 				B9DF3C9B26DD62F60052B466 /* DLocations.swift in Sources */,
 				B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */,
 				B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */,
-				B929629C27C5014F00391364 /* Color.Ext.swift in Sources */,
 				B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */,
 				B929627627C4EE2800391364 /* LocationDetailViewModel.swift in Sources */,
 				B929627227C4D9F300391364 /* DAnnotation.swift in Sources */,
@@ -263,6 +262,7 @@
 				B91641DE27C7C4170026C4D7 /* LocationDetailPushview.swift in Sources */,
 				B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */,
 				B929627027C4D87800391364 /* MapBalloon.swift in Sources */,
+				B928219A27C9270900000E3B /* Color+Ext.swift in Sources */,
 				B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */,
 				B9DF3C9926DD62D40052B466 /* MainListView.swift in Sources */,
 				B929627827C4EECB00391364 /* LocationManager.swift in Sources */,
@@ -399,7 +399,7 @@
 				DEVELOPMENT_TEAM = V9453FD64D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Dostoevsky/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,7 +422,7 @@
 				DEVELOPMENT_TEAM = V9453FD64D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Dostoevsky/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

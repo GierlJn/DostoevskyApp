@@ -56,7 +56,10 @@ struct DMapview: View{
             Text("Show all").tag(FilterOptions.all)
             Text("Before exile").tag(FilterOptions.beforeExile)
             Text("After exile").tag(FilterOptions.afterExile)
-            Text("Novels").tag(FilterOptions.novels)}.padding(), alignment: .bottomTrailing)
+            Text("Novels").tag(FilterOptions.novels)}
+                    .frame(width: 100, height: 35).background(RoundedRectangle(cornerRadius: 12)
+                                                                .foregroundColor(getFilterColor()))
+                    .padding(6), alignment: .bottomTrailing)
         
         
         .edgesIgnoringSafeArea([.top, .leading, .trailing])
@@ -67,5 +70,18 @@ struct DMapview: View{
         }
         
         
+    }
+    
+    func getFilterColor()->Color{
+        switch viewModel.filter{
+        case .all:
+            return Color.brandPrimary
+        case .beforeExile:
+            return Color.brandCategory1
+        case .afterExile:
+            return Color.brandCategory2
+        case .novels:
+            return Color.brandCategory3
+        }
     }
 }
