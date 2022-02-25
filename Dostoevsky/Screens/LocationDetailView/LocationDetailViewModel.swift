@@ -12,6 +12,10 @@ enum SortType{
     case date, rating
 }
 
+enum FilterOptions{
+    case all, beforeExile, afterExile, novels
+}
+
 class LocationDetailViewModel: ObservableObject{
     
     @Published var selectedLocation: DLocation?
@@ -31,6 +35,11 @@ class LocationDetailViewModel: ObservableObject{
     @Published var sort: SortType = .date{
         didSet{
             sortLocationsBy(sort)
+        }
+    }
+    @Published var filter: FilterOptions = .all{
+        didSet{
+            
         }
     }
         
