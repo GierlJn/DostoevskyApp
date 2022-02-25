@@ -26,6 +26,7 @@ struct AppTabView: View {
                 viewModel.getLocations()
             }
         }
+        .accentColor(.brandCategory3)
         .overlay(viewModel.isLoadingData ? LoadingView() : nil)
     }
 }
