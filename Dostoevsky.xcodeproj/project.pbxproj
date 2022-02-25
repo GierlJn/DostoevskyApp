@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B91641DE27C7C4170026C4D7 /* LocationDetailPushview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */; };
 		B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DF27C7C79C0026C4D7 /* LoadingView.swift */; };
+		B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641E127C7D6FE0026C4D7 /* DismissButton.swift */; };
 		B929627027C4D87800391364 /* MapBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929626F27C4D87800391364 /* MapBalloon.swift */; };
 		B929627227C4D9F300391364 /* DAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627127C4D9F300391364 /* DAnnotation.swift */; };
 		B929627427C4ED3600391364 /* DMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627327C4ED3600391364 /* DMapViewModel.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailPushview.swift; sourceTree = "<group>"; };
 		B91641DF27C7C79C0026C4D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B91641E127C7D6FE0026C4D7 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		B929626F27C4D87800391364 /* MapBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBalloon.swift; sourceTree = "<group>"; };
 		B929627127C4D9F300391364 /* DAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAnnotation.swift; sourceTree = "<group>"; };
 		B929627327C4ED3600391364 /* DMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapViewModel.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		B9DF3C7926DD624D0052B466 = {
 			isa = PBXGroup;
 			children = (
+				B91641E127C7D6FE0026C4D7 /* DismissButton.swift */,
 				B91641DF27C7C79C0026C4D7 /* LoadingView.swift */,
 				B9D68BD127C788A200CB4AA9 /* RatingManager.swift */,
 				B95DC0A927C63F56008EC3E9 /* OnBoardView.swift */,
@@ -253,6 +256,7 @@
 				B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */,
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
 				B9D68BD227C788A200CB4AA9 /* RatingManager.swift in Sources */,
+				B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */,
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B929629E27C5023600391364 /* AppTabView.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,

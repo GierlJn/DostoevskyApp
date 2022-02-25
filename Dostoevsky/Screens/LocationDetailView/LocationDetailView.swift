@@ -10,13 +10,13 @@ struct LocationDetailView: View {
     
     @ObservedObject var viewModel: LocationDetailViewModel
     var selectedLocation: DLocation?
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
             if viewModel.selectedLocation != nil{
                 VStack(spacing: 32) {
                     BannerImageView(image: viewModel.selectedLocation!.createBannerImage())
-                        .padding(.top,32)
                         .padding(.bottom,16)
                     
                     HStack {
@@ -105,8 +105,7 @@ struct LocationDetailView: View {
             
             
         }
-        .navigationTitle(viewModel.selectedLocation?.name ?? "")
-        .navigationBarTitleDisplayMode(.inline)
+
         .accentColor(.white)
         .onAppear(perform: {
             guard let selectedLocation = selectedLocation else {
@@ -114,6 +113,13 @@ struct LocationDetailView: View {
             }
             viewModel.setup(location: selectedLocation)
         })
+        
+        .overlay(Button {
+            withAnimation { self.presentationMode.wrappedValue.dismiss() }
+        } label: {
+            XDismissButton()
+        }, alignment: .topTrailing)
+        
     }
 }
 

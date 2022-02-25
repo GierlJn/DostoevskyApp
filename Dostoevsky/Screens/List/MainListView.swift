@@ -11,37 +11,74 @@ import SwiftUI
 
 struct MainListView: View {
     
-    @ObservedObject var viewModel = LocationDetailViewModel()
+    @ObservedObject var viewModel: LocationDetailViewModel
     
     var body: some View {
-        NavigationView{
+        
             VStack{
                 HStack{
                     Spacer()
                     Button("Sort"){
                         print("test")
-                    }
+                    }.padding()
                 }
                 List{
+                    Section(header: HStack{
+                        Text("Before Exile")
+                        
+                    }){
+                        ForEach(viewModel.locations.filter{$0.category == 1}, id: (\.self)){ location in
+                            Button {
+                                viewModel.selectedLocation = location
+                                viewModel.setup(location: location)
+                                viewModel.isShowingDetailView = true
+                            } label: {
+                                LocationCell(location: location)
+                            }
+                            
+                        }
+                    }
+                    Section(header: HStack{
+                        Text("After Exile")
+                        
+                    }){
+                        ForEach(viewModel.locations.filter{$0.category == 2}, id: (\.self)){ location in
+                            Button {
+                                viewModel.selectedLocation = location
+                                viewModel.setup(location: location)
+                                viewModel.isShowingDetailView = true
+                            } label: {
+                                LocationCell(location: location)
+                            }
+                            
+                        }
+                    }
                     Section(header: HStack{
                         Text("Novels")
                         
                     }){
-                        ForEach(viewModel.locations.filter{$0.category == 1}, id: (\.self)){ location in
-                            NavigationLink {
-                                LocationDetailPushView(viewModel: viewModel, selectedLocation: location)
+                        ForEach(viewModel.locations.filter{$0.category == 3}, id: (\.self)){ location in
+                            Button {
+                                viewModel.selectedLocation = location
+                                viewModel.setup(location: location)
+                                viewModel.isShowingDetailView = true
                             } label: {
                                 LocationCell(location: location)
                             }
+                            
                         }
                     }
                 }
+                Spacer()
                 
             }
-            
-            
+            .fullScreenCover(isPresented: $viewModel.isShowingDetailView){
+                    LocationDetailView(viewModel: viewModel)
+            }
             .navigationBarHidden(true)
-        }
+            .navigationTitle("asdf")
+            
+            
         
         .accentColor(.white)
     }
@@ -50,7 +87,7 @@ struct MainListView: View {
 
 struct MainListView_Previews: PreviewProvider {
     static var previews: some View {
-        MainListView()
+        MainListView(viewModel: LocationDetailViewModel())
     }
 }
 

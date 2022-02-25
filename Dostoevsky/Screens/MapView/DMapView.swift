@@ -11,7 +11,7 @@ import MapKit
 struct DMapview: View{
     
     @ObservedObject var viewModel = LocationDetailViewModel()
-
+    
     var body: some View{
         ZStack{
             Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: viewModel.locations) { location in
@@ -21,7 +21,7 @@ struct DMapview: View{
                             viewModel.selectedLocation = location
                             viewModel.setup(location: location)
                             viewModel.isShowingDetailView = true
-                    }
+                        }
                 }
             }
             VStack{
@@ -37,10 +37,9 @@ struct DMapview: View{
         
         .edgesIgnoringSafeArea([.top, .leading, .trailing])
         .accentColor(.white)
-        .sheet(isPresented: $viewModel.isShowingDetailView, onDismiss: {}){
-            NavigationView{
-                LocationDetailView(viewModel: viewModel)
-            }
+        
+        .fullScreenCover(isPresented: $viewModel.isShowingDetailView, onDismiss: {}){
+            LocationDetailView(viewModel: viewModel)
         }
         
         
