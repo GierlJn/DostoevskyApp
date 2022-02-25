@@ -21,7 +21,7 @@ struct LocationDetailView: View {
                 VStack(spacing: 16){
                     
                 ZStack{
-                    BannerImageView(image: viewModel.selectedLocation!.createBannerImage())
+                    BannerImageView(image: viewModel.selectedLocation!.previewImages.first ?? PlaceholderImage.banner)
                     VStack{
                         Spacer()
                         HStack{

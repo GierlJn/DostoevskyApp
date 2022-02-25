@@ -14,7 +14,7 @@ struct LocationCell: View {
     var body: some View {
         HStack{
             ZStack{
-                Image(uiImage: location.createBannerImage())
+                Image(uiImage: location.previewImages.first ?? PlaceholderImage.banner)
                     .resizable()
                     .frame(width: 60, height: 60)
                     .clipShape(Circle())

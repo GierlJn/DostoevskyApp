@@ -20,6 +20,7 @@ struct DLocation: Identifiable, Hashable{
         static let streetName = "streetName"
         static let time = "time"
         static let rating = "rating"
+        static let imageNameList = "imageNameList"
     }
     
     var id: CKRecord.ID
@@ -28,7 +29,7 @@ struct DLocation: Identifiable, Hashable{
     var location: CLLocation
     var name: String
     var place: Int
-    var previewImage: CKAsset!
+    var previewImages: [UIImage]!
     var streetName: String
     var time: String
     var rating: Int
@@ -38,19 +39,33 @@ struct DLocation: Identifiable, Hashable{
         category = record[DLocation.Keys.category] as? Int ?? 0
         description = record[DLocation.Keys.description] as? String ?? ""
         location = record[DLocation.Keys.location] as? CLLocation ?? CLLocation()
-            name = record[DLocation.Keys.name] as? String ?? ""
-            place = record[DLocation.Keys.place] as? Int ?? 0
-        previewImage = record[DLocation.Keys.previewImage] as? CKAsset
+        name = record[DLocation.Keys.name] as? String ?? ""
+        place = record[DLocation.Keys.place] as? Int ?? 0
+        //previewImage = record[DLocation.Keys.previewImage] as? CKAsset
+        previewImages = UIImage.loadImages(record[DLocation.Keys.imageNameList] as? [String] ?? [String]())
         streetName = record[DLocation.Keys.streetName] as? String ?? ""
         time = record[DLocation.Keys.time] as? String ?? ""
         rating = record[DLocation.Keys.rating] as? Int ?? 0
     }
     
-    func createBannerImage() -> UIImage{
-        guard let asset = previewImage else { return PlaceholderImage.banner }
-        return asset.convertToUIImage()
-    }
+    
+    
+//    func createBannerImage() -> UIImage{
+//        guard let asset = previewImage else { return PlaceholderImage.banner }
+//        return asset.convertToUIImage()
+//    }
     
 }
 
 
+extension UIImage{
+    static func loadImages(_ imageNames: [String])->[UIImage]{
+        var images = [UIImage]()
+        for name in imageNames{
+            if let image = UIImage(named: name){
+                images.append(image)
+            }
+        }
+        return images
+    }
+}
