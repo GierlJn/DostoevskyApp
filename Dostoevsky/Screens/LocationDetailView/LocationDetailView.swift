@@ -13,113 +13,121 @@ struct LocationDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        ZStack {
-            if viewModel.selectedLocation != nil{
-                VStack(spacing: 32) {
+        if viewModel.selectedLocation != nil{
+            VStack(spacing: 16) {
+                ZStack{
                     BannerImageView(image: viewModel.selectedLocation!.createBannerImage())
-                        .padding(.bottom,16)
-                    
-                    HStack {
-                        Button {
-                            viewModel.getDirectionsToLocation()
-                        } label: {
-                            AddressView(address: viewModel.selectedLocation!.streetName)
+                    VStack{
+                        Spacer()
+                        HStack{
+                            Text(viewModel.selectedLocation!.name)
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding()
+                                
+                            Spacer()
                         }
                         
-                        Spacer()
+                    }
+                }.frame(height: 350)
+                
+                HStack {
+                    Button {
+                        viewModel.getDirectionsToLocation()
+                    } label: {
+                        AddressView(address: viewModel.selectedLocation!.streetName)
+                    }
+                    
+                    Spacer()
+                    
+                }
+                .padding(.horizontal)
+                
+                DescriptionView(text: viewModel.selectedLocation!.description)
+                Spacer()
+                ZStack {
+                    Capsule()
+                        .frame(height: 80)
+                        .foregroundColor(Color(.secondarySystemBackground))
+                    
+                    HStack(spacing: 20) {
                         
+                        Button {
+                            if viewModel.disableRating {
+                                return
+                            }
+                            switch viewModel.ratingState{
+                            case -1:
+                                viewModel.selectedLocation!.rating += 1
+                                viewModel.ratingState = 0
+                            case 0:
+                                viewModel.selectedLocation!.rating -= 1
+                                viewModel.ratingState = -1
+                            case 1:
+                                viewModel.selectedLocation!.rating -= 1
+                                viewModel.ratingState = 0
+                            default:
+                                print("not")
+                            }
+
+                            
+                            
+                            viewModel.updateSelectedLocation()
+                            viewModel.updateLocationRating()
+                        } label: {
+                            LocationActionButton(color: .brandPrimary, imageName: "minus").opacity(viewModel.ratingState == -1 ? 0.5 : 1)
+                        }
+                        
+                        InfoView(color: .brandPrimary, text: "\(viewModel.selectedLocation!.rating)")
+                        
+                        Button {
+                            if viewModel.disableRating {
+                                return
+                            }
+                            
+                            switch viewModel.ratingState{
+                            case -1:
+                                viewModel.selectedLocation!.rating += 1
+                                viewModel.ratingState = 0
+                            case 0:
+                                viewModel.selectedLocation!.rating += 1
+                                viewModel.ratingState = 1
+                            case 1:
+                                viewModel.selectedLocation!.rating -= 1
+                                viewModel.ratingState = 0
+                            default:
+                                print("not")
+                            }
+                            
+                            
+                            viewModel.updateSelectedLocation()
+                            viewModel.updateLocationRating()
+                        } label: {
+                            LocationActionButton(color: .brandPrimary, imageName: "plus").opacity(viewModel.ratingState == 1 ? 0.5 : 1)
+                        }
                     }
                     .padding(.horizontal)
                     
-                    DescriptionView(text: viewModel.selectedLocation!.description)
-                    Spacer()
-                    ZStack {
-                        Capsule()
-                            .frame(height: 80)
-                            .foregroundColor(Color(.secondarySystemBackground))
-                        
-                        HStack(spacing: 20) {
-                            
-                            Button {
-                                if viewModel.disableRating {
-                                    return
-                                }
-                                switch viewModel.ratingState{
-                                case -1:
-                                    viewModel.selectedLocation!.rating += 1
-                                    viewModel.ratingState = 0
-                                case 0:
-                                    viewModel.selectedLocation!.rating -= 1
-                                    viewModel.ratingState = -1
-                                case 1:
-                                    viewModel.selectedLocation!.rating -= 1
-                                    viewModel.ratingState = 0
-                                default:
-                                    print("not")
-                                }
-
-                                
-                                
-                                viewModel.updateSelectedLocation()
-                                viewModel.updateLocationRating()
-                            } label: {
-                                LocationActionButton(color: .brandPrimary, imageName: "minus").opacity(viewModel.ratingState == -1 ? 0.5 : 1)
-                            }
-                            
-                            InfoView(color: .brandPrimary, text: "\(viewModel.selectedLocation!.rating)")
-                            
-                            Button {
-                                if viewModel.disableRating {
-                                    return
-                                }
-                                
-                                switch viewModel.ratingState{
-                                case -1:
-                                    viewModel.selectedLocation!.rating += 1
-                                    viewModel.ratingState = 0
-                                case 0:
-                                    viewModel.selectedLocation!.rating += 1
-                                    viewModel.ratingState = 1
-                                case 1:
-                                    viewModel.selectedLocation!.rating -= 1
-                                    viewModel.ratingState = 0
-                                default:
-                                    print("not")
-                                }
-                                
-                                
-                                viewModel.updateSelectedLocation()
-                                viewModel.updateLocationRating()
-                            } label: {
-                                LocationActionButton(color: .brandPrimary, imageName: "plus").opacity(viewModel.ratingState == 1 ? 0.5 : 1)
-                            }
-                        }
-                        .padding(.horizontal)
-                        
-                    }
-                    
                 }
+                
             }
-            
-            
-            
-            
+            .accentColor(.white)
+            .onAppear(perform: {
+                guard let selectedLocation = selectedLocation else {
+                    return
+                }
+                viewModel.setup(location: selectedLocation)
+            })
+            .ignoresSafeArea(edges: .top)
+            .overlay(Button {
+                withAnimation { self.presentationMode.wrappedValue.dismiss() }
+            } label: {
+                XDismissButton()
+            }, alignment: .topTrailing)
+        }else{
+            EmptyView()
         }
 
-        .accentColor(.white)
-        .onAppear(perform: {
-            guard let selectedLocation = selectedLocation else {
-                return
-            }
-            viewModel.setup(location: selectedLocation)
-        })
-        
-        .overlay(Button {
-            withAnimation { self.presentationMode.wrappedValue.dismiss() }
-        } label: {
-            XDismissButton()
-        }, alignment: .topTrailing)
-        
     }
 }
 
@@ -131,8 +139,8 @@ private struct BannerImageView: View {
     var body: some View {
         Image(uiImage: image)
             .resizable()
-            .scaledToFill()
-            .frame(height: 120)
+            
+            .frame(height: 350)
     }
 }
 
