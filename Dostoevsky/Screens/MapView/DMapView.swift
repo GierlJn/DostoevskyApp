@@ -44,8 +44,9 @@ struct DMapview: View{
                 Image("map-logo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200)
-                    .shadow(radius: 10)
+                    .frame(width: 150)
+                    .shadow(color: .black, radius: 12)
+                    .padding()
                 Spacer()
             }
             

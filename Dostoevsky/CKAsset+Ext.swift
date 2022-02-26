@@ -10,6 +10,7 @@ import UIKit
 
 extension CKAsset{
     func convertToUIImage() -> UIImage {
+        
         let placeholder = PlaceholderImage.banner
         
         guard let fileUrl = self.fileURL else { return placeholder }

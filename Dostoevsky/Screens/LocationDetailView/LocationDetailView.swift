@@ -11,6 +11,7 @@ struct LocationDetailView: View {
     @ObservedObject var viewModel: LocationDetailViewModel
     var selectedLocation: DLocation?
     @Environment(\.presentationMode) var presentationMode
+    @State var userIsSwiping = false
     
     var body: some View {
         if viewModel.selectedLocation != nil{
@@ -21,7 +22,33 @@ struct LocationDetailView: View {
                 VStack(spacing: 16){
                     
                 ZStack{
-                    BannerImageView(image: viewModel.selectedLocation!.previewImages.first ?? PlaceholderImage.banner)
+                    
+                    GeometryReader{ geometry in
+                        ScrollView(.horizontal, showsIndicators: false){
+                            HStack(alignment: .center, spacing: 1){
+                                ForEach(viewModel.selectedLocation!.previewImages, id: \.self){ photo in
+                                   // BannerImageView(image: photo)
+                                    Image(uiImage: photo)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(height: geometry.size.width)
+                                        
+                                }
+                            }
+                        }
+                        
+                        .content
+                        .frame(width: geometry.size.width, alignment: .leading)
+                        .animation(.spring())
+                    
+                    }
+                    
+                    
+                    
+                    
+                    //BannerImageView(image: viewModel.selectedLocation!.previewImages.first ?? PlaceholderImage.banner)
+                    
+                    
                     VStack{
                         Spacer()
                         HStack{
