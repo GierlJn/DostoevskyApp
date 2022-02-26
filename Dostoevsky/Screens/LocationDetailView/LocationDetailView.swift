@@ -19,79 +19,54 @@ struct LocationDetailView: View {
                 
                 ScrollView{
                     
-                VStack(spacing: 16){
-                    
-                ZStack{
-                    
-                    GeometryReader{ geometry in
-                        ScrollView(.horizontal, showsIndicators: false){
-                            HStack(alignment: .center, spacing: 1){
-                                ForEach(viewModel.selectedLocation!.previewImages, id: \.self){ photo in
-                                   // BannerImageView(image: photo)
-                                    Image(uiImage: photo)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(height: geometry.size.width)
-                                        
+                    VStack(spacing: 16){
+                        
+                        ZStack{
+                            ImageSlider(images: viewModel.selectedLocation!.previewImages)
+                                .frame(height: 350)
+                            VStack{
+                                Spacer()
+                                HStack{
+                                    Text(viewModel.selectedLocation!.name)
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .padding()
+                                    
+                                    Spacer()
                                 }
-                            }
-                        }
-                        
-                        .content
-                        .frame(width: geometry.size.width, alignment: .leading)
-                        .animation(.spring())
-                    
-                    }
-                    
-                    
-                    
-                    
-                    //BannerImageView(image: viewModel.selectedLocation!.previewImages.first ?? PlaceholderImage.banner)
-                    
-                    
-                    VStack{
-                        Spacer()
-                        HStack{
-                            Text(viewModel.selectedLocation!.name)
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .padding()
                                 
-                            Spacer()
-                        }
+                            }
+                        }.frame(height: 350)
                         
-                    }
-                }.frame(height: 350)
-                
-                HStack {
-                    Button {
-                        viewModel.getDirectionsToLocation()
-                    } label: {
-                        AddressView(address: viewModel.selectedLocation!.streetName)
-                    }
-                    
-                    Spacer()
-                    
-                }
-                .padding(.horizontal)
-                    
-                    if (viewModel.selectedLocation!.time != ""){
                         HStack {
                             Button {
-                                //
+                                viewModel.getDirectionsToLocation()
                             } label: {
-                                DateView(date: viewModel.selectedLocation!.time)
+                                AddressView(address: viewModel.selectedLocation!.streetName)
                             }
                             
                             Spacer()
                             
                         }
                         .padding(.horizontal)
-                    }
-                    
-                
-                DescriptionView(text: viewModel.selectedLocation!.description)
-                
+                        
+                        if (viewModel.selectedLocation!.time != ""){
+                            HStack {
+                                Button {
+                                    //
+                                } label: {
+                                    DateView(date: viewModel.selectedLocation!.time)
+                                }
+                                
+                                Spacer()
+                                
+                            }
+                            .padding(.horizontal)
+                        }
+                        
+                        
+                        DescriptionView(text: viewModel.selectedLocation!.description)
+                        
                     }
                 }
                 ZStack {
@@ -118,7 +93,7 @@ struct LocationDetailView: View {
                             default:
                                 print("not")
                             }
-
+                            
                             
                             
                             viewModel.updateSelectedLocation()
@@ -176,7 +151,7 @@ struct LocationDetailView: View {
         }else{
             EmptyView()
         }
-
+        
     }
 }
 
@@ -188,8 +163,7 @@ private struct BannerImageView: View {
     var body: some View {
         Image(uiImage: image)
             .resizable()
-            
-            .frame(height: 350)
+        
     }
 }
 
@@ -274,3 +248,23 @@ struct LocationDetailView_Previews: PreviewProvider{
         }
     }
 }
+
+struct ImageSlider: View{
+    var images: [UIImage]
+    var body: some View{
+        if images.isEmpty{
+            Image(uiImage: PlaceholderImage.banner)
+                .resizable()
+        }else{
+            TabView{
+                ForEach(images, id: \.self) { item in
+                    Image(uiImage: item)
+                        .resizable()
+                        
+                }
+            }
+            .tabViewStyle(PageTabViewStyle())
+        }
+    }
+}
+
