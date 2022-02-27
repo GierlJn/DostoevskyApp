@@ -30,7 +30,10 @@ struct LocationDetailView: View {
                                     Text(viewModel.selectedLocation!.name)
                                         .font(.title)
                                         .fontWeight(.bold)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.75)
                                         .padding()
+                                        .padding(.bottom, 12)
                                     
                                     Spacer()
                                 }
@@ -65,74 +68,32 @@ struct LocationDetailView: View {
                         }
                         
                         
+                        
                         DescriptionView(text: viewModel.selectedLocation!.description)
+                            .padding(.top)
                         
                     }
                 }
                 ZStack {
                     Capsule()
-                        .frame(height: 80)
+                        
                         .foregroundColor(Color(.secondarySystemBackground))
-                    
-                    HStack(spacing: 20) {
                         
+                    HStack{
                         Button {
-                            if viewModel.disableRating {
-                                return
-                            }
-                            switch viewModel.ratingState{
-                            case -1:
-                                viewModel.selectedLocation!.rating += 1
-                                viewModel.ratingState = 0
-                            case 0:
-                                viewModel.selectedLocation!.rating -= 1
-                                viewModel.ratingState = -1
-                            case 1:
-                                viewModel.selectedLocation!.rating -= 1
-                                viewModel.ratingState = 0
-                            default:
-                                print("not")
-                            }
-                            
-                            
-                            
-                            viewModel.updateSelectedLocation()
-                            viewModel.updateLocationRating()
+                            viewModel.getDirectionsToLocation()
                         } label: {
-                            LocationActionButton(color: .brandPrimary, imageName: "minus").opacity(viewModel.ratingState == -1 ? 0.5 : 1)
+                            LocationActionButton(color: Color.brandPrimary, imageName: "location.fill")
+                                .padding(.leading)
                         }
-                        
-                        InfoView(color: .brandPrimary, text: "\(viewModel.selectedLocation!.rating)")
-                        
-                        Button {
-                            if viewModel.disableRating {
-                                return
-                            }
-                            
-                            switch viewModel.ratingState{
-                            case -1:
-                                viewModel.selectedLocation!.rating += 1
-                                viewModel.ratingState = 0
-                            case 0:
-                                viewModel.selectedLocation!.rating += 1
-                                viewModel.ratingState = 1
-                            case 1:
-                                viewModel.selectedLocation!.rating -= 1
-                                viewModel.ratingState = 0
-                            default:
-                                print("not")
-                            }
-                            
-                            
-                            viewModel.updateSelectedLocation()
-                            viewModel.updateLocationRating()
-                        } label: {
-                            LocationActionButton(color: .brandPrimary, imageName: "plus").opacity(viewModel.ratingState == 1 ? 0.5 : 1)
-                        }
+                        Spacer()
+
+                        RatingView(viewModel: viewModel)
+                            .padding(.horizontal)
                     }
-                    .padding(.horizontal)
-                    
                 }
+                .frame(width: 300, height: 60)
+                .padding(.bottom)
                 
             }
             .accentColor(.white)
@@ -153,6 +114,78 @@ struct LocationDetailView: View {
         }
         
     }
+}
+
+private struct RatingView: View{
+    @ObservedObject var viewModel: LocationDetailViewModel
+    
+    var body: some View{
+        HStack(spacing: 20) {
+            
+            Button {
+                if viewModel.disableRating {
+                    return
+                }
+                switch viewModel.ratingState{
+                case -1:
+                    viewModel.selectedLocation!.rating += 1
+                    viewModel.ratingState = 0
+                case 0:
+                    viewModel.selectedLocation!.rating -= 1
+                    viewModel.ratingState = -1
+                case 1:
+                    viewModel.selectedLocation!.rating -= 1
+                    viewModel.ratingState = 0
+                default:
+                    print("not")
+                }
+                
+                
+                
+                viewModel.updateSelectedLocation()
+                viewModel.updateLocationRating()
+            } label: {
+                LocationActionButton(color: .brandPrimary, imageName: "minus").opacity(viewModel.ratingState == -1 ? 0.5 : 1)
+            }
+            
+            InfoView(color: .brandPrimary, text: "\(viewModel.selectedLocation!.rating)")
+            
+            PlusButton(viewModel: viewModel)
+        }
+    }
+}
+
+private struct PlusButton: View{
+    @ObservedObject var viewModel: LocationDetailViewModel
+    
+    var body: some View{
+        Button {
+            if viewModel.disableRating {
+                return
+            }
+            
+            switch viewModel.ratingState{
+            case -1:
+                viewModel.selectedLocation!.rating += 1
+                viewModel.ratingState = 0
+            case 0:
+                viewModel.selectedLocation!.rating += 1
+                viewModel.ratingState = 1
+            case 1:
+                viewModel.selectedLocation!.rating -= 1
+                viewModel.ratingState = 0
+            default:
+                print("not")
+            }
+            
+            
+            viewModel.updateSelectedLocation()
+            viewModel.updateLocationRating()
+        } label: {
+            LocationActionButton(color: .brandPrimary, imageName: "plus").opacity(viewModel.ratingState == 1 ? 0.5 : 1)
+        }
+    }
+    
 }
 
 
@@ -199,13 +232,13 @@ private struct LocationActionButton: View {
         ZStack {
             Circle()
                 .foregroundColor(color)
-                .frame(width: 60, height: 60)
+                .frame(width: 40, height: 40)
             
             Image(systemName: imageName)
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(.white)
-                .frame(width: 22, height: 22)
+                .frame(width: 17.5, height: 17.5)
             
         }
     }
@@ -220,11 +253,11 @@ private struct InfoView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
                 .foregroundColor(color)
-                .frame(width: 70, height: 50)
+                .frame(width: 70, height: 35)
             
             Text(text)
                 .foregroundColor(.white)
-                .frame(width: 22, height: 22)
+                .frame(width: 17, height: 17)
             
         }
     }
@@ -260,7 +293,7 @@ struct ImageSlider: View{
                 ForEach(images, id: \.self) { item in
                     Image(uiImage: item)
                         .resizable()
-                        
+                    
                 }
             }
             .tabViewStyle(PageTabViewStyle())
