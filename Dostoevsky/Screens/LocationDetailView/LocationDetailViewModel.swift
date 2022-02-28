@@ -42,12 +42,61 @@ class LocationDetailViewModel: ObservableObject{
             
         }
     }
-        
+    @Published var isFavorite = false
+    
+    @Published var favoriteIds = [String](){
+        didSet{
+            guard let selectedLocation = selectedLocation else {
+                return
+            }
+            if favoriteIds.contains("\(selectedLocation.id)"){
+                isFavorite = true
+            }else{
+                isFavorite = false
+            }
+        }
+    }
+    
     
     func setup(location: DLocation) {
         self.selectedLocation = location
         self.ratingState = UserDefaults.standard.integer(forKey: location.name)
+        PersistanceManager.retrieveFavoriteIds(completed: { result in
+            switch result{
+            case .success(let ids):
+                self.favoriteIds = ids
+            case .failure(let error):
+                print(error)
+                #warning("error")
+            }
+        })
     }
+    
+    func favoriteButtonTapped(){
+
+        
+        if !isFavorite{
+            PersistanceManager.updateWith(favoriteId: "\(selectedLocation!.id)", actionType: .add) { result in
+                switch result{
+                case .success(let updatedIds):
+                    self.favoriteIds = updatedIds
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }else{
+            PersistanceManager.updateWith(favoriteId: "\(selectedLocation!.id)", actionType: .remove) { result in
+                switch result{
+                case .success(let updatedIds):
+                    self.favoriteIds = updatedIds
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        
+    }
+
     
     func sortLocationsBy(_ sortType: SortType){
         locations = locations.sorted(by: { (lhs, rhs) -> Bool in

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B904B95C27CC046800646CEE /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B904B95B27CC046800646CEE /* PersistenceManager.swift */; };
 		B91641DE27C7C4170026C4D7 /* LocationDetailPushview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */; };
 		B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DF27C7C79C0026C4D7 /* LoadingView.swift */; };
 		B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641E127C7D6FE0026C4D7 /* DismissButton.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B904B95B27CC046800646CEE /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailPushview.swift; sourceTree = "<group>"; };
 		B91641DF27C7C79C0026C4D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B91641E127C7D6FE0026C4D7 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		B9DF3C7926DD624D0052B466 = {
 			isa = PBXGroup;
 			children = (
+				B904B95B27CC046800646CEE /* PersistenceManager.swift */,
 				B928219927C9270900000E3B /* Color+Ext.swift */,
 				B91641E127C7D6FE0026C4D7 /* DismissButton.swift */,
 				B91641DF27C7C79C0026C4D7 /* LoadingView.swift */,
@@ -255,6 +258,7 @@
 				B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */,
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
 				B9D68BD227C788A200CB4AA9 /* RatingManager.swift in Sources */,
+				B904B95C27CC046800646CEE /* PersistenceManager.swift in Sources */,
 				B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */,
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B929629E27C5023600391364 /* AppTabView.swift in Sources */,

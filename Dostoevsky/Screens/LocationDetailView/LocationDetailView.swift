@@ -86,6 +86,14 @@ struct LocationDetailView: View {
                             LocationActionButton(color: Color.brandPrimary, imageName: "location.fill")
                                 .padding(.leading)
                         }
+                        
+                        Button {
+                            viewModel.favoriteButtonTapped()
+                        } label: {
+                            LocationActionButton(color: Color.brandPrimary, imageName: viewModel.isFavorite ? "heart.fill" : "heart")
+                                .padding(.leading)
+                        }
+                        
                         Spacer()
 
                         RatingView(viewModel: viewModel)
