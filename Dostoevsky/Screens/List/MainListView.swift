@@ -37,7 +37,7 @@ struct MainListView: View {
                         Text("Before Exile")
                         
                     }){
-                        ForEach(viewModel.locations.filter{$0.category == 1}, id: (\.self)){ location in
+                        ForEach(beforeExileLocations, id: (\.self)){ location in
                             Button {
                                 viewModel.selectedLocation = location
                                 viewModel.setup(location: location)
@@ -52,7 +52,7 @@ struct MainListView: View {
                         Text("After Exile")
                         
                     }){
-                        ForEach(viewModel.locations.filter{$0.category == 2}, id: (\.self)){ location in
+                        ForEach(afterExileLocations, id: (\.self)){ location in
                             Button {
                                 viewModel.selectedLocation = location
                                 viewModel.setup(location: location)
@@ -67,7 +67,7 @@ struct MainListView: View {
                         Text("Novels")
                         
                     }){
-                        ForEach(viewModel.locations.filter{$0.category == 3}, id: (\.self)){ location in
+                        ForEach(novelLocations, id: (\.self)){ location in
                             Button {
                                 viewModel.selectedLocation = location
                                 viewModel.setup(location: location)
@@ -91,6 +91,18 @@ struct MainListView: View {
             
         
         .accentColor(.white)
+    }
+    
+    var beforeExileLocations: [DLocation]{
+        viewModel.locations.filter{$0.category == 1}
+    }
+    
+    var afterExileLocations: [DLocation]{
+        viewModel.locations.filter{$0.category == 2}
+    }
+    
+    var novelLocations: [DLocation]{
+        viewModel.locations.filter{$0.category == 3}
     }
 
 }
