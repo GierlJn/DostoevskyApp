@@ -44,6 +44,7 @@ enum PersistanceManager{
                     oldFavorites.removeAll { loc in
                         loc == favoriteId
                     }
+                    save(favoriteIds: oldFavorites)
                     completed(.success(oldFavorites))
                 }
                 
