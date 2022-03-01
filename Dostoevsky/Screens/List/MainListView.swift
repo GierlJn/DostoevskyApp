@@ -99,20 +99,20 @@ struct MainListView: View {
     
     var beforeExileLocations: [DLocation]{
         viewModel.showingFavorites ? viewModel.locations.filter{$0.category == 1}.filter({ loc in
-            viewModel.favoriteIds.contains("\(loc.id)")
+            viewModel.favoriteIds.contains("\(loc.name)")
         }) : viewModel.locations.filter{$0.category == 1}
         
     }
     
     var afterExileLocations: [DLocation]{
         viewModel.showingFavorites ? viewModel.locations.filter{$0.category == 2}.filter({ loc in
-            viewModel.favoriteIds.contains("\(loc.id)")
+            viewModel.favoriteIds.contains("\(loc.name)")
         }) : viewModel.locations.filter{$0.category == 2}
     }
     
     var novelLocations: [DLocation]{
         viewModel.showingFavorites ? viewModel.locations.filter{$0.category == 3}.filter({ loc in
-            viewModel.favoriteIds.contains("\(loc.id)")
+            viewModel.favoriteIds.contains("\(loc.name)")
         }) : viewModel.locations.filter{$0.category == 3 }
     }
 

@@ -49,7 +49,7 @@ class LocationDetailViewModel: ObservableObject{
             guard let selectedLocation = selectedLocation else {
                 return
             }
-            if favoriteIds.contains("\(selectedLocation.id)"){
+            if favoriteIds.contains("\(selectedLocation.name)"){
                 isFavorite = true
             }else{
                 isFavorite = false
@@ -66,18 +66,20 @@ class LocationDetailViewModel: ObservableObject{
             switch result{
             case .success(let ids):
                 self.favoriteIds = ids
+                print(self.favoriteIds)
             case .failure(let error):
                 print(error)
                 #warning("error")
             }
         })
+       
     }
     
     func favoriteButtonTapped(){
 
         
         if !isFavorite{
-            PersistanceManager.updateWith(favoriteId: "\(selectedLocation!.id)", actionType: .add) { result in
+            PersistanceManager.updateWith(favoriteId: "\(selectedLocation!.name)", actionType: .add) { result in
                 switch result{
                 case .success(let updatedIds):
                     self.favoriteIds = updatedIds
@@ -86,7 +88,7 @@ class LocationDetailViewModel: ObservableObject{
                 }
             }
         }else{
-            PersistanceManager.updateWith(favoriteId: "\(selectedLocation!.id)", actionType: .remove) { result in
+            PersistanceManager.updateWith(favoriteId: "\(selectedLocation!.name)", actionType: .remove) { result in
                 switch result{
                 case .success(let updatedIds):
                     self.favoriteIds = updatedIds
