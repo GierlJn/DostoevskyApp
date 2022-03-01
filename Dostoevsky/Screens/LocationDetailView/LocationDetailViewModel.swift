@@ -56,6 +56,7 @@ class LocationDetailViewModel: ObservableObject{
             }
         }
     }
+    @Published var showingFavorites = false
     
     
     func setup(location: DLocation) {

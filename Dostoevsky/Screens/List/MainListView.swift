@@ -17,8 +17,12 @@ struct MainListView: View {
         
             VStack{
                 HStack{
-                    Spacer()
-                    
+                    Button {
+                        viewModel.showingFavorites.toggle()
+                    } label: {
+                        Text(viewModel.showingFavorites ? "Show all" : "Show favorites")
+                    }
+
                     Spacer()
                     
                     Text("Sort by: ")
@@ -94,15 +98,22 @@ struct MainListView: View {
     }
     
     var beforeExileLocations: [DLocation]{
-        viewModel.locations.filter{$0.category == 1}
+        viewModel.showingFavorites ? viewModel.locations.filter{$0.category == 1}.filter({ loc in
+            viewModel.favoriteIds.contains("\(loc.id)")
+        }) : viewModel.locations.filter{$0.category == 1}
+        
     }
     
     var afterExileLocations: [DLocation]{
-        viewModel.locations.filter{$0.category == 2}
+        viewModel.showingFavorites ? viewModel.locations.filter{$0.category == 2}.filter({ loc in
+            viewModel.favoriteIds.contains("\(loc.id)")
+        }) : viewModel.locations.filter{$0.category == 2}
     }
     
     var novelLocations: [DLocation]{
-        viewModel.locations.filter{$0.category == 3}
+        viewModel.showingFavorites ? viewModel.locations.filter{$0.category == 3}.filter({ loc in
+            viewModel.favoriteIds.contains("\(loc.id)")
+        }) : viewModel.locations.filter{$0.category == 3 }
     }
 
 }
