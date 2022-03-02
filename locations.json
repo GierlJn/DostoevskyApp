@@ -1,0 +1,56 @@
+{
+  "location": [
+    {
+      "placeId": 0,
+      "name": {
+        "en": "",
+        "ru": ""
+      },
+      "category": 0,
+      "description": {
+        "en": "",
+        "ru": ""
+      },
+      "imageNameList": [
+        {
+          "imageName": ""
+        }
+      ],
+      "location": {
+        "lat": "",
+        "lon": ""
+      },
+      "address": {
+        "en": "",
+        "ru": ""
+      },
+      "date": ""
+    },
+    {
+      "placeId": 0,
+      "name": {
+        "en": "",
+        "ru": ""
+      },
+      "category": 0,
+      "description": {
+        "en": "",
+        "ru": ""
+      },
+      "imageNameList": [
+        {
+          "imageName": ""
+        }
+      ],
+      "location": {
+        "lat": "",
+        "lon": ""
+      },
+      "address": {
+        "en": "",
+        "ru": ""
+      },
+      "date": ""
+    }
+  ]
+}
