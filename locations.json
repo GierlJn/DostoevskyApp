@@ -1,56 +1,33 @@
 {
   "location": [
     {
-      "placeId": 0,
+      "placeId": 1,
       "name": {
-        "en": "",
-        "ru": ""
+        "en": "Serapinskaya Hotel",
+        "ru": "Серапинская гостиница"
       },
       "category": 0,
       "description": {
-        "en": "",
-        "ru": ""
+        "en": "He stayed there for a few days with his father and brother Mikhail during his first arrival to the city. ",
+        "ru": "При первом приезде в столицу из Москвы пробыл здесь несколько дней с отцом и братом Михаилом."
       },
-      "imageNameList": [
+      "images": [
         {
-          "imageName": ""
+          "imageName": "10"
         }
       ],
       "location": {
-        "lat": "",
-        "lon": ""
+        "lat": "59,9158828",
+        "lon": "30,3098249"
       },
       "address": {
-        "en": "",
-        "ru": ""
+        "en": "Moskovsky Avenue, 22",
+        "ru": "Московский проспект, 22"
       },
-      "date": ""
-    },
-    {
-      "placeId": 0,
-      "name": {
-        "en": "",
-        "ru": ""
+      "date": {
+        "en": "May 1837",
+        "ru": "Май 1837"
       },
-      "category": 0,
-      "description": {
-        "en": "",
-        "ru": ""
-      },
-      "imageNameList": [
-        {
-          "imageName": ""
-        }
-      ],
-      "location": {
-        "lat": "",
-        "lon": ""
-      },
-      "address": {
-        "en": "",
-        "ru": ""
-      },
-      "date": ""
     }
   ]
 }
