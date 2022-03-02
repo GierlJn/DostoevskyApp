@@ -20,8 +20,10 @@ extension Bundle{
         let decoder = JSONDecoder()
         
         guard let loaded = try? decoder.decode(T.self, from: data) else {
+            
             fatalError("failed to decode \(file) in bundle")
         }
         return loaded
     }
 }
+

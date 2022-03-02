@@ -25,6 +25,8 @@ struct AppTabView: View {
         }.onAppear{
             if(viewModel.locations.isEmpty){
                 viewModel.getLocations()
+                let user = Bundle.main.decode(DOLocation.self, from: "locations.json")
+                print(user)
             }
         }
         .accentColor(.brandCategory3)
