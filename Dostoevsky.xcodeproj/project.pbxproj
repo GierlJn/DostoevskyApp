@@ -21,6 +21,8 @@
 		B92962A327C50F2700391364 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A227C50F2700391364 /* Constants.swift */; };
 		B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A427C50FAC00391364 /* CKAsset+Ext.swift */; };
 		B953CC6F27CF6EC600D5AC1A /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = B953CC6E27CF6EC600D5AC1A /* locations.json */; };
+		B953CC7127CF71CD00D5AC1A /* DOLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B953CC7027CF71CD00D5AC1A /* DOLocations.swift */; };
+		B953CC7327CF736100D5AC1A /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B953CC7227CF736100D5AC1A /* Bundle+Ext.swift */; };
 		B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DC0A927C63F56008EC3E9 /* OnBoardView.swift */; };
 		B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FF7FE27C41C5800EC3884 /* DMapView.swift */; };
 		B9D68BD227C788A200CB4AA9 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D68BD127C788A200CB4AA9 /* RatingManager.swift */; };
@@ -51,6 +53,8 @@
 		B92962A227C50F2700391364 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B92962A427C50FAC00391364 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
 		B953CC6E27CF6EC600D5AC1A /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
+		B953CC7027CF71CD00D5AC1A /* DOLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLocations.swift; sourceTree = "<group>"; };
+		B953CC7227CF736100D5AC1A /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		B95DC0A927C63F56008EC3E9 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		B97FF7FE27C41C5800EC3884 /* DMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapView.swift; sourceTree = "<group>"; };
 		B9D68BD127C788A200CB4AA9 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		B9DF3C7926DD624D0052B466 = {
 			isa = PBXGroup;
 			children = (
+				B953CC7227CF736100D5AC1A /* Bundle+Ext.swift */,
 				B953CC6E27CF6EC600D5AC1A /* locations.json */,
 				B904B95B27CC046800646CEE /* PersistenceManager.swift */,
 				B928219927C9270900000E3B /* Color+Ext.swift */,
@@ -154,6 +159,7 @@
 				B9DF3C8E26DD624E0052B466 /* Info.plist */,
 				B9DF3C8B26DD624E0052B466 /* Preview Content */,
 				B9DF3C9A26DD62F60052B466 /* DLocations.swift */,
+				B953CC7027CF71CD00D5AC1A /* DOLocations.swift */,
 				B9DF3C9C26DD6A820052B466 /* MockData.swift */,
 				B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */,
 				B929626F27C4D87800391364 /* MapBalloon.swift */,
@@ -254,6 +260,7 @@
 				B929627427C4ED3600391364 /* DMapViewModel.swift in Sources */,
 				B9DF3C9B26DD62F60052B466 /* DLocations.swift in Sources */,
 				B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */,
+				B953CC7127CF71CD00D5AC1A /* DOLocations.swift in Sources */,
 				B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */,
 				B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */,
 				B929627627C4EE2800391364 /* LocationDetailViewModel.swift in Sources */,
@@ -262,6 +269,7 @@
 				B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */,
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
 				B9D68BD227C788A200CB4AA9 /* RatingManager.swift in Sources */,
+				B953CC7327CF736100D5AC1A /* Bundle+Ext.swift in Sources */,
 				B904B95C27CC046800646CEE /* PersistenceManager.swift in Sources */,
 				B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */,
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
