@@ -49,8 +49,4 @@ struct DAnnotation: View {
     }
 }
 
-struct DAnnotation_Previews: PreviewProvider {
-    static var previews: some View {
-        DAnnotation(location: DLocation(record: MockData.createLocationRecord()))
-    }
-}
+

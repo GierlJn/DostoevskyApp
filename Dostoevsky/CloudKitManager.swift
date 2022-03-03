@@ -1,33 +1,49 @@
-//
-//  CloudKitManager.swift
-//  Grab
-//
-//  Created by Julian Gierl on 25.08.21.
-//
+
 
 import CloudKit
 
+
+struct LocationRating: Identifiable, Hashable{
+
+    enum Keys{
+        static let name = "name"
+        static let rating = "rating"
+        static let place = "place"
+    }
+
+    var id: CKRecord.ID
+    var name: String
+    var rating: Int
+    var place: Int
+
+    init(record: CKRecord){
+        id = record.recordID
+        name = record[LocationRating.Keys.name] as? String ?? ""
+        rating = record[LocationRating.Keys.rating] as? Int ?? 0
+        place = record[LocationRating.Keys.place] as? Int ?? 0
+    }
+}
 final class CloudKitManager{
     
     static var shared = CloudKitManager()
     
     private init(){}
     
-    func getLocations(completed: @escaping (Result<[DLocation], Error>) -> Void){
-        let orderSort = NSSortDescriptor(key: DLocation.Keys.place, ascending: true)
-        let query = CKQuery(recordType: RecordTypes.location, predicate: NSPredicate(value: true))
+    func getLocationRatings(completed: @escaping (Result<[LocationRating], Error>) -> Void){
+        let orderSort = NSSortDescriptor(key: "place", ascending: true)
+        let query = CKQuery(recordType: "Location", predicate: NSPredicate(value: true))
         //query.sortDescriptors = [orderSort]
-        
+
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { records, error in
-            
+
             guard error == nil else {
                 completed(.failure(error!))
                 return
             }
-            
+
             guard let records = records else { return }
-            
-            let locations = records.map { DLocation(record: $0) }
+
+            let locations = records.map { LocationRating(record: $0) }
             completed(.success(locations))
         }
     }
@@ -44,7 +60,35 @@ final class CloudKitManager{
         }
     }
     
+    func fetchRecordN(with placeId: Int, completed: @escaping (Result<CKRecord, Error>) -> Void){
+        
+        let predicate = NSPredicate(format: "place == \(placeId)")
+        let query = CKQuery(recordType: "Location", predicate: predicate)
+        
+        CKContainer.default().publicCloudDatabase.fetch(withQuery: query) { result in
+            switch result{
+            case .success((let matchResults, let queryCursor)):
+                guard let matchRecordResult = matchResults.first else{
+                    //completed(.failure(Error))
+                    return
+                }
+                switch matchRecordResult.1{
+                case .success(let record):
+                    completed(.success(record))
+                case .failure(let error):
+                    completed(.failure(error))
+                }
+                return
+            case .failure(let error):
+                completed(.failure(error))
+                return
+            }
+        }
+ 
+    }
+    
     func fetchRecord(with id: CKRecord.ID, completed: @escaping (Result<CKRecord, Error>) -> Void){
+
         CKContainer.default().publicCloudDatabase.fetch(withRecordID: id) { record, error in
             guard let record = record, error == nil else {
                 completed(.failure(error!))

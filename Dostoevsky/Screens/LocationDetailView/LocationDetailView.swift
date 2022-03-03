@@ -22,12 +22,12 @@ struct LocationDetailView: View {
                     VStack(spacing: 16){
                         
                         ZStack{
-                            ImageSlider(images: viewModel.selectedLocation!.previewImages)
+                            ImageSlider(images: UIImage.loadImages(viewModel.selectedLocation!.imageList))
                                 .frame(height: 350)
                             VStack{
                                 Spacer()
                                 HStack{
-                                    Text(viewModel.selectedLocation!.name)
+                                    Text(viewModel.selectedLocation!.name.en)
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .lineLimit(1)
@@ -45,7 +45,7 @@ struct LocationDetailView: View {
                             Button {
                                 viewModel.getDirectionsToLocation()
                             } label: {
-                                AddressView(address: viewModel.selectedLocation!.streetName)
+                                AddressView(address: viewModel.selectedLocation!.address.en)
                             }
                             
                             Spacer()
@@ -53,12 +53,12 @@ struct LocationDetailView: View {
                         }
                         .padding(.horizontal)
                         
-                        if (viewModel.selectedLocation!.time != ""){
+                        if (viewModel.selectedLocation!.date.en != ""){
                             HStack {
                                 Button {
                                     //
                                 } label: {
-                                    DateView(date: viewModel.selectedLocation!.time)
+                                    DateView(date: viewModel.selectedLocation!.date.en)
                                 }
                                 
                                 Spacer()
@@ -69,7 +69,7 @@ struct LocationDetailView: View {
                         
                         
                         
-                        DescriptionView(text: viewModel.selectedLocation!.description)
+                        DescriptionView(text: viewModel.selectedLocation!.description.en)
                             .padding(.top)
                         
                     }

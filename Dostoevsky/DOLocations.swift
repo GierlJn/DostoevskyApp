@@ -9,8 +9,16 @@ import Foundation
 import MapKit
 
 
-struct DOLocation: Codable {
-    let placeId: Int
+struct DLocation: Identifiable, Hashable, Codable {
+    static func == (lhs: DLocation, rhs: DLocation) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher)
+        {
+            hasher.combine(id)
+        }
+    let id: Int
     let name: Address
     let category: Int
     let description: Address
@@ -31,4 +39,16 @@ struct Address: Codable {
 // MARK: - LocationLocation
 struct GeoLocation: Codable {
     let lat, lon: String
+}
+
+extension UIImage{
+    static func loadImages(_ imageNames: [String])->[UIImage]{
+        var images = [UIImage]()
+        for name in imageNames{
+            if let image = UIImage(named: name){
+                images.append(image)
+            }
+        }
+        return images
+    }
 }

@@ -22,12 +22,13 @@ class LocationDetailViewModel: ObservableObject{
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.933181, longitude: 30.338418), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     @Published var isShowingDetailView = false
     @Published var locations = [DLocation]()
+    @Published var ratings = [LocationRating]()
     @Published var ratingState = 0{
         didSet{
             guard let selectedLocation = selectedLocation else {
                 return
             }
-            UserDefaults.standard.set(ratingState, forKey: selectedLocation.name)
+            UserDefaults.standard.set(ratingState, forKey: selectedLocation.name.en)
         }
     }
     @Published var disableRating = false
@@ -58,10 +59,42 @@ class LocationDetailViewModel: ObservableObject{
     }
     @Published var showingFavorites = false
     
+    func getRatingForLocation(location: DLocation)->LocationRating{
+        ratings.first { rating in
+            rating.place == location.id
+        }!
+    }
+    
+    func updateRatingForSelectedLocation(){
+        guard let selectedLocation = selectedLocation else {
+            return
+        }
+        disableRating = true
+        CloudKitManager.shared.fetchRecordN(with: selectedLocation.id) { [self] result in
+            switch result{
+            case .success(let record):
+                record["rating"] = ratings.first(where: {$0.id == record.recordID})?.rating ?? 0
+                CloudKitManager.shared.save(record: record) { result in
+                    DispatchQueue.main.async {
+                        disableRating = false
+                        switch result{
+                        case .success(let record):
+                            print("saved successfully ")
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     
     func setup(location: DLocation) {
         self.selectedLocation = location
-        self.ratingState = UserDefaults.standard.integer(forKey: location.name)
+        self.ratingState = UserDefaults.standard.integer(forKey: location.name.en)
         PersistanceManager.retrieveFavoriteIds(completed: { result in
             switch result{
             case .success(let ids):
@@ -103,18 +136,19 @@ class LocationDetailViewModel: ObservableObject{
     
     func sortLocationsBy(_ sortType: SortType){
         locations = locations.sorted(by: { (lhs, rhs) -> Bool in
-            sortType == .rating ? (lhs.rating > rhs.rating) : (lhs.place > lhs.place)
+            sortType == .rating ? (lhs.rating > rhs.rating) : (lhs.id > lhs.id)
         })
     }
     
     func getLocations(){
         isLoadingData = true
-        CloudKitManager.shared.getLocations { [self] result in
+        self.locations = Bundle.main.decode([DLocation].self, from: "locations.json")
+        CloudKitManager.shared.getLocationRatings { [self] result in
             DispatchQueue.main.async {
                 isLoadingData = false
                 switch(result){
-                case .success(let locations):
-                    self.locations = locations
+                case .success(let ratings):
+                    self.ratings = ratings
                 case .failure(_):
                     print("error")
                 }
@@ -127,42 +161,11 @@ class LocationDetailViewModel: ObservableObject{
             return
         }
         
-        let placemark = MKPlacemark(coordinate: selectedLocation.location.coordinate)
+        let placemark = MKPlacemark(coordinate: selectedLocation.getCLLocation().coordinate)
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = selectedLocation.name
+        mapItem.name = selectedLocation.name.en
         
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking])
-    }
-    
-    func updateLocationRating(){
-        guard let selectedLocation = selectedLocation else {
-            return
-        }
-        disableRating = true
-        
- 
-        CloudKitManager.shared.fetchRecord(with: selectedLocation.id) { [self] result in
-            switch result{
-            case .success(let record):
-                record[DLocation.Keys.rating] = selectedLocation.rating
-                CloudKitManager.shared.save(record: record) { result in
-                    DispatchQueue.main.async {
-                        switch result{
-
-                        case .success(let record):
-                            self.selectedLocation = DLocation(record: record)
-                            print("success")
-                        case .failure(let error):
-                            print(error)
-                        }
-                        disableRating = false
-                    }
-                    
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
     
     func updateSelectedLocation(){
@@ -173,7 +176,7 @@ class LocationDetailViewModel: ObservableObject{
         guard let idx = oldLocationIndex else {
             return
         }
-        locations[idx] = selectedLocation
+        locations[idx].rating = selectedLocation.rating
     }
     
 

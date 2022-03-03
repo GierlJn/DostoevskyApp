@@ -16,7 +16,7 @@ import Foundation
      }
      
     var hasVotedUp: Bool{
-        let intValue = UserDefaults.standard.integer(forKey: location.name)
+        let intValue = UserDefaults.standard.integer(forKey: location.name.en)
         return intValue > 0
     }
  }

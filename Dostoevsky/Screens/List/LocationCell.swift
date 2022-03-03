@@ -14,7 +14,7 @@ struct LocationCell: View {
     var body: some View {
         HStack{
             ZStack{
-                Image(uiImage: location.previewImages.first ?? PlaceholderImage.banner)
+                Image(uiImage: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner)
                     .resizable()
                     .frame(width: 60, height: 60)
                     .clipShape(Circle())
@@ -31,14 +31,14 @@ struct LocationCell: View {
             
             
             VStack(alignment: .leading){
-                Text(location.name)
+                Text(location.name.en)
                     .font(.title2)
                     .fontWeight(.semibold)
                     .lineLimit(1)
                     .minimumScaleFactor(0.75)
                 
-                if location.time != ""{
-                    Text(location.time)
+                if location.date.en != ""{
+                    Text(location.date.en)
                         .font(.body)
                         .fontWeight(.none)
                         .lineLimit(1)
@@ -51,8 +51,4 @@ struct LocationCell: View {
 }
 
 
-struct LocationCell_Previews: PreviewProvider {
-    static var previews: some View {
-        LocationCell(location: DLocation(record: MockData.createLocationRecord()))
-    }
-}
+
