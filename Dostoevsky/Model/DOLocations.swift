@@ -43,12 +43,6 @@ struct DLocation: Identifiable, Hashable, Codable {
     }
 }
 
-extension Double{
-    static func initFromCommaString(str: String)->Double{
-        Double(str.split(separator: ",").joined(separator: ".")) ?? 0
-    }
-}
-
 // MARK: - Address
 struct Address: Codable {
     let en, ru: String
