@@ -12,6 +12,7 @@ struct LocationDetailView: View {
     var selectedLocation: DLocation?
     @Environment(\.presentationMode) var presentationMode
     @State var userIsSwiping = false
+    @State var locationRating = 0
     
     var body: some View {
         if viewModel.selectedLocation != nil{
@@ -96,7 +97,7 @@ struct LocationDetailView: View {
                         
                         Spacer()
 
-                        RatingView(viewModel: viewModel)
+                        RatingView(viewModel: viewModel, locationRating: $locationRating)
                             .padding(.horizontal)
                     }
                 }
@@ -117,16 +118,20 @@ struct LocationDetailView: View {
             } label: {
                 XDismissButton()
             }, alignment: .topTrailing)
+            .onAppear {
+                self.locationRating = viewModel.getRatingForLocation(location: viewModel.selectedLocation!).rating
+            }
         }else{
             EmptyView()
         }
+            
         
     }
 }
 
 private struct RatingView: View{
     @ObservedObject var viewModel: LocationDetailViewModel
-    
+    @Binding var locationRating: Int
     var body: some View{
         HStack(spacing: 20) {
             
@@ -136,35 +141,37 @@ private struct RatingView: View{
                 }
                 switch viewModel.ratingState{
                 case -1:
-                    viewModel.selectedLocation!.rating += 1
+                    locationRating += 1
                     viewModel.ratingState = 0
                 case 0:
-                    viewModel.selectedLocation!.rating -= 1
+                    locationRating -= 1
                     viewModel.ratingState = -1
                 case 1:
-                    viewModel.selectedLocation!.rating -= 1
+                    locationRating -= 1
                     viewModel.ratingState = 0
                 default:
                     print("not")
                 }
                 
                 
-                
+                viewModel.updateRatingForSelectedLocation(locationRating)
                 viewModel.updateSelectedLocation()
-                viewModel.updateLocationRating()
+                
             } label: {
                 LocationActionButton(color: .brandPrimary, imageName: "minus").opacity(viewModel.ratingState == -1 ? 0.5 : 1)
             }
             
-            InfoView(color: .brandPrimary, text: "\(viewModel.selectedLocation!.rating)")
             
-            PlusButton(viewModel: viewModel)
+            InfoView(color: .brandPrimary, text: "\(viewModel.getRatingForLocation(location: viewModel.selectedLocation!).rating)")
+            
+            PlusButton(viewModel: viewModel, locationRating: $locationRating)
         }
     }
 }
 
 private struct PlusButton: View{
     @ObservedObject var viewModel: LocationDetailViewModel
+    @Binding var locationRating: Int
     
     var body: some View{
         Button {
@@ -174,21 +181,21 @@ private struct PlusButton: View{
             
             switch viewModel.ratingState{
             case -1:
-                viewModel.selectedLocation!.rating += 1
+                locationRating += 1
                 viewModel.ratingState = 0
             case 0:
-                viewModel.selectedLocation!.rating += 1
+                locationRating += 1
                 viewModel.ratingState = 1
             case 1:
-                viewModel.selectedLocation!.rating -= 1
+                locationRating -= 1
                 viewModel.ratingState = 0
             default:
                 print("not")
             }
             
             
+            viewModel.updateRatingForSelectedLocation(locationRating)
             viewModel.updateSelectedLocation()
-            viewModel.updateLocationRating()
         } label: {
             LocationActionButton(color: .brandPrimary, imageName: "plus").opacity(viewModel.ratingState == 1 ? 0.5 : 1)
         }

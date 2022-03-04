@@ -47,7 +47,7 @@ struct MainListView: View {
                                 viewModel.setup(location: location)
                                 viewModel.isShowingDetailView = true
                             } label: {
-                                LocationCell(location: location)
+                                LocationCell(viewModel: viewModel, location: location)
                             }
                             
                         }
@@ -62,7 +62,7 @@ struct MainListView: View {
                                 viewModel.setup(location: location)
                                 viewModel.isShowingDetailView = true
                             } label: {
-                                LocationCell(location: location)
+                                LocationCell(viewModel: viewModel, location: location)
                             }
                             
                         }
@@ -77,7 +77,7 @@ struct MainListView: View {
                                 viewModel.setup(location: location)
                                 viewModel.isShowingDetailView = true
                             } label: {
-                                LocationCell(location: location)
+                                LocationCell(viewModel: viewModel, location: location)
                             }
                             
                         }

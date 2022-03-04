@@ -11,11 +11,12 @@
             "ru": "При первом приезде в столицу из Москвы пробыл здесь несколько дней с отцом и братом Михаилом."
           },
     "imageList": [
-            "10"
+            "10",
+            "11"
           ],
     "location": {
-            "lat": "59,9158828",
-            "lon": "30,3098249"
+            "lat": "59,9273389",
+            "lon": "30,355357"
           },
     "address": {
             "en": "Moskovsky Avenue, 22",
@@ -29,28 +30,28 @@
     {
     "id": 2,
     "name": {
-            "en": "Serapinskaya Hotel",
-            "ru": "Серапинская гостиница"
+            "en": "Kostomarov boarding house",
+            "ru": "Пансион Костомарова"
           },
     "category": 1,
     "description": {
-            "en": "He stayed there for a few days with his father and brother Mikhail during his first arrival to the city. ",
-            "ru": "При первом приезде в столицу из Москвы пробыл здесь несколько дней с отцом и братом Михаилом."
+            "en": "Prepare for exams at the Main Engineering School. ",
+            "ru": "Готовился к поступлению в Главное инженерное училище."
           },
     "imageList": [
-            "10"
+            "20"
           ],
     "location": {
             "lat": "59,9158828",
             "lon": "30,3098249"
           },
     "address": {
-            "en": "Moskovsky Avenue, 22",
-            "ru": "Московский проспект, 22"
+            "en": "Ligovsky Avenue, 65",
+            "ru": "Лиговский проспект, 65"
           },
     "date": {
-           "en": "May 1837",
-           "ru": "Май 1837"
+           "en": "May 1837 – 16 January 1838",
+           "ru": "Май 1837 – 16 января 1838"
          }
     }
 ]

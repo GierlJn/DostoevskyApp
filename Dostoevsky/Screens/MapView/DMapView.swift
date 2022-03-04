@@ -30,7 +30,7 @@ struct DMapview: View{
                     }
                 })) { location in
                     MapAnnotation(coordinate: location.getCLLocation().coordinate) {
-                        DAnnotation(location: location)
+                        DAnnotation(viewModel: viewModel, location: location)
                             .onTapGesture {
                                 viewModel.selectedLocation = location
                                 viewModel.setup(location: location)

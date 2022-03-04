@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LocationCell: View {
+    @ObservedObject var viewModel: LocationDetailViewModel
     
     var location: DLocation
     
@@ -20,7 +21,7 @@ struct LocationCell: View {
                     .clipShape(Circle())
                     .padding(.vertical, 8)
                 
-                    Text("\(location.rating)")
+                Text("\(viewModel.getRatingForLocation(location: location).rating)")
                         .font(.system(size: 11, weight: .bold))
                         .frame(width: 26, height: 18)
                         .background(Color.red)

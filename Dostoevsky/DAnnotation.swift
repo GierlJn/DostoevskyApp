@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DAnnotation: View {
-    
+    @ObservedObject var viewModel: LocationDetailViewModel
     var location: DLocation
     
     var body: some View {
@@ -32,7 +32,7 @@ struct DAnnotation: View {
 
                 
                 
-                Text("\(location.rating)")
+                Text("\(viewModel.getRatingForLocation(location: location).rating)")
                     .font(.system(size: 11, weight: .bold))
                     .frame(width: 26, height: 18)
                     .background(Color.red)

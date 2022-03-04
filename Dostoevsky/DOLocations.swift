@@ -8,6 +8,18 @@
 import Foundation
 import MapKit
 
+    enum Keys{
+        static let category = "category"
+        static let description = "description"
+        static let location = "location"
+        static let name = "name"
+        static let place = "place"
+        static let previewImage = "previewImage"
+        static let streetName = "streetName"
+        static let time = "time"
+        static let rating = "rating"
+        static let imageNameList = "imageNameList"
+    }
 
 struct DLocation: Identifiable, Hashable, Codable {
     static func == (lhs: DLocation, rhs: DLocation) -> Bool {
@@ -27,7 +39,13 @@ struct DLocation: Identifiable, Hashable, Codable {
     let address, date: Address
 
     func getCLLocation()->CLLocation{
-        return CLLocation(latitude: Double(location.lat)!, longitude: Double(location.lon)!)
+        return CLLocation(latitude: Double.initFromCommaString(str: location.lat), longitude: Double.initFromCommaString(str: location.lon))
+    }
+}
+
+extension Double{
+    static func initFromCommaString(str: String)->Double{
+        Double(str.split(separator: ",").joined(separator: ".")) ?? 0
     }
 }
 

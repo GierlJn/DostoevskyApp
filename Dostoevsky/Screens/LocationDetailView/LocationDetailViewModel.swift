@@ -60,15 +60,30 @@ class LocationDetailViewModel: ObservableObject{
     @Published var showingFavorites = false
     
     func getRatingForLocation(location: DLocation)->LocationRating{
-        ratings.first { rating in
+        let rating = ratings.first { rating in
             rating.place == location.id
-        }!
+        }
+        guard rating != nil else {
+            return LocationRating(record: MockData.createMockRecord())
+        }
+        return rating!
+        
     }
     
-    func updateRatingForSelectedLocation(){
+    func updateRatingForSelectedLocation(_ newValue: Int){
         guard let selectedLocation = selectedLocation else {
             return
         }
+        
+        //update ratings locally
+        var rating = getRatingForLocation(location: selectedLocation)
+        ratings.removeAll { rating in
+            rating.place == selectedLocation.id
+        }
+        rating.rating = newValue
+        ratings.append(rating)
+       
+        //update ratings on server
         disableRating = true
         CloudKitManager.shared.fetchRecordN(with: selectedLocation.id) { [self] result in
             switch result{
@@ -136,7 +151,7 @@ class LocationDetailViewModel: ObservableObject{
     
     func sortLocationsBy(_ sortType: SortType){
         locations = locations.sorted(by: { (lhs, rhs) -> Bool in
-            sortType == .rating ? (lhs.rating > rhs.rating) : (lhs.id > lhs.id)
+            sortType == .rating ? (getRatingForLocation(location: lhs).rating > getRatingForLocation(location: rhs).rating) : (getRatingForLocation(location: lhs).rating > getRatingForLocation(location: rhs).rating)
         })
     }
     
@@ -176,7 +191,7 @@ class LocationDetailViewModel: ObservableObject{
         guard let idx = oldLocationIndex else {
             return
         }
-        locations[idx].rating = selectedLocation.rating
+        //locations[idx].rating = selectedLocation.rating
     }
     
 

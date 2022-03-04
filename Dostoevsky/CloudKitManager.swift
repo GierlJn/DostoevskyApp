@@ -44,6 +44,7 @@ final class CloudKitManager{
             guard let records = records else { return }
 
             let locations = records.map { LocationRating(record: $0) }
+            
             completed(.success(locations))
         }
     }
