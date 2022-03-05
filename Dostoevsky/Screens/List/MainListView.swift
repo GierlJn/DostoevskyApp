@@ -11,7 +11,7 @@ import SwiftUI
 
 struct MainListView: View {
     
-    @ObservedObject var viewModel: LocationDetailViewModel
+    @EnvironmentObject var viewModel: AppStateViewModel
     
     var body: some View {
         
@@ -87,7 +87,7 @@ struct MainListView: View {
                 
             }
             .fullScreenCover(isPresented: $viewModel.isShowingDetailView){
-                    LocationDetailView(viewModel: viewModel)
+                    LocationDetailView()
             }
             .navigationBarHidden(true)
             .navigationTitle("asdf")
@@ -116,12 +116,6 @@ struct MainListView: View {
         }) : viewModel.locations.filter{$0.category == 3 }
     }
 
-}
-
-struct MainListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainListView(viewModel: LocationDetailViewModel())
-    }
 }
 
 

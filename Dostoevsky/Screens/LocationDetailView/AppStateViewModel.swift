@@ -16,7 +16,7 @@ enum FilterOptions{
     case all, beforeExile, afterExile, novels
 }
 
-class LocationDetailViewModel: ObservableObject{
+class AppStateViewModel: ObservableObject{
     
     @Published var selectedLocation: DLocation?
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.933181, longitude: 30.338418), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
@@ -182,17 +182,4 @@ class LocationDetailViewModel: ObservableObject{
         
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking])
     }
-    
-    func updateSelectedLocation(){
-        guard let selectedLocation = selectedLocation else {
-            return
-        }
-        let oldLocationIndex = locations.firstIndex { loc in loc.id == selectedLocation.id }
-        guard let idx = oldLocationIndex else {
-            return
-        }
-        //locations[idx].rating = selectedLocation.rating
-    }
-    
-
 }

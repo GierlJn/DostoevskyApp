@@ -8,7 +8,8 @@ import SwiftUI
 
 struct LocationDetailView: View {
     
-    @ObservedObject var viewModel: LocationDetailViewModel
+    @EnvironmentObject var viewModel: AppStateViewModel
+    
     var selectedLocation: DLocation?
     @Environment(\.presentationMode) var presentationMode
     @State var userIsSwiping = false
@@ -130,7 +131,7 @@ struct LocationDetailView: View {
 }
 
 private struct RatingView: View{
-    @ObservedObject var viewModel: LocationDetailViewModel
+    @ObservedObject var viewModel: AppStateViewModel
     @Binding var locationRating: Int
     var body: some View{
         HStack(spacing: 20) {
@@ -155,7 +156,7 @@ private struct RatingView: View{
                 
                 
                 viewModel.updateRatingForSelectedLocation(locationRating)
-                viewModel.updateSelectedLocation()
+                //viewModel.updateSelectedLocation()
                 
             } label: {
                 LocationActionButton(color: .brandPrimary, imageName: "minus").opacity(viewModel.ratingState == -1 ? 0.5 : 1)
@@ -170,7 +171,7 @@ private struct RatingView: View{
 }
 
 private struct PlusButton: View{
-    @ObservedObject var viewModel: LocationDetailViewModel
+    @ObservedObject var viewModel: AppStateViewModel
     @Binding var locationRating: Int
     
     var body: some View{
@@ -195,7 +196,7 @@ private struct PlusButton: View{
             
             
             viewModel.updateRatingForSelectedLocation(locationRating)
-            viewModel.updateSelectedLocation()
+            //viewModel.updateSelectedLocation()
         } label: {
             LocationActionButton(color: .brandPrimary, imageName: "plus").opacity(viewModel.ratingState == 1 ? 0.5 : 1)
         }
@@ -289,13 +290,6 @@ private struct DescriptionView: View {
     }
 }
 
-struct LocationDetailView_Previews: PreviewProvider{
-    static var previews: some View{
-        NavigationView{
-            LocationDetailView(viewModel: LocationDetailViewModel())
-        }
-    }
-}
 
 struct ImageSlider: View{
     var images: [UIImage]

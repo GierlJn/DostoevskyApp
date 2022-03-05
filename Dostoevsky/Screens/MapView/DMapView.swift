@@ -12,7 +12,7 @@ import MapKit
 
 struct DMapview: View{
     
-    @ObservedObject var viewModel = LocationDetailViewModel()
+    @EnvironmentObject var viewModel: AppStateViewModel
     
     var body: some View{
         ZStack{
@@ -67,7 +67,7 @@ struct DMapview: View{
         .accentColor(.white)
         
         .fullScreenCover(isPresented: $viewModel.isShowingDetailView, onDismiss: {}){
-            LocationDetailView(viewModel: viewModel)
+          LocationDetailView().environmentObject(viewModel)
         }
         
         

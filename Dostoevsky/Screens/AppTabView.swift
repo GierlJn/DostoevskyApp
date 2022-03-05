@@ -9,16 +9,16 @@ import SwiftUI
 
 struct AppTabView: View {
     
-    @StateObject var viewModel = LocationDetailViewModel()
+  @EnvironmentObject var viewModel: AppStateViewModel
     
     var body: some View {
         TabView{
-            MainListView(viewModel: viewModel)
+            MainListView()
                 .tabItem {
                     Label("Locations", systemImage: "building")
                 }
             
-            DMapview(viewModel: viewModel)
+            DMapview()
                 .tabItem {
                     Label("Map", systemImage: "map")
                 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationCell: View {
-    @ObservedObject var viewModel: LocationDetailViewModel
+    @ObservedObject var viewModel: AppStateViewModel
     
     var location: DLocation
     
