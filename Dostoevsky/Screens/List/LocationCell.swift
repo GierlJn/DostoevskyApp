@@ -38,8 +38,8 @@ struct LocationCell: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.75)
                 
-                if location.date.en != ""{
-                    Text(location.date.en)
+                if let date = location.date{
+                    Text(date.en)
                         .font(.body)
                         .fontWeight(.none)
                         .lineLimit(1)

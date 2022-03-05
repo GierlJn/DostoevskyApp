@@ -11,29 +11,30 @@ import MapKit
 
 
 struct DLocation: Identifiable, Hashable, Codable {
-    static func == (lhs: DLocation, rhs: DLocation) -> Bool {
-        lhs.id == rhs.id
-    }
+  static func == (lhs: DLocation, rhs: DLocation) -> Bool {
+    lhs.id == rhs.id
+  }
+  
+  func hash(into hasher: inout Hasher)
+  {
+    hasher.combine(id)
+  }
+  let id: Int
+  let name: Address
+  let category: Int
+  let description: Address
+  let imageList: [String]
+  let location: String
+  let address: Address
+  let date: Address?
+  
+  func getCLLocation()->CLLocation{
     
-    func hash(into hasher: inout Hasher)
-        {
-            hasher.combine(id)
-        }
-    let id: Int
-    let name: Address
-    let category: Int
-    let description: Address
-    let imageList: [String]
-    let location: String
-    let address, date: Address
-
-    func getCLLocation()->CLLocation{
-
-      let latLon = Array(location.replacingOccurrences(of: " ", with: "").split(separator: ",")).map({Double($0)!})
-      return CLLocation(latitude: latLon[0], longitude: latLon[1])
-    }
+    let latLon = Array(location.replacingOccurrences(of: " ", with: "").split(separator: ",")).map({Double($0)!})
+    return CLLocation(latitude: latLon[0], longitude: latLon[1])
+  }
 }
 
 struct Address: Codable {
-    let en, ru: String
+  let en, ru: String
 }

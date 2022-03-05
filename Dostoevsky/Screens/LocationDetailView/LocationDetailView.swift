@@ -53,12 +53,12 @@ struct LocationDetailView: View {
           }
           .padding(.horizontal)
           
-          if (locationDetailViewModel.selectedLocation.date.en != ""){
+          if let date = locationDetailViewModel.selectedLocation.date{
             HStack {
               Button {
                 //
               } label: {
-                DateView(date: locationDetailViewModel.selectedLocation.date.en)
+                DateView(date: date.en)
               }
               
               Spacer()

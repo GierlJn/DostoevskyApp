@@ -71,5 +71,77 @@
            "en": "16 January 1838 – August 1841",
            "ru": "Май 1837 – 16 января 1838"
          }
+    },
+    {
+    "id": 4,
+    "name": {
+            "en": "Setkov House",
+            "ru": "Дом купца Сеткова"
+          },
+    "category": 1,
+    "description": {
+            "en": "On August 12th 1841 he was promoted to engineer warrant officer with the possibility to live privately. He and his classmate Adolph Totleben rented a small two-room apartment.",
+            "ru": "12 августа 1841 года был произведен в полевые инженер-прапорщики с правом жить на частной квартире: небольшой, из двух комнат, одну из которых занимал его товарищ по училищу Адольф Тотлебен."
+          },
+    "imageList": [
+            "40"
+          ],
+    "location": "59.935710, 30.341749",
+    "address": {
+            "en": "Karavannaya Ulitsa, 16",
+            "ru": "Караванная улица, 16/14"
+          },
+    "date": {
+           "en": "August 1841 – February 1842",
+           "ru": "Май 1837 – 16 января 1838"
+         }
+    },
+    {
+    "id": 5,
+    "name": {
+            "en": "Pryanichnikov House",
+            "ru": "Дом Пряничникова"
+          },
+    "category": 1,
+    "description": {
+            "en": "Rented an apartment on the second floor with his brother Andrey. From 1844 to 1845 Dostoyevsky’s neighbour was Dmitry Grigorovich, to whom he read his first novel «Poor Folk» in may 1845.",
+            "ru": "Снимал квартиру на втором этаже с братом Андреем. Через дорогу (в доме Фредерикса) покупал булки и ячменный кофе. С 1844 по 1845 год соседом Достоевского был Д.В. Григорович, которому писатель читал свой первый роман «Бедные люди», оконченный в конце мая 1845."
+          },
+    "imageList": [
+            "50"
+          ],
+    "location": "59.930309, 30.347228",
+    "address": {
+            "en": "Grafskiy Pereulok, 10",
+            "ru": "Графский переулок, 10"
+          },
+    "date": {
+           "en": "February 1842 – late 1845",
+           "ru": "Февраль 1842 – конец 1845"
+         }
+    },
+    {
+    "id": 6,
+    "name": {
+            "en": "Spas na Sennoy",
+            "ru": "Церковь Спаса-на-Сенной"
+          },
+    "category": 1,
+    "description": {
+            "en": "The church was visited by Dostoevsky (it was demolished during soviet period, now there is a chapel at this place). Heroes of the novel «Poor Folk» presumably inhabited this area.",
+            "ru": "Снесенную в советский период церковь посещал Достоевский (сейчас на этом месте часовня Иоанна Нового Сочавского). Возможно, рядом жили герои романа «Бедные люди»."
+          },
+    "imageList": [
+            "60"
+          ],
+    "location": "59.927256, 30.320944",
+    "address": {
+            "en": "Ulitsa Yefimova, 2",
+            "ru": "Улица Ефимова, 2Ч"
+          },
+    "date": {
+           "en": "February 1842 – late 1845",
+           "ru": "Февраль 1842 – конец 1845"
+         }
     }
 ]
