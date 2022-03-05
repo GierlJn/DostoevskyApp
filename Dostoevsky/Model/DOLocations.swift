@@ -24,11 +24,13 @@ struct DLocation: Identifiable, Hashable, Codable {
     let category: Int
     let description: Address
     let imageList: [String]
-    let location: GeoLocation
+    let location: String
     let address, date: Address
 
     func getCLLocation()->CLLocation{
-        return CLLocation(latitude: Double.initFromCommaString(str: location.lat), longitude: Double.initFromCommaString(str: location.lon))
+
+      let latLon = Array(location.replacingOccurrences(of: " ", with: "").split(separator: ",")).map({Double($0)!})
+      return CLLocation(latitude: latLon[0], longitude: latLon[1])
     }
 }
 

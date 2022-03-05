@@ -14,10 +14,7 @@
             "10",
             "11"
           ],
-    "location": {
-            "lat": "59,9273389",
-            "lon": "30,355357"
-          },
+    "location": "59.9273389, 30.355357",
     "address": {
             "en": "Moskovsky Avenue, 22",
             "ru": "Московский проспект, 22"
@@ -41,16 +38,37 @@
     "imageList": [
             "20"
           ],
-    "location": {
-            "lat": "59,9158828",
-            "lon": "30,3098249"
-          },
+    "location": "59.9158828, 30.3098249",
     "address": {
             "en": "Ligovsky Avenue, 65",
             "ru": "Лиговский проспект, 65"
           },
     "date": {
            "en": "May 1837 – 16 January 1838",
+           "ru": "Май 1837 – 16 января 1838"
+         }
+    },
+    {
+    "id": 3,
+    "name": {
+            "en": "Saint Michael’s Castle",
+            "ru": "Михайловский замок"
+          },
+    "category": 1,
+    "description": {
+            "en": "Studied and lived in the Main Engineering School. His favourite place was a corner cubicle by the window overlooking the Panteleimon bridge.",
+            "ru": "Учился и проживал в Главном инженерном училище. Его любимым местом была угловая каморка у окна, выходившего на Пантелеймоновский мост."
+          },
+    "imageList": [
+            "30"
+          ],
+    "location": "59.940240, 30.337068",
+    "address": {
+            "en": "Sadovaya Street, 2",
+            "ru": "16 января 1838 – август 1841"
+          },
+    "date": {
+           "en": "16 January 1838 – August 1841",
            "ru": "Май 1837 – 16 января 1838"
          }
     }
