@@ -40,11 +40,7 @@ struct DAnnotation: View {
                     .offset(x: 20, y: -28)
                 
             }
-            
-//
-//            Text("Test ")
-//                .font(.caption)
-//                .fontWeight(.semibold)
+
         
     }
 }

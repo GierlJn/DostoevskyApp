@@ -13,7 +13,6 @@
 		B928219A27C9270900000E3B /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B928219927C9270900000E3B /* Color+Ext.swift */; };
 		B929627027C4D87800391364 /* MapBalloonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929626F27C4D87800391364 /* MapBalloonShape.swift */; };
 		B929627227C4D9F300391364 /* DAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627127C4D9F300391364 /* DAnnotation.swift */; };
-		B929627427C4ED3600391364 /* DMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627327C4ED3600391364 /* DMapViewModel.swift */; };
 		B929627627C4EE2800391364 /* AppStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929627527C4EE2800391364 /* AppStateViewModel.swift */; };
 		B929629E27C5023600391364 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929629D27C5023600391364 /* AppTabView.swift */; };
 		B92962A327C50F2700391364 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A227C50F2700391364 /* Constants.swift */; };
@@ -44,7 +43,6 @@
 		B928219927C9270900000E3B /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		B929626F27C4D87800391364 /* MapBalloonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBalloonShape.swift; sourceTree = "<group>"; };
 		B929627127C4D9F300391364 /* DAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAnnotation.swift; sourceTree = "<group>"; };
-		B929627327C4ED3600391364 /* DMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapViewModel.swift; sourceTree = "<group>"; };
 		B929627527C4EE2800391364 /* AppStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateViewModel.swift; sourceTree = "<group>"; };
 		B929629D27C5023600391364 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		B92962A227C50F2700391364 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 		B92962A027C5066000391364 /* MapView */ = {
 			isa = PBXGroup;
 			children = (
-				B929627327C4ED3600391364 /* DMapViewModel.swift */,
 				B97FF7FE27C41C5800EC3884 /* DMapView.swift */,
 				B929626F27C4D87800391364 /* MapBalloonShape.swift */,
 				B929627127C4D9F300391364 /* DAnnotation.swift */,
@@ -294,7 +291,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B929627427C4ED3600391364 /* DMapViewModel.swift in Sources */,
 				B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */,
 				B953CC7127CF71CD00D5AC1A /* DOLocations.swift in Sources */,
 				B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */,
