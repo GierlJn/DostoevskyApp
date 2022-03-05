@@ -7,11 +7,15 @@
 
 import CloudKit
 
+enum RecordTypes{
+    static let ratings = "Rating"
+}
+
 struct Rating: Identifiable, Hashable{
 
     enum Keys{
         static let rating = "rating"
-        static let place = "place"
+        static let locationId = "locationId"
     }
 
     var id: CKRecord.ID
@@ -21,6 +25,6 @@ struct Rating: Identifiable, Hashable{
     init(record: CKRecord){
         id = record.recordID
         rating = record[Rating.Keys.rating] as? Int ?? 0
-        place = record[Rating.Keys.place] as? Int ?? 0
+        place = record[Rating.Keys.locationId] as? Int ?? 0
     }
 }

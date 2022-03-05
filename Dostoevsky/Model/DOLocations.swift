@@ -8,18 +8,7 @@
 import Foundation
 import MapKit
 
-    enum Keys{
-        static let category = "category"
-        static let description = "description"
-        static let location = "location"
-        static let name = "name"
-        static let place = "place"
-        static let previewImage = "previewImage"
-        static let streetName = "streetName"
-        static let time = "time"
-        static let rating = "rating"
-        static let imageNameList = "imageNameList"
-    }
+
 
 struct DLocation: Identifiable, Hashable, Codable {
     static func == (lhs: DLocation, rhs: DLocation) -> Bool {
