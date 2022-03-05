@@ -11,7 +11,7 @@ class LocationDetailViewModel: ObservableObject{
   
   var selectedLocation: DLocation
   @Published var userIsSwiping = false
-  @Published var locationRating: LocationRating = LocationRating(record: MockData.createMockRecord())
+  @Published var locationRating: Rating = Rating(record: MockData.createMockRecord())
   @Published var ratingState = 0{
     didSet{
       UserDefaults.standard.set(ratingState, forKey: selectedLocation.name.en)
@@ -34,12 +34,12 @@ class LocationDetailViewModel: ObservableObject{
     self.locationRating = getRatingForLocation(location: selectedLocation)
   }
   
-  func getRatingForLocation(location: DLocation)->LocationRating{
+  func getRatingForLocation(location: DLocation)->Rating{
     let rating = appStateViewModel.ratings.first { rating in
       rating.place == location.id
     }
     guard rating != nil else {
-      return LocationRating(record: MockData.createMockRecord())
+      return Rating(record: MockData.createMockRecord())
     }
     return rating!
     

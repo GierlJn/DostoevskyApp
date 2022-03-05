@@ -22,7 +22,7 @@ class AppStateViewModel: ObservableObject{
   @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.933181, longitude: 30.338418), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
   @Published var isShowingDetailView = false
   @Published var locations = [DLocation]()
-  @Published var ratings = [LocationRating]()
+  @Published var ratings = [Rating]()
   
   
   @Published var isLoadingData = false
@@ -40,12 +40,12 @@ class AppStateViewModel: ObservableObject{
   @Published var favoriteIds = [String]()
   @Published var showingFavorites = false
   
-  func getRatingForLocation(location: DLocation)->LocationRating{
+  func getRatingForLocation(location: DLocation)->Rating{
     let rating = ratings.first { rating in
       rating.place == location.id
     }
     guard rating != nil else {
-      return LocationRating(record: MockData.createMockRecord())
+      return Rating(record: MockData.createMockRecord())
     }
     return rating!
     
@@ -73,7 +73,7 @@ class AppStateViewModel: ObservableObject{
     }
   }
   
-  func updateRatingForSelectedLocation(selectedLocation: DLocation, rating: LocationRating){
+  func updateRatingForSelectedLocation(selectedLocation: DLocation, rating: Rating){
     ratings.removeAll { $0.id == rating.id}
     ratings.append(rating)
 

@@ -2,34 +2,13 @@
 
 import CloudKit
 
-
-struct LocationRating: Identifiable, Hashable{
-
-    enum Keys{
-        static let name = "name"
-        static let rating = "rating"
-        static let place = "place"
-    }
-
-    var id: CKRecord.ID
-    var name: String
-    var rating: Int
-    var place: Int
-
-    init(record: CKRecord){
-        id = record.recordID
-        name = record[LocationRating.Keys.name] as? String ?? ""
-        rating = record[LocationRating.Keys.rating] as? Int ?? 0
-        place = record[LocationRating.Keys.place] as? Int ?? 0
-    }
-}
 final class CloudKitManager{
     
     static var shared = CloudKitManager()
     
     private init(){}
     
-    func getLocationRatings(completed: @escaping (Result<[LocationRating], Error>) -> Void){
+    func getLocationRatings(completed: @escaping (Result<[Rating], Error>) -> Void){
         let orderSort = NSSortDescriptor(key: "place", ascending: true)
         let query = CKQuery(recordType: "Location", predicate: NSPredicate(value: true))
         //query.sortDescriptors = [orderSort]
@@ -43,7 +22,7 @@ final class CloudKitManager{
 
             guard let records = records else { return }
 
-            let locations = records.map { LocationRating(record: $0) }
+            let locations = records.map { Rating(record: $0) }
             
             completed(.success(locations))
         }

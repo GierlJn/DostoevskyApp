@@ -74,7 +74,6 @@ struct DMapview: View{
       LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: mapViewModel.selectedLocation!, appStateViewModel: viewModel))
     }
     
-    
   }
   
   func getFilterColor()->Color{
