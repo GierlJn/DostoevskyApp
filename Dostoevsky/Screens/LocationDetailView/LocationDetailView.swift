@@ -15,7 +15,7 @@ struct LocationDetailView: View {
   
   var body: some View {
     
-    VStack(){
+    VStack{
       
       ScrollView{
         
@@ -96,7 +96,7 @@ struct LocationDetailView: View {
           
           Spacer()
           
-          RatingView(locationDetailViewModel: locationDetailViewModel).environmentObject(viewModel)
+          RatingView(locationDetailViewModel: locationDetailViewModel)
             .padding(.horizontal)
         }
       }
@@ -112,9 +112,6 @@ struct LocationDetailView: View {
       XDismissButton()
     }, alignment: .topTrailing)
   }
-  
-  
-  
 }
 
 private struct RatingView: View{
@@ -195,7 +192,6 @@ private struct PlusButton: View{
   
 }
 
-
 private struct BannerImageView: View {
   
   var image: UIImage
@@ -228,7 +224,6 @@ private struct DateView: View {
       .foregroundColor(.secondary)
   }
 }
-
 
 private struct LocationActionButton: View {
   
@@ -270,7 +265,6 @@ private struct InfoView: View {
   }
 }
 
-
 private struct DescriptionView: View {
   
   var text: String
@@ -281,8 +275,7 @@ private struct DescriptionView: View {
   }
 }
 
-
-struct ImageSlider: View{
+private struct ImageSlider: View{
   var images: [UIImage]
   var body: some View{
     if images.isEmpty{

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B904B95C27CC046800646CEE /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B904B95B27CC046800646CEE /* PersistenceManager.swift */; };
-		B91641DE27C7C4170026C4D7 /* LocationDetailPushview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */; };
 		B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DF27C7C79C0026C4D7 /* LoadingView.swift */; };
 		B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641E127C7D6FE0026C4D7 /* DismissButton.swift */; };
 		B928219A27C9270900000E3B /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B928219927C9270900000E3B /* Color+Ext.swift */; };
@@ -40,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		B904B95B27CC046800646CEE /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
-		B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailPushview.swift; sourceTree = "<group>"; };
 		B91641DF27C7C79C0026C4D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B91641E127C7D6FE0026C4D7 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		B928219927C9270900000E3B /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 			children = (
 				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
 				B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */,
-				B91641DD27C7C4170026C4D7 /* LocationDetailPushview.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -315,7 +312,6 @@
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B929629E27C5023600391364 /* AppTabView.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
-				B91641DE27C7C4170026C4D7 /* LocationDetailPushview.swift in Sources */,
 				B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */,
 				B929627027C4D87800391364 /* MapBalloonShape.swift in Sources */,
 				B928219A27C9270900000E3B /* Color+Ext.swift in Sources */,
