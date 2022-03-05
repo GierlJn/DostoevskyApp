@@ -138,10 +138,126 @@
     "address": {
             "en": "Ulitsa Yefimova, 2",
             "ru": "Улица Ефимова, 2Ч"
+          }
+    },
+    {
+    "id": 17,
+    "name": {
+            "en": "Politin House",
+            "ru": "Дом Политина"
+          },
+    "category": 2,
+    "description": {
+            "en": "Returned to the city after exile, worked on novels «The House of the Dead» and «Humiliated and Insulted».",
+            "ru": "Возвратился в Петербург после ссылки, работал над произведениями «Записки из Мертвого дома» и «Униженные и оскорбленные»."
+          },
+    "imageList": [
+            "170"
+          ],
+    "location": "61.239194, 46.630352",
+    "address": {
+            "en": "3-ya Krasnoarmeyskaya Ulitsa, 5",
+            "ru": "3-я Красноармейская улица, 5"
           },
     "date": {
-           "en": "February 1842 – late 1845",
+           "en": "December 1859 – August 1861",
            "ru": "Февраль 1842 – конец 1845"
+         }
+    },
+    {
+    "id": 18,
+    "name": {
+            "en": "Astafieva House",
+            "ru": "Дом Астафьевой"
+          },
+    "category": 2,
+    "description": {
+            "en": "Rented a five-room apartment on the second floor with a kitchen, finished novel «The House of the Dead».",
+            "ru": "Нанимал квартиру на втором этаже из пяти комнат с кухней, закончил «Записки из Мертвого дома»."
+          },
+    "imageList": [
+            "180"
+          ],
+    "location": "59.927459, 30.314548",
+    "address": {
+            "en": "3-ya Krasnoarmeyskaya Ulitsa, 5",
+            "ru": "3-я Красноармейская улица, 5"
+          },
+    "date": {
+           "en": "September 1861 – August 1863",
+           "ru": "Сентябрь 1861 – август 1863"
+         }
+    },
+    {
+    "id": 19,
+    "name": {
+            "en": "Tomas House",
+            "ru": "Дом Томас"
+          },
+    "category": 2,
+    "description": {
+            "en": "At this time Dostoevsky traveled in Europe and his stepson Pavel Isaev lived at this address. The writer stayed in his stepson’s apartment during his visits to St. Petersburg in late 1863 – early 1864.",
+            "ru": "В это время Достоевский путешествовал по Европе и по этому адресу жил его пасынок Павел Исаев. Писатель останавливался в квартире своего пасынка на время визитов в Петербург в конце 1863 – начале 1864 г."
+          },
+    "imageList": [
+            "190"
+          ],
+    "location": "59.926602, 30.302187",
+    "address": {
+            "en": "Malaya Pod’yacheskaya Ulitsa, 2/96",
+            "ru": "Малая Подьяческая улица, 2/96"
+          },
+    "date": {
+           "en": "1863 – early 1864",
+           "ru": "Июль 1863 – начало 1864"
+         }
+    },
+    {
+    "id": 20,
+    "name": {
+            "en": "Evreinov House",
+            "ru": "Дом Евреинова"
+          },
+    "category": 2,
+    "description": {
+            "en": "Stayed after the death of his first wife Maria Dmitriyevna Isaeva.",
+            "ru": "Остановился после смерти первой жены Марии Дмитриевны Исаевой от чахотки."
+          },
+    "imageList": [
+            "200"
+          ],
+    "location": "59.926738, 30.311942",
+    "address": {
+            "en": "Kaznacheyskaya Ulitsa, 9",
+            "ru": "Казначейская улица, 9"
+          },
+    "date": {
+           "en": "April 1864",
+           "ru": "Апрель 1864"
+         }
+    },
+    {
+    "id": 21,
+    "name": {
+            "en": "Alonkin House",
+            "ru": "Дом купца Алонкина"
+          },
+    "category": 2,
+    "description": {
+            "en": "Wrote novels «Crime and Punishment» and «The Gambler» and met his second wife Anna Grigoryevna Snitkina.",
+            "ru": "В квартире на втором этаже написал романы «Преступление и наказание» и «Игрок», познакомился с будущей женой Анной Григорьевной Сниткиной."
+          },
+    "imageList": [
+            "210"
+          ],
+    "location": "59.926738, 30.311942",
+    "address": {
+            "en": "Kaznacheyskaya Ulitsa, 7",
+            "ru": "Казначейская улица, 7"
+          },
+    "date": {
+           "en": "20 August 1864 – 20 January 1867",
+           "ru": "20 августа 1864 – 20 января 1867"
          }
     }
 ]
