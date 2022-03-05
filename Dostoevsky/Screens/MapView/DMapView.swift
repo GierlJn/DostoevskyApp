@@ -13,7 +13,7 @@ import MapKit
 struct DMapview: View{
     
     @EnvironmentObject var viewModel: AppStateViewModel
-    
+    @State var selectedLocation: DLocation?
     var body: some View{
         ZStack{
             VStack{
@@ -32,8 +32,7 @@ struct DMapview: View{
                     MapAnnotation(coordinate: location.getCLLocation().coordinate) {
                         DAnnotation(viewModel: viewModel, location: location)
                             .onTapGesture {
-                                viewModel.selectedLocation = location
-                                viewModel.setup(location: location)
+                                selectedLocation = location
                                 viewModel.isShowingDetailView = true
                             }
                     }
@@ -67,7 +66,7 @@ struct DMapview: View{
         .accentColor(.white)
         
         .fullScreenCover(isPresented: $viewModel.isShowingDetailView, onDismiss: {}){
-          LocationDetailView().environmentObject(viewModel)
+          LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: self.selectedLocation!, appStateViewModel: viewModel)).environmentObject(viewModel)
         }
         
         

@@ -12,7 +12,8 @@ import SwiftUI
 struct MainListView: View {
     
     @EnvironmentObject var viewModel: AppStateViewModel
-    
+    @State var selectedLocation: DLocation?
+  
     var body: some View {
         
             VStack{
@@ -43,8 +44,7 @@ struct MainListView: View {
                     }){
                         ForEach(beforeExileLocations, id: (\.self)){ location in
                             Button {
-                                viewModel.selectedLocation = location
-                                viewModel.setup(location: location)
+                                selectedLocation = location
                                 viewModel.isShowingDetailView = true
                             } label: {
                                 LocationCell(viewModel: viewModel, location: location)
@@ -58,8 +58,7 @@ struct MainListView: View {
                     }){
                         ForEach(afterExileLocations, id: (\.self)){ location in
                             Button {
-                                viewModel.selectedLocation = location
-                                viewModel.setup(location: location)
+                                selectedLocation = location
                                 viewModel.isShowingDetailView = true
                             } label: {
                                 LocationCell(viewModel: viewModel, location: location)
@@ -73,8 +72,7 @@ struct MainListView: View {
                     }){
                         ForEach(novelLocations, id: (\.self)){ location in
                             Button {
-                                viewModel.selectedLocation = location
-                                viewModel.setup(location: location)
+                                selectedLocation = location
                                 viewModel.isShowingDetailView = true
                             } label: {
                                 LocationCell(viewModel: viewModel, location: location)
@@ -87,7 +85,7 @@ struct MainListView: View {
                 
             }
             .fullScreenCover(isPresented: $viewModel.isShowingDetailView){
-                    LocationDetailView()
+              LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: selectedLocation!, appStateViewModel: viewModel))
             }
             .navigationBarHidden(true)
             .navigationTitle("asdf")

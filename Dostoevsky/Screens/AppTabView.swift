@@ -24,7 +24,7 @@ struct AppTabView: View {
                 }
         }.onAppear{
             if(viewModel.locations.isEmpty){
-                viewModel.getLocations()
+                viewModel.setup()
             }
         }
         .accentColor(.brandCategory3)

@@ -1,0 +1,53 @@
+//
+//  LocationDetailViewModel.swift
+//  Dostoevsky
+//
+//  Created by Julian Gierl on 05.03.22.
+//
+
+import SwiftUI
+
+class LocationDetailViewModel: ObservableObject{
+  
+  var selectedLocation: DLocation
+  @Published var userIsSwiping = false
+  @Published var locationRating: LocationRating = LocationRating(record: MockData.createMockRecord())
+  @Published var ratingState = 0{
+    didSet{
+      UserDefaults.standard.set(ratingState, forKey: selectedLocation.name.en)
+    }
+  }
+  @Published var isFavorite = false
+  @Published var disableRating = false
+  @ObservedObject var appStateViewModel: AppStateViewModel
+  
+  
+  init(selectedLocation: DLocation, appStateViewModel: AppStateViewModel){
+    self.selectedLocation = selectedLocation
+    self.appStateViewModel = appStateViewModel
+    self.ratingState = UserDefaults.standard.integer(forKey: selectedLocation.name.en)
+    self.isFavorite = appStateViewModel.favoriteIds.contains("\(selectedLocation.name)")
+    setup()
+  }
+  
+  func setup(){
+    self.locationRating = getRatingForLocation(location: selectedLocation)
+  }
+  
+  func getRatingForLocation(location: DLocation)->LocationRating{
+    let rating = appStateViewModel.ratings.first { rating in
+      rating.place == location.id
+    }
+    guard rating != nil else {
+      return LocationRating(record: MockData.createMockRecord())
+    }
+    return rating!
+    
+  }
+  
+  func favoriteButtonTapped(){
+    appStateViewModel.updateFavoriteIds(location: selectedLocation, newStatus: isFavorite)
+    isFavorite.toggle()
+  }
+  
+}
