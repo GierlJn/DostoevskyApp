@@ -18,13 +18,13 @@
 		B92962A327C50F2700391364 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A227C50F2700391364 /* Constants.swift */; };
 		B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A427C50FAC00391364 /* CKAsset+Ext.swift */; };
 		B953CC6F27CF6EC600D5AC1A /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = B953CC6E27CF6EC600D5AC1A /* locations.json */; };
-		B953CC7127CF71CD00D5AC1A /* DOLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B953CC7027CF71CD00D5AC1A /* DOLocations.swift */; };
+		B953CC7127CF71CD00D5AC1A /* DLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B953CC7027CF71CD00D5AC1A /* DLocation.swift */; };
 		B953CC7327CF736100D5AC1A /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B953CC7227CF736100D5AC1A /* Bundle+Ext.swift */; };
 		B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DC0A927C63F56008EC3E9 /* OnBoardView.swift */; };
 		B96CFDAB27D383B300A42152 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CFDAA27D383B300A42152 /* LocationDetailViewModel.swift */; };
 		B96CFDAD27D3B37700A42152 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CFDAC27D3B37700A42152 /* Rating.swift */; };
+		B96CFDAF27D3BD9B00A42152 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */; };
 		B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FF7FE27C41C5800EC3884 /* DMapView.swift */; };
-		B9CB947C27D22407009EC12A /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CB947B27D22407009EC12A /* Double+Ext.swift */; };
 		B9D68BD227C788A200CB4AA9 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D68BD127C788A200CB4AA9 /* RatingManager.swift */; };
 		B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */; };
 		B9DF3C8A26DD624E0052B466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DF3C8926DD624E0052B466 /* Assets.xcassets */; };
@@ -49,13 +49,13 @@
 		B92962A227C50F2700391364 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B92962A427C50FAC00391364 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
 		B953CC6E27CF6EC600D5AC1A /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
-		B953CC7027CF71CD00D5AC1A /* DOLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLocations.swift; sourceTree = "<group>"; };
+		B953CC7027CF71CD00D5AC1A /* DLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLocation.swift; sourceTree = "<group>"; };
 		B953CC7227CF736100D5AC1A /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		B95DC0A927C63F56008EC3E9 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		B96CFDAA27D383B300A42152 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
 		B96CFDAC27D3B37700A42152 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		B97FF7FE27C41C5800EC3884 /* DMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapView.swift; sourceTree = "<group>"; };
-		B9CB947B27D22407009EC12A /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		B9D68BD127C788A200CB4AA9 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
 		B9DF3C8226DD624D0052B466 /* Dostoevsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dostoevsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DF3C8526DD624D0052B466 /* DostoevskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DostoevskyApp.swift; sourceTree = "<group>"; };
@@ -118,10 +118,10 @@
 		B9CB947D27D22411009EC12A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B9CB947B27D22407009EC12A /* Double+Ext.swift */,
 				B953CC7227CF736100D5AC1A /* Bundle+Ext.swift */,
 				B92962A427C50FAC00391364 /* CKAsset+Ext.swift */,
 				B928219927C9270900000E3B /* Color+Ext.swift */,
+				B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -130,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				B953CC6E27CF6EC600D5AC1A /* locations.json */,
-				B953CC7027CF71CD00D5AC1A /* DOLocations.swift */,
+				B953CC7027CF71CD00D5AC1A /* DLocation.swift */,
 				B9DF3C9C26DD6A820052B466 /* MockData.swift */,
 				B96CFDAC27D3B37700A42152 /* Rating.swift */,
 			);
@@ -295,15 +295,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */,
-				B953CC7127CF71CD00D5AC1A /* DOLocations.swift in Sources */,
+				B953CC7127CF71CD00D5AC1A /* DLocation.swift in Sources */,
 				B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */,
-				B9CB947C27D22407009EC12A /* Double+Ext.swift in Sources */,
 				B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */,
 				B929627627C4EE2800391364 /* AppStateViewModel.swift in Sources */,
 				B929627227C4D9F300391364 /* DAnnotation.swift in Sources */,
 				B92962A327C50F2700391364 /* Constants.swift in Sources */,
 				B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */,
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
+				B96CFDAF27D3BD9B00A42152 /* UIImage+Ext.swift in Sources */,
 				B9D68BD227C788A200CB4AA9 /* RatingManager.swift in Sources */,
 				B953CC7327CF736100D5AC1A /* Bundle+Ext.swift in Sources */,
 				B96CFDAD27D3B37700A42152 /* Rating.swift in Sources */,

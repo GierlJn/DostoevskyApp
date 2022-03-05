@@ -34,24 +34,6 @@ struct DLocation: Identifiable, Hashable, Codable {
     }
 }
 
-// MARK: - Address
 struct Address: Codable {
     let en, ru: String
-}
-
-// MARK: - LocationLocation
-struct GeoLocation: Codable {
-    let lat, lon: String
-}
-
-extension UIImage{
-    static func loadImages(_ imageNames: [String])->[UIImage]{
-        var images = [UIImage]()
-        for name in imageNames{
-            if let image = UIImage(named: name){
-                images.append(image)
-            }
-        }
-        return images
-    }
 }
