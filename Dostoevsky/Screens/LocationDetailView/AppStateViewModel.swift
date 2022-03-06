@@ -8,12 +8,9 @@
 import MapKit
 import CloudKit
 
+
 enum SortType{
   case date, rating
-}
-
-enum FilterOptions{
-  case all, beforeExile, afterExile, novels
 }
 
 class AppStateViewModel: ObservableObject{
@@ -31,12 +28,6 @@ class AppStateViewModel: ObservableObject{
       sortLocationsBy(sort)
     }
   }
-  @Published var filter: FilterOptions = .all{
-    didSet{
-      
-    }
-  }
-  
   @Published var favoriteIds = [String]()
   @Published var showingFavorites = false
   

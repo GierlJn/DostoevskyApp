@@ -9,7 +9,13 @@ import SwiftUI
 
 struct OnBoardView: View {
     var body: some View {
+      VStack{
+        Spacer()
         Text("Fyodor Mikhailovich Dostoyevsky lived in the city about 28 years in total and where he developed as a writer")
+        Spacer()
+        
+      }
+        
     }
 }
 

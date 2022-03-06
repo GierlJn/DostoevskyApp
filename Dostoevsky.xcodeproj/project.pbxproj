@@ -17,6 +17,9 @@
 		B929629E27C5023600391364 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929629D27C5023600391364 /* AppTabView.swift */; };
 		B92962A327C50F2700391364 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A227C50F2700391364 /* Constants.swift */; };
 		B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A427C50FAC00391364 /* CKAsset+Ext.swift */; };
+		B93A177727D4E88C00BB9CF6 /* DMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A177627D4E88C00BB9CF6 /* DMapViewModel.swift */; };
+		B93A177927D4E8FE00BB9CF6 /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A177827D4E8FE00BB9CF6 /* FilterOptions.swift */; };
+		B93A177B27D4F38B00BB9CF6 /* LocationDetailViewMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A177A27D4F38B00BB9CF6 /* LocationDetailViewMap.swift */; };
 		B953CC6F27CF6EC600D5AC1A /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = B953CC6E27CF6EC600D5AC1A /* locations.json */; };
 		B953CC7127CF71CD00D5AC1A /* DLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B953CC7027CF71CD00D5AC1A /* DLocation.swift */; };
 		B953CC7327CF736100D5AC1A /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B953CC7227CF736100D5AC1A /* Bundle+Ext.swift */; };
@@ -48,6 +51,9 @@
 		B929629D27C5023600391364 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		B92962A227C50F2700391364 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B92962A427C50FAC00391364 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
+		B93A177627D4E88C00BB9CF6 /* DMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapViewModel.swift; sourceTree = "<group>"; };
+		B93A177827D4E8FE00BB9CF6 /* FilterOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptions.swift; sourceTree = "<group>"; };
+		B93A177A27D4F38B00BB9CF6 /* LocationDetailViewMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewMap.swift; sourceTree = "<group>"; };
 		B953CC6E27CF6EC600D5AC1A /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 		B953CC7027CF71CD00D5AC1A /* DLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLocation.swift; sourceTree = "<group>"; };
 		B953CC7227CF736100D5AC1A /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
@@ -99,8 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				B97FF7FE27C41C5800EC3884 /* DMapView.swift */,
+				B93A177627D4E88C00BB9CF6 /* DMapViewModel.swift */,
 				B929626F27C4D87800391364 /* MapBalloonShape.swift */,
 				B929627127C4D9F300391364 /* DAnnotation.swift */,
+				B93A177827D4E8FE00BB9CF6 /* FilterOptions.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */,
+				B93A177A27D4F38B00BB9CF6 /* LocationDetailViewMap.swift */,
 				B96CFDAA27D383B300A42152 /* LocationDetailViewModel.swift */,
 				B929627527C4EE2800391364 /* AppStateViewModel.swift */,
 			);
@@ -308,10 +317,13 @@
 				B953CC7327CF736100D5AC1A /* Bundle+Ext.swift in Sources */,
 				B96CFDAD27D3B37700A42152 /* Rating.swift in Sources */,
 				B904B95C27CC046800646CEE /* PersistenceManager.swift in Sources */,
+				B93A177B27D4F38B00BB9CF6 /* LocationDetailViewMap.swift in Sources */,
+				B93A177927D4E8FE00BB9CF6 /* FilterOptions.swift in Sources */,
 				B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */,
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B929629E27C5023600391364 /* AppTabView.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
+				B93A177727D4E88C00BB9CF6 /* DMapViewModel.swift in Sources */,
 				B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */,
 				B929627027C4D87800391364 /* MapBalloonShape.swift in Sources */,
 				B928219A27C9270900000E3B /* Color+Ext.swift in Sources */,

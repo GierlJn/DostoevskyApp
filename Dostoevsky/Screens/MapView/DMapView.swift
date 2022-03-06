@@ -8,22 +8,17 @@
 import SwiftUI
 import MapKit
 
-class DMapViewModel: ObservableObject{
-  @Published var isShowingDetailView = false
-  @Published var selectedLocation: DLocation?
-}
-
 struct DMapview: View{
   
   @EnvironmentObject var viewModel: AppStateViewModel
   @StateObject var mapViewModel = DMapViewModel()
-
+  @State var numberOfPeople = 0
   
   var body: some View{
     ZStack{
       VStack{
         Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: viewModel.locations.filter({ loc in
-          switch viewModel.filter{
+          switch mapViewModel.filter{
           case .all:
             return true
           case .beforeExile:
@@ -38,7 +33,7 @@ struct DMapview: View{
             DAnnotation(viewModel: viewModel, location: location)
               .onTapGesture {
                 mapViewModel.selectedLocation = location
-                mapViewModel.isShowingDetailView = true
+                viewModel.isShowingDetailView = true
               }
           }
         }
@@ -52,40 +47,39 @@ struct DMapview: View{
           .shadow(color: .black, radius: 12)
           .padding()
         Spacer()
+        
+        
+        Picker("Number of people", selection: $numberOfPeople) {
+                ForEach(2 ..< 100) {
+                    Text("\($0) people")
+                }
+            }
+        
       }
-      
     }
-    
-    
-    .overlay( Picker("Filter", selection: $viewModel.filter) {
+    .edgesIgnoringSafeArea([.top, .leading, .trailing])
+    .accentColor(.white)
+    .sheet(isPresented: $viewModel.isShowingDetailView){
+      //OnBoardView()
+      LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: mapViewModel.selectedLocation!, appStateViewModel: viewModel))
+    }
+    //.overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)
+  }
+  
+  
+}
+
+struct PickerView: View{
+  @StateObject var viewModel: DMapViewModel
+  var body: some View{
+    Picker("Filter", selection: $viewModel.filter) {
       Text("Show all").tag(FilterOptions.all)
       Text("Before exile").tag(FilterOptions.beforeExile)
       Text("After exile").tag(FilterOptions.afterExile)
       Text("Novels").tag(FilterOptions.novels)}
-                .frame(width: 100, height: 35).background(RoundedRectangle(cornerRadius: 12)
-                                                            .foregroundColor(getFilterColor()))
-                .padding(6), alignment: .bottomTrailing)
-    
-    
-    .edgesIgnoringSafeArea([.top, .leading, .trailing])
-    .accentColor(.white)
-    
-    .fullScreenCover(isPresented: $mapViewModel.isShowingDetailView){
-      LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: mapViewModel.selectedLocation!, appStateViewModel: viewModel))
-    }
-    
-  }
-  
-  func getFilterColor()->Color{
-    switch viewModel.filter{
-    case .all:
-      return Color.brandPrimary
-    case .beforeExile:
-      return Color.brandCategory1
-    case .afterExile:
-      return Color.brandCategory2
-    case .novels:
-      return Color.brandCategory3
-    }
+//
+//      .frame(width: 100, height: 35).background(RoundedRectangle(cornerRadius: 12)
+//                                                  .foregroundColor(viewModel.filter.getFilterColor))
+//      .padding(6)
   }
 }

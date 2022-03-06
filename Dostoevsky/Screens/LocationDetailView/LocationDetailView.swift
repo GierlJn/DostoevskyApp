@@ -107,7 +107,8 @@ struct LocationDetailView: View {
     .accentColor(.white)
     .ignoresSafeArea(edges: .top)
     .overlay(Button {
-      withAnimation { self.presentationMode.wrappedValue.dismiss() }
+      viewModel.isShowingDetailView = false
+      presentationMode.wrappedValue.dismiss()
     } label: {
       XDismissButton()
     }, alignment: .topTrailing)
