@@ -7,15 +7,9 @@
 
 import SwiftUI
 
-class MainListViewModel: ObservableObject{
-  @Published var isShowingDetailView = false
-  @Published var selectedLocation: DLocation?
-}
-
 struct MainListView: View {
   
-  @EnvironmentObject var viewModel: AppStateViewModel
-  @StateObject var mainListViewModel = MainListViewModel()
+  @EnvironmentObject var viewModel: AppState
   
   var body: some View {
     VStack{
@@ -47,8 +41,8 @@ struct MainListView: View {
           ForEach(beforeExileLocations, id: (\.self)){ location in
             Button {
               DispatchQueue.main.async {
-                mainListViewModel.selectedLocation = location
-                mainListViewModel.isShowingDetailView = true
+                viewModel.selectedLocation = location
+                viewModel.isShowingDetailView = true
               }
             } label: {
               LocationCell(viewModel: viewModel, location: location)
@@ -62,8 +56,8 @@ struct MainListView: View {
         }){
           ForEach(afterExileLocations, id: (\.self)){ location in
             Button {
-              mainListViewModel.selectedLocation = location
-              mainListViewModel.isShowingDetailView = true
+              viewModel.selectedLocation = location
+              viewModel.isShowingDetailView = true
             } label: {
               LocationCell(viewModel: viewModel, location: location)
             }
@@ -76,8 +70,8 @@ struct MainListView: View {
         }){
           ForEach(novelLocations, id: (\.self)){ location in
             Button {
-              mainListViewModel.selectedLocation = location
-              mainListViewModel.isShowingDetailView = true
+              viewModel.selectedLocation = location
+              viewModel.isShowingDetailView = true
             } label: {
               LocationCell(viewModel: viewModel, location: location)
             }
@@ -87,9 +81,6 @@ struct MainListView: View {
       }
       Spacer()
       
-    }
-    .fullScreenCover(isPresented: $mainListViewModel.isShowingDetailView){
-      LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: mainListViewModel.selectedLocation!, appStateViewModel: viewModel))
     }
     .navigationBarHidden(true)
     .accentColor(.white)

@@ -13,7 +13,7 @@ enum SortType{
   case date, rating
 }
 
-class AppStateViewModel: ObservableObject{
+class AppState: ObservableObject{
   
   //@Published var selectedLocation: DLocation?
   @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.933181, longitude: 30.338418), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
@@ -30,6 +30,7 @@ class AppStateViewModel: ObservableObject{
   }
   @Published var favoriteIds = [String]()
   @Published var showingFavorites = false
+  @Published var selectedLocation: DLocation?
   
   func getRatingForLocation(location: DLocation)->Rating{
     let rating = ratings.first { rating in

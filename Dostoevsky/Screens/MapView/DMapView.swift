@@ -10,7 +10,7 @@ import MapKit
 
 struct DMapview: View{
   
-  @EnvironmentObject var viewModel: AppStateViewModel
+  @EnvironmentObject var viewModel: AppState
   @StateObject var mapViewModel = DMapViewModel()
   @State var numberOfPeople = 0
   
@@ -32,7 +32,7 @@ struct DMapview: View{
           MapAnnotation(coordinate: location.getCLLocation().coordinate) {
             DAnnotation(viewModel: viewModel, location: location)
               .onTapGesture {
-                mapViewModel.selectedLocation = location
+                viewModel.selectedLocation = location
                 viewModel.isShowingDetailView = true
               }
           }
@@ -53,17 +53,12 @@ struct DMapview: View{
                 ForEach(2 ..< 100) {
                     Text("\($0) people")
                 }
-            }
+        }
         
       }
     }
     .edgesIgnoringSafeArea([.top, .leading, .trailing])
     .accentColor(.white)
-    .sheet(isPresented: $viewModel.isShowingDetailView){
-      //OnBoardView()
-      LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: mapViewModel.selectedLocation!, appStateViewModel: viewModel))
-    }
-    //.overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)
   }
   
   

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppTabView: View {
     
-  @EnvironmentObject var viewModel: AppStateViewModel
+  @EnvironmentObject var viewModel: AppState
     
     var body: some View {
         TabView{
@@ -29,6 +29,9 @@ struct AppTabView: View {
         }
         .accentColor(.brandCategory3)
         .overlay(viewModel.isLoadingData ? LoadingView() : nil)
+        .sheet(isPresented: $viewModel.isShowingDetailView){
+          LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation!, appStateViewModel: viewModel))
+        }
     }
 }
 

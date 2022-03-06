@@ -9,7 +9,7 @@ import SwiftUI
 struct LocationDetailView: View {
   
   @Environment(\.presentationMode) var presentationMode
-  @EnvironmentObject var viewModel: AppStateViewModel
+  @EnvironmentObject var viewModel: AppState
   @ObservedObject var locationDetailViewModel: LocationDetailViewModel
   
   
@@ -107,7 +107,7 @@ struct LocationDetailView: View {
     .accentColor(.white)
     .ignoresSafeArea(edges: .top)
     .overlay(Button {
-      viewModel.isShowingDetailView = false
+      //viewModel.isShowingDetailView = false
       presentationMode.wrappedValue.dismiss()
     } label: {
       XDismissButton()
@@ -116,7 +116,7 @@ struct LocationDetailView: View {
 }
 
 private struct RatingView: View{
-  @EnvironmentObject var viewModel: AppStateViewModel
+  @EnvironmentObject var viewModel: AppState
   @ObservedObject var locationDetailViewModel: LocationDetailViewModel
   var body: some View{
     HStack(spacing: 20) {
@@ -131,7 +131,7 @@ private struct RatingView: View{
 }
 
 private struct MinusButton: View{
-  @EnvironmentObject var viewModel: AppStateViewModel
+  @EnvironmentObject var viewModel: AppState
   @ObservedObject var locationDetailViewModel: LocationDetailViewModel
   
   var body: some View{
@@ -163,7 +163,7 @@ private struct MinusButton: View{
 }
 
 private struct PlusButton: View{
-  @EnvironmentObject var viewModel: AppStateViewModel
+  @EnvironmentObject var viewModel: AppState
   @ObservedObject var locationDetailViewModel: LocationDetailViewModel
   
   var body: some View{

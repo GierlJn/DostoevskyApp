@@ -19,10 +19,10 @@ class LocationDetailViewModel: ObservableObject{
   }
   @Published var isFavorite = false
   @Published var disableRating = false
-  @ObservedObject var appStateViewModel: AppStateViewModel
+  @ObservedObject var appStateViewModel: AppState
   
   
-  init(selectedLocation: DLocation, appStateViewModel: AppStateViewModel){
+  init(selectedLocation: DLocation, appStateViewModel: AppState){
     self.selectedLocation = selectedLocation
     self.appStateViewModel = appStateViewModel
     self.ratingState = UserDefaults.standard.integer(forKey: selectedLocation.name.en)

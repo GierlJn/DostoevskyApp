@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DAnnotation: View {
-    @ObservedObject var viewModel: AppStateViewModel
+    @ObservedObject var viewModel: AppState
     var location: DLocation
     
     var body: some View {

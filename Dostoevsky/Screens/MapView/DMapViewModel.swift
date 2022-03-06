@@ -8,7 +8,6 @@
 import SwiftUI
 
 class DMapViewModel: ObservableObject{
-  @Published var isShowingDetailView = false
-  @Published var selectedLocation: DLocation?
+  //@Published var selectedLocation: DLocation?
   @Published var filter: FilterOptions = .all
 }
