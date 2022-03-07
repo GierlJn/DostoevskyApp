@@ -33,7 +33,7 @@ struct DMapview: View{
             DAnnotation(viewModel: viewModel, location: location)
               .onTapGesture {
                 viewModel.selectedLocation = location
-                viewModel.isShowingDetailView = true
+                viewModel.showDetail = ActiveStatus.active
               }
           }
         }
@@ -47,18 +47,14 @@ struct DMapview: View{
           .shadow(color: .black, radius: 12)
           .padding()
         Spacer()
-        
-        
-        Picker("Number of people", selection: $numberOfPeople) {
-                ForEach(2 ..< 100) {
-                    Text("\($0) people")
-                }
-        }
-        
       }
     }
+    .overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)
     .edgesIgnoringSafeArea([.top, .leading, .trailing])
     .accentColor(.white)
+//    .fullScreenCover(item: $mapViewModel.filter) { _ in
+//      LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation, appStateViewModel: viewModel))
+//    }
   }
   
   
@@ -72,9 +68,9 @@ struct PickerView: View{
       Text("Before exile").tag(FilterOptions.beforeExile)
       Text("After exile").tag(FilterOptions.afterExile)
       Text("Novels").tag(FilterOptions.novels)}
-//
-//      .frame(width: 100, height: 35).background(RoundedRectangle(cornerRadius: 12)
-//                                                  .foregroundColor(viewModel.filter.getFilterColor))
-//      .padding(6)
+
+      .frame(width: 100, height: 35).background(RoundedRectangle(cornerRadius: 12)
+                                                  .foregroundColor(viewModel.filter.getFilterColor))
+      .padding(6)
   }
 }

@@ -8,7 +8,7 @@ import SwiftUI
 
 struct LocationDetailView: View {
   
-  @Environment(\.presentationMode) var presentationMode
+  @Environment(\.dismiss) var dismiss
   @EnvironmentObject var viewModel: AppState
   @ObservedObject var locationDetailViewModel: LocationDetailViewModel
   
@@ -107,8 +107,7 @@ struct LocationDetailView: View {
     .accentColor(.white)
     .ignoresSafeArea(edges: .top)
     .overlay(Button {
-      //viewModel.isShowingDetailView = false
-      presentationMode.wrappedValue.dismiss()
+      dismiss()
     } label: {
       XDismissButton()
     }, alignment: .topTrailing)

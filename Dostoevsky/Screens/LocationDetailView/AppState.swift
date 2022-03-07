@@ -13,11 +13,19 @@ enum SortType{
   case date, rating
 }
 
+enum ActiveStatus: String, CaseIterable, Identifiable {
+    case active
+    case inactive
+    
+    var id: String { self.rawValue }
+}
+
 class AppState: ObservableObject{
   
   //@Published var selectedLocation: DLocation?
   @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.933181, longitude: 30.338418), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-  @Published var isShowingDetailView = false
+  //@Published var isShowingDetailView = false
+  @Published var showDetail: ActiveStatus?
   @Published var locations = [DLocation]()
   @Published var ratings = [Rating]()
   

@@ -42,7 +42,7 @@ struct MainListView: View {
             Button {
               DispatchQueue.main.async {
                 viewModel.selectedLocation = location
-                viewModel.isShowingDetailView = true
+                viewModel.showDetail = ActiveStatus.active
               }
             } label: {
               LocationCell(viewModel: viewModel, location: location)
@@ -57,7 +57,7 @@ struct MainListView: View {
           ForEach(afterExileLocations, id: (\.self)){ location in
             Button {
               viewModel.selectedLocation = location
-              viewModel.isShowingDetailView = true
+              viewModel.showDetail = ActiveStatus.active
             } label: {
               LocationCell(viewModel: viewModel, location: location)
             }
@@ -71,7 +71,7 @@ struct MainListView: View {
           ForEach(novelLocations, id: (\.self)){ location in
             Button {
               viewModel.selectedLocation = location
-              viewModel.isShowingDetailView = true
+              viewModel.showDetail = ActiveStatus.active
             } label: {
               LocationCell(viewModel: viewModel, location: location)
             }
