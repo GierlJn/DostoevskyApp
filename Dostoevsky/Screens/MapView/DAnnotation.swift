@@ -15,17 +15,17 @@ struct DAnnotation: View {
             ZStack{
                 switch location.category{
                 case 1:
-                    Image("dostoIconGreen")
+                    Image("preExileDosto")
                         .resizable()
-                        .frame(width: 45, height: 70)
+                        .frame(width: 35, height: 60)
                 case 2:
                     Image("dostoIconDarkGreen")
                         .resizable()
-                        .frame(width: 45, height: 70)
+                        .frame(width: 35, height: 60)
                 case 3:
-                    Image("dostoIconGray")
+                    Image("inkwell")
                         .resizable()
-                        .frame(width: 45, height: 70)
+                        .frame(width: 35, height: 60)
                 default:
                     EmptyView()
                 }
