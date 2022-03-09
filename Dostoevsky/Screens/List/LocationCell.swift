@@ -78,7 +78,7 @@ struct LocationCell: View {
       if res.isEmpty{
         res = "\(book)"
       }else{
-        res += ", \(book)"
+        res += "and \(book)"
       }
     }
     return res

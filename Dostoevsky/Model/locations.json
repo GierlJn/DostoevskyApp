@@ -310,7 +310,11 @@
     "address": {
             "en": "Pereulok Pirogova, 6",
             "ru": "Переулок Пирогова, 6"
-          }
+          },
+    "books": {
+           "en": ["Humiliated and Insulted"],
+           "ru": ["Униженных и оскорбленных"]
+         }
     },
     {
     "id": 45,
@@ -330,7 +334,11 @@
     "address": {
             "en": "Pereulok Pirogova, 6",
             "ru": "Переулок Пирогова, 6"
-          }
+          },
+    "books": {
+           "en": ["Humiliated and Insulted"],
+           "ru": ["Униженных и оскорбленных"]
+         }
     },
     {
     "id": 46,
@@ -350,7 +358,11 @@
     "address": {
             "en": "13-ya Liniya Vasil’yevskogo Ostrova",
             "ru": "13-я линия Васильевского острова"
-          }
+          },
+    "books": {
+           "en": ["Humiliated and Insulted"],
+           "ru": ["Униженных и оскорбленных"]
+         }
     },
     {
     "id": 47,
@@ -370,7 +382,11 @@
     "address": {
             "en": "Fontanka river embankment, 103",
             "ru": "Набережная реки Фонтанки, 103"
-          }
+          },
+    "books": {
+           "en": ["Humiliated and Insulted"],
+           "ru": ["Униженных и оскорбленных"]
+         }
     },
     {
     "id": 48,
@@ -390,7 +406,11 @@
     "address": {
             "en": "Torgovyy Most",
             "ru": "Торговому мосту"
-          }
+          },
+    "books": {
+           "en": ["Humiliated and Insulted"],
+           "ru": ["Униженных и оскорбленных"]
+         }
     },
     {
     "id": 49,
@@ -410,7 +430,11 @@
     "address": {
             "en": "Bol’shaya Morskaya Ulitsa, 16",
             "ru": "Большая Морская улица, 16"
-          }
+          },
+    "books": {
+           "en": ["Humiliated and Insulted"],
+           "ru": ["Униженных и оскорбленных"]
+         }
     },
     {
     "id": 50,
@@ -430,7 +454,11 @@
     "address": {
             "en": "Nevsky Avenue, 35",
             "ru": "Невский проспект, 35"
-          }
+          },
+    "books": {
+           "en": ["Notes from the Underground"],
+           "ru": ["Записки из подполья"]
+         }
     },
     {
     "id": 51,
@@ -450,7 +478,11 @@
     "address": {
             "en": "Kokushkin Most",
             "ru": "Кокушкин мост"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 52,
@@ -470,7 +502,11 @@
     "address": {
             "en": "Konnogvardeyskiy Bul’var",
             "ru": "Кокушкин мост"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 53,
@@ -480,7 +516,7 @@
           },
     "category": 3,
     "description": {
-            "en": "Mentioned multiple times in the novel «Crime and Punishment».",
+            "en": "Mentioned multiple times in the novel «Crime and Punishment». For example, at the end of the novel Raskolnikov \"knelt down in the middle of the square, bowed to the ground and kissed this dirty earth, with pleasure and happiness\"",
             "ru": "Вокруг Сенной происходило множество событий из «Преступления и наказания». Например, в конце романа Раскольников «стал на колени среди площади, поклонился до земли и поцеловал эту грязную землю, с наслаждением и счастием»."
           },
     "imageList": [
@@ -490,7 +526,11 @@
     "address": {
             "en": "Sennaya Ploshchad",
             "ru": "Сенная площадь"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 54,
@@ -500,7 +540,7 @@
           },
     "category": 3,
     "description": {
-            "en": "The tavern where Raskolnikov listened to Svidrigailov’s story.",
+            "en": "The tavern where Raskolnikov listened to Svidrigailov's confession. In the drafts for the novel, Dostoevsky writes: \"At the corner of Sadovaya and Voznesensky I came across a hotel, and since I knew that there were newspapers in it, I went there to read in the newspaper, under the heading of daily events, about what was written there about the murder of an old woman.\" \n\nIn this place also was the hotel \n\"Palais de Cristal\".",
             "ru": "Трактир, где Раскольников выслушал исповедь Свидригайлова. В черновиках к роману Достоевский пишет: «На углу Садовой и Вознесенского я набрел на одну гостиницу, и так как я знал, что в ней есть газеты, то и зашел туда, чтобы прочесть в газете, под рубрикой ежедневных событий, о том, что там написано об убийстве старухи». В этом месте находилась гостиница «Пале-де-Кристаль»."
           },
     "imageList": [
@@ -510,7 +550,11 @@
     "address": {
             "en": "Voznesensky Avenue, 45",
             "ru": "Вознесенский проспект, 45"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 55,
