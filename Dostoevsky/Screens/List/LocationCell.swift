@@ -25,6 +25,7 @@ struct LocationCell: View {
                         .font(.system(size: 11, weight: .bold))
                         .frame(width: 26, height: 18)
                         .background(Color.red)
+                        .foregroundColor(.white)
                         .clipShape(Capsule())
                         .offset(x: 20, y: -28)
     
@@ -34,7 +35,6 @@ struct LocationCell: View {
             VStack(alignment: .leading){
                 Text(location.name.en)
                     .font(.title2)
-                    .foregroundColor(.primary)
                     .fontWeight(.semibold)
                     .lineLimit(1)
                     .minimumScaleFactor(0.75)
@@ -42,7 +42,6 @@ struct LocationCell: View {
                 if let date = location.date{
                     Text(date.en)
                         .font(.body)
-                        .foregroundColor(.primary)
                         .fontWeight(.none)
                         .lineLimit(1)
                         .minimumScaleFactor(0.6)

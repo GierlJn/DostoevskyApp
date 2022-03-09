@@ -12,15 +12,11 @@ struct LocationDetailView: View {
   @EnvironmentObject var viewModel: AppState
   @ObservedObject var locationDetailViewModel: LocationDetailViewModel
   
-  
   var body: some View {
     
     VStack{
-      
       ScrollView{
-        
         VStack(spacing: 16){
-          
           ZStack{
             ImageSlider(images: UIImage.loadImages(locationDetailViewModel.selectedLocation.imageList))
               .frame(height: 350)

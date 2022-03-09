@@ -29,9 +29,15 @@ struct DLocation: Identifiable, Hashable, Codable {
   let date: Address?
   
   func getCLLocation()->CLLocation{
-    
     let latLon = Array(location.replacingOccurrences(of: " ", with: "").split(separator: ",")).map({Double($0)!})
     return CLLocation(latitude: latLon[0], longitude: latLon[1])
+  }
+  
+  var definedCategory: Categories{
+    guard category < Categories.allCases.count+1 else{
+      fatalError("tried to add category out of bounds")
+    }
+    return Categories.allCases[category-1]
   }
 }
 

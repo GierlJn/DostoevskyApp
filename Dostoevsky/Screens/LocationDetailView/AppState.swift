@@ -9,7 +9,7 @@ import MapKit
 import CloudKit
 
 
-enum SortType{
+enum SortType: CaseIterable{
   case date, rating
 }
 
@@ -33,7 +33,7 @@ class AppState: ObservableObject{
   @Published var isLoadingData = false
   @Published var sort: SortType = .date{
     didSet{
-      sortLocationsBy(sort)
+      //sortLocationsBy(sort)
     }
   }
   @Published var favoriteIds = [String]()
@@ -127,13 +127,6 @@ class AppState: ObservableObject{
     }
     
   }
-  
-  func sortLocationsBy(_ sortType: SortType){
-    locations = locations.sorted(by: { (lhs, rhs) -> Bool in
-      sortType == .rating ? (getRatingForLocation(location: lhs).rating > getRatingForLocation(location: rhs).rating) : (getRatingForLocation(location: lhs).rating > getRatingForLocation(location: rhs).rating)
-    })
-  }
-  
   
   func getDirectionsToLocation(location: DLocation) {
     let placemark = MKPlacemark(coordinate: location.getCLLocation().coordinate)
