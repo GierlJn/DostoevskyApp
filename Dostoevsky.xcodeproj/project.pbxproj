@@ -37,6 +37,8 @@
 		B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */; };
 		B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */; };
 		B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */; };
+		B9F3413B27D91A90007E2616 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413A27D91A90007E2616 /* TimeLineView.swift */; };
+		B9F3413D27D91AA2007E2616 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413C27D91AA2007E2616 /* Categories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		B9F3413A27D91A90007E2616 /* TimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
+		B9F3413C27D91AA2007E2616 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				B953CC7027CF71CD00D5AC1A /* DLocation.swift */,
 				B9DF3C9C26DD6A820052B466 /* MockData.swift */,
 				B96CFDAC27D3B37700A42152 /* Rating.swift */,
+				B9F3413C27D91AA2007E2616 /* Categories.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
 				B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */,
+				B9F3413A27D91A90007E2616 /* TimeLineView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -301,12 +307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */,
+				B9F3413D27D91AA2007E2616 /* Categories.swift in Sources */,
 				B953CC7127CF71CD00D5AC1A /* DLocation.swift in Sources */,
 				B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */,
 				B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */,
 				B929627627C4EE2800391364 /* AppState.swift in Sources */,
 				B929627227C4D9F300391364 /* DAnnotation.swift in Sources */,
 				B92962A327C50F2700391364 /* Constants.swift in Sources */,
+				B9F3413B27D91A90007E2616 /* TimeLineView.swift in Sources */,
 				B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */,
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
 				B96CFDAF27D3BD9B00A42152 /* UIImage+Ext.swift in Sources */,

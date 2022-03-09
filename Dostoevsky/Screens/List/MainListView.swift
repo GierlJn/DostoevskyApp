@@ -7,11 +7,7 @@
 
 import SwiftUI
 
-enum Categories: CaseIterable, Equatable{
-  case beforeExile
-  case afterExile
-  case novels
-}
+
 
 struct MainListView: View {
   
