@@ -71,7 +71,7 @@ struct MainListView: View {
             }
           }
         }){
-          ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[1]), sortType: sortSettings[0]), id: (\.self)){ location in
+          ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[1]), sortType: sortSettings[1]), id: (\.self)){ location in
             Button {
               DispatchQueue.main.async {
                 viewModel.selectedLocation = location
@@ -94,7 +94,7 @@ struct MainListView: View {
             }
           }
         }){
-          ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[2]), sortType: sortSettings[0]), id: (\.self)){ location in
+          ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[2]), sortType: sortSettings[2]), id: (\.self)){ location in
             Button {
               DispatchQueue.main.async {
                 viewModel.selectedLocation = location

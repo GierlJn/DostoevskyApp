@@ -142,7 +142,11 @@
     "address": {
             "en": "Ulitsa Yefimova, 2",
             "ru": "Улица Ефимова, 2Ч"
-          }
+          },
+    "date": {
+           "en": "1845",
+           "ru": "1845"
+         }
     },
     {
     "id": 17,
@@ -282,7 +286,11 @@
     "address": {
             "en": "Ulitsa Mayakovskogo",
             "ru": "Улица Маяковского"
-          }
+          },
+    "books": {
+           "en": ["Double", "Humiliated and Insulted"],
+           "ru": ["Двойника", "Униженных и оскорбленных"]
+         }
     },
     {
     "id": 44,

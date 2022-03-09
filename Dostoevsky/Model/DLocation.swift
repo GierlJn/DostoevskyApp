@@ -27,6 +27,7 @@ struct DLocation: Identifiable, Hashable, Codable {
   let location: String
   let address: Address
   let date: Address?
+  let books: Books?
   
   func getCLLocation()->CLLocation{
     let latLon = Array(location.replacingOccurrences(of: " ", with: "").split(separator: ",")).map({Double($0)!})
@@ -43,4 +44,8 @@ struct DLocation: Identifiable, Hashable, Codable {
 
 struct Address: Codable {
   let en, ru: String
+}
+
+struct Books: Codable {
+  let en, ru: [String]
 }

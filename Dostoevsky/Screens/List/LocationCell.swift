@@ -31,7 +31,7 @@ struct LocationCell: View {
     
             }
             
-            
+          
             VStack(alignment: .leading){
                 Text(location.name.en)
                     .font(.title2)
@@ -45,11 +45,33 @@ struct LocationCell: View {
                         .fontWeight(.none)
                         .lineLimit(1)
                         .minimumScaleFactor(0.6)
+                }else if let allBooks = allBooksEn{
+                  Text(allBooks)
+                    .font(.body)
+                    .fontWeight(.none)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.6)
+                  
                 }
 
             }.padding(.leading)
         }
     }
+  
+  var allBooksEn: String?{
+    guard let books = location.books?.en else{
+      return nil
+    }
+    var res = ""
+    for book in books{
+      if res.isEmpty{
+        res = "\(book)"
+      }else{
+        res += ", \(book)"
+      }
+    }
+    return res
+  }
 }
 
 
