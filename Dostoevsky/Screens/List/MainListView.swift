@@ -27,10 +27,9 @@ struct MainListView: View {
           Text("Date").tag(SortType.date)
           Text("Rating").tag(SortType.rating)
         }
-        
-        
-        
       }
+      .foregroundColor(.primary)
+      .accentColor(.primary)
       .padding(.top)
       .padding(.trailing)
       List{

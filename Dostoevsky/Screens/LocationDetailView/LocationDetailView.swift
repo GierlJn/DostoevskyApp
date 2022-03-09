@@ -30,6 +30,7 @@ struct LocationDetailView: View {
                 Text(locationDetailViewModel.selectedLocation.name.en)
                   .font(.title)
                   .fontWeight(.bold)
+                  .foregroundColor(.white)
                   .lineLimit(1)
                   .minimumScaleFactor(0.75)
                   .padding()
