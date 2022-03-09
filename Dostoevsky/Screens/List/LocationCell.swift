@@ -20,6 +20,7 @@ struct LocationCell: View {
                     .frame(width: 60, height: 60)
                     .clipShape(Circle())
                     .padding(.vertical, 8)
+              
                 
                 Text("\(viewModel.getRatingForLocation(location: location).rating)")
                         .font(.system(size: 11, weight: .bold))
@@ -28,6 +29,16 @@ struct LocationCell: View {
                         .foregroundColor(.white)
                         .clipShape(Capsule())
                         .offset(x: 20, y: -28)
+              
+              if viewModel.favoriteIds.contains(where: { $0 == "\(location.name)"}){
+                Image(systemName: "heart.fill")
+                    .resizable()
+                    .frame(width: 15, height: 15 )
+                    .foregroundColor(.red)
+                    .offset(x: -18, y: 25)
+                    .shadow(radius: 8)
+              }
+              
     
             }
             
