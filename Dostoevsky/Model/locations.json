@@ -149,6 +149,250 @@
          }
     },
     {
+    "id": 7,
+    "name": {
+            "en": "Lerha Restaurant",
+            "ru": "Ресторан Лерха"
+          },
+    "category": 1,
+    "description": {
+            "en": "Celebrate graduation from the Main Engineering School in Lerche’s restaurant on June 30th 1843.",
+            "ru": "30 июня 1843 в ресторане Лерха праздновал окончание Главного инженерного училища."
+          },
+    "imageList": [
+            "70"
+          ],
+    "location": "59.933054, 30.347354",
+    "address": {
+            "en": "Nevsky Avenue, 74",
+            "ru": "Невский проспект, 74"
+          },
+    "date": {
+           "en": "30 июня 1843",
+           "ru": "June 30th 1843"
+         }
+    },
+    {
+    "id": 8,
+    "name": {
+            "en": "Tulubev House",
+            "ru": "Дом Тулубьева"
+          },
+    "category": 1,
+    "description": {
+            "en": "Dmitry Grigorovich brought manuscript of «Poor Folk» to poet Nikolay Nekrasov. After Nekrasov finished the full work during the night he proclaimed Dostoyevsky «the New Gogol».",
+            "ru": " Григорович передал рукопись «Бедных людей» жившему здесь Некрасову. Который, прочитав роман за одну ночь, передал рукопись Белинскому со словами: «Новый Гоголь явился!»"
+          },
+    "imageList": [
+            "80"
+          ],
+    "location": "59.929308, 30.351621",
+    "address": {
+            "en": "Povarskoy Pereulok, 13",
+            "ru": "Поварской переулок, 13"
+          },
+    "date": {
+           "en": "May 1845",
+           "ru": "Май 1845"
+         }
+    },
+    {
+    "id": 9,
+    "name": {
+            "en": "Kuchin House",
+            "ru": "Дом Кучиной"
+          },
+    "category": 1,
+    "description": {
+            "en": "He lived in a three-room apartment on the first floor, windows facing Grebetskaya street (it is the 5th-7th windows to the right of the arch Dostoevsky street). Wrote the novel «The Double».",
+            "ru": "Жил в трехкомнатной квартире на первом этаже, окна выходили на Гребецкую улицу (это 5-е – 7-е окна справа от арки по улице Достоевского). Написал повесть «Двойник»."
+          },
+    "imageList": [
+            "90"
+          ],
+    "location": "59.927310, 30.350840",
+    "address": {
+            "en": "Kuznechnyy Pereulok, 5/2",
+            "ru": "Поварской переулок, 13"
+          },
+    "date": {
+           "en": "End of 1845 – Beginning of 1846",
+           "ru": "Конец 1845 – конец апреля – начало мая 1846"
+         }
+    },
+    {
+    "id": 10,
+    "name": {
+            "en": "Pavlov House",
+            "ru": "Дом Павловых"
+          },
+    "category": 1,
+    "description": {
+            "en": "He lived here for less than a month before leaving for the summer to Revel to his brother Michael.",
+            "ru": "Прожил здесь неполный месяц перед отъездом на лето в Ревель к брату Михаилу."
+          },
+    "imageList": [
+            "100"
+          ],
+    "location": "59.930038, 30.344974",
+    "address": {
+            "en": "Rubinstein​a​ Street, 32",
+            "ru": "Улица Рубенштейна, 32"
+          },
+    "date": {
+           "en": "May 1846",
+           "ru": "Май 1846"
+         }
+    },
+    {
+    "id": 11,
+    "name": {
+            "en": "Kochendorf House",
+            "ru": "Дом Кохендорфа"
+          },
+    "category": 1,
+    "description": {
+            "en": "Finished story «Mr. Prokharchin». Met here Alexander Herzen on October 5th 1846.",
+            "ru": "Закончил повесть «Господин Прохарчин». 5 октября 1846 года познакомился с А.И. Герценым."
+          },
+    "imageList": [
+            "110"
+          ],
+    "location": "59.933681, 30.323019",
+    "address": {
+            "en": "Kazanskaya Ulitsa, 2",
+            "ru": "Казанская улица, 2/1"
+          },
+    "date": {
+           "en": "6 September 1846 – November 1846",
+           "ru": "6 сентября 1846 – ноябрь 1846"
+         }
+    },
+    {
+    "id": 12,
+    "name": {
+            "en": "Soloshich House",
+            "ru": "Дом Солошича"
+          },
+    "category": 1,
+    "description": {
+            "en": "Rented a few rooms with brothers Beketovs.",
+            "ru": "Снимал несколько комнат совместно с братьями Бекетовыми."
+          },
+    "imageList": [
+            "120"
+          ],
+    "location": "59.940772, 30.290113",
+    "address": {
+            "en": "Bol’shoy Prospekt Vasil’yevskogo Ostrova, 4",
+            "ru": "Большой проспект Васильевского острова, 4"
+          },
+    "date": {
+           "en": "November 1846 – February 1847",
+           "ru": "Ноябрь 1846 – февраль 1847"
+         }
+    },
+    {
+    "id": 13,
+    "name": {
+            "en": "Wolf and Beranger",
+            "ru": "Кафе «Вольф и Беранже»"
+          },
+    "category": 1,
+    "description": {
+            "en": "The participants of the literary discussion group The Petrashevsky Circle gathered in the cafe «Wolf and Beranger». In spring of 1846 Dostoyevsky became acquainted with Mikhail Petrashevsky.",
+            "ru": "В кафе «Вольф и Беранже» собирались петрашевцы и здесь же весной 1846 года случайно познакомился с М.В. Буташевичем-Петрашевским, пропагандировавшим идеи утопического социализма."
+          },
+    "imageList": [
+            "130"
+          ],
+    "location": "59.936557, 30.318258",
+    "address": {
+            "en": "Bol’shoy Prospekt Vasil’yevskogo Ostrova, 4",
+            "ru": "Большой проспект Васильевского острова, 4"
+          },
+    "date": {
+           "en": "1846",
+           "ru": "1846"
+         }
+    },
+    {
+    "id": 14,
+    "name": {
+            "en": "Bolshaya Podyacheskaya ulitsa",
+            "ru": "Большая Подьяческая"
+          },
+    "category": 1,
+    "description": {
+            "en": "Lived with his brother’s Michail family. Then they moved to Pargolovo for the summer, and in return settled back in the old apartment in the house of Shil.",
+            "ru": "Жил с семейством брата Михаила. Потом перебрался с ними на всё лето в Парголово, а по возвращении поселился на старой квартире в доме Шиля."
+          },
+    "imageList": [
+            "140"
+          ],
+    "location": "59.925800, 30.304442",
+    "address": {
+            "en": "Voznesensky Avenue, 8",
+            "ru": "Большая Подьяческая улица, 7"
+          },
+    "date": {
+           "en": "January 1948 – late May 1948",
+           "ru": "Январь 1948 – конец мая 1948"
+         }
+    },
+    {
+    "id": 15,
+    "name": {
+            "en": "Shil House",
+            "ru": "Дом Шиля"
+          },
+    "category": 1,
+    "description": {
+            "en": "Lived on the third floor, wrote stories «White Nights» and «Netochka Nezvanova». On April 23, 1849, he was arrested for participating in the Petrashevsky circle and escorted to the Third Department, and then to the Peter and Paul Fortress.",
+            "ru": "Жил на третьем этаже, написал повести и рассказы «Белые ночи» и «Неточка Незванова». 23 апреля 1849 года был арестован за участие в кружке Петрашевского и препровожден в Третье отделение, а затем в Петропавловскую крепость."
+          },
+    "imageList": [
+            "150",
+            "151",
+            "152",
+            "153"
+          ],
+    "location": "59.934355, 30.308750",
+    "address": {
+            "en": "Bol’shaya Pod’yacheskaya Ulitsa, 7",
+            "ru": "Большая Подьяческая улица, 7"
+          },
+    "date": {
+           "en": "February 1847 – 23 April 1849",
+           "ru": "Февраль 1847–23 апреля 1849"
+         }
+    },
+    {
+    "id": 16,
+    "name": {
+            "en": "Peter and Paul Fortress",
+            "ru": "Петропавловская крепость"
+          },
+    "category": 1,
+    "description": {
+            "en": "Wrote the novel «A Little Hero» in prison in the Alexeev ravelin (ravelin’s prison was destroyed in 1895). After the sentence he left St. Petersburg and retired from the literary process for 10 years.",
+            "ru": "В Алексеевском равелине Петропавловской крепости написал рассказ «Маленький герой» (тюрьма Алексеевского равелина была разрушена в 1895 году). После приговора покинул Петербург и выбыл из литературного процесса на 10 лет."
+          },
+    "imageList": [
+            "160",
+            "161"
+          ],
+    "location": "59.950073, 30.315015",
+    "address": {
+            "en": "Peter and Paul Fortress",
+            "ru": "Петропавловская крепость"
+          },
+    "date": {
+           "en": "23 April 1849 – 22 December 1849",
+           "ru": "23 апреля 1849–22 декабря 1849"
+         }
+    },
+    {
     "id": 17,
     "name": {
             "en": "Politin House",
@@ -574,7 +818,11 @@
     "address": {
             "en": "Moskovsky Avenue, 4 and 6",
             "ru": "Московский проспект, 4 и 6"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 56,
@@ -584,7 +832,7 @@
           },
     "category": 3,
     "description": {
-            "en": "On the fourth floor there was an apartment where Rodion rented a tiny room.",
+            "en": "On the fourth floor there was an apartment where Rodion rented a tiny room. \"It was a tiny cell, about six paces long, which had the most pitiful appearance with its yellow, dusty wallpaper that had fallen off the wall everywhere, and it was so low... that you were about to knock your head on the ceiling.\"",
             "ru": "В доме Иохима на четвертом этаже располагалась квартира, в которой Родион снимал комнату: «Это была крошечная клетушка, шагов в шесть длиной, имевшая самый жалкий вид с своими желтенькими, пыльными и всюду отставшими от стены обоями, и до того низкая,… что вот-вот стукнешься головой о потолок»."
           },
     "imageList": [
@@ -594,7 +842,11 @@
     "address": {
             "en": "Grazhdanskaya Ulitsa, 19",
             "ru": "Гражданская улица, 19"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 57,
@@ -604,7 +856,7 @@
           },
     "category": 3,
     "description": {
-            "en": "Sonya Marmeladova rented a room on the third floor.",
+            "en": "\"The house was three-storied, old, green in color.\" On the third floor (then the last) Sonya Marmeladova rented a room with windows facing the Catherine Canal.",
             "ru": "«Дом был трехэтажный, старый, зеленого цвета». На третьем этаже (тогда последнем) Соня снимала комнату, окна которой выходили на Екатерининский канал."
           },
     "imageList": [
@@ -614,7 +866,11 @@
     "address": {
             "en": "Griboyedov Canal embankment, 73",
             "ru": "Набережная канала Грибоедова, 73"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 58,
