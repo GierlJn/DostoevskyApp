@@ -1,20 +1,70 @@
 //
-//  TimeLineView.swift
+//  MainListView.swift
 //  Dostoevsky
 //
-//  Created by Julian Gierl on 09.03.22.
+//  Created by Julian Gierl on 30.08.21.
 //
 
 import SwiftUI
 
 struct TimeLineView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  
+  @EnvironmentObject var viewModel: AppState
+  @State var categories = Categories.allCases
+  @State var sortSettings = Array.init(repeating: SortType.date, count: Categories.allCases.count)
+  
+  
+  
+  var body: some View {
+    
+        VStack{
+          ScrollView{
+            ForEach(Array(sortLocations(locations: filteredLocations(for: Categories.allCases[0]), sortType: sortSettings[0]).enumerated()), id: (\.element)){ index, location in
+              
+              Button {
+                DispatchQueue.main.async {
+                  viewModel.selectedLocation = location
+                  viewModel.showDetail = ActiveStatus.active
+                }
+              } label: {
+                ZStack{
+                  GeometryReader{ reader in
+                    TimeLineLocationCell(viewModel: viewModel, location: location, mirrored: index % 2 == 0)
+                      
+                    
+                    
+                  }
+                }
+                .padding()
+                .padding(.vertical)
+                
+                
+              }
+          
+        }
+      }
     }
+    
+    .foregroundColor(.primary)
+    .accentColor(.primary)
+    .navigationBarHidden(true)
+    
+  }
+  
+  func sortLocations(locations: [DLocation], sortType: SortType)->[DLocation]{
+    switch sortType{
+    case .date:
+      return locations.sorted(by: { $0.id < $1.id })
+    case .rating:
+      return locations.sorted(by: { viewModel.getRatingForLocation(location: $0).rating > viewModel.getRatingForLocation(location: $1).rating })
+    }
+  }
+  
+  func filteredLocations(for category: Categories)->[DLocation]{
+    viewModel.showingFavorites ? viewModel.locations.filter{$0.definedCategory == category}.filter({ loc in
+      viewModel.favoriteIds.contains("\(loc.name)")
+    }) : viewModel.locations.filter{$0.definedCategory == category}
+  }
 }
 
-struct TimeLineView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimeLineView()
-    }
-}
+

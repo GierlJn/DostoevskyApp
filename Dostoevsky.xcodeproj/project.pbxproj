@@ -39,6 +39,7 @@
 		B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */; };
 		B9F3413B27D91A90007E2616 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413A27D91A90007E2616 /* TimeLineView.swift */; };
 		B9F3413D27D91AA2007E2616 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413C27D91AA2007E2616 /* Categories.swift */; };
+		B9F3413F27D9212C007E2616 /* TimeLineLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413E27D9212C007E2616 /* TimeLineLocationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		B9F3413A27D91A90007E2616 /* TimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
 		B9F3413C27D91AA2007E2616 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		B9F3413E27D9212C007E2616 /* TimeLineLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineLocationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
 				B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */,
 				B9F3413A27D91A90007E2616 /* TimeLineView.swift */,
+				B9F3413E27D9212C007E2616 /* TimeLineLocationCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */,
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B929629E27C5023600391364 /* AppTabView.swift in Sources */,
+				B9F3413F27D9212C007E2616 /* TimeLineLocationCell.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
 				B93A177727D4E88C00BB9CF6 /* DMapViewModel.swift in Sources */,
 				B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */,

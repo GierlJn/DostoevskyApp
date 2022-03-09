@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LocationCell: View {
+struct TimeLineLocationCell: View {
     @ObservedObject var viewModel: AppState
     
     var location: DLocation

@@ -13,7 +13,7 @@ struct AppTabView: View {
     
     var body: some View {
         TabView{
-            MainListView()
+          TimeLineView()
                 .tabItem {
                     Label("Locations", systemImage: "building")
                 }
