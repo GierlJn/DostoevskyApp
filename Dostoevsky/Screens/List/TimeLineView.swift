@@ -107,8 +107,9 @@ struct TimeLineView: View {
           }
         }
       }
-      
     }
+    
+    .preferredColorScheme(.light)
     .padding()
     .foregroundColor(.primary)
     .accentColor(.primary)

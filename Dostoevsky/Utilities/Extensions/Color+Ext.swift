@@ -12,5 +12,6 @@ extension Color{
     static let brandCategory2 = Color("category2")
     static let brandCategory3 = Color("category3")
     static let brandPrimary = Color("brandPrimary")
+    static let tabColor = Color("tabColor")
 }
 
