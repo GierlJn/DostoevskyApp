@@ -8,7 +8,11 @@
 import Foundation
 import MapKit
 
-
+extension Collection where Element == DLocation{
+  var beforeExileLocations: [DLocation]{
+    self.filter{$0.definedCategory == Categories.beforeExile}
+  }
+}
 
 struct DLocation: Identifiable, Hashable, Codable {
   static func == (lhs: DLocation, rhs: DLocation) -> Bool {
@@ -39,6 +43,21 @@ struct DLocation: Identifiable, Hashable, Codable {
       fatalError("tried to add category out of bounds")
     }
     return Categories.allCases[category-1]
+  }
+  
+  var allBooksEn: String?{
+    guard let books = books?.en else{
+      return nil
+    }
+    var res = ""
+    for book in books{
+      if res.isEmpty{
+        res = "\(book)"
+      }else{
+        res += "and \(book)"
+      }
+    }
+    return res
   }
 }
 
