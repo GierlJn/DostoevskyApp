@@ -17,44 +17,48 @@ struct MainListView: View {
   
   var body: some View {
     VStack{
-      HStack{
-        Button {
-          viewModel.showingFavorites.toggle()
-        } label: {
-          Label("Favorites", systemImage: "heart.fill")
+//      HStack{
+//        Button {
+//          viewModel.showingFavorites.toggle()
+//        } label: {
+//          Label("Favorites", systemImage: "heart.fill")
+//        }
+//
+//        Spacer()
+//        Spacer()
+//      }
+      
+//      .padding(.top)
+//      .padding(.horizontal)
+      List{
+        if !sortLocations(locations: filteredLocations(for: Categories.allCases[0]), sortType: sortSettings[0]).isEmpty{
+          Section(header: HStack{
+            HStack{
+              Text("Before Exile")
+              Spacer()
+              Menu("Sort"){
+                Picker(selection: $sortSettings[0], label: Text("Sort")){
+                  Text("Date").tag(SortType.date)
+                  Text("Rating").tag(SortType.rating)
+                }
+              }
+            }
+          }){
+            ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[0]), sortType: sortSettings[0]), id: (\.self)){ location in
+              Button {
+                DispatchQueue.main.async {
+                  viewModel.selectedLocation = location
+                  viewModel.showDetail = ActiveStatus.active
+                }
+              } label: {
+                LocationCell(viewModel: viewModel, location: location)
+              }
+              
+            }.listRowBackground(Color.tabColor)
+          }
         }
         
-        Spacer()
-        Spacer()
-      }
-      
-      .padding(.top)
-      .padding(.horizontal)
-      List{
-        Section(header: HStack{
-          HStack{
-            Text("Before Exile")
-            Spacer()
-            Menu("Sort"){
-              Picker(selection: $sortSettings[0], label: Text("Sort")){
-                Text("Date").tag(SortType.date)
-                Text("Rating").tag(SortType.rating)
-              }
-            }
-          }
-        }){
-          ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[0]), sortType: sortSettings[0]), id: (\.self)){ location in
-            Button {
-              DispatchQueue.main.async {
-                viewModel.selectedLocation = location
-                viewModel.showDetail = ActiveStatus.active
-              }
-            } label: {
-              LocationCell(viewModel: viewModel, location: location)
-            }
-            
-          }
-        }
+        if !sortLocations(locations: filteredLocations(for: Categories.allCases[1]), sortType: sortSettings[1]).isEmpty{
         Section(header: HStack{
           HStack{
             Text("After Exile")
@@ -74,36 +78,41 @@ struct MainListView: View {
                 viewModel.showDetail = ActiveStatus.active
               }
             } label: {
-              LocationCell(viewModel: viewModel, location: location)
+              LocationCell(viewModel: viewModel, location: location).listRowBackground(Color.tabColor)
             }
-            
+            }
           }
         }
-        Section(header: HStack{
-          HStack{
-            Text("Novels")
-            Spacer()
-            Menu("Sort"){
-              Picker(selection: $sortSettings[2], label: Text("Sort")){
-                Text("Rating").tag(SortType.rating)
-              }
-            }
-          }
-        }){
-          ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[2]), sortType: sortSettings[2]), id: (\.self)){ location in
-            Button {
-              DispatchQueue.main.async {
-                viewModel.selectedLocation = location
-                viewModel.showDetail = ActiveStatus.active
-              }
-            } label: {
-              LocationCell(viewModel: viewModel, location: location)
-            }
-            
-          }
-        }
+        
+//        Section(header: HStack{
+//          HStack{
+//            Text("Novels")
+//            Spacer()
+//            Menu("Sort"){
+//              Picker(selection: $sortSettings[2], label: Text("Sort")){
+//                Text("Rating").tag(SortType.rating)
+//              }
+//            }
+//          }
+//        }){
+//          ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[2]), sortType: sortSettings[2]), id: (\.self)){ location in
+//            Button {
+//              DispatchQueue.main.async {
+//                viewModel.selectedLocation = location
+//                viewModel.showDetail = ActiveStatus.active
+//              }
+//            } label: {
+//              LocationCell(viewModel: viewModel, location: location)
+//            }
+//
+//          }
+//        }
       }
-      Spacer()
+      .onAppear{
+        UITableView.appearance().backgroundColor = .clear
+        
+      }
+      //Spacer()
       
     }
     .foregroundColor(.primary)
@@ -122,9 +131,12 @@ struct MainListView: View {
   }
   
   func filteredLocations(for category: Categories)->[DLocation]{
-    viewModel.showingFavorites ? viewModel.locations.filter{$0.definedCategory == category}.filter({ loc in
+//    viewModel.showingFavorites ? viewModel.locations.filter{$0.definedCategory == category}.filter({ loc in
+//      viewModel.favoriteIds.contains("\(loc.name)")
+//    }) : viewModel.locations.filter{$0.definedCategory == category}
+    viewModel.locations.filter{$0.definedCategory == category}.filter({ loc in
       viewModel.favoriteIds.contains("\(loc.name)")
-    }) : viewModel.locations.filter{$0.definedCategory == category}
+    })
   }
 }
 

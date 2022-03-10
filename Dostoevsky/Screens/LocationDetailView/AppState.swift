@@ -39,6 +39,7 @@ class AppState: ObservableObject{
   @Published var favoriteIds = [String]()
   @Published var showingFavorites = false
   @Published var selectedLocation: DLocation?
+  @Published var showCompatListVIew = false
   
   func getRatingForLocation(location: DLocation)->Rating{
     let rating = ratings.first { rating in
@@ -76,8 +77,6 @@ class AppState: ObservableObject{
   func updateRatingForSelectedLocation(selectedLocation: DLocation, rating: Rating){
     ratings.removeAll { $0.id == rating.id}
     ratings.append(rating)
-
-    //disableRating = true
     CloudKitManager.shared.fetchRecordN(with: selectedLocation.id) { [self] result in
       switch result{
       case .success(let record):

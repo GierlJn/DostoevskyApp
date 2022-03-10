@@ -13,13 +13,38 @@ struct AppTabView: View {
   
   var body: some View {
     TabView{
-      TimeLineView()
-        .background(Image("lifeBackground")
-                      .resizable()
-                      .edgesIgnoringSafeArea([.top, .leading, .trailing]))
-        .tabItem {
-          Label("Biography", systemImage: "building")
+      Group{
+        if viewModel.showCompatListVIew{
+          MainListView()
+        }else{
+          TimeLineView()
         }
+      }
+      .background(Image("lifeBackground")
+                    .resizable()
+                    .edgesIgnoringSafeArea([.top, .leading, .trailing]))
+      .overlay(alignment: .bottomTrailing) {
+        Button {
+          viewModel.showCompatListVIew.toggle()
+        } label: {
+          Image(systemName: "heart.fill")
+            .resizable()
+            .frame(width: 17, height: 17)
+            .padding()
+            .background {
+              RoundedRectangle(cornerRadius: 8)
+                .foregroundColor(.tabColor)
+            }
+            .padding()
+            
+        }
+        
+      }
+      
+      
+      .tabItem {
+        Label("Biography", systemImage: "building")
+      }
       
       DMapview()
         .tabItem {
@@ -29,12 +54,11 @@ struct AppTabView: View {
       if(viewModel.locations.isEmpty){
         viewModel.setup()
       }
-      UITabBar.appearance().backgroundColor = UIColor(named: "tabColor")
+      UITabBar.appearance().backgroundColor = UIColor.tabColor
     }
     
     
     .preferredColorScheme(.light)
-    
     .accentColor(.black)
     .overlay(viewModel.isLoadingData ? LoadingView() : nil)
     .fullScreenCover(item: $viewModel.showDetail, content: {_ in

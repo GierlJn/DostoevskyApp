@@ -15,3 +15,10 @@ extension Color{
     static let tabColor = Color("tabColor")
 }
 
+extension UIColor{
+  static let brandCategory1 = UIColor(named: "category1")
+  static let brandCategory2 = UIColor(named: "category2")
+  static let brandCategory3 = UIColor(named: "category3")
+  static let brandPrimary = UIColor(named: "brandPrimary")
+  static let tabColor = UIColor(named: "tabColor")
+}
