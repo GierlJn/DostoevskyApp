@@ -12,6 +12,16 @@ extension Collection where Element == DLocation{
   var beforeExileLocations: [DLocation]{
     self.filter{$0.definedCategory == Categories.beforeExile}
   }
+  var afterExileLocations: [DLocation]{
+    self.filter{$0.definedCategory == Categories.afterExile}
+  }
+  
+  var biographyLocations: [DLocation]{
+    self.beforeExileLocations + self.afterExileLocations
+  }
+  var novelLocations: [DLocation]{
+    self.filter{$0.definedCategory == Categories.beforeExile}
+  }
 }
 
 struct DLocation: Identifiable, Hashable, Codable {

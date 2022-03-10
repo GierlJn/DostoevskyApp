@@ -78,8 +78,8 @@ struct TimeLineView: View {
     VStack{
       
       ScrollView(showsIndicators: false){
-        ForEach(0 ..< viewModel.locations.beforeExileLocations.count){ i in
-          let location = viewModel.locations.beforeExileLocations[i]
+        ForEach(0 ..< viewModel.locations.biographyLocations.count){ i in
+          let location = viewModel.locations.biographyLocations[i]
           Button {
             DispatchQueue.main.async {
               viewModel.selectedLocation = location
@@ -100,7 +100,7 @@ struct TimeLineView: View {
               EmptyView()
             }
           }
-          if i < viewModel.locations.beforeExileLocations.count-1{
+          if i < viewModel.locations.biographyLocations.count-1{
             Triangle()
               .stroke(.secondary, style: StrokeStyle(lineWidth: 3, lineCap:.round, lineJoin: .round, dash: [10], dashPhase: 1))
                 .frame(width: 3, height: 90)

@@ -18,12 +18,10 @@ struct AppTabView: View {
                       .resizable()
                       .edgesIgnoringSafeArea([.top, .leading, .trailing]))
         .tabItem {
-          Label("Locations", systemImage: "building")
+          Label("Biography", systemImage: "building")
         }
       
       DMapview()
-      
-      
         .tabItem {
           Label("Map", systemImage: "map")
         }
