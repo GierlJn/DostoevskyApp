@@ -49,6 +49,7 @@ struct DMapview: View{
         Spacer()
       }
     }
+    //.preferredColorScheme(.dark)
     .overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)
     .edgesIgnoringSafeArea([.top, .leading, .trailing])
     .accentColor(.white)

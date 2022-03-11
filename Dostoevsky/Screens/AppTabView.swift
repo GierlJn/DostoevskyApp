@@ -29,7 +29,7 @@ struct AppTabView: View {
         } label: {
           Image(systemName: "heart.fill")
             .resizable()
-            .frame(width: 17, height: 17)
+            .frame(width: 17, height: 17 )
             .padding()
             .background {
               RoundedRectangle(cornerRadius: 8)
@@ -58,7 +58,7 @@ struct AppTabView: View {
     }
     
     
-    .preferredColorScheme(.light)
+    //.preferredColorScheme(.light)
     .accentColor(.black)
     .overlay(viewModel.isLoadingData ? LoadingView() : nil)
     .fullScreenCover(item: $viewModel.showDetail, content: {_ in
