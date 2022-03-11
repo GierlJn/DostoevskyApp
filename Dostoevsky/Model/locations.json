@@ -890,7 +890,11 @@
     "address": {
             "en": "Griboyedov Canal embankment, 104",
             "ru": "Набережная канала Грибоедова, 104"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 59,
@@ -910,7 +914,11 @@
     "address": {
             "en": "Pereulok Grivtsova",
             "ru": "Переулок Гривцова"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 60,
@@ -930,7 +938,11 @@
     "address": {
             "en": "Voznesensky Avenue, 3–5",
             "ru": "Вознесенский проспект, 3–5"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 61,
@@ -950,7 +962,11 @@
     "address": {
             "en": "Griboyedov Canal embankment, 99",
             "ru": "Набережная канала Грибоедова, 99"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 62,
@@ -970,7 +986,11 @@
     "address": {
             "en": "Sadovaya Street, 58",
             "ru": "Садовая улица, 58"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 63,
@@ -990,7 +1010,11 @@
     "address": {
             "en": "Pereulok Brin’ko, 4",
             "ru": "Переулок Бринько, 4"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 64,
@@ -1010,7 +1034,11 @@
     "address": {
             "en": "Yusupov Garden",
             "ru": "Юсуповский сад"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 65,
@@ -1030,7 +1058,11 @@
     "address": {
             "en": "Voznesenskiy Bridge",
             "ru": "Вознесенский мост"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 66,
@@ -1050,7 +1082,11 @@
     "address": {
             "en": "Voznesensky Avenue, 22",
             "ru": "Вознесенский проспект, 22"
-          }
+          },
+    "books": {
+           "en": ["Crime and Punishment"],
+           "ru": ["Преступление и наказание"]
+         }
     },
     {
     "id": 67,
@@ -1070,7 +1106,11 @@
     "address": {
             "en": "Zagorodnyi Prospekt, 20",
             "ru": "Вознесенский проспект, 22"
-          }
+          },
+    "books": {
+           "en": ["Idiot"],
+           "ru": ["Идиот"]
+         }
     },
     {
     "id": 68,
@@ -1080,7 +1120,7 @@
           },
     "category": 3,
     "description": {
-            "en": "General lived in his own house away from Liteyniy avenue and near the Transfiguration Cathedral.",
+            "en": "The general \"lived in his own house, somewhat away from the Foundry, to the Saviour of the Transfiguration.\" Literary historians point to the house of State Councilor Ivan Derin, who occupied an apartment of eleven rooms on the second floor, rented out the rest of the premises. Like General Epanchin, General Dirin owned another house in the city center, but preferred to live at the Transfiguration Savior, which was both respectable and very practical. However, Epanchin's house could well have been the house of the court adviser Alexander Lisitsyn, located directly on the opposite side of Preobrazhenskaya Square: Ryleeva str., 1.",
             "ru": "Генерал «жил в собственном доме, несколько в стороне от Литейной, к Спасу Преображения». Литературные краеведы указывают на дом статского советника Иван Дирина, который занимал квартиру в одиннадцать комнат на втором этаже, остальные помещения сдавал внаем. Как и генерал Епанчин, генерал Дирин владел еще одним домом в центре города, но предпочитал жить у Спаса Преображения, что было и респектабельно и весьма практично. Однако домом Епанчина вполне мог быть дом надворного советника Александра Лисицина, расположенный прямо на противоположной стороне Преображенской площади: ул. Рылеева, 1."
           },
     "imageList": [
@@ -1090,7 +1130,11 @@
     "address": {
             "en": "Manezhnyy Pereulok, 2",
             "ru": "Манежный переулок, 2"
-          }
+          },
+    "books": {
+           "en": ["Idiot"],
+           "ru": ["Идиот"]
+         }
     },
     {
     "id": 69,
@@ -1110,7 +1154,11 @@
     "address": {
             "en": "Gorokhovaya Street, 28",
             "ru": "Гороховая улица, 28"
-          }
+          },
+    "books": {
+           "en": ["Idiot"],
+           "ru": ["Идиот"]
+         }
     },
     {
     "id": 70,
@@ -1130,7 +1178,11 @@
     "address": {
             "en": "Gorokhovaya Street, 28",
             "ru": "Гороховая улица, 28"
-          }
+          },
+    "books": {
+           "en": ["Idiot"],
+           "ru": ["Идиот"]
+         }
     },
     {
     "id": 71,
@@ -1150,7 +1202,11 @@
     "address": {
             "en": "Summer Garden",
             "ru": "Летний сад"
-          }
+          },
+    "books": {
+           "en": ["Idiot"],
+           "ru": ["Идиот"]
+         }
     },
     {
     "id": 72,
@@ -1170,7 +1226,11 @@
     "address": {
             "en": "Zagorodnyy Prospekt, 52",
             "ru": "Загородный проспект, 52"
-          }
+          },
+    "books": {
+           "en": ["Idiot"],
+           "ru": ["Идиот"]
+         }
     },
     {
     "id": 73,
@@ -1190,7 +1250,11 @@
     "address": {
             "en": "Obvodny Canal embankment, 118с",
             "ru": "Набережная Обводного канала, 118С"
-          }
+          },
+    "books": {
+           "en": ["Idiot"],
+           "ru": ["Идиот"]
+         }
     },
     {
     "id": 74,
@@ -1210,7 +1274,11 @@
     "address": {
             "en": "Green Bridge",
             "ru": "Зелёный мост"
-          }
+          },
+    "books": {
+           "en": ["The Eternal Husband"],
+           "ru": ["Вечный муж"]
+         }
     },
     {
     "id": 75,
@@ -1231,7 +1299,11 @@
     "address": {
             "en": "Obvodny Canal embankment, 118с",
             "ru": "Набережная Обводного канала, 118С"
-          }
+          },
+    "books": {
+           "en": ["The Eternal Husband"],
+           "ru": ["Вечный муж"]
+         }
     },
     {
     "id": 76,
@@ -1251,7 +1323,11 @@
     "address": {
             "en": "Anichkov Most",
             "ru": "Аничков мост"
-          }
+          },
+    "books": {
+           "en": ["Demons"],
+           "ru": ["Бесах"]
+         }
     }
 ]
 
