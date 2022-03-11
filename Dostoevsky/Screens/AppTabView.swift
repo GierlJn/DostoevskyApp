@@ -38,13 +38,15 @@ struct AppTabView: View {
             .padding()
             
         }
-        
       }
-      
-      
       .tabItem {
         Label("Biography", systemImage: "building")
       }
+      
+      BookOverViewList()
+        .tabItem {
+          Label("Books", systemImage: "book")
+        }
       
       DMapview()
         .tabItem {

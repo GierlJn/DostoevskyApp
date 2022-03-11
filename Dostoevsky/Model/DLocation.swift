@@ -20,7 +20,17 @@ extension Collection where Element == DLocation{
     self.beforeExileLocations + self.afterExileLocations
   }
   var novelLocations: [DLocation]{
-    self.filter{$0.definedCategory == Categories.beforeExile}
+    self.filter{$0.definedCategory == Categories.novels}
+  }
+  var crimeAndPunishmentLocations: [DLocation]{
+    self.filter{
+      return $0.books?.en.contains("Crime and Punishment") ?? false
+    }
+  }
+  func novelFilteredLocations(for novelName: String)->[DLocation]{
+    self.filter{
+      return $0.books?.en.contains(novelName) ?? false
+    }
   }
 }
 

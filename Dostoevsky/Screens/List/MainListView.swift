@@ -17,19 +17,6 @@ struct MainListView: View {
   
   var body: some View {
     VStack{
-//      HStack{
-//        Button {
-//          viewModel.showingFavorites.toggle()
-//        } label: {
-//          Label("Favorites", systemImage: "heart.fill")
-//        }
-//
-//        Spacer()
-//        Spacer()
-//      }
-      
-//      .padding(.top)
-//      .padding(.horizontal)
       List{
         if !sortLocations(locations: filteredLocations(for: Categories.allCases[0]), sortType: sortSettings[0]).isEmpty{
           Section(header: HStack{
