@@ -20,9 +20,9 @@ struct AppTabView: View {
           TimeLineView()
         }
       }
-      .background(Image("lifeBackground")
-                    .resizable()
-                    .edgesIgnoringSafeArea([.top, .leading, .trailing]))
+//      .background(Image("lifeBackground")
+//                    .resizable()
+//                    .edgesIgnoringSafeArea([.top, .leading, .trailing]))
       .overlay(alignment: .bottomTrailing) {
         Button {
           viewModel.showCompatListVIew.toggle()
@@ -33,10 +33,9 @@ struct AppTabView: View {
             .padding()
             .background {
               RoundedRectangle(cornerRadius: 8)
-                .foregroundColor(.tabColor)
             }
             .padding()
-            
+          
         }
       }
       .tabItem {
@@ -56,12 +55,10 @@ struct AppTabView: View {
       if(viewModel.locations.isEmpty){
         viewModel.setup()
       }
-      UITabBar.appearance().backgroundColor = UIColor.tabColor
+      //UITabBar.appearance().backgroundColor = UIColor.tabColor
     }
-    
-    
     //.preferredColorScheme(.light)
-    .accentColor(.black)
+    //.accentColor(.black)
     .overlay(viewModel.isLoadingData ? LoadingView() : nil)
     .fullScreenCover(item: $viewModel.showDetail, content: {_ in
       LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation!, appStateViewModel: viewModel))

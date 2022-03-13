@@ -25,8 +25,8 @@ struct StartingLocationCell: View {
             Text("\(viewModel.getRatingForLocation(location: location).rating)")
                     .font(.system(size: 11, weight: .bold))
                     .frame(width: 26, height: 18)
-                    .background(Color.red)
-                    .foregroundColor(.white)
+                    //.background(Color.red)
+                    //.foregroundColor(.white)
                     .clipShape(Capsule())
                     .offset(x: 20, y: -28)
           
@@ -34,7 +34,7 @@ struct StartingLocationCell: View {
             Image(systemName: "heart.fill")
                 .resizable()
                 .frame(width: 15, height: 15 )
-                .foregroundColor(.red)
+                //.foregroundColor(.red)
                 .offset(x: -18, y: 25)
                 .shadow(radius: 8)
           }

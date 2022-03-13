@@ -111,8 +111,8 @@ struct TimeLineView: View {
     
     //.preferredColorScheme(.light)
     .padding()
-    .foregroundColor(.primary)
-    .accentColor(.primary)
+    //.foregroundColor(.primary)
+    //.accentColor(.primary)
     
   }
 

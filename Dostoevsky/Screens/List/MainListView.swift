@@ -41,7 +41,7 @@ struct MainListView: View {
                 LocationCell(viewModel: viewModel, location: location)
               }
               
-            }.listRowBackground(Color.tabColor)
+            }//.listRowBackground(Color.tabColor)
           }
         }
         
@@ -65,7 +65,7 @@ struct MainListView: View {
                 viewModel.showDetail = ActiveStatus.active
               }
             } label: {
-              LocationCell(viewModel: viewModel, location: location).listRowBackground(Color.tabColor)
+              LocationCell(viewModel: viewModel, location: location)//.listRowBackground(Color.tabColor)
             }
             }
           }
@@ -96,14 +96,14 @@ struct MainListView: View {
 //        }
       }
       .onAppear{
-        UITableView.appearance().backgroundColor = .clear
+        //UITableView.appearance().backgroundColor = .clear
         
       }
       //Spacer()
       
     }
-    .foregroundColor(.primary)
-    .accentColor(.primary)
+    //.foregroundColor(.primary)
+    //.accentColor(.primary)
     .navigationBarHidden(true)
     
   }
