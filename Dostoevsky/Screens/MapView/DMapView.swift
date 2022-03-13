@@ -71,7 +71,7 @@ struct PickerView: View{
       Text("Novels").tag(FilterOptions.novels)}
 
       .frame(width: 100, height: 35).background(RoundedRectangle(cornerRadius: 12)
-                                                  .foregroundColor(viewModel.filter.getFilterColor))
+                                                  .foregroundColor(.accentLight))
       .padding(6)
   }
 }

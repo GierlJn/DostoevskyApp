@@ -14,33 +14,8 @@ struct TrailingLocationCell: View {
   
     var body: some View {
         HStack{
-            ZStack{
-                Image(uiImage: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner)
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                    .clipShape(Circle())
-                    .padding(.vertical, 8)
-              
-                
-                Text("\(viewModel.getRatingForLocation(location: location).rating)")
-                        .font(.system(size: 11, weight: .bold))
-                        .frame(width: 26, height: 18)
-                        //.background(Color.red)
-                        //.foregroundColor(.white)
-                        .clipShape(Capsule())
-                        .offset(x: 20, y: -28)
-              
-              if viewModel.favoriteIds.contains(where: { $0 == "\(location.name)"}){
-                Image(systemName: "heart.fill")
-                    .resizable()
-                    .frame(width: 15, height: 15 )
-                    //.foregroundColor(.red)
-                    .offset(x: -18, y: 25)
-                    .shadow(radius: 8)
-              }
-              
-    
-            }
+          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: viewModel.favoriteIds.contains(where: { $0 == "\(location.name)"}))
+          
             VStack(alignment: .leading){
                 Text(location.name.en)
                     .font(.title2)
@@ -77,3 +52,5 @@ struct MirroredLocationCell_Previews: PreviewProvider {
       TrailingLocationCell(viewModel: AppState(), location: MockData.createMockLocation())
     }
 }
+
+

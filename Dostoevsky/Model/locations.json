@@ -532,8 +532,8 @@
             "ru": "Улица Маяковского"
           },
     "books": {
-           "en": ["Double", "Humiliated and Insulted"],
-           "ru": ["Двойника", "Униженных и оскорбленных"]
+           "en": ["Humiliated and Insulted"],
+           "ru": ["Униженных и оскорбленных"]
          }
     },
     {
@@ -678,30 +678,6 @@
     "books": {
            "en": ["Humiliated and Insulted"],
            "ru": ["Униженных и оскорбленных"]
-         }
-    },
-    {
-    "id": 50,
-    "name": {
-            "en": "Gostiny Dvor",
-            "ru": "Гостиный двор"
-          },
-    "category": 3,
-    "description": {
-            "en": "The main character of the novel «Notes from the Underground» tried to buy a beaver collar for his coat.",
-            "ru": "Герой «Записок из подполья» ищет здесь бобровый воротник для пальто: «Надо было переменить воротник во что бы ни стало и завести бобрик, вроде как у офицеров. Для этого я стал ходить по Гостиному двору и после нескольких попыток нацелился на один дешёвый немецкий бобрик.»"
-          },
-    "imageList": [
-            "500"
-          ],
-    "location": "59.934177, 30.332631",
-    "address": {
-            "en": "Nevsky Avenue, 35",
-            "ru": "Невский проспект, 35"
-          },
-    "books": {
-           "en": ["Notes from the Underground"],
-           "ru": ["Записки из подполья"]
          }
     },
     {

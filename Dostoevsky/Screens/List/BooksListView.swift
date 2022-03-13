@@ -44,12 +44,11 @@ struct BooksListView: View {
         }
       }
       .onAppear{
-        //UITableView.appearance().backgroundColor = .clear
+        UITableView.appearance().backgroundColor = .clear
         
       }
     }
-    //.foregroundColor(.primary)
-    //.accentColor(.primary)
+    .accentColor(.white)
     .navigationBarHidden(true)
     
   }

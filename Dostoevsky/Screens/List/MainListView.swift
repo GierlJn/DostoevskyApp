@@ -80,7 +80,7 @@ struct MainListView: View {
       
     }
     //.foregroundColor(.primary)
-    //.accentColor(.primary)
+    .accentColor(.white)
     .navigationBarHidden(true)
     
   }

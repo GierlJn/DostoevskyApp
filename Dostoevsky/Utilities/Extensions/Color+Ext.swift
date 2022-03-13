@@ -13,6 +13,10 @@ extension Color{
     static let brandCategory3 = Color("category3")
     static let brandPrimary = Color("brandPrimary")
     static let tabColor = Color("tabColor")
+  static let backgroundStart = Color("backgroundStart")
+  static let backgroundEnd = Color("backgroundEnd")
+  static let customAccentColor = Color("accentColor")
+  static let accentLight = Color("accentColorLight")
 }
 
 extension UIColor{
@@ -21,4 +25,6 @@ extension UIColor{
   static let brandCategory3 = UIColor(named: "category3")
   static let brandPrimary = UIColor(named: "brandPrimary")
   static let tabColor = UIColor(named: "tabColor")
+  static let customAccentColor = UIColor(named: "accentColor")
+  static let accentLight = UIColor(named: "accentColorLight")
 }

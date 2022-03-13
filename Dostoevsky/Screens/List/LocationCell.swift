@@ -25,8 +25,8 @@ struct LocationCell: View {
                 Text("\(viewModel.getRatingForLocation(location: location).rating)")
                         .font(.system(size: 11, weight: .bold))
                         .frame(width: 26, height: 18)
-                        //.background(Color.red)
-                        //.foregroundColor(.white)
+                        .background(Color.accentLight)
+                        .foregroundColor(.white)
                         .clipShape(Capsule())
                         .offset(x: 20, y: -28)
               
@@ -34,13 +34,12 @@ struct LocationCell: View {
                 Image(systemName: "heart.fill")
                     .resizable()
                     .frame(width: 15, height: 15 )
-                    //.foregroundColor(.red)
+                    .foregroundColor(Color.init(uiColor: .systemRed))
                     .offset(x: -18, y: 25)
                     .shadow(radius: 8)
               }
-              
-    
             }
+          
             VStack(alignment: .leading){
                 Text(location.name.en)
                     .font(.title2)

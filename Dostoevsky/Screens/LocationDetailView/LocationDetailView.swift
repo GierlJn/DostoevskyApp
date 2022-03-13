@@ -80,14 +80,14 @@ struct LocationDetailView: View {
           Button {
             viewModel.getDirectionsToLocation(location: locationDetailViewModel.selectedLocation)
           } label: {
-            LocationActionButton(color: Color.brandPrimary, imageName: "location.fill")
+            LocationActionButton(color: Color.customAccentColor, imageName: "location.fill")
               .padding(.leading)
           }
           
           Button {
             locationDetailViewModel.favoriteButtonTapped()
           } label: {
-            LocationActionButton(color: Color.brandPrimary, imageName: locationDetailViewModel.isFavorite ? "heart.fill" : "heart")
+            LocationActionButton(color: Color.customAccentColor, imageName: locationDetailViewModel.isFavorite ? "heart.fill" : "heart")
               .padding(.leading)
           }
           
@@ -99,8 +99,9 @@ struct LocationDetailView: View {
       }
       .frame(width: 300, height: 60)
       .padding(.bottom)
-      
     }
+    .background(
+      LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing))
     .accentColor(.white)
     .ignoresSafeArea(edges: .top)
     .overlay(Button {
@@ -151,7 +152,7 @@ private struct MinusButton: View{
       viewModel.updateRatingForSelectedLocation(selectedLocation: locationDetailViewModel.selectedLocation, rating: locationDetailViewModel.locationRating)
       
     } label: {
-      LocationActionButton(color: .brandPrimary, imageName: "minus").opacity(locationDetailViewModel.ratingState == -1 ? 0.5 : 1)
+      LocationActionButton(color: .customAccentColor, imageName: "minus").opacity(locationDetailViewModel.ratingState == -1 ? 0.5 : 1)
     }
     
   }
@@ -183,7 +184,7 @@ private struct PlusButton: View{
       }
       viewModel.updateRatingForSelectedLocation(selectedLocation: locationDetailViewModel.selectedLocation, rating: locationDetailViewModel.locationRating)
     } label: {
-      LocationActionButton(color: .brandPrimary, imageName: "plus").opacity(locationDetailViewModel.ratingState == 1 ? 0.5 : 1)
+      LocationActionButton(color: .customAccentColor, imageName: "plus").opacity(locationDetailViewModel.ratingState == 1 ? 0.5 : 1)
     }
   }
   
@@ -251,7 +252,7 @@ private struct InfoView: View {
   var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: 12)
-        .foregroundColor(color)
+        .foregroundColor(.customAccentColor)
         .frame(width: 70, height: 35)
       
       Text("\(locationDetailViewModel.locationRating.rating)")

@@ -23,6 +23,9 @@ struct AppTabView: View {
 //      .background(Image("lifeBackground")
 //                    .resizable()
 //                    .edgesIgnoringSafeArea([.top, .leading, .trailing]))
+      .background(
+        LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
+      )
       .overlay(alignment: .bottomTrailing) {
         Button {
           viewModel.showCompatListVIew.toggle()
@@ -43,11 +46,17 @@ struct AppTabView: View {
       }
       
       BookOverViewList()
+        .background(
+          LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
         .tabItem {
           Label("Books", systemImage: "book")
         }
       
       DMapview()
+        .background(
+          LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
         .tabItem {
           Label("Map", systemImage: "map")
         }
@@ -56,9 +65,11 @@ struct AppTabView: View {
         viewModel.setup()
       }
       //UITabBar.appearance().backgroundColor = UIColor.tabColor
+      //
     }
     //.preferredColorScheme(.light)
-    //.accentColor(.black)
+    .accentColor(.customAccentColor)
+    
     .overlay(viewModel.isLoadingData ? LoadingView() : nil)
     .fullScreenCover(item: $viewModel.showDetail, content: {_ in
       LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation!, appStateViewModel: viewModel))
