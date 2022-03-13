@@ -71,29 +71,6 @@ struct MainListView: View {
           }
         }
         
-//        Section(header: HStack{
-//          HStack{
-//            Text("Novels")
-//            Spacer()
-//            Menu("Sort"){
-//              Picker(selection: $sortSettings[2], label: Text("Sort")){
-//                Text("Rating").tag(SortType.rating)
-//              }
-//            }
-//          }
-//        }){
-//          ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[2]), sortType: sortSettings[2]), id: (\.self)){ location in
-//            Button {
-//              DispatchQueue.main.async {
-//                viewModel.selectedLocation = location
-//                viewModel.showDetail = ActiveStatus.active
-//              }
-//            } label: {
-//              LocationCell(viewModel: viewModel, location: location)
-//            }
-//
-//          }
-//        }
       }
       .onAppear{
         //UITableView.appearance().backgroundColor = .clear
@@ -118,9 +95,6 @@ struct MainListView: View {
   }
   
   func filteredLocations(for category: Categories)->[DLocation]{
-//    viewModel.showingFavorites ? viewModel.locations.filter{$0.definedCategory == category}.filter({ loc in
-//      viewModel.favoriteIds.contains("\(loc.name)")
-//    }) : viewModel.locations.filter{$0.definedCategory == category}
     viewModel.locations.filter{$0.definedCategory == category}.filter({ loc in
       viewModel.favoriteIds.contains("\(loc.name)")
     })
