@@ -50,7 +50,8 @@ struct BooksListView: View {
       }
     }
     .accentColor(.white)
-    .navigationBarHidden(true)
+    .navigationTitle(bookName)
+    .navigationBarTitleDisplayMode(.inline)
     
   }
   
