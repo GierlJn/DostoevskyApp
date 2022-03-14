@@ -10,9 +10,14 @@ import SwiftUI
 @main
 struct DostoevskyApp: App {
     var body: some Scene {
+      let appState = AppState()
         WindowGroup {
-          //AppTabView().environmentObject(AppState())
-          OnBoardView()
+          if appState.showsOnboard{
+            OnBoardView().environmentObject(appState)
+          }else{
+            AppTabView().environmentObject(appState)
+          }
+          
         }
     }
 }

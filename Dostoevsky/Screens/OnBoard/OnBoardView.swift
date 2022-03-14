@@ -12,6 +12,7 @@ import SwiftUI
 struct OnBoardView: View {
   @State var animatedOpacity: Double = 0
   @State var offset: CGFloat = 150
+  @EnvironmentObject var appState: AppState
   var body: some View {
     ZStack{
       GeometryReader{ reader in
@@ -57,6 +58,7 @@ struct OnBoardView: View {
       withAnimation(.linear(duration: 1).delay(4)) {
         animatedOpacity = 1
       }
+      appState.showsOnboard = false
     })
     .background {
       OnBoardImagesView()

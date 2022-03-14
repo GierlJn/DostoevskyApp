@@ -7,6 +7,7 @@
 
 import MapKit
 import CloudKit
+import SwiftUI
 
 
 enum SortType: CaseIterable{
@@ -46,6 +47,8 @@ class AppState: ObservableObject{
   @Published var showingFavorites = false
   @Published var selectedLocation: DLocation?
   @Published var showCompatListVIew = false
+
+  @AppStorage("onboard") var showsOnboard = true
   
   func getRatingForLocation(location: DLocation)->Rating{
     let rating = ratings.first { rating in

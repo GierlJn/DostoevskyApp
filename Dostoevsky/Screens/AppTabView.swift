@@ -20,9 +20,7 @@ struct AppTabView: View {
           TimeLineView()
         }
       }
-//      .background(Image("lifeBackground")
-//                    .resizable()
-//                    .edgesIgnoringSafeArea([.top, .leading, .trailing]))
+
       .background(
         LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
       )
