@@ -25,18 +25,29 @@ struct BookOverViewList: View {
         }else{
           TabView{
             ForEach(books, id: \.self){ book in
-              VStack{
-                Text(book.en)
+              VStack(alignment: .leading){
+                
                 book.image
                   .resizable()
-                  .frame(height: 200)
+                  .frame(height: 150)
+                  .clipShape(RoundedRectangle(cornerRadius: 12))
+                  
+                  
+                Text(book.en)
+                  .font(.title)
+                  .fontWeight(.bold)
+                  .foregroundColor(.white)
+                  .lineLimit(1)
+                  .minimumScaleFactor(0.75)
+                  .padding(.horizontal)
                 BooksListView(bookName: book.en)
               }
             }
-          }
+          }.ignoresSafeArea(edges: .top)
           .tabViewStyle(PageTabViewStyle())
         }
       }
+      
     }
 }
 

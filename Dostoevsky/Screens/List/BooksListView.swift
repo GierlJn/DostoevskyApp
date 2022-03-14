@@ -21,7 +21,7 @@ struct BooksListView: View {
       List{
         Section(header: HStack{
           HStack{
-            Text("Novels")
+            Spacer()
             Spacer()
             Menu("Sort"){
               Picker(selection: $sortSettings, label: Text("Sort")){
@@ -62,15 +62,12 @@ struct BooksListView: View {
       return locations.sorted(by: { viewModel.getRatingForLocation(location: $0).rating > viewModel.getRatingForLocation(location: $1).rating })
     case .favorite:
       return locations.sorted { loc1, loc2 in
-        if viewModel.favoriteIds.hasName(loc1.name.en){
-          return true
-        }else if !viewModel.favoriteIds.hasName(loc1.name.en) &&  viewModel.favoriteIds.hasName(loc2.name.en){
-          return false
-        }
-        return false
-      }
+        return viewModel.favoriteIds.hasName(loc1.name.en) && !viewModel.favoriteIds.hasName(loc2.name.en)
     }
   }
 }
+}
+
+
 
 
