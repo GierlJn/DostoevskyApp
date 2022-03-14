@@ -26,7 +26,7 @@ class LocationDetailViewModel: ObservableObject{
     self.selectedLocation = selectedLocation
     self.appStateViewModel = appStateViewModel
     self.ratingState = UserDefaults.standard.integer(forKey: selectedLocation.name.en)
-    self.isFavorite = appStateViewModel.favoriteIds.contains("\(selectedLocation.name)")
+    self.isFavorite = appStateViewModel.favoriteIds.contains("\(selectedLocation.name.en)")
     setup()
   }
   

@@ -74,9 +74,12 @@ struct AppTabView: View {
     .accentColor(.customAccentColor)
     
     .overlay(viewModel.isLoadingData ? LoadingView() : nil)
-    .fullScreenCover(item: $viewModel.showDetail, content: {_ in
+    .sheet(item: $viewModel.showDetail, content: { _ in
       LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation!, appStateViewModel: viewModel))
     })
+//    .fullScreenCover(item: $viewModel.showDetail, content: {_ in
+//      LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation!, appStateViewModel: viewModel))
+//    })
     
   }
 }

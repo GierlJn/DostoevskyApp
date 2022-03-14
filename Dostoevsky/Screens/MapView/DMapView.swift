@@ -42,12 +42,11 @@ struct DMapview: View{
       }
       
       VStack{
-        Image("map-logo")
-          .resizable()
-          .scaledToFit()
-          .frame(width: 150)
-          .shadow(color: .black, radius: 12)
-          .padding()
+          Image("sign")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 150, height: 80)
+            .multicolorGlow()
         Spacer()
       }
     }
@@ -59,6 +58,20 @@ struct DMapview: View{
   }
   
   
+}
+
+extension View {
+    func multicolorGlow() -> some View {
+        ZStack {
+            ForEach(0..<2) { i in
+                Rectangle()
+                    .fill(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center))
+                    .frame(width: 150, height: 80)
+                    .mask(self.blur(radius: 20))
+                    .overlay(self.blur(radius: 5 - CGFloat(i * 5)))
+            }
+        }
+    }
 }
 
 struct PickerView: View{
