@@ -12,11 +12,13 @@ struct DostoevskyApp: App {
   @StateObject var appState = AppState()
     var body: some Scene {
         WindowGroup {
-          if appState.showsOnboard{
-            OnBoardView().environmentObject(appState)
-          }else{
-            AppTabView().environmentObject(appState)
-          }
+          AppTabView().environmentObject(appState)
+            .preferredColorScheme(.dark)
+//          if appState.showsOnboard{
+//            OnBoardView().environmentObject(appState)
+//          }else{
+//            AppTabView().environmentObject(appState)
+//          }
           
         }
     }
