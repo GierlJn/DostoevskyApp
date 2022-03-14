@@ -25,8 +25,10 @@ struct DMapview: View{
             return loc.category == 1
           case .afterExile:
             return loc.category == 2
-          case .novels:
-            return loc.category == 3
+          case .crime:
+            return loc.bookType == .crimeAndPunishment
+          case .humililated:
+            return loc.bookType == .humiliatedAndInsulted
           }
         })) { location in
           MapAnnotation(coordinate: location.getCLLocation().coordinate) {
@@ -49,13 +51,11 @@ struct DMapview: View{
         Spacer()
       }
     }
-    //.preferredColorScheme(.dark)
+
     .overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)
     .edgesIgnoringSafeArea([.top, .leading, .trailing])
     .accentColor(.white)
-//    .fullScreenCover(item: $mapViewModel.filter) { _ in
-//      LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation, appStateViewModel: viewModel))
-//    }
+
   }
   
   
@@ -68,7 +68,8 @@ struct PickerView: View{
       Text("Show all").tag(FilterOptions.all)
       Text("Before exile").tag(FilterOptions.beforeExile)
       Text("After exile").tag(FilterOptions.afterExile)
-      Text("Novels").tag(FilterOptions.novels)}
+      Text("Crime and Punishment").tag(FilterOptions.crime)
+      Text("Humiliated and Insulted").tag(FilterOptions.humililated)}
 
       .frame(width: 100, height: 35).background(RoundedRectangle(cornerRadius: 12)
                                                   .foregroundColor(.accentLight))

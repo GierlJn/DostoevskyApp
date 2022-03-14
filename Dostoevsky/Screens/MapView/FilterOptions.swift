@@ -8,18 +8,7 @@
 import SwiftUI
 
 enum FilterOptions{
-  case all, beforeExile, afterExile, novels
+  case all, beforeExile, afterExile, crime, humililated
   
-  var getFilterColor: Color{
-    switch self{
-    case .all:
-      return Color.brandPrimary
-    case .beforeExile:
-      return Color.brandCategory1
-    case .afterExile:
-      return Color.brandCategory2
-    case .novels:
-      return Color.brandCategory3
-    }
-  }
+
 }

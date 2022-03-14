@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct DostoevskyApp: App {
+  @StateObject var appState = AppState()
     var body: some Scene {
-      let appState = AppState()
         WindowGroup {
           if appState.showsOnboard{
             OnBoardView().environmentObject(appState)

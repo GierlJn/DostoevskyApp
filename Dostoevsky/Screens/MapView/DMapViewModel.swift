@@ -9,5 +9,6 @@ import SwiftUI
 
 class DMapViewModel: ObservableObject{
   //@Published var selectedLocation: DLocation?
-  @Published var filter: FilterOptions = .all
+  @Published var filter: FilterOptions = .afterExile
+  
 }

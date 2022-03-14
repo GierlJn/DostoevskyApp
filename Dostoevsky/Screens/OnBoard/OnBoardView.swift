@@ -36,14 +36,19 @@ struct OnBoardView: View {
           .padding()
           .opacity(animatedOpacity)
         
-        Text("Explore")
-          .foregroundColor(.black)
-          .padding()
-          .background {
-            RoundedRectangle(cornerRadius: 15)
-              .frame(width: 130)
-              .foregroundColor(.white)
-          }
+        Button(action: {
+          appState.showsOnboard = false
+        }, label: {
+          Text("Explore")
+            .foregroundColor(.black)
+            .padding()
+            .background {
+              RoundedRectangle(cornerRadius: 15)
+                .frame(width: 130)
+                .foregroundColor(.white)
+            }
+        })
+          .accentColor(.black)
           .padding(.top)
           .opacity(animatedOpacity)
           
@@ -58,7 +63,7 @@ struct OnBoardView: View {
       withAnimation(.linear(duration: 1).delay(4)) {
         animatedOpacity = 1
       }
-      appState.showsOnboard = false
+      
     })
     .background {
       OnBoardImagesView()

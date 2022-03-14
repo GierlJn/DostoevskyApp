@@ -8,31 +8,6 @@
 import Foundation
 import MapKit
 
-extension Collection where Element == DLocation{
-  var beforeExileLocations: [DLocation]{
-    self.filter{$0.definedCategory == Categories.beforeExile}
-  }
-  var afterExileLocations: [DLocation]{
-    self.filter{$0.definedCategory == Categories.afterExile}
-  }
-  
-  var biographyLocations: [DLocation]{
-    self.beforeExileLocations + self.afterExileLocations
-  }
-  var novelLocations: [DLocation]{
-    self.filter{$0.definedCategory == Categories.novels}
-  }
-  var crimeAndPunishmentLocations: [DLocation]{
-    self.filter{
-      return $0.books?.en.contains("Crime and Punishment") ?? false
-    }
-  }
-  func novelFilteredLocations(for novelName: String)->[DLocation]{
-    self.filter{
-      return $0.books?.en.contains(novelName) ?? false
-    }
-  }
-}
 
 struct DLocation: Identifiable, Hashable, Codable {
   static func == (lhs: DLocation, rhs: DLocation) -> Bool {
@@ -52,6 +27,18 @@ struct DLocation: Identifiable, Hashable, Codable {
   let address: Address
   let date: Address?
   let books: Books?
+  
+  var bookType: BookType?{
+    guard self.books != nil else {
+      return nil
+    }
+    if self.books!.en.hasName("Crime and Punishment"){
+      return .crimeAndPunishment
+    }else if self.books!.en.hasName("Humiliated and Insulted"){
+      return .humiliatedAndInsulted
+    }
+    return nil
+  }
   
   func getCLLocation()->CLLocation{
     let latLon = Array(location.replacingOccurrences(of: " ", with: "").split(separator: ",")).map({Double($0)!})
@@ -87,4 +74,30 @@ struct Address: Codable {
 
 struct Books: Codable {
   let en, ru: [String]
+}
+
+extension Collection where Element == DLocation{
+  var beforeExileLocations: [DLocation]{
+    self.filter{$0.definedCategory == Categories.beforeExile}
+  }
+  var afterExileLocations: [DLocation]{
+    self.filter{$0.definedCategory == Categories.afterExile}
+  }
+  
+  var biographyLocations: [DLocation]{
+    self.beforeExileLocations + self.afterExileLocations
+  }
+  var novelLocations: [DLocation]{
+    self.filter{$0.definedCategory == Categories.novels}
+  }
+  var crimeAndPunishmentLocations: [DLocation]{
+    self.filter{
+      return $0.books?.en.contains("Crime and Punishment") ?? false
+    }
+  }
+  func novelFilteredLocations(for novelName: String)->[DLocation]{
+    self.filter{
+      return $0.books?.en.contains(novelName) ?? false
+    }
+  }
 }
