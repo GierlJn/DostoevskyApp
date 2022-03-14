@@ -13,6 +13,7 @@ struct OnBoardImagesView: View {
   
   @State var mockImages = [UIImage]()
   let columns: [GridItem] = Array(repeating: .init(.fixed(101)), count: 5)
+  @State var offset: CGFloat = 1000
   
   var body: some View {
         VStack{
@@ -27,18 +28,8 @@ struct OnBoardImagesView: View {
             }
           }
           .frame(height: 1000)
-          .overlay{
-            GeometryReader{ reader in
-              VStack(spacing: 0){
-                Color.black.frame(height:reader.size.height*0.2)
-                LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .top, endPoint: .bottom)
-                  .frame(height:reader.size.height*0.8)
-              }
-              
-                .allowsHitTesting(false)
-            }.ignoresSafeArea(edges: .horizontal)
-
-          }
+          .offset(x: 0, y: offset)
+          
           .rotation3DEffect(.degrees(45  ), axis: (x: 1, y: 0, z: 0))
         }
     .background(.black)
@@ -47,6 +38,9 @@ struct OnBoardImagesView: View {
       mockImages = locations.map({ location in
         UIImage(named: location.imageList.first!) ?? PlaceholderImage.banner
       })
+      withAnimation(.easeIn(duration: 0.5).delay(3)) {
+        offset = 0
+      }
     }
     
     
@@ -57,4 +51,26 @@ struct OnBoardImagesView_Previews: PreviewProvider {
   static var previews: some View {
     OnBoardImagesView()
   }
+}
+
+extension View {
+    func animate(using animation: Animation = .easeInOut(duration: 1), _ action: @escaping () -> Void) -> some View {
+        onAppear {
+            withAnimation(animation) {
+                action()
+            }
+        }
+    }
+}
+
+extension View {
+    func animateForever(using animation: Animation = .easeInOut(duration: 1), autoreverses: Bool = false, _ action: @escaping () -> Void) -> some View {
+        let repeated = animation.repeatForever(autoreverses: autoreverses)
+
+        return onAppear {
+            withAnimation(repeated) {
+                action()
+            }
+        }
+    }
 }
