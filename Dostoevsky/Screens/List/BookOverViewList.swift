@@ -18,13 +18,16 @@ struct BookOverViewList: View {
   
   @State var books = Bundle.main.decode([Book].self, from: "books.json")
   @EnvironmentObject var appState: AppState
-    var body: some View {
-      NavigationView{
+  var body: some View {
+    NavigationView{
       VStack{
         if books.isEmpty{
-          EmptyView()
+          EmptyView().background(
+            LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
+          )
         }else{
-          
+          VStack{
+            Spacer()
             ForEach(books, id: \.self){ book in
               VStack(alignment: .leading){
                 NavigationLink {
@@ -35,7 +38,7 @@ struct BookOverViewList: View {
                       .resizable()
                       .frame(height: 150)
                       .clipShape(RoundedRectangle(cornerRadius: 12))
-
+                    
                     Text(book.en)
                       .font(.title)
                       .fontWeight(.bold)
@@ -44,22 +47,26 @@ struct BookOverViewList: View {
                       .minimumScaleFactor(0.75)
                       .padding(.horizontal)
                   }
-                 
+                  
                 }
 
-                
-              }
               }
             }
+            Spacer()
+          }
+          .padding()
+          .background(
+            LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
+          )
           
-            
         }
-            
-//          }.ignoresSafeArea(edges: .top)
-//          .tabViewStyle(PageTabViewStyle())
+        
         
       }
       
     }
+    
+    
+  }
 }
 

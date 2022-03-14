@@ -31,6 +31,10 @@
 		B96CFDAF27D3BD9B00A42152 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */; };
 		B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FF7FE27C41C5800EC3884 /* DMapView.swift */; };
 		B9BB567C27DE461100B7017C /* CellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB567B27DE461100B7017C /* CellImageView.swift */; };
+		B9C1B52727DF6FF000C0A91D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B52627DF6FF000C0A91D /* AboutView.swift */; };
+		B9C1B52927DF78EF00C0A91D /* SKStoreReviewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B52827DF78EF00C0A91D /* SKStoreReviewController+Ext.swift */; };
+		B9C1B52C27DF7B2D00C0A91D /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B52B27DF7B2D00C0A91D /* ShareSheet.swift */; };
+		B9C1B52E27DF7EDB00C0A91D /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1B52D27DF7EDB00C0A91D /* MailView.swift */; };
 		B9CB484927DF32B200D3C289 /* OnboardImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CB484827DF32B200D3C289 /* OnboardImagesView.swift */; };
 		B9CB484B27DF4B4C00D3C289 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CB484A27DF4B4C00D3C289 /* Book.swift */; };
 		B9D68BD227C788A200CB4AA9 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D68BD127C788A200CB4AA9 /* RatingManager.swift */; };
@@ -76,6 +80,10 @@
 		B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		B97FF7FE27C41C5800EC3884 /* DMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapView.swift; sourceTree = "<group>"; };
 		B9BB567B27DE461100B7017C /* CellImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellImageView.swift; sourceTree = "<group>"; };
+		B9C1B52627DF6FF000C0A91D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		B9C1B52827DF78EF00C0A91D /* SKStoreReviewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Ext.swift"; sourceTree = "<group>"; };
+		B9C1B52B27DF7B2D00C0A91D /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		B9C1B52D27DF7EDB00C0A91D /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		B9CB484827DF32B200D3C289 /* OnboardImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardImagesView.swift; sourceTree = "<group>"; };
 		B9CB484A27DF4B4C00D3C289 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B9D68BD127C788A200CB4AA9 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
@@ -114,8 +122,9 @@
 		B929629F27C502FD00391364 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B9BB567D27DF23A300B7017C /* OnBoard */,
 				B929629D27C5023600391364 /* AppTabView.swift */,
+				B9C1B52627DF6FF000C0A91D /* AboutView.swift */,
+				B9BB567D27DF23A300B7017C /* OnBoard */,
 				B9BB567A27DE45E800B7017C /* Shared Views */,
 				B9D68BD327C7937300CB4AA9 /* List */,
 				B92962A127C5066D00391364 /* LocationDetailView */,
@@ -163,6 +172,15 @@
 			path = OnBoard;
 			sourceTree = "<group>";
 		};
+		B9C1B52A27DF7B1C00C0A91D /* UIKit Representables */ = {
+			isa = PBXGroup;
+			children = (
+				B9C1B52B27DF7B2D00C0A91D /* ShareSheet.swift */,
+				B9C1B52D27DF7EDB00C0A91D /* MailView.swift */,
+			);
+			path = "UIKit Representables";
+			sourceTree = "<group>";
+		};
 		B9CB947D27D22411009EC12A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +188,7 @@
 				B92962A427C50FAC00391364 /* CKAsset+Ext.swift */,
 				B928219927C9270900000E3B /* Color+Ext.swift */,
 				B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */,
+				B9C1B52827DF78EF00C0A91D /* SKStoreReviewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,6 +219,7 @@
 		B9CB948027D22528009EC12A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B9C1B52A27DF7B1C00C0A91D /* UIKit Representables */,
 				B92962A227C50F2700391364 /* Constants.swift */,
 				B9CB947F27D224B5009EC12A /* UtilityViews */,
 				B9CB947D27D22411009EC12A /* Extensions */,
@@ -355,6 +375,7 @@
 			files = (
 				B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */,
 				B966ED5B27D9FA2400156F42 /* EndingLocationCell.swift in Sources */,
+				B9C1B52E27DF7EDB00C0A91D /* MailView.swift in Sources */,
 				B9F3413D27D91AA2007E2616 /* Categories.swift in Sources */,
 				B966ED5927D9F51A00156F42 /* StartingLocationCell.swift in Sources */,
 				B953CC7127CF71CD00D5AC1A /* DLocation.swift in Sources */,
@@ -369,6 +390,7 @@
 				B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */,
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
 				B9DD351827DB887C00A63B4D /* BookOverViewList.swift in Sources */,
+				B9C1B52727DF6FF000C0A91D /* AboutView.swift in Sources */,
 				B96CFDAF27D3BD9B00A42152 /* UIImage+Ext.swift in Sources */,
 				B9DD351A27DB932D00A63B4D /* BooksListView.swift in Sources */,
 				B9D68BD227C788A200CB4AA9 /* RatingManager.swift in Sources */,
@@ -383,6 +405,7 @@
 				B9F3413F27D9212C007E2616 /* LeadingLocationCell.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
 				B93A177727D4E88C00BB9CF6 /* DMapViewModel.swift in Sources */,
+				B9C1B52C27DF7B2D00C0A91D /* ShareSheet.swift in Sources */,
 				B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */,
 				B929627027C4D87800391364 /* MapBalloonShape.swift in Sources */,
 				B928219A27C9270900000E3B /* Color+Ext.swift in Sources */,
@@ -390,6 +413,7 @@
 				B9DF3C9926DD62D40052B466 /* MainListView.swift in Sources */,
 				B966ED5727D9ED1700156F42 /* TrailingLocationCell.swift in Sources */,
 				B96CFDAB27D383B300A42152 /* LocationDetailViewModel.swift in Sources */,
+				B9C1B52927DF78EF00C0A91D /* SKStoreReviewController+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

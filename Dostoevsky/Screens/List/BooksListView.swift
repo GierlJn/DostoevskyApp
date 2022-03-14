@@ -40,15 +40,14 @@ struct BooksListView: View {
             } label: {
               LocationCell(viewModel: viewModel, location: location)
             }
-
+            
           }
         }
       }
-      .onAppear{
-        UITableView.appearance().backgroundColor = .clear
-        
-      }
     }
+    .background(
+      LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
+    )
     .accentColor(.white)
     .navigationTitle(bookName)
     .navigationBarTitleDisplayMode(.inline)
@@ -62,11 +61,22 @@ struct BooksListView: View {
     case .rating:
       return locations.sorted(by: { viewModel.getRatingForLocation(location: $0).rating > viewModel.getRatingForLocation(location: $1).rating })
     case .favorite:
-      return locations.sorted { loc1, loc2 in
-        return viewModel.favoriteIds.hasName(loc1.name.en) && !viewModel.favoriteIds.hasName(loc2.name.en)
-    }
+      return locations.sorted(by: { (item1, item2) -> Bool in
+        var check1: Int = 0
+        var check2: Int = 0
+        print(viewModel.favoriteIds)
+        print(item1.name.en)
+        if viewModel.favoriteIds.hasName(item1.name.en) == true {
+          print(item1.name.en)
+          check1 = 1
+        }
+        if viewModel.favoriteIds.hasName(item2.name.en) == true {
+          check2 = 1
+        }
+        return check1 > check2
+      }
+    )}
   }
-}
 }
 
 

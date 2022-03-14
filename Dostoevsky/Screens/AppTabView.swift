@@ -46,9 +46,6 @@ struct AppTabView: View {
       }
       
       BookOverViewList()
-        .background(
-          LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
-        )
         .tabItem {
           Label("Books", systemImage: "book")
         }
@@ -60,6 +57,12 @@ struct AppTabView: View {
         .tabItem {
           Label("Map", systemImage: "map")
         }
+      AboutView()
+        .tabItem {
+          Label("About", systemImage: "info")
+        }
+        
+      
     }.onAppear{
       if(viewModel.locations.isEmpty){
         viewModel.setup()
@@ -83,3 +86,4 @@ struct AppTabView_Previews: PreviewProvider {
     AppTabView()
   }
 }
+

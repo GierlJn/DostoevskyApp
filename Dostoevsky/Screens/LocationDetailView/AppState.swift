@@ -63,7 +63,7 @@ class AppState: ObservableObject{
   
   func updateFavoriteIds(location: DLocation, newStatus: Bool){
     if !newStatus{
-      PersistanceManager.updateWith(favoriteId: "\(location.name)", actionType: .add) { result in
+      PersistanceManager.updateWith(favoriteId: "\(location.name.en)", actionType: .add) { result in
         switch result{
         case .success(let updatedIds):
           self.favoriteIds = updatedIds
@@ -72,7 +72,7 @@ class AppState: ObservableObject{
         }
       }
     }else{
-      PersistanceManager.updateWith(favoriteId: "\(location.name)", actionType: .remove) { result in
+      PersistanceManager.updateWith(favoriteId: "\(location.name.en)", actionType: .remove) { result in
         switch result{
         case .success(let updatedIds):
           self.favoriteIds = updatedIds
