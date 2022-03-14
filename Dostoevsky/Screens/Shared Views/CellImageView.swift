@@ -33,7 +33,7 @@ struct CellImageView: View{
        Image(systemName: "heart.fill")
            .resizable()
            .frame(width: 15, height: 15 )
-           .foregroundColor(Color(uiColor: UIColor.systemRed))
+           .foregroundColor(Color(uiColor: UIColor.white))
            .offset(x: -18, y: 25)
            .shadow(radius: 8)
      }

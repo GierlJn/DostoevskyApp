@@ -10,7 +10,7 @@ import CloudKit
 
 
 enum SortType: CaseIterable{
-  case date, rating
+  case date, rating, favorite
 }
 
 enum ActiveStatus: String, CaseIterable, Identifiable {
@@ -18,6 +18,12 @@ enum ActiveStatus: String, CaseIterable, Identifiable {
     case inactive
     
     var id: String { self.rawValue }
+}
+
+extension Collection where Element == String{
+  func hasName(_ id: String)->Bool{
+    self.contains(where: { $0 == "\(id)"})
+  }
 }
 
 class AppState: ObservableObject{

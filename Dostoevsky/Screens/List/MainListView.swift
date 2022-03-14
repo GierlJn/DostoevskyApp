@@ -13,12 +13,12 @@ struct MainListView: View {
   
   @EnvironmentObject var viewModel: AppState
   @State var categories = Categories.allCases
-  @State var sortSettings = Array.init(repeating: SortType.date, count: Categories.allCases.count)
+  @State var sortSettings = [SortType.date, SortType.date]
   
   var body: some View {
     VStack{
       List{
-        if !sortLocations(locations: filteredLocations(for: Categories.allCases[0]), sortType: sortSettings[0]).isEmpty{
+        if !sortedLocations(section: 0, sortType: sortSettings[0]).isEmpty{
           Section(header: HStack{
             HStack{
               Text("Before Exile")
@@ -27,11 +27,12 @@ struct MainListView: View {
                 Picker(selection: $sortSettings[0], label: Text("Sort")){
                   Text("Date").tag(SortType.date)
                   Text("Rating").tag(SortType.rating)
+                  Text("Favorites").tag(SortType.favorite)
                 }
               }
             }
           }){
-            ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[0]), sortType: sortSettings[0]), id: (\.self)){ location in
+            ForEach(sortedLocations(section: 0, sortType: sortSettings[0]), id: (\.self)){ location in
               Button {
                 DispatchQueue.main.async {
                   viewModel.selectedLocation = location
@@ -41,11 +42,11 @@ struct MainListView: View {
                 LocationCell(viewModel: viewModel, location: location)
               }
               
-            }//.listRowBackground(Color.tabColor)
+            }
           }
         }
         
-        if !sortLocations(locations: filteredLocations(for: Categories.allCases[1]), sortType: sortSettings[1]).isEmpty{
+        if !sortedLocations(section: 1, sortType: sortSettings[1]).isEmpty{
         Section(header: HStack{
           HStack{
             Text("After Exile")
@@ -54,11 +55,12 @@ struct MainListView: View {
               Picker(selection: $sortSettings[1], label: Text("Sort")){
                 Text("Date").tag(SortType.date)
                 Text("Rating").tag(SortType.rating)
+                Text("Favorites").tag(SortType.favorite)
               }
             }
           }
         }){
-          ForEach(sortLocations(locations: filteredLocations(for: Categories.allCases[1]), sortType: sortSettings[1]), id: (\.self)){ location in
+          ForEach(sortedLocations(section: 1, sortType: sortSettings[1]), id: (\.self)){ location in
             Button {
               DispatchQueue.main.async {
                 viewModel.selectedLocation = location
@@ -72,17 +74,18 @@ struct MainListView: View {
         }
         
       }
-      .onAppear{
-        //UITableView.appearance().backgroundColor = .clear
-        
-      }
-      //Spacer()
-      
     }
-    //.foregroundColor(.primary)
+    
+    .background(
+      LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
+    )
     .accentColor(.white)
     .navigationBarHidden(true)
     
+  }
+  
+  func sortedLocations(section: Int, sortType: SortType)->[DLocation]{
+    sortLocations(locations: filteredLocations(for: Categories.allCases[section]), sortType: sortType)
   }
   
   func sortLocations(locations: [DLocation], sortType: SortType)->[DLocation]{
@@ -91,13 +94,18 @@ struct MainListView: View {
       return locations.sorted(by: { $0.id < $1.id })
     case .rating:
       return locations.sorted(by: { viewModel.getRatingForLocation(location: $0).rating > viewModel.getRatingForLocation(location: $1).rating })
+    case .favorite:
+      return locations.sorted { loc1, loc2 in
+        viewModel.favoriteIds.hasName(loc1.name.en) || viewModel.favoriteIds.hasName(loc2.name.en)
+      }
     }
   }
   
   func filteredLocations(for category: Categories)->[DLocation]{
-    viewModel.locations.filter{$0.definedCategory == category}.filter({ loc in
-      viewModel.favoriteIds.contains("\(loc.name)")
-    })
+    viewModel.locations.filter{$0.definedCategory == category}
+//    .filter({ loc in
+//      viewModel.favoriteIds.contains("\(loc.name)")
+//    })
   }
 }
 

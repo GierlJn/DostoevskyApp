@@ -13,7 +13,7 @@ struct BooksListView: View {
   
   @EnvironmentObject var viewModel: AppState
   @State var categories = Categories.allCases
-  @State var sortSettings = Array.init(repeating: SortType.date, count: Categories.allCases.count)
+  @State var sortSettings = SortType.date
   @State var bookName: String
   
   var body: some View {
@@ -24,13 +24,14 @@ struct BooksListView: View {
             Text("Novels")
             Spacer()
             Menu("Sort"){
-              Picker(selection: $sortSettings[2], label: Text("Sort")){
+              Picker(selection: $sortSettings, label: Text("Sort")){
                 Text("Rating").tag(SortType.rating)
+                Text("Favorites").tag(SortType.favorite)
               }
             }
           }
         }){
-          ForEach(sortLocations(locations: viewModel.locations.novelFilteredLocations(for: bookName), sortType: sortSettings[2]), id: (\.self)){ location in
+          ForEach(sortLocations(locations: viewModel.locations.novelFilteredLocations(for: bookName), sortType: sortSettings), id: (\.self)){ location in
             Button {
               DispatchQueue.main.async {
                 viewModel.selectedLocation = location
@@ -59,20 +60,17 @@ struct BooksListView: View {
       return locations.sorted(by: { $0.id < $1.id })
     case .rating:
       return locations.sorted(by: { viewModel.getRatingForLocation(location: $0).rating > viewModel.getRatingForLocation(location: $1).rating })
+    case .favorite:
+      return locations.sorted { loc1, loc2 in
+        if viewModel.favoriteIds.hasName(loc1.name.en){
+          return true
+        }else if !viewModel.favoriteIds.hasName(loc1.name.en) &&  viewModel.favoriteIds.hasName(loc2.name.en){
+          return false
+        }
+        return false
+      }
     }
   }
-  
- // func filteredLocations(for category: Categories)->[DLocation]{
-//    viewModel.showingFavorites ? viewModel.locations.filter{$0.definedCategory == category}.filter({ loc in
-//      viewModel.favoriteIds.contains("\(loc.name)")
-//    }) : viewModel.locations.filter{$0.definedCategory == category}
-//    viewModel.locations.novelLocations.filter{$0.books?.en.contains(where: { str in
-//      str == book.en
-//    }) }
-//      .filter({ loc in
-//      viewModel.favoriteIds.contains("\(loc.name)")
-//    })
-  //}
 }
 
 

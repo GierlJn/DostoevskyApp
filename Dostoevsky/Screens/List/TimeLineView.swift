@@ -123,6 +123,10 @@ struct TimeLineView: View {
       return locations.sorted(by: { $0.id < $1.id })
     case .rating:
       return locations.sorted(by: { viewModel.getRatingForLocation(location: $0).rating > viewModel.getRatingForLocation(location: $1).rating })
+    case .favorite:
+      return locations.sorted { loc1, loc2 in
+        viewModel.favoriteIds.hasName(loc1.name.en) || viewModel.favoriteIds.hasName(loc2.name.en)
+      }
     }
   }
   

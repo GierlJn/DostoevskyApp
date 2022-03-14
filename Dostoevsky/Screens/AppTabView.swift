@@ -30,12 +30,14 @@ struct AppTabView: View {
         Button {
           viewModel.showCompatListVIew.toggle()
         } label: {
-          Image(systemName: "heart.fill")
+          Image(systemName: "list.bullet.rectangle.fill")
             .resizable()
-            .frame(width: 17, height: 17 )
+            .frame(width: 20, height: 20 )
             .padding()
+            .foregroundColor(.white)
             .background {
               RoundedRectangle(cornerRadius: 8)
+                .frame(width: 36, height: 36)
             }
             .padding()
           
