@@ -11,8 +11,8 @@ import SwiftUI
 struct DostoevskyApp: App {
     var body: some Scene {
         WindowGroup {
-          AppTabView().environmentObject(AppState())
-            
+          //AppTabView().environmentObject(AppState())
+          OnBoardView()
         }
     }
 }
