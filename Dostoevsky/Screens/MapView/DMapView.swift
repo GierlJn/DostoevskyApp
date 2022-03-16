@@ -83,9 +83,9 @@ struct PickerView: View{
       Text("After exile").tag(FilterOptions.afterExile)
       Text("Crime and Punishment").tag(FilterOptions.crime)
       Text("Humiliated and Insulted").tag(FilterOptions.humililated)}
-
-      .frame(width: 100, height: 35).background(RoundedRectangle(cornerRadius: 12)
-                                                  .foregroundColor(.accentLight))
-      .padding(6)
+    .padding(.horizontal)
+    .background(RoundedRectangle(cornerRadius: 12)
+      .foregroundColor(.accentLight))
+    .padding(6)
   }
 }

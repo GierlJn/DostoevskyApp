@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B929629D27C5023600391364 /* AppTabView.swift */,
-				B9C1B52627DF6FF000C0A91D /* AboutView.swift */,
+				B9A5D9A227E256BD006C417A /* AboutView */,
 				B9BB567D27DF23A300B7017C /* OnBoard */,
 				B9BB567A27DE45E800B7017C /* Shared Views */,
 				B9D68BD327C7937300CB4AA9 /* List */,
@@ -177,6 +177,14 @@
 				B929627527C4EE2800391364 /* AppState.swift */,
 			);
 			path = LocationDetailView;
+			sourceTree = "<group>";
+		};
+		B9A5D9A227E256BD006C417A /* AboutView */ = {
+			isa = PBXGroup;
+			children = (
+				B9C1B52627DF6FF000C0A91D /* AboutView.swift */,
+			);
+			path = AboutView;
 			sourceTree = "<group>";
 		};
 		B9BB567A27DE45E800B7017C /* Shared Views */ = {
