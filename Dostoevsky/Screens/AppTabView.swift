@@ -20,7 +20,6 @@ struct AppTabView: View {
           TimeLineView()
         }
       }
-
       .background(
         LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
       )
@@ -31,15 +30,9 @@ struct AppTabView: View {
           Image(systemName: "list.bullet.rectangle.fill")
             .resizable()
             .frame(width: 20, height: 20 )
-            .padding()
-            .foregroundColor(.white)
-            .background {
-              RoundedRectangle(cornerRadius: 8)
-                .frame(width: 36, height: 36)
-            }
-            .padding()
-          
         }
+        .buttonStyle(GradientButtonStyle())
+        .padding()
       }
       .tabItem {
         Label("Biography", systemImage: "building")
@@ -61,25 +54,18 @@ struct AppTabView: View {
         .tabItem {
           Label("About", systemImage: "info")
         }
-        
+      
       
     }.onAppear{
       if(viewModel.locations.isEmpty){
         viewModel.setup()
       }
-      //UITabBar.appearance().backgroundColor = UIColor.tabColor
-      //
     }
-    //.preferredColorScheme(.light)
     .accentColor(.customAccentColor)
-    
     .overlay(viewModel.isLoadingData ? LoadingView() : nil)
     .sheet(item: $viewModel.showDetail, content: { _ in
       LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation!, appStateViewModel: viewModel))
     })
-//    .fullScreenCover(item: $viewModel.showDetail, content: {_ in
-//      LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation!, appStateViewModel: viewModel))
-//    })
     
   }
 }
