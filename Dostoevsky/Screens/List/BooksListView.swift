@@ -64,13 +64,11 @@ struct BooksListView: View {
       return locations.sorted(by: { (item1, item2) -> Bool in
         var check1: Int = 0
         var check2: Int = 0
-        print(viewModel.favoriteIds)
-        print(item1.name.en)
-        if viewModel.favoriteIds.hasName(item1.name.en) == true {
+        if item1.isFavorite == true {
           print(item1.name.en)
           check1 = 1
         }
-        if viewModel.favoriteIds.hasName(item2.name.en) == true {
+        if item2.isFavorite == true {
           check2 = 1
         }
         return check1 > check2

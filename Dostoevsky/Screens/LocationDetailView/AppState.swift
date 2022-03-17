@@ -37,7 +37,6 @@ class AppState: ObservableObject{
   
   @Published var isLoadingData = false
   @Published var sort: SortType = .date
-  @Published var favoriteIds = [String]()
   @Published var showingFavorites = false
   @Published var selectedLocation: DLocation?
   @Published var showCompatListVIew = false
@@ -53,28 +52,6 @@ class AppState: ObservableObject{
     }
     return rating!
     
-  }
-  
-  func updateFavoriteIds(location: DLocation, newStatus: Bool){
-    if !newStatus{
-      PersistanceManager.updateWith(favoriteId: "\(location.name.en)", actionType: .add) { result in
-        switch result{
-        case .success(let updatedIds):
-          self.favoriteIds = updatedIds
-        case .failure(let error):
-          print(error)
-        }
-      }
-    }else{
-      PersistanceManager.updateWith(favoriteId: "\(location.name.en)", actionType: .remove) { result in
-        switch result{
-        case .success(let updatedIds):
-          self.favoriteIds = updatedIds
-        case .failure(let error):
-          print(error)
-        }
-      }
-    }
   }
   
   func updateRatingForSelectedLocation(selectedLocation: DLocation, rating: Rating){
@@ -103,18 +80,7 @@ class AppState: ObservableObject{
   }
   
   func setup() {
-    isLoadingData = true
-    PersistanceManager.retrieveFavoriteIds(completed: { result in
-      switch result{
-      case .success(let ids):
-        self.favoriteIds = ids
-        print(self.favoriteIds)
-      case .failure(let error):
-        print(error)
-#warning("error")
-      }
-    })
-    
+    isLoadingData = true    
     self.locations = Bundle.main.decode([DLocation].self, from: "locations.json")
     CloudKitManager.shared.getLocationRatings { [self] result in
       DispatchQueue.main.async {

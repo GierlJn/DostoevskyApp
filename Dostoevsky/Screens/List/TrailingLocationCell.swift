@@ -14,7 +14,7 @@ struct TrailingLocationCell: View {
   
     var body: some View {
         HStack{
-          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: viewModel.favoriteIds.contains(where: { $0 == "\(location.name.en)"}))
+          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: location.isFavorite)
           
           CellTitleVStack(alignment: .leading, location: location)
             .padding(.leading)

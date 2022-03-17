@@ -28,6 +28,10 @@ struct DLocation: Identifiable, Hashable, Codable {
   let date: Address?
   let books: Books?
   
+  var isFavorite: Bool{
+    PersistanceManager.isFavorite(self)
+  }
+  
   var localizedDate: String?{
     isRussian() ? date?.ru : date?.en
   }
@@ -39,6 +43,7 @@ struct DLocation: Identifiable, Hashable, Codable {
   var localizedBook: String?{
     isRussian() ? books?.ru.first : books?.en.first
   }
+  
   
   var bookType: BookType?{
     guard self.books != nil else {

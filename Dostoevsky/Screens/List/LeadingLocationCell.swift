@@ -18,7 +18,7 @@ struct LeadingLocationCell: View {
         HStack{
           CellTitleVStack(alignment: .trailing, location: location).padding(.trailing)
           
-          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: viewModel.favoriteIds.contains(where: { $0 == "\(location.name.en)"}))
+          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: PersistanceManager.isFavorite(location))
         }
         .padding(.vertical)
     }

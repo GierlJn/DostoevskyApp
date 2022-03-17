@@ -21,12 +21,12 @@ class LocationDetailViewModel: ObservableObject{
   @Published var disableRating = false
   @ObservedObject var appStateViewModel: AppState
   
-  
   init(selectedLocation: DLocation, appStateViewModel: AppState){
     self.selectedLocation = selectedLocation
     self.appStateViewModel = appStateViewModel
     self.ratingState = UserDefaults.standard.integer(forKey: selectedLocation.name.en)
-    self.isFavorite = appStateViewModel.favoriteIds.contains("\(selectedLocation.name.en)")
+    self.isFavorite = selectedLocation.isFavorite
+    //self.isFavorite = appStateViewModel.favoriteIds.contains("\(selectedLocation.name.en)")
     setup()
   }
   
@@ -46,8 +46,15 @@ class LocationDetailViewModel: ObservableObject{
   }
   
   func favoriteButtonTapped(){
-    appStateViewModel.updateFavoriteIds(location: selectedLocation, newStatus: isFavorite)
-    isFavorite.toggle()
+    //appStateViewModel.updateFavoriteIds(location: selectedLocation, newStatus: isFavorite)
+    PersistanceManager.updateWith(favoriteId: selectedLocation.name.en, actionType: isFavorite ? .remove : .add) { result in
+      switch result{
+      case .success(_):
+        self.isFavorite.toggle()
+      case .failure(_):
+        print("could not add fav")
+      }
+    }
   }
   
 }

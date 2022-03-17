@@ -14,7 +14,7 @@ struct LocationCell: View {
     var body: some View {
 
         HStack{
-          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: viewModel.favoriteIds.contains(where: { $0 == "\(location.localizedName)"}))
+          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: PersistanceManager.isFavorite(location))
           
             VStack(alignment: .leading){
                 Text(location.localizedName)

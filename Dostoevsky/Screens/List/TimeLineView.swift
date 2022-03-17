@@ -118,14 +118,14 @@ struct TimeLineView: View {
       return locations.sorted(by: { viewModel.getRatingForLocation(location: $0).rating > viewModel.getRatingForLocation(location: $1).rating })
     case .favorite:
       return locations.sorted { loc1, loc2 in
-        viewModel.favoriteIds.hasName(loc1.name.en) && !viewModel.favoriteIds.hasName(loc2.name.en)
+        loc1.isFavorite && !loc2.isFavorite
       }
     }
   }
   
   func filteredLocations(for category: Categories)->[DLocation]{
     viewModel.showingFavorites ? viewModel.locations.filter{$0.definedCategory == category}.filter({ loc in
-      viewModel.favoriteIds.contains("\(loc.name.en)")
+      loc.isFavorite
     }) : viewModel.locations.filter{$0.definedCategory == category}
   }
 }

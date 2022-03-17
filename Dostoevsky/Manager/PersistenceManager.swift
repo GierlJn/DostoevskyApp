@@ -53,6 +53,17 @@ enum PersistanceManager{
             }
         }
     }
+  
+  static func isFavorite(_ loc: DLocation)->Bool{
+    guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else{ return false }
+    do{
+      let favorites = try JSONDecoder().decode([String].self, from: favoritesData)
+      return favorites.contains(loc.name.en)
+    }catch{
+      return false
+    }
+  }
+  
     
     static func retrieveFavoriteIds(completed: @escaping(Result<[String], Error>) -> Void){
         guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else{

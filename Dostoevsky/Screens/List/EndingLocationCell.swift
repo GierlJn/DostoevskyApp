@@ -40,7 +40,7 @@ struct EndingLocationCell: View {
         
       }.padding(.trailing)
       
-      CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: viewModel.favoriteIds.contains(where: { $0 == "\(location.name.en)"}))
+      CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: location.isFavorite)
     }
     .padding(.vertical)
   }
