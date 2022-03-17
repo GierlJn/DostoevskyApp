@@ -14,7 +14,7 @@ struct BooksListView: View {
   @EnvironmentObject var viewModel: AppState
   @State var categories = Categories.allCases
   @State var sortSettings = SortType.date
-  @State var bookName: String
+  @State var book: Book
   
   var body: some View {
     VStack{
@@ -31,7 +31,7 @@ struct BooksListView: View {
             }
           }
         }){
-          ForEach(sortLocations(locations: viewModel.locations.novelFilteredLocations(for: bookName), sortType: sortSettings), id: (\.self)){ location in
+          ForEach(sortLocations(locations: viewModel.locations.novelFilteredLocations(for: book.en), sortType: sortSettings), id: (\.self)){ location in
             Button {
               DispatchQueue.main.async {
                 viewModel.selectedLocation = location
@@ -49,7 +49,7 @@ struct BooksListView: View {
       LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
     )
     .accentColor(.white)
-    .navigationTitle(bookName)
+    .navigationTitle(book.localizedName)
     .navigationBarTitleDisplayMode(.inline)
     
   }

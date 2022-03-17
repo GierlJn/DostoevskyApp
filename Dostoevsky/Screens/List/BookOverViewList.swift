@@ -9,6 +9,11 @@ import SwiftUI
 
 struct Book: Codable, Hashable{
   let en, ru: String
+  
+  var localizedName: String{
+    isRussian() ? ru : en
+  }
+  
   var image: Image{
     return Image(en)
   }
@@ -31,7 +36,7 @@ struct BookOverViewList: View {
             ForEach(books, id: \.self){ book in
               VStack(alignment: .leading){
                 NavigationLink {
-                  BooksListView(bookName: book.en)
+                  BooksListView(book: book)
                 } label: {
                   VStack{
                     book.image
@@ -39,7 +44,7 @@ struct BookOverViewList: View {
                       .frame(height: 150)
                       .clipShape(RoundedRectangle(cornerRadius: 12))
                     
-                    Text(book.en)
+                    Text(book.localizedName)
                       .font(.title)
                       .fontWeight(.bold)
                       .foregroundColor(.white)

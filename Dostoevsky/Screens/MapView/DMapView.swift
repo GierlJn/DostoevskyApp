@@ -42,7 +42,7 @@ struct DMapview: View{
       }
       
       VStack{
-          Image("sign")
+          Image("sign1")
             .resizable()
             .scaledToFit()
             .frame(width: 150, height: 80)
