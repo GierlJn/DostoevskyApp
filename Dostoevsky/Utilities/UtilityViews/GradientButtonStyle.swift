@@ -18,3 +18,11 @@ struct GradientButtonStyle: ButtonStyle {
     }
 }
 
+struct StandardGradientButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .foregroundColor(Color.white)
+            .background(configuration.isPressed ? LinearGradient(gradient: Gradient(colors: [Color.accentLight, Color.accentLight]), startPoint: .leading, endPoint: .trailing) : LinearGradient(gradient: Gradient(colors: [Color.accentLight, Color.customAccentColor]), startPoint: .leading, endPoint: .trailing))
+            .scaleEffect(configuration.isPressed ? 1.1 : 1.0)
+    }
+}

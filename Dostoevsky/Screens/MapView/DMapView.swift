@@ -46,7 +46,9 @@ struct DMapview: View{
             .resizable()
             .scaledToFit()
             .frame(width: 150, height: 80)
+            .padding()
             .multicolorGlow()
+            
         Spacer()
       }
     }

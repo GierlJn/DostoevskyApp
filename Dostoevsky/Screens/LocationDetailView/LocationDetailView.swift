@@ -154,7 +154,6 @@ private struct MinusButton: View{
     } label: {
       LocationActionButton(color: .customAccentColor, imageName: "minus").opacity(locationDetailViewModel.ratingState == -1 ? 0.5 : 1)
     }
-    
   }
   
 }
