@@ -47,7 +47,7 @@ struct AboutView: View {
                   MailView(result: self.$result)
               }
       .sheet(isPresented: $isShowingSheet, content: {
-        ShareSheet(activityItems: ["Check out this cool app!"])
+        ShareSheet(activityItems: ["Check out this cool app! https://apps.apple.com/app/dostoevskys-petersburg/id1614266132"])
       })
       .accentColor(.white)
       
