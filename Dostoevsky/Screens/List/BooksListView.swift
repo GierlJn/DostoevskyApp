@@ -65,7 +65,6 @@ struct BooksListView: View {
         var check1: Int = 0
         var check2: Int = 0
         if item1.isFavorite == true {
-          print(item1.name.en)
           check1 = 1
         }
         if item2.isFavorite == true {

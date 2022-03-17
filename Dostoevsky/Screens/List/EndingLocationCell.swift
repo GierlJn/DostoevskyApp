@@ -17,14 +17,14 @@ struct EndingLocationCell: View {
     
     HStack{
       VStack(alignment: .trailing){
-        Text(location.name.en)
+        Text(location.localizedName)
           .font(.title2)
           .fontWeight(.semibold)
           .lineLimit(1)
           .minimumScaleFactor(0.75)
         
-        if let date = location.date{
-          Text(date.en)
+        if let date = location.localizedDate{
+          Text(date)
             .font(.body)
             .fontWeight(.none)
             .lineLimit(1)

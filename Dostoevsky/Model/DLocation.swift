@@ -32,6 +32,14 @@ struct DLocation: Identifiable, Hashable, Codable {
     PersistanceManager.isFavorite(self)
   }
   
+  var localizedDescription: String{
+    isRussian() ? description.ru : description.en
+  }
+  
+  var localizedAddress: String{
+    isRussian() ? address.ru : address.en
+  }
+  
   var localizedDate: String?{
     isRussian() ? date?.ru : date?.en
   }

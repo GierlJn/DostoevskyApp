@@ -5,6 +5,7 @@
 //  Created by Julian Gierl on 30.08.21.
 //
 import SwiftUI
+import MapKit
 
 struct LocationDetailView: View {
   
@@ -23,7 +24,7 @@ struct LocationDetailView: View {
             VStack{
               Spacer()
               HStack{
-                Text(locationDetailViewModel.selectedLocation.name.en)
+                Text(locationDetailViewModel.selectedLocation.localizedName)
                   .font(.title)
                   .fontWeight(.bold)
                   .foregroundColor(.white)
@@ -38,35 +39,10 @@ struct LocationDetailView: View {
             }
           }.frame(height: 350)
           
-          HStack {
-            Button {
-              viewModel.getDirectionsToLocation(location: locationDetailViewModel.selectedLocation)
-            } label: {
-              AddressView(address: locationDetailViewModel.selectedLocation.address.en)
-            }
-            
-            Spacer()
-            
-          }
-          .padding(.horizontal)
           
-          if let date = locationDetailViewModel.selectedLocation.date{
-            HStack {
-              Button {
-                //
-              } label: {
-                DateView(date: date.en)
-              }
-              
-              Spacer()
-              
-            }
-            .padding(.horizontal)
-          }
+          SubImageLabels(location: locationDetailViewModel.selectedLocation)
           
-          
-          
-          DescriptionView(text: locationDetailViewModel.selectedLocation.description.en)
+          DescriptionView(text: locationDetailViewModel.selectedLocation.localizedDescription)
             .padding(.top)
           
         }
@@ -200,27 +176,6 @@ private struct BannerImageView: View {
   }
 }
 
-private struct AddressView: View {
-  
-  var address: String
-  
-  var body: some View {
-    Label(address, systemImage: "mappin.and.ellipse")
-      .font(.caption)
-      .foregroundColor(.secondary)
-  }
-}
-
-private struct DateView: View {
-  
-  var date: String
-  
-  var body: some View {
-    Label(date, systemImage: "calendar")
-      .font(.caption)
-      .foregroundColor(.secondary)
-  }
-}
 
 private struct LocationActionButton: View {
   
@@ -290,4 +245,5 @@ private struct ImageSlider: View{
     }
   }
 }
+
 
