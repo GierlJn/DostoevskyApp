@@ -90,7 +90,7 @@ struct TimeLineView: View {
             switch i{
             case _ where i == 0:
               StartingLocationCell(viewModel: viewModel, location: location)
-            case _ where i >= viewModel.locations.beforeExileLocations.count-1:
+            case _ where i >= viewModel.locations.biographyLocations.count-1:
               StartingLocationCell(viewModel: viewModel, location: location)
             case _ where i % 2 == 0:
               LeadingLocationCell(viewModel: viewModel, location: location)

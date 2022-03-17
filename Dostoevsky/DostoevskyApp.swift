@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+
+public func isRussian() -> Bool {
+    return NSLocale.preferredLanguages[0].range(of:"ru") != nil
+}
+
 @main
 struct DostoevskyApp: App {
   @StateObject var appState = AppState()
@@ -19,6 +24,7 @@ struct DostoevskyApp: App {
           AppTabView().environmentObject(appState)
         }
       }.preferredColorScheme(.dark)
+        
     }
   }
 }

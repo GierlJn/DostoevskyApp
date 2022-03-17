@@ -28,6 +28,18 @@ struct DLocation: Identifiable, Hashable, Codable {
   let date: Address?
   let books: Books?
   
+  var localizedDate: String?{
+    isRussian() ? date?.ru : date?.en
+  }
+  
+  var localizedName: String{
+    isRussian() ? name.ru : name.en
+  }
+  
+  var localizedBook: String?{
+    isRussian() ? books?.ru.first : books?.en.first
+  }
+  
   var bookType: BookType?{
     guard self.books != nil else {
       return nil
@@ -50,21 +62,6 @@ struct DLocation: Identifiable, Hashable, Codable {
       fatalError("tried to add category out of bounds")
     }
     return Categories.allCases[category-1]
-  }
-  
-  var allBooksEn: String?{
-    guard let books = books?.en else{
-      return nil
-    }
-    var res = ""
-    for book in books{
-      if res.isEmpty{
-        res = "\(book)"
-      }else{
-        res += "and \(book)"
-      }
-    }
-    return res
   }
 }
 
