@@ -37,7 +37,7 @@ extension CGPoint {
   }
 }
 
-struct Triangle: Shape {
+struct ConnectingLine: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         path.move(to: CGPoint(x: 0, y: 0))
@@ -81,16 +81,12 @@ struct TimeLineView: View {
         ForEach(0 ..< viewModel.locations.biographyLocations.count){ i in
           let location = viewModel.locations.biographyLocations[i]
           Button {
-            DispatchQueue.main.async {
               viewModel.selectedLocation = location
               viewModel.showDetail = ActiveStatus.active
-            }
           } label: {
             
             switch i{
-            case _ where i == 0:
-              StartingLocationCell(viewModel: viewModel, location: location)
-            case _ where i >= viewModel.locations.biographyLocations.count-1:
+            case _ where i == 0 || i >= viewModel.locations.biographyLocations.count-1:
               StartingLocationCell(viewModel: viewModel, location: location)
             case _ where i % 2 == 0:
               LeadingLocationCell(viewModel: viewModel, location: location)
@@ -101,17 +97,14 @@ struct TimeLineView: View {
             }
           }
           if i < viewModel.locations.biographyLocations.count-1{
-            Triangle()
+            ConnectingLine()
               .stroke(.secondary, style: StrokeStyle(lineWidth: 3, lineCap:.round, lineJoin: .round, dash: [10], dashPhase: 1))
                 .frame(width: 3, height: 90)
           }
         }
       }
     }
-    
-    //.preferredColorScheme(.light)
     .padding()
-    //.foregroundColor(.primary)
     .accentColor(.white)
     
   }
