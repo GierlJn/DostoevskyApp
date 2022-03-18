@@ -42,12 +42,13 @@ struct DMapview: View{
       }
       
       VStack{
-          Image("sign1")
+          Image("sign")
             .resizable()
             .scaledToFit()
             .frame(width: 150, height: 80)
             .padding()
-            .multicolorGlow()
+            .shadow(radius: 12)
+            .shadow(radius: 12)
             
         Spacer()
       }
