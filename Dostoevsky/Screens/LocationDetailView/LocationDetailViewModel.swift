@@ -45,7 +45,6 @@ class LocationDetailViewModel: ObservableObject{
   }
   
   func favoriteButtonTapped(){
-    //appStateViewModel.updateFavoriteIds(location: selectedLocation, newStatus: isFavorite)
     PersistanceManager.updateWith(favoriteId: selectedLocation.name.en, actionType: isFavorite ? .remove : .add) { result in
       switch result{
       case .success(_):

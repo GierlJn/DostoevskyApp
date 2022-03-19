@@ -7,8 +7,4 @@
 
 import SwiftUI
 
-enum FilterOptions{
-  case all, beforeExile, afterExile, crime, humililated
-  
-
-}
+enum FilterOptions{ case all, beforeExile, afterExile, crime, humililated }

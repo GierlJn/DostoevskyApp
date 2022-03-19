@@ -57,15 +57,14 @@ class AppState: ObservableObject{
   func updateRatingForSelectedLocation(selectedLocation: DLocation, rating: Rating){
     ratings.removeAll { $0.id == rating.id}
     ratings.append(rating)
-    CloudKitManager.shared.fetchRecordN(with: selectedLocation.id) { [self] result in
+    CloudKitManager.shared.fetchRecordN(with: selectedLocation.id) { result in
       switch result{
       case .success(let record):
         record["rating"] = rating.rating
         CloudKitManager.shared.save(record: record) { result in
           DispatchQueue.main.async {
-            //disableRating = false
             switch result{
-            case .success(let record):
+            case .success(_):
               print("saved successfully ")
             case .failure(let error):
               print(error)
@@ -84,7 +83,7 @@ class AppState: ObservableObject{
     self.locations = Bundle.main.decode([DLocation].self, from: "locations.json")
     CloudKitManager.shared.getLocationRatings { [self] result in
       DispatchQueue.main.async {
-        isLoadingData = false
+        self.isLoadingData = false
         switch(result){
         case .success(let ratings):
           self.ratings = ratings

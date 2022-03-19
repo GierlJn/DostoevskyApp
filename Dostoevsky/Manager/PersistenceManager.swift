@@ -38,17 +38,17 @@ enum PersistanceManager{
                         return
                     }
                     oldFavorites.append(favoriteId)
-                    save(favoriteIds: oldFavorites)
+                    var _ = save(favoriteIds: oldFavorites)
                     completed(.success(oldFavorites))
                 case .remove:
                     oldFavorites.removeAll { loc in
                         loc == favoriteId
                     }
-                    save(favoriteIds: oldFavorites)
+                    var _ = save(favoriteIds: oldFavorites)
                     completed(.success(oldFavorites))
                 }
                 
-            case .failure(let error):
+            case .failure(_):
                 completed(.failure(DError.alreadyInFavorites))
             }
         }
