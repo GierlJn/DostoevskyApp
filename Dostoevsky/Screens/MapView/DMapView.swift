@@ -41,17 +41,17 @@ struct DMapview: View{
         }
       }
       
-      VStack{
-          Image("sign")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 150, height: 80)
-            .padding()
-            .shadow(radius: 12)
-            .shadow(radius: 12)
-            
-        Spacer()
-      }
+//      VStack{
+//          Image("sign")
+//            .resizable()
+//            .scaledToFit()
+//            .frame(width: 150, height: 80)
+//            .padding()
+//            .shadow(radius: 12)
+//            .shadow(radius: 12)
+//
+//        Spacer()
+//      }
     }
 
     .overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)
