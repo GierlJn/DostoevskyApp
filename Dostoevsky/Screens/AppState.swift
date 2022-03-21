@@ -51,7 +51,6 @@ class AppState: ObservableObject{
       return Rating(record: MockData.createMockRecord())
     }
     return rating!
-    
   }
   
   func updateRatingForSelectedLocation(selectedLocation: DLocation, rating: Rating){

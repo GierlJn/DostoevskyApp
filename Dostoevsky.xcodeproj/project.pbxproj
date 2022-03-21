@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B904B95C27CC046800646CEE /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B904B95B27CC046800646CEE /* PersistenceManager.swift */; };
+		B90CD22A27E8D79800772259 /* AnimatedListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90CD22927E8D79800772259 /* AnimatedListButton.swift */; };
 		B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641DF27C7C79C0026C4D7 /* LoadingView.swift */; };
 		B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91641E127C7D6FE0026C4D7 /* DismissButton.swift */; };
 		B928219A27C9270900000E3B /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B928219927C9270900000E3B /* Color+Ext.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		B904B95B27CC046800646CEE /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		B90CD22927E8D79800772259 /* AnimatedListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedListButton.swift; sourceTree = "<group>"; };
 		B91641DF27C7C79C0026C4D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B91641E127C7D6FE0026C4D7 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		B928219927C9270900000E3B /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				B91641DF27C7C79C0026C4D7 /* LoadingView.swift */,
 				B91641E127C7D6FE0026C4D7 /* DismissButton.swift */,
 				B9A5D9A327E259E5006C417A /* GradientButtonStyle.swift */,
+				B90CD22927E8D79800772259 /* AnimatedListButton.swift */,
 			);
 			path = UtilityViews;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				B9DF3C9926DD62D40052B466 /* MainListView.swift in Sources */,
 				B966ED5727D9ED1700156F42 /* TrailingLocationCell.swift in Sources */,
 				B96CFDAB27D383B300A42152 /* LocationDetailViewModel.swift in Sources */,
+				B90CD22A27E8D79800772259 /* AnimatedListButton.swift in Sources */,
 				B9C1B52927DF78EF00C0A91D /* SKStoreReviewController+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

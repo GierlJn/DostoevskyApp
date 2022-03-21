@@ -10,7 +10,7 @@ import SwiftUI
 struct AppTabView: View {
   
   @EnvironmentObject var viewModel: AppState
-  
+  @State var buttonPressed = false
   var body: some View {
     TabView{
       Group{
@@ -24,14 +24,16 @@ struct AppTabView: View {
         LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
       )
       .overlay(alignment: .bottomTrailing) {
+        
         Button {
-          viewModel.showCompatListVIew.toggle()
+          withAnimation(.interpolatingSpring(stiffness: 300, damping: 15)){
+            viewModel.showCompatListVIew.toggle()
+          }
         } label: {
-          Image(systemName: "list.bullet.rectangle.fill")
-            .resizable()
-            .frame(width: 20, height: 20 )
+
+          AnimatedListButton(isPressed: $viewModel.showCompatListVIew)
+
         }
-        .buttonStyle(GradientButtonStyle())
         .padding()
       }
       .tabItem {
