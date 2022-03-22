@@ -21,21 +21,22 @@ struct AppTabView: View {
             TimeLineView()
           }
         }
-        Button {
-          viewModel.showCompatListVIew.toggle()
-          withAnimation(.interpolatingSpring(stiffness: 300, damping: 15)){
-            buttonPressed.toggle()
-          }
-        } label: {
-          VStack{
+        VStack{
+          Spacer()
+          HStack{
             Spacer()
-            HStack{
-              Spacer()
-              AnimatedListButton(isRotating: $buttonPressed, isHidden: $buttonPressed)
+            Button {
+              viewModel.showCompatListVIew.toggle()
+              withAnimation(.interpolatingSpring(stiffness: 300, damping: 15)){
+                buttonPressed.toggle()
+              }
+            } label: {
+              
+                  AnimatedListButton(isRotating: $buttonPressed, isHidden: $buttonPressed)
             }
-          }
-        }
-        .padding()
+            .padding()
+          }}
+        
       }
       .background(
         LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)

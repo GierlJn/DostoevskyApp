@@ -34,6 +34,16 @@ class DostoevskyUITests: XCTestCase {
   
   func testMapScreenShot() throws{
     
+    
+    let app = XCUIApplication()
+    let button = app.scrollViews.otherElements.buttons["2, Серапинская гостиница, Май 1837"]
+    button.tap()
+    
+    let element = app.tables.cells["2, Серапинская гостиница, Май 1837"].children(matching: .other).element(boundBy: 0).children(matching: .other).element
+    element.tap()
+    button.tap()
+    button.tap()
+    element.tap()
     let app = XCUIApplication()
     app.scrollViews.otherElements.buttons["2, Serapinskaya Hotel, May 1837"].tap()
     snapshot("01")
@@ -44,6 +54,7 @@ class DostoevskyUITests: XCTestCase {
     snapshot("03")
     tabBar.buttons["Map"].tap()
     snapshot("04")
+    
     
   }
   
