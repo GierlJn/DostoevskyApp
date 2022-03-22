@@ -13,29 +13,33 @@ struct AppTabView: View {
   @State var buttonPressed = false
   var body: some View {
     TabView{
-      Group{
-        if viewModel.showCompatListVIew{
-          MainListView()
-        }else{
-          TimeLineView()
+      ZStack{
+        Group{
+          if viewModel.showCompatListVIew{
+            MainListView()
+          }else{
+            TimeLineView()
+          }
         }
+        Button {
+          viewModel.showCompatListVIew.toggle()
+          withAnimation(.interpolatingSpring(stiffness: 300, damping: 15)){
+            buttonPressed.toggle()
+          }
+        } label: {
+          VStack{
+            Spacer()
+            HStack{
+              Spacer()
+              AnimatedListButton(isRotating: $buttonPressed, isHidden: $buttonPressed)
+            }
+          }
+        }
+        .padding()
       }
       .background(
         LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
       )
-      .overlay(alignment: .bottomTrailing) {
-        
-        Button {
-          withAnimation(.interpolatingSpring(stiffness: 300, damping: 15)){
-            viewModel.showCompatListVIew.toggle()
-          }
-        } label: {
-
-          AnimatedListButton(isPressed: $viewModel.showCompatListVIew)
-
-        }
-        .padding()
-      }
       .tabItem {
         Label("Biography", systemImage: "building")
       }
