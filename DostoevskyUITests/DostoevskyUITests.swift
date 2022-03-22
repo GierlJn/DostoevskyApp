@@ -7,9 +7,15 @@
 
 import XCTest
 
+
+
+
 class DostoevskyUITests: XCTestCase {
   
-  
+    
+  func isRussian() -> Bool {
+    return NSLocale.preferredLanguages[0].range(of:"ru") != nil
+  }
   override func setUp() {
     super.setUp()
     let app = XCUIApplication()
@@ -33,30 +39,16 @@ class DostoevskyUITests: XCTestCase {
   
   
   func testMapScreenShot() throws{
-    
-    
-    let app = XCUIApplication()
-    let button = app.scrollViews.otherElements.buttons["2, Серапинская гостиница, Май 1837"]
-    button.tap()
-    
-    let element = app.tables.cells["2, Серапинская гостиница, Май 1837"].children(matching: .other).element(boundBy: 0).children(matching: .other).element
-    element.tap()
-    button.tap()
-    button.tap()
-    element.tap()
-    let app = XCUIApplication()
-    app.scrollViews.otherElements.buttons["2, Serapinskaya Hotel, May 1837"].tap()
-    snapshot("01")
-    app.buttons["Close"].tap()
-    snapshot("02")
-    let tabBar = app.tabBars["Tab Bar"]
-    tabBar.buttons["Books"].tap()
-    snapshot("03")
-    tabBar.buttons["Map"].tap()
-    snapshot("04")
-    
-    
+      let app = XCUIApplication()
+      app.scrollViews.otherElements.buttons.firstMatch.tap()
+      snapshot("01")
+      app.buttons[AccessibilityIdentifier.dismissButton].tap()
+      snapshot("02")
+      app.buttons[AccessibilityIdentifier.books].tap()
+      snapshot("03")
+      app.buttons[AccessibilityIdentifier.map].tap()
+      snapshot("04")
   }
-  
-  
 }
+
+

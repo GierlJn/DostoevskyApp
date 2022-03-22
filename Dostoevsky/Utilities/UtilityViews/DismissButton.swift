@@ -10,7 +10,7 @@ struct XDismissButton: View {
                 .foregroundColor(.white)
                 .imageScale(.small)
                 .frame(width: 44, height: 44)
-        }
+        }.accessibilityIdentifier(AccessibilityIdentifier.dismissButton)
     }
 }
 

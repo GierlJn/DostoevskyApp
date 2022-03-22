@@ -48,6 +48,7 @@ struct AppTabView: View {
       BookOverViewList()
         .tabItem {
           Label("Books", systemImage: "book")
+            .accessibilityIdentifier(AccessibilityIdentifier.books)
         }
       
       DMapview()
@@ -56,6 +57,7 @@ struct AppTabView: View {
         )
         .tabItem {
           Label("Map", systemImage: "map")
+            .accessibilityIdentifier(AccessibilityIdentifier.map)
         }
       AboutView()
         .tabItem {
@@ -63,7 +65,9 @@ struct AppTabView: View {
         }
       
       
-    }.onAppear{
+    }
+    .accessibilityIdentifier(AccessibilityIdentifier.tabBar)
+    .onAppear{
       if(viewModel.locations.isEmpty){
         viewModel.setup()
       }
