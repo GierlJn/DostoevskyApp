@@ -53,6 +53,9 @@ struct DMapview: View{
 //        Spacer()
 //      }
     }
+    .onAppear{
+      mapViewModel.checkIfLocationServicesIsEnabled()
+    }
 
     .overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)
     .edgesIgnoringSafeArea([.top, .leading, .trailing])
