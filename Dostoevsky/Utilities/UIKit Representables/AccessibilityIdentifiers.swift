@@ -12,4 +12,5 @@ public struct AccessibilityIdentifier{
   static let  tabBar = "tabBar"
   static let  map = "map"
   static let books = "books"
+  static let exploreButton = "explore"
 }

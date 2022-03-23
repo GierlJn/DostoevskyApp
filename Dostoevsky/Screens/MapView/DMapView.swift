@@ -54,7 +54,9 @@ struct DMapview: View{
 //      }
     }
     .onAppear{
-      mapViewModel.checkIfLocationServicesIsEnabled()
+      if !CommandLine.arguments.contains("--UITests") {
+        mapViewModel.checkIfLocationServicesIsEnabled()
+      }
     }
 
     .overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)

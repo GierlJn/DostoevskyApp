@@ -31,11 +31,12 @@ struct OnBoardView: View {
           .minimumScaleFactor(0.7)
           .offset(x: 0, y: offset)
         
+        if !CommandLine.arguments.contains("--UITests") {
         Text("Fyodor Mikhailovich Dostoyevsky lived in the city about 28 years in total. His characters inhabit the streets of the city and come to life on the pages of his books.")
           .foregroundColor(.white)
           .padding()
           .opacity(animatedOpacity)
-        
+        }
         Button(action: {
           appState.showsOnboard = false
         }, label: {
@@ -48,6 +49,7 @@ struct OnBoardView: View {
                 .foregroundColor(.white)
             }
         })
+        .accessibilityIdentifier(AccessibilityIdentifier.exploreButton)
           .accentColor(.black)
           .padding(.top)
           .opacity(animatedOpacity)
@@ -57,13 +59,18 @@ struct OnBoardView: View {
       .padding()
     }
     .onAppear(perform: {
+      
+      if CommandLine.arguments.contains("--UITests") {
+        offset = 0
+        animatedOpacity = 1
+      }else{
       withAnimation(.linear(duration: 0.5).delay(3)) {
         offset = 0
       }
       withAnimation(.linear(duration: 1).delay(4)) {
         animatedOpacity = 1
       }
-      
+      }
     })
     .background {
       OnBoardImagesView()

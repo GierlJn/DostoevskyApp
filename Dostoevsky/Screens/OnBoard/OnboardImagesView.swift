@@ -38,9 +38,15 @@ struct OnBoardImagesView: View {
       mockImages = locations.map({ location in
         UIImage(named: location.imageList.first!) ?? PlaceholderImage.banner
       })
-      withAnimation(.easeIn(duration: 0.5).delay(3)) {
-        offset = 0
+      
+      if CommandLine.arguments.contains("--UITests") {
+        offset = 0}
+      else{
+        withAnimation(.easeIn(duration: 0.5).delay(3)) {
+          offset = 0
+        }
       }
+      
     }
     
     
