@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 class DMapViewModel: NSObject, ObservableObject{
-  @Published var filter: FilterOptions = .afterExile
+  @Published var filter: FilterOptions = .beforeExile
   @Published var alertItem: AlertItem?
   var deviceLocationManager: CLLocationManager?
   

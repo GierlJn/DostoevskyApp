@@ -29,7 +29,7 @@ extension Collection where Element == String{
 
 class AppState: ObservableObject{
   
-  @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.933181, longitude: 30.338418), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+  @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.933181, longitude: 30.338418), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
   @Published var showDetail: ActiveStatus?
   @Published var locations = [DLocation]()
   @Published var ratings = [Rating]()

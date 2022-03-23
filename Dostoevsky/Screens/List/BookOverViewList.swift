@@ -41,8 +41,9 @@ struct BookOverViewList: View {
                   VStack{
                     book.image
                       .resizable()
-                      .frame(height: 150)
+                      .frame(height: 200)
                       .clipShape(RoundedRectangle(cornerRadius: 12))
+                      .padding(.vertical, 20)
                     
                     Text(book.localizedName)
                       .font(.title)
@@ -68,7 +69,8 @@ struct BookOverViewList: View {
         
         
       }
-      
+      .navigationBarHidden(false)
+      .navigationTitle("Books")
     }
     
     
