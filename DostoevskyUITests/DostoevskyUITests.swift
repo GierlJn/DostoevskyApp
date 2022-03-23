@@ -42,9 +42,9 @@ class DostoevskyUITests: XCTestCase {
   func testMapScreenShot() throws{
       let app = XCUIApplication()
       app.launchArguments.append("--UITests")
-        
-      app.buttons[AccessibilityIdentifier.exploreButton].tap()
       snapshot("00main")
+      app.buttons[AccessibilityIdentifier.exploreButton].tap()
+      
       app.scrollViews.otherElements.buttons.firstMatch.tap()
       snapshot("01")
       app.buttons[AccessibilityIdentifier.dismissButton].tap()
