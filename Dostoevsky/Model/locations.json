@@ -513,6 +513,513 @@
          }
     },
     {
+    "id": 22,
+    "name": {
+            "en": "Kostromskaya Ulitsa",
+            "ru": "Костромская улица"
+          },
+    "category": 2,
+    "description": {
+            "en": "The first time he visited the apartment of his second wife Anna Grigoryevna Snitkina: «And I’ve been looking for you since seven o’clock. I went around the neighborhood and asked everybody. Everyone knows that there is a Kostromskaya street here, but they can’t tell you how to get into it.»",
+            "ru": "Первый раз посетил квартиру своей будущей жены Анной Григорьевной Сниткиной: «А я ведь ищу вас с семи часов, объехал окрестности и всех расспрашивал. Все знают, что тут имеется Костромская улица, а как в нее попасть — указать не могут». Сам дом располагался в конце Слонового проспекта (ныне Суворовского), поблизости от Николаевского госпиталя."
+          },
+    "imageList": [
+            "220"
+          ],
+    "location": "55.886887, 37.595016",
+    "address": {
+            "en": "Kostromskaya Ulitsa",
+            "ru": "Костромская улица"
+          },
+    "date": {
+           "en": "November 1866",
+           "ru": "Ноября 1866"
+         }
+    },
+    {
+    "id": 23,
+    "name": {
+            "en": "Adam House",
+            "ru": "Дом Державина/Кукановых/Адама"
+          },
+    "category": 2,
+    "description": {
+            "en": "The Dostoevskys visited their close literary friend Apollon Nikolayevich Maykov in his apartments, for example, according to the memoirs of Annd Dostoevskaya: «In the evening of this day, we were invited to spend the evening with the Maykovs. Knowing this, our guests left immediately after dinner.»",
+            "ru": "Достоевские посещали близкого друга-литератора Аполлон Николаевича Майкова в его салоне, например, по воспоминаниям Достоевской: «Вечером этого дня мы были званы к Майковым провести вечер. Зная это, наши гости ушли тотчас после обеда.»"
+          },
+    "imageList": [
+            "230"
+          ],
+    "location": "59.924041, 30.310676",
+    "address": {
+            "en": "Sadovaya Street, 51",
+            "ru": "Садовая улица, 51"
+          },
+    "date": {
+           "en": "1860",
+           "ru": "1860"
+         }
+    },
+    {
+    "id": 24,
+    "name": {
+            "en": "Schirmer House",
+            "ru": "Дом Ширмера"
+          },
+    "category": 2,
+    "description": {
+            "en": "Rented a five-room apartment on the second floor before his second marriage. After that he went abroad.",
+            "ru": "Снимал пятикомнатную квартиру на втором этаже перед свадьбой со второй женой, после чего уехал за границу."
+          },
+    "imageList": [
+            "240"
+          ],
+    "location": "59.925867, 30.307837",
+    "address": {
+            "en": "Voznesensky Avenue, 27",
+            "ru": "Вознесенский проспект, 27"
+          },
+    "date": {
+           "en": "21 January – 14 April 1867",
+           "ru": "21 января – 14 апреля 1867."
+         }
+    },
+    {
+    "id": 25,
+    "name": {
+            "en": "Trinity Cathedral",
+            "ru": "Троице-Измайловский собор"
+          },
+    "category": 2,
+    "description": {
+            "en": "He married here on the same day of his release from the Omsk prison camp.",
+            "ru": "Венчался (со второй женой Анной Григорьевной Сниткиной) в дату освобождения из Омского острога."
+          },
+    "imageList": [
+            "250"
+          ],
+    "location": "59.916451, 30.305825",
+    "address": {
+            "en": "Izmaylovskiy Prospekt, 7A",
+            "ru": "Измайловский проспект, 7а"
+          },
+    "date": {
+           "en": "15 February 1867",
+           "ru": "15 февраля 1867"
+         }
+    },
+    {
+    "id": 26,
+    "name": {
+            "en": "Volkov Hotel",
+            "ru": "Дом Волкова"
+          },
+    "category": 2,
+    "description": {
+            "en": "According to the memoirs of Anna Grigorievna Dostoevskaya, after returning from abroad «we stayed at a hotel on the Bolshaya Konyushennaya, but only for two days. It was inconvenient and expensive».",
+            "ru": "По воспоминаниям Анны Григорьевны Достоевской, после возвращения из-за границы: «остановились в гостинице на Большой Конюшенной, но прожили там всего два дня. Оставаться в ней было неудобно, да и не по средствам»."
+          },
+    "imageList": [
+            "260"
+          ],
+    "location": "59.937927, 30.322219",
+    "address": {
+            "en": "Bolshaya Konyushennaya Street, 23",
+            "ru": "Большая Конюшенная улица, 23"
+          },
+    "date": {
+           "en": "8–9 July 1871",
+           "ru": "8–9 июля 1871"
+         }
+    },
+    {
+    "id": 27,
+    "name": {
+            "en": "Demut Hotel",
+            "ru": "Дом Воронина, гостиница «Демут»"
+          },
+    "category": 2,
+    "description": {
+            "en": "The hotel’s address is unknown to the biographers, but probably Dostoevskys could live here for two days after returning from abroad.",
+            "ru": "Адрес отеля не известен биографам писателя, но, вероятно, Достоевские могли здесь прожить два дня после возвращения из-за границы."
+          },
+    "imageList": [
+            "270"
+          ],
+    "location": "59.937003, 30.322372",
+    "address": {
+            "en": "Bolshaya Konyushennaya Street, 23",
+            "ru": "Большая Конюшенная улица, 23"
+          },
+    "date": {
+           "en": "8–9 July 1871",
+           "ru": "8–9 июля 1871"
+         }
+    },
+    {
+    "id": 28,
+    "name": {
+            "en": "Mickiewicz House",
+            "ru": "Дом Мицкевича"
+          },
+    "category": 2,
+    "description": {
+            "en": "After returning from abroad he rented two rooms where his son Fyodor was born.",
+            "ru": "По возвращению из-за границы занял две меблированные комнаты, где родился сын Федор."
+          },
+    "imageList": [
+            "280"
+          ],
+    "location": "59.924528, 30.311026",
+    "address": {
+            "en": "Prospekt Rimskogo-Korsakova, 39",
+            "ru": "Проспект Римского-Корсакова, 3"
+          },
+    "date": {
+           "en": "10 July – 22 August 1871",
+           "ru": "10 июля – 22 августа 1871"
+         }
+    },
+    {
+    "id": 29,
+    "name": {
+            "en": "Arkhangelsk House",
+            "ru": "Дом Архангельской"
+          },
+    "category": 2,
+    "description": {
+            "en": "Lived here before leaving for the summer to Staraya Russa. He posed here for the famous portrait by the painter Perov.",
+            "ru": "Жил здесь до отъезда на лето в Старую Руссу. Здесь же писатель позировал художнику Перову для знаменитого портрета."
+          },
+    "imageList": [
+            "290",
+            "291"
+          ],
+    "location": "59.915937, 30.322255",
+    "address": {
+            "en": "Serpukhovskaya Ulitsa, 11",
+            "ru": "Проспект Римского-Корсакова, 3"
+          },
+    "date": {
+           "en": "22 August 1871 – 15 May 1872",
+           "ru": "22 августа 1871 – 15 мая 1872"
+         }
+    },
+    {
+    "id": 30,
+    "name": {
+            "en": "Maximilianovsky Hospital",
+            "ru": "Максимилиановская лечебница"
+          },
+    "category": 2,
+    "description": {
+            "en": "Returned from Staraya Russa, because of a broken arm of his three-year-old daughter Lyuba. He lived in the hospital’s inn with his wife for two days.",
+            "ru": "Вернулся из Старой Руссы из-за перелома руки трехлетней дочки Любы. Прожил с женой двое суток на постоялом дворе при лечебнице (на углу переулка Пирогова и Вознесенского проспекта)."
+          },
+    "imageList": [
+            "300"
+          ],
+    "location": "59.929290, 30.307388",
+    "address": {
+            "en": "Ulitsa Dekabristov, 1",
+            "ru": "Улица Декабристов, 1–3"
+          },
+    "date": {
+           "en": "24–26 May 1872",
+           "ru": "24-26 Мая 1872"
+         }
+    },
+    {
+    "id": 31,
+    "name": {
+            "en": "Mebes House",
+            "ru": "Дом Мёбес"
+          },
+    "category": 2,
+    "description": {
+            "en": "Finished the novel «Demons» and started editing «The Citizen» magazine. The room was on the second floor of an inside outbuilding which has not been preserved.",
+            "ru": "Закончил работу над романом «Бесы», начал редактировать журнал «Гражданин». Квартира была во внутреннем флигеле на втором этаже."
+          },
+    "imageList": [
+            "310"
+          ],
+    "location": "59.915102, 30.311727",
+    "address": {
+            "en": "2-ya Krasnoarmeyskaya Ulitsa, 14",
+            "ru": "2-я Красноармейская улица, 14"
+          },
+    "date": {
+           "en": "August 1872 – March 1873",
+           "ru": "Августа 1872 – Март 1873"
+         }
+    },
+    {
+    "id": 32,
+    "name": {
+            "en": "Slivchansky House",
+            "ru": "Дом Сливчанского"
+          },
+    "category": 2,
+    "description": {
+            "en": "Moved to a place closer to the publishing house of «The Citizen» magazine, started working on the novel «The Adolescent». He didn’t like the owner of the house and the noise on the street.",
+            "ru": "Переехал, чтобы жить поближе к редакции журнала «Гражданин», начал работу над «Подростком». Не нравился хозяин дома и шум на улице."
+          },
+    "imageList": [
+            "320"
+          ],
+    "location": "59.934461, 30.362661",
+    "address": {
+            "en": "Ligovsky Avenue, 25",
+            "ru": "Лиговский проспект, 25"
+          },
+    "date": {
+           "en": "March 1873 – May 1874",
+           "ru": "Март 1873 – май 1874"
+         }
+    },
+    {
+    "id": 33,
+    "name": {
+            "en": "«The Citizen» magazine",
+            "ru": "Редакция и типография журнала «Гражданин»"
+          },
+    "category": 2,
+    "description": {
+            "en": "Was an editor and wrote a weekly political review column, published essays «A Writer’s Diary».",
+            "ru": "Занимал пост редактора и вел еженедельное политическое обозрение, публиковал «Дневник писателя»."
+          },
+    "imageList": [
+            "330"
+          ],
+    "location": "59.931260, 30.357379",
+    "address": {
+            "en": "Nevsky Avenue, 77",
+            "ru": "Невский проспект, 77"
+          },
+    "date": {
+           "en": "1873 – April 1874",
+           "ru": "1873 – апрель 1874"
+         }
+    },
+    {
+    "id": 34,
+    "name": {
+            "en": "Former guardhouse",
+            "ru": "Бывшая гауптвахта"
+          },
+    "category": 2,
+    "description": {
+            "en": "Spent two days under arrest in military prison due to violation of censorship as an editor in «The Citizen» magazine.",
+            "ru": "Занимал пост редактора и вел еженедельное политическое обозрение, публиковал «Дневник писателя»."
+          },
+    "imageList": [
+            "340"
+          ],
+    "location": "59.927649, 30.319237",
+    "address": {
+            "en": "Sadovaya Street, 37",
+            "ru": "Садовая улица, 37"
+          },
+    "date": {
+           "en": "21–23 March 1874",
+           "ru": "21–23 марта 1874"
+         }
+    },
+    {
+    "id": 35,
+    "name": {
+            "en": "Dagmar Hotel",
+            "ru": "Гостиница «Дагмар»"
+          },
+    "category": 2,
+    "description": {
+            "en": "Stopped once on the way from Staraya Russa to Bad Ems. The hotel and the room turned out to be «the worst».",
+            "ru": "Останавливался один раз по дороге из Старой Руссы в Бад-Эмс. Отель и комната оказались «сквернейшими»."
+          },
+    "imageList": [
+            "350"
+          ],
+    "location": "59.932734, 30.349609",
+    "address": {
+            "en": "Nevsky Avenue, 82/7",
+            "ru": "Невский проспект, 82/7"
+          },
+    "date": {
+           "en": "5–7 June 1875",
+           "ru": "5–7 июня 1875"
+         }
+    },
+    {
+    "id": 36,
+    "name": {
+            "en": "Znamenskaya Hotel",
+            "ru": "Гостиница «Знаменская»"
+          },
+    "category": 2,
+    "description": {
+            "en": "He stayed at the «Znamenskaya» hotel several times: from 5 to 16 February 1875, where he corrected the first part of the novel «The Adolescent», then 12–15 May 1875 and 6–9 July 1875, while returning from Ems. Then 9–11 August, 1876, where he suffered an epileptic. And passed by on the night of 19–20 July 1879.",
+            "ru": "Останавливался в «Знаменской» гостинице несколько раз: с 5 по 16 февраля 1875, где корректировал первую часть романа «Подросток», затем 12–15 мая 1875 и 6–9 июля 1875, возвращаясь из Эмса. Потом 9–11 августа 1876, где случился эпилептический припадок. И останавливался проездом в ночь с 19 на 20 июля 1879."
+          },
+    "imageList": [
+            "360"
+          ],
+    "location": "59.931544, 30.362545",
+    "address": {
+            "en": "Nevsky Avenue, 118",
+            "ru": "Невский проспект, 118"
+          },
+    "date": {
+           "en": "1875",
+           "ru": "1875"
+         }
+    },
+    {
+    "id": 37,
+    "name": {
+            "en": "Strubinsky House",
+            "ru": "Дом Струбинского"
+          },
+    "category": 2,
+    "description": {
+            "en": "The apartment was on the third floor with an entrance from the backyard. Finished the novel «The Adolescent», moved out after the death of his younger son.",
+            "ru": "Квартира находилась на третьем этаже с входом со двора. Тут закончил «Подростка», съехал после смерти младшего сына."
+          },
+    "imageList": [
+            "370"
+          ],
+    "location": "59.935994, 30.366686",
+    "address": {
+            "en": "Grecheskiy Prospekt, 6",
+            "ru": "Греческий проспект, 6"
+          },
+    "date": {
+           "en": "20 September 1875 – May 1878",
+           "ru": "20 сентября 1875 – май 1878"
+         }
+    },
+    {
+    "id": 38,
+    "name": {
+            "en": "Duke of Oldenburg Hospital",
+            "ru": "Больница принца Ольденбургского"
+          },
+    "category": 2,
+    "description": {
+            "en": "The hospital was on Dostoevsky’s route during his hour-long evening walks when he lived with his family in the «Peski» district.",
+            "ru": "Больница была на маршруте Достоевского во время его часовых вечерних прогулок, когда он жил с семьей на Песках. Там он часто встречал лиц, которые «выпрашивали у прохожих деньги на похороны будто бы умерших в детской больнице своих племянников или детей»."
+          },
+    "imageList": [
+            "380"
+          ],
+    "location": "59.934420, 30.363973",
+    "address": {
+            "en": "Ligovsky Avenue, 8",
+            "ru": "Лиговский проспоспект, 8"
+          },
+    "date": {
+           "en": "1876–1877",
+           "ru": "1876–1877"
+         }
+    },
+    {
+    "id": 39,
+    "name": {
+            "en": "Bezobrazov House",
+            "ru": "Дом Безобразовых"
+          },
+    "category": 2,
+    "description": {
+            "en": "In the last years of his life, Dostoevsky attended «Friday readings» at the apartment of the poet Yakov Petrovich Polonsky.",
+            "ru": "В последние годы жизни Достоевский бывал на «пятничных чтениях» на квартире поэта Якова Петровича Полонского."
+          },
+    "imageList": [
+            "390"
+          ],
+    "location": "59.939915, 30.342099",
+    "address": {
+            "en": "Fontanka river embankment, 24",
+            "ru": "Набережная реки Фонтанки, 24"
+          },
+    "date": {
+           "en": "1879–1880",
+           "ru": "1879–1880"
+         }
+    },
+    {
+    "id": 40,
+    "name": {
+            "en": "Dostoevsky Museum",
+            "ru": "Дом Клинкстрем"
+          },
+    "category": 2,
+    "description": {
+            "en": "Dostoevsky had rented an apartment in this building twice, once for a very short time in 1846, and then from October 1878 until his death on February 9th 1881. Here he wrote his last novel «The Brothers Karamazov».",
+            "ru": "Здание сменило владельца, когда писатель жил в нем во второй раз до самой смерти (28 января по старому стилю). Окна новой квартиры выходили на Кузнечный переулок, сейчас там располагается литературно-мемориальный музей-квартира писателя. Написал свой последний роман «Братья Карамазовы»."
+          },
+    "imageList": [
+            "400",
+            "401",
+            "402"
+          ],
+    "location": "59.927310, 30.350840",
+    "address": {
+            "en": "Kuznechnyy Pereulok, 5/2",
+            "ru": "Кузнечный переулок, 5/2"
+          },
+    "date": {
+           "en": "1878 - 9th February 1881",
+           "ru": "5 октября 1878 – 9 февраля 1881"
+         }
+    },
+    {
+    "id": 41,
+    "name": {
+            "en": "Grave",
+            "ru": "Могила"
+          },
+    "category": 2,
+    "description": {
+            "en": "Dostoevsky was buried February 14th (February 1st by the Old Style date) 1881 in the Tikhvin Cemetery. His tombstone is inscribed with lines from the New Testament: Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it dies, it bringeth forth much fruit. – John 12:24.",
+            "ru": "Похоронен 14 февраля (1 февраля по старому стилю) 1881 на Тихвинском кладбище. В эпитафии на надгробии приведены слова из Евангелия от Иоанна: «Истинно, истинно говорю вам: если пшеничное зерно, пав в землю, не умрет, то останется одно; а если умрет, то принесет много плода»."
+          },
+    "imageList": [
+            "410"
+          ],
+    "location": "59.922765, 30.386116",
+    "address": {
+            "en": "Tikhvin Cemetery",
+            "ru": "Тихвинское кладбище"
+          },
+    "date": {
+           "en": "February 14th 1881",
+           "ru": "14 февраля 1881"
+         }
+    },
+    {
+    "id": 42,
+    "name": {
+            "en": "Dostoevsky’s monument",
+            "ru": "Памятник"
+          },
+    "category": 2,
+    "description": {
+            "en": "The monument was opened in 1997.",
+            "ru": "Памятник Достоевскому был установлен 30 мая 1997 г. Каждую первую субботу июля рядом с памятником открываются Дни Достоевского в Санкт-Петербурге."
+          },
+    "imageList": [
+            "420"
+          ],
+    "location": "59.927302, 30.347513",
+    "address": {
+            "en": "Boulevard of Bol’shaya Moskovskaya Ulitsa",
+            "ru": "Бульвар Большой Московской улицы"
+          },
+    "date": {
+           "en": "1997",
+           "ru": "1997"
+         }
+    },
+    {
     "id": 43,
     "name": {
             "en": "Shestilavochnaya ulitsa",
