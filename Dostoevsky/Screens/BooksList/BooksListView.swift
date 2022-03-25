@@ -11,10 +11,12 @@ import SwiftUI
 
 struct BooksListView: View {
   
+  @StateObject var bookListViewModel = BookListViewModel()
   @EnvironmentObject var viewModel: AppState
   @State var categories = Categories.allCases
   @State var sortSettings = SortType.date
   @State var book: Book
+  
   
   var body: some View {
     VStack{
@@ -31,7 +33,7 @@ struct BooksListView: View {
             }
           }
         }){
-          ForEach(sortLocations(locations: viewModel.locations.novelFilteredLocations(for: book.en), sortType: sortSettings), id: (\.self)){ location in
+          ForEach(bookListViewModel.sortLocations(locations: viewModel.locations.novelFilteredLocations(for: book.en), sortType: sortSettings, appState: viewModel), id: (\.self)){ location in
             Button {
               DispatchQueue.main.async {
                 viewModel.selectedLocation = location
@@ -53,28 +55,9 @@ struct BooksListView: View {
     .navigationBarTitleDisplayMode(.inline)
     
   }
-  
-  func sortLocations(locations: [DLocation], sortType: SortType)->[DLocation]{
-    switch sortType{
-    case .date:
-      return locations.sorted(by: { $0.id < $1.id })
-    case .rating:
-      return locations.sorted(by: { viewModel.getRatingForLocation(location: $0).rating > viewModel.getRatingForLocation(location: $1).rating })
-    case .favorite:
-      return locations.sorted(by: { (item1, item2) -> Bool in
-        var check1: Int = 0
-        var check2: Int = 0
-        if item1.isFavorite == true {
-          check1 = 1
-        }
-        if item2.isFavorite == true {
-          check2 = 1
-        }
-        return check1 > check2
-      }
-    )}
-  }
+
 }
+
 
 
 

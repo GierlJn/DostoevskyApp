@@ -32,6 +32,7 @@
 		B96CFDAD27D3B37700A42152 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CFDAC27D3B37700A42152 /* Rating.swift */; };
 		B96CFDAF27D3BD9B00A42152 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */; };
 		B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FF7FE27C41C5800EC3884 /* DMapView.swift */; };
+		B993B77327EE435E008485CA /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B77227EE435E008485CA /* BookListViewModel.swift */; };
 		B99F89AD27E3A581003860C3 /* SubImageLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F89AC27E3A581003860C3 /* SubImageLabels.swift */; };
 		B99F89B027E3AA4D003860C3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B99F89B227E3AA4D003860C3 /* Localizable.strings */; };
 		B9A5D9A427E259E5006C417A /* GradientButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A5D9A327E259E5006C417A /* GradientButtonStyle.swift */; };
@@ -101,6 +102,7 @@
 		B96CFDAC27D3B37700A42152 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		B97FF7FE27C41C5800EC3884 /* DMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapView.swift; sourceTree = "<group>"; };
+		B993B77227EE435E008485CA /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
 		B99F89AC27E3A581003860C3 /* SubImageLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubImageLabels.swift; sourceTree = "<group>"; };
 		B99F89B127E3AA4D003860C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B99F89B427E3AC5A003860C3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -165,7 +167,8 @@
 				B9A5D9A227E256BD006C417A /* AboutView */,
 				B9BB567D27DF23A300B7017C /* OnBoard */,
 				B9BB567A27DE45E800B7017C /* Shared Views */,
-				B9D68BD327C7937300CB4AA9 /* List */,
+				B993B77127EE42FE008485CA /* BooksList */,
+				B9D68BD327C7937300CB4AA9 /* BioGraphyList */,
 				B92962A127C5066D00391364 /* LocationDetailView */,
 				B92962A027C5066000391364 /* MapView */,
 			);
@@ -192,6 +195,16 @@
 				B99F89AC27E3A581003860C3 /* SubImageLabels.swift */,
 			);
 			path = LocationDetailView;
+			sourceTree = "<group>";
+		};
+		B993B77127EE42FE008485CA /* BooksList */ = {
+			isa = PBXGroup;
+			children = (
+				B9DD351727DB887C00A63B4D /* BookOverViewList.swift */,
+				B9DD351927DB932D00A63B4D /* BooksListView.swift */,
+				B993B77227EE435E008485CA /* BookListViewModel.swift */,
+			);
+			path = BooksList;
 			sourceTree = "<group>";
 		};
 		B9A5D9A227E256BD006C417A /* AboutView */ = {
@@ -298,7 +311,7 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		B9D68BD327C7937300CB4AA9 /* List */ = {
+		B9D68BD327C7937300CB4AA9 /* BioGraphyList */ = {
 			isa = PBXGroup;
 			children = (
 				B9DF3C9826DD62D40052B466 /* MainListView.swift */,
@@ -308,10 +321,8 @@
 				B966ED5827D9F51A00156F42 /* StartingLocationCell.swift */,
 				B9F3413E27D9212C007E2616 /* LeadingLocationCell.swift */,
 				B966ED5A27D9FA2400156F42 /* EndingLocationCell.swift */,
-				B9DD351727DB887C00A63B4D /* BookOverViewList.swift */,
-				B9DD351927DB932D00A63B4D /* BooksListView.swift */,
 			);
-			path = List;
+			path = BioGraphyList;
 			sourceTree = "<group>";
 		};
 		B9DF3C7926DD624D0052B466 = {
@@ -514,6 +525,7 @@
 				B929629E27C5023600391364 /* AppTabView.swift in Sources */,
 				B9F3413F27D9212C007E2616 /* LeadingLocationCell.swift in Sources */,
 				B9DF3C8626DD624D0052B466 /* DostoevskyApp.swift in Sources */,
+				B993B77327EE435E008485CA /* BookListViewModel.swift in Sources */,
 				B93A177727D4E88C00BB9CF6 /* DMapViewModel.swift in Sources */,
 				B9C1B52C27DF7B2D00C0A91D /* ShareSheet.swift in Sources */,
 				B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */,
