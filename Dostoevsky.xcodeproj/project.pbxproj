@@ -33,6 +33,8 @@
 		B96CFDAF27D3BD9B00A42152 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */; };
 		B97FF7FF27C41C5800EC3884 /* DMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FF7FE27C41C5800EC3884 /* DMapView.swift */; };
 		B993B77327EE435E008485CA /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B77227EE435E008485CA /* BookListViewModel.swift */; };
+		B993B77527EE4638008485CA /* BookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B77427EE4638008485CA /* BookManager.swift */; };
+		B993B77727EE4705008485CA /* BookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B77627EE4705008485CA /* BookType.swift */; };
 		B99F89AD27E3A581003860C3 /* SubImageLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F89AC27E3A581003860C3 /* SubImageLabels.swift */; };
 		B99F89B027E3AA4D003860C3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B99F89B227E3AA4D003860C3 /* Localizable.strings */; };
 		B9A5D9A427E259E5006C417A /* GradientButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A5D9A327E259E5006C417A /* GradientButtonStyle.swift */; };
@@ -103,6 +105,8 @@
 		B96CFDAE27D3BD9B00A42152 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		B97FF7FE27C41C5800EC3884 /* DMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapView.swift; sourceTree = "<group>"; };
 		B993B77227EE435E008485CA /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
+		B993B77427EE4638008485CA /* BookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookManager.swift; sourceTree = "<group>"; };
+		B993B77627EE4705008485CA /* BookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookType.swift; sourceTree = "<group>"; };
 		B99F89AC27E3A581003860C3 /* SubImageLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubImageLabels.swift; sourceTree = "<group>"; };
 		B99F89B127E3AA4D003860C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B99F89B427E3AC5A003860C3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 		B9CB947E27D22432009EC12A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B993B77427EE4638008485CA /* BookManager.swift */,
 				B953CC6E27CF6EC600D5AC1A /* locations.json */,
 				B9DD351127DB841800A63B4D /* books.json */,
 				B953CC7027CF71CD00D5AC1A /* DLocation.swift */,
@@ -274,6 +279,7 @@
 				B96CFDAC27D3B37700A42152 /* Rating.swift */,
 				B9F3413C27D91AA2007E2616 /* Categories.swift */,
 				B9CB484A27DF4B4C00D3C289 /* Book.swift */,
+				B993B77627EE4705008485CA /* BookType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				B953CC7127CF71CD00D5AC1A /* DLocation.swift in Sources */,
 				B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */,
 				B9A5D9A427E259E5006C417A /* GradientButtonStyle.swift in Sources */,
+				B993B77727EE4705008485CA /* BookType.swift in Sources */,
 				B9BB567C27DE461100B7017C /* CellImageView.swift in Sources */,
 				B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */,
 				B929627627C4EE2800391364 /* AppState.swift in Sources */,
@@ -509,6 +516,7 @@
 				B95DC0AA27C63F56008EC3E9 /* OnBoardView.swift in Sources */,
 				B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */,
 				B9DD351827DB887C00A63B4D /* BookOverViewList.swift in Sources */,
+				B993B77527EE4638008485CA /* BookManager.swift in Sources */,
 				B9C1B52727DF6FF000C0A91D /* AboutView.swift in Sources */,
 				B96CFDAF27D3BD9B00A42152 /* UIImage+Ext.swift in Sources */,
 				B9DD351A27DB932D00A63B4D /* BooksListView.swift in Sources */,

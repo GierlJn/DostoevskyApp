@@ -5,9 +5,16 @@
 //  Created by Julian Gierl on 14.03.22.
 //
 
-import Foundation
+import SwiftUI
 
-enum BookType: String{
-  case crimeAndPunishment = "Crime and Punishment"
-  case humiliatedAndInsulted = "Humiliated and Insulted"
+struct Book: Codable, Hashable{
+  let en, ru: String
+  
+  var localizedName: String{
+    isRussian() ? ru : en
+  }
+  
+  var image: Image{
+    return Image(en)
+  }
 }

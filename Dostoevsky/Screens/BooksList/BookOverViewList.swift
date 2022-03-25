@@ -7,29 +7,17 @@
 
 import SwiftUI
 
-struct Book: Codable, Hashable{
-  let en, ru: String
-  
-  var localizedName: String{
-    isRussian() ? ru : en
-  }
-  
-  var image: Image{
-    return Image(en)
-  }
-}
+
 
 struct BookOverViewList: View {
   
-  @State var books = Bundle.main.decode([Book].self, from: "books.json")
-  @EnvironmentObject var appState: AppState
+  @State var books = BookManager.books
+
   var body: some View {
     NavigationView{
-      VStack{
+      Group{
         if books.isEmpty{
-          EmptyView().background(
-            LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
-          )
+          EmptyView()
         }else{
           ScrollView(showsIndicators: false){
             ForEach(books, id: \.self){ book in
@@ -52,27 +40,19 @@ struct BookOverViewList: View {
                       .minimumScaleFactor(0.75)
                       .padding(.horizontal)
                   }
-                  
                 }
-
               }
             }
-            
           }
           .padding()
-          .background(
-            LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
-          )
-          
         }
-        
-        
       }
+      .background(
+        LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
+      )
       .navigationBarHidden(false)
       .navigationTitle("Books")
     }
-    
-    
   }
 }
 
