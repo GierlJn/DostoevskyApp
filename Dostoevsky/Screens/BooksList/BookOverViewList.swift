@@ -31,8 +31,7 @@ struct BookOverViewList: View {
             LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
           )
         }else{
-          VStack{
-            Spacer()
+          ScrollView(showsIndicators: false){
             ForEach(books, id: \.self){ book in
               VStack(alignment: .leading){
                 NavigationLink {
@@ -58,7 +57,7 @@ struct BookOverViewList: View {
 
               }
             }
-            Spacer()
+            
           }
           .padding()
           .background(
