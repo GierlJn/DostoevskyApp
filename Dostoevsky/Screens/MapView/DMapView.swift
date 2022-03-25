@@ -19,8 +19,8 @@ struct DMapview: View{
       VStack{
         Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: viewModel.locations.filter({ loc in
           switch mapViewModel.filter{
-          case .all:
-            return true
+          case .favorites:
+            return loc.isFavorite
           case .beforeExile:
             return loc.category == 1
           case .afterExile:
@@ -40,32 +40,16 @@ struct DMapview: View{
           }
         }
       }
-      
-//      VStack{
-//          Image("sign")
-//            .resizable()
-//            .scaledToFit()
-//            .frame(width: 150, height: 80)
-//            .padding()
-//            .shadow(radius: 12)
-//            .shadow(radius: 12)
-//
-//        Spacer()
-//      }
     }
     .onAppear{
       if !CommandLine.arguments.contains("--UITests") {
         mapViewModel.checkIfLocationServicesIsEnabled()
       }
     }
-
     .overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)
     .edgesIgnoringSafeArea([.top, .leading, .trailing])
     .accentColor(.white)
-
   }
-  
-  
 }
 
 extension View {
@@ -86,7 +70,7 @@ struct PickerView: View{
   @StateObject var viewModel: DMapViewModel
   var body: some View{
     Picker("Filter", selection: $viewModel.filter) {
-      Text("Show all").tag(FilterOptions.all)
+      Text("Favorites").tag(FilterOptions.favorites)
       Text("Before exile").tag(FilterOptions.beforeExile)
       Text("After exile").tag(FilterOptions.afterExile)
       Text("Crime and Punishment").tag(FilterOptions.crime)
