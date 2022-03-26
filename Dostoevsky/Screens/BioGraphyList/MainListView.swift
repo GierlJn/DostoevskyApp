@@ -67,7 +67,7 @@ struct MainListView: View {
                 viewModel.showDetail = ActiveStatus.active
               }
             } label: {
-              LocationCell(viewModel: viewModel, location: location)//.listRowBackground(Color.tabColor)
+              LocationCell(viewModel: viewModel, location: location)
             }
             }
           }
@@ -103,9 +103,6 @@ struct MainListView: View {
   
   func filteredLocations(for category: Categories)->[DLocation]{
     viewModel.locations.filter{$0.definedCategory == category}
-//    .filter({ loc in
-//      viewModel.favoriteIds.contains("\(loc.name)")
-//    })
   }
 }
 
