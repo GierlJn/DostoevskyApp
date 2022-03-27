@@ -9,14 +9,4 @@ import Foundation
 
  class RatingManager{
      
-     var location: DLocation
-     
-     init(location: DLocation){
-         self.location = location
-     }
-     
-    var hasVotedUp: Bool{
-        let intValue = UserDefaults.standard.integer(forKey: location.name.en)
-        return intValue > 0
-    }
  }

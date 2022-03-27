@@ -18,6 +18,7 @@
 		B929629E27C5023600391364 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929629D27C5023600391364 /* AppTabView.swift */; };
 		B92962A327C50F2700391364 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A227C50F2700391364 /* Constants.swift */; };
 		B92962A527C50FAC00391364 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92962A427C50FAC00391364 /* CKAsset+Ext.swift */; };
+		B931017127EF5F2500205B76 /* Favorites+PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B931017027EF5F2500205B76 /* Favorites+PersistenceManager.swift */; };
 		B93A177727D4E88C00BB9CF6 /* DMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A177627D4E88C00BB9CF6 /* DMapViewModel.swift */; };
 		B93A177927D4E8FE00BB9CF6 /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A177827D4E8FE00BB9CF6 /* FilterOptions.swift */; };
 		B953CC6F27CF6EC600D5AC1A /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = B953CC6E27CF6EC600D5AC1A /* locations.json */; };
@@ -90,6 +91,7 @@
 		B929629D27C5023600391364 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		B92962A227C50F2700391364 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B92962A427C50FAC00391364 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
+		B931017027EF5F2500205B76 /* Favorites+PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+PersistenceManager.swift"; sourceTree = "<group>"; };
 		B93A177627D4E88C00BB9CF6 /* DMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMapViewModel.swift; sourceTree = "<group>"; };
 		B93A177827D4E8FE00BB9CF6 /* FilterOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptions.swift; sourceTree = "<group>"; };
 		B953CC6E27CF6EC600D5AC1A /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			children = (
 				B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */,
 				B904B95B27CC046800646CEE /* PersistenceManager.swift */,
+				B931017027EF5F2500205B76 /* Favorites+PersistenceManager.swift */,
 				B9D68BD127C788A200CB4AA9 /* RatingManager.swift */,
 			);
 			path = Manager;
@@ -510,6 +513,7 @@
 				B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */,
 				B929627627C4EE2800391364 /* AppState.swift in Sources */,
 				B929627227C4D9F300391364 /* DAnnotation.swift in Sources */,
+				B931017127EF5F2500205B76 /* Favorites+PersistenceManager.swift in Sources */,
 				B92962A327C50F2700391364 /* Constants.swift in Sources */,
 				B9F3413B27D91A90007E2616 /* TimeLineView.swift in Sources */,
 				B9CB484927DF32B200D3C289 /* OnboardImagesView.swift in Sources */,
@@ -735,7 +739,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Dostoevsky/Dostoevsky.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Dostoevsky/Preview Content\"";
 				DEVELOPMENT_TEAM = V9453FD64D;
 				ENABLE_PREVIEWS = YES;
@@ -745,7 +749,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gierljn.Dostoevsky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -760,7 +764,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Dostoevsky/Dostoevsky.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Dostoevsky/Preview Content\"";
 				DEVELOPMENT_TEAM = V9453FD64D;
 				ENABLE_PREVIEWS = YES;
@@ -770,7 +774,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gierljn.Dostoevsky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
