@@ -8,11 +8,11 @@
 import SwiftUI
 
 extension Color{
-    static let brandCategory1 = Color("category1")
-    static let brandCategory2 = Color("category2")
-    static let brandCategory3 = Color("category3")
-    static let brandPrimary = Color("brandPrimary")
-    static let tabColor = Color("tabColor")
+  static let brandCategory1 = Color("category1")
+  static let brandCategory2 = Color("category2")
+  static let brandCategory3 = Color("category3")
+  static let brandPrimary = Color("brandPrimary")
+  static let tabColor = Color("tabColor")
   static let backgroundStart = Color("backgroundStart")
   static let backgroundEnd = Color("backgroundEnd")
   static let customAccentColor = Color("accentColor")

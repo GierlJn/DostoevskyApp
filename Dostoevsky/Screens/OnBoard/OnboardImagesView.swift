@@ -16,22 +16,21 @@ struct OnBoardImagesView: View {
   @State var offset: CGFloat = 1000
   
   var body: some View {
-        VStack{
-          ScrollView{
-            LazyVGrid(columns: columns, spacing: 5) {
-              ForEach(mockImages, id:\.self){ image in
-                Image(uiImage: image)
-                  .resizable()
-                  .frame(width: 100, height: 100)
-                  .cornerRadius(12)
-              }
-            }
+    VStack{
+      ScrollView{
+        LazyVGrid(columns: columns, spacing: 5) {
+          ForEach(mockImages, id:\.self){ image in
+            Image(uiImage: image)
+              .resizable()
+              .frame(width: 100, height: 100)
+              .cornerRadius(12)
           }
-          .frame(height: 1000)
-          .offset(x: 0, y: offset)
-          
-          .rotation3DEffect(.degrees(45  ), axis: (x: 1, y: 0, z: 0))
         }
+      }
+      .frame(height: 1000)
+      .offset(x: 0, y: offset)
+      .rotation3DEffect(.degrees(45  ), axis: (x: 1, y: 0, z: 0))
+    }
     .background(.black)
     .onAppear {
       let locations = Bundle.main.decode([DLocation].self, from: "locations.json")
@@ -48,8 +47,6 @@ struct OnBoardImagesView: View {
       }
       
     }
-    
-    
   }
 }
 
@@ -60,23 +57,23 @@ struct OnBoardImagesView_Previews: PreviewProvider {
 }
 
 extension View {
-    func animate(using animation: Animation = .easeInOut(duration: 1), _ action: @escaping () -> Void) -> some View {
-        onAppear {
-            withAnimation(animation) {
-                action()
-            }
-        }
+  func animate(using animation: Animation = .easeInOut(duration: 1), _ action: @escaping () -> Void) -> some View {
+    onAppear {
+      withAnimation(animation) {
+        action()
+      }
     }
+  }
 }
 
 extension View {
-    func animateForever(using animation: Animation = .easeInOut(duration: 1), autoreverses: Bool = false, _ action: @escaping () -> Void) -> some View {
-        let repeated = animation.repeatForever(autoreverses: autoreverses)
-
-        return onAppear {
-            withAnimation(repeated) {
-                action()
-            }
-        }
+  func animateForever(using animation: Animation = .easeInOut(duration: 1), autoreverses: Bool = false, _ action: @escaping () -> Void) -> some View {
+    let repeated = animation.repeatForever(autoreverses: autoreverses)
+    
+    return onAppear {
+      withAnimation(repeated) {
+        action()
+      }
     }
+  }
 }

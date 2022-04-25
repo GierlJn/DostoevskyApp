@@ -33,8 +33,7 @@ class AppState: ObservableObject{
   @Published var showDetail: ActiveStatus?
   @Published var locations = [DLocation]()
   @Published var ratings = [Rating]()
-  
-  
+
   @Published var isLoadingData = false
   @Published var sort: SortType = .date
   @Published var showingFavorites = false
