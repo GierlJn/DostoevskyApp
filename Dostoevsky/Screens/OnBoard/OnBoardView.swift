@@ -26,7 +26,7 @@ struct OnBoardView: View {
         .allowsHitTesting(false)
       }.ignoresSafeArea(edges: .horizontal)
       VStack{
-        Text("Dostoevsky's Petersburg")
+          Text(L10n.Onboard.header)
           .font(.title).bold().underline()
           .foregroundColor(.white)
           .padding(.top)
@@ -43,7 +43,7 @@ struct OnBoardView: View {
         Button(action: {
           appState.showsOnboard = false
         }, label: {
-          Text("Explore")
+            Text(L10n.Onboard.action)
             .foregroundColor(.black)
             .padding()
             .background {

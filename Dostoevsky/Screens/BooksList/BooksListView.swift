@@ -25,10 +25,10 @@ struct BooksListView: View {
           HStack{
             Spacer()
             Spacer()
-            Menu("Sort"){
-              Picker(selection: $sortSettings, label: Text("Sort")){
-                Text("Rating").tag(SortType.rating)
-                Text("Favorites").tag(SortType.favorite)
+              Menu(L10n.Compactlist.Action.sort){
+              Picker(selection: $sortSettings, label: Text(L10n.Compactlist.Action.sort)){
+                  Text(L10n.Compactlist.Sort.Option.rating).tag(SortType.rating)
+                  Text(L10n.Compactlist.Sort.Option.favorites).tag(SortType.favorite)
               }
             }
           }

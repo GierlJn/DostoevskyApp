@@ -70,11 +70,11 @@ struct PickerView: View{
   @StateObject var viewModel: DMapViewModel
   var body: some View{
     Picker("Filter", selection: $viewModel.filter) {
-      Text("Favorites").tag(FilterOptions.favorites)
-      Text("Before exile").tag(FilterOptions.beforeExile)
-      Text("After exile").tag(FilterOptions.afterExile)
-      Text("Crime and Punishment").tag(FilterOptions.crime)
-      Text("Humiliated and Insulted").tag(FilterOptions.humililated)}
+        Text(L10n.Map.Filter.Option.favorites).tag(FilterOptions.favorites)
+        Text(L10n.Map.Filter.Option.beforeexile).tag(FilterOptions.beforeExile)
+        Text(L10n.Map.Filter.Option.afterexile).tag(FilterOptions.afterExile)
+        Text(L10n.Book.Title.crimeandpunishment).tag(FilterOptions.crime)
+        Text(L10n.Book.Title.humiliatedandinsulted).tag(FilterOptions.humililated)}
     .padding(.horizontal)
     .background(RoundedRectangle(cornerRadius: 12)
       .foregroundColor(.accentLight))

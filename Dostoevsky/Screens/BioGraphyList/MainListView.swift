@@ -21,13 +21,13 @@ struct MainListView: View {
         if !sortedLocations(section: 0, sortType: sortSettings[0]).isEmpty{
           Section(header: HStack{
             HStack{
-              Text("Before Exile")
+                Text(L10n.Map.Filter.Option.beforeexile)
               Spacer()
-              Menu("Sort"){
-                Picker(selection: $sortSettings[0], label: Text("Sort")){
-                  Text("Date").tag(SortType.date)
-                  Text("Rating").tag(SortType.rating)
-                  Text("Favorites").tag(SortType.favorite)
+              Menu(L10n.Compactlist.Action.sort){
+                  Picker(selection: $sortSettings[0], label: Text(L10n.Compactlist.Action.sort)){
+                      Text(L10n.Compactlist.Sort.Option.date).tag(SortType.date)
+                      Text(L10n.Compactlist.Sort.Option.rating).tag(SortType.rating)
+                      Text(L10n.Compactlist.Sort.Option.favorites).tag(SortType.favorite)
                 }
               }
             }
@@ -49,13 +49,13 @@ struct MainListView: View {
         if !sortedLocations(section: 1, sortType: sortSettings[1]).isEmpty{
         Section(header: HStack{
           HStack{
-            Text("After Exile")
+              Text(L10n.Map.Filter.Option.afterexile)
             Spacer()
-            Menu("Sort"){
-              Picker(selection: $sortSettings[1], label: Text("Sort")){
-                Text("Date").tag(SortType.date)
-                Text("Rating").tag(SortType.rating)
-                Text("Favorites").tag(SortType.favorite)
+            Menu(L10n.Compactlist.Action.sort){
+              Picker(selection: $sortSettings[1], label: Text(L10n.Compactlist.Action.sort)){
+                  Text(L10n.Compactlist.Sort.Option.date).tag(SortType.date)
+                  Text(L10n.Compactlist.Sort.Option.rating).tag(SortType.rating)
+                  Text(L10n.Compactlist.Sort.Option.favorites).tag(SortType.favorite)
               }
             }
           }

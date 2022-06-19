@@ -66,6 +66,7 @@
 		B9F3413F27D9212C007E2616 /* LeadingLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413E27D9212C007E2616 /* LeadingLocationCell.swift */; };
 		B9FE5FA627EA465C006AF98B /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE5FA527EA465C006AF98B /* AccessibilityIdentifiers.swift */; };
 		B9FE5FA727EA4F82006AF98B /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE5FA527EA465C006AF98B /* AccessibilityIdentifiers.swift */; };
+		B9FF85ED285F21E4009BE363 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FF85EC285F21E4009BE363 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		B9F3413C27D91AA2007E2616 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		B9F3413E27D9212C007E2616 /* LeadingLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingLocationCell.swift; sourceTree = "<group>"; };
 		B9FE5FA527EA465C006AF98B /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		B9FF85EC285F21E4009BE363 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +336,7 @@
 		B9DF3C7926DD624D0052B466 = {
 			isa = PBXGroup;
 			children = (
+				B9FF85EC285F21E4009BE363 /* Strings.swift */,
 				B9DF3C8426DD624D0052B466 /* Dostoevsky */,
 				B9C1B53427DFA08000C0A91D /* DostoevskyUITests */,
 				B9DF3C8326DD624D0052B466 /* Products */,
@@ -529,6 +532,7 @@
 				B9FE5FA627EA465C006AF98B /* AccessibilityIdentifiers.swift in Sources */,
 				B9CB484B27DF4B4C00D3C289 /* Book.swift in Sources */,
 				B91641E227C7D6FE0026C4D7 /* DismissButton.swift in Sources */,
+				B9FF85ED285F21E4009BE363 /* Strings.swift in Sources */,
 				B9DF3C9D26DD6A820052B466 /* MockData.swift in Sources */,
 				B929629E27C5023600391364 /* AppTabView.swift in Sources */,
 				B9F3413F27D9212C007E2616 /* LeadingLocationCell.swift in Sources */,
