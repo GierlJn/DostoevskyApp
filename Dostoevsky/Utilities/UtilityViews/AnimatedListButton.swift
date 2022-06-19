@@ -16,20 +16,20 @@ struct AnimatedListButton: View {
       ZStack{
         VStack(spacing: 10){
             Rectangle()
-                .frame(width: 34, height: 8)
+                .frame(width: 34, height: 4)
                 .cornerRadius(4)
                 .rotationEffect(.degrees(isRotating ? 0 : 0), anchor: .leading)
                 .offset(x: 0, y: isRotating ? 10 : 0)
             
             Rectangle()
-                .frame(width: 34, height: 8)
+                .frame(width: 34, height: 4)
                 .cornerRadius(4)
                 .scaleEffect(isHidden ? 0 : 1, anchor: isHidden ? .trailing: .leading)
                 .opacity(isHidden ? 0 : 1)
                 .rotationEffect(.degrees(isRotating ? 90: 0) )
             
             Rectangle()
-                .frame(width: 34, height: 8)
+                .frame(width: 34, height: 4)
                 .cornerRadius(4)
                 .rotationEffect(.degrees(isRotating ? 0 : 0), anchor: .leading)
                 .offset(x: 0, y: isRotating ? -10 : 0)
