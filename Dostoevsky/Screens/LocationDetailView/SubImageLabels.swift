@@ -10,9 +10,9 @@ import MapKit
 
 struct SubImageLabels: View {
   var location: DLocation
-  
+
   var body: some View {
-    VStack(spacing: 8){
+    VStack(spacing: 8) {
       HStack {
         Button {
           getDirectionsToLocation(location: location)
@@ -21,8 +21,8 @@ struct SubImageLabels: View {
         }
         Spacer()
       }
-      
-      if let date = location.localizedDate{
+
+      if let date = location.localizedDate {
         HStack {
           DateView(date: date)
           Spacer()
@@ -30,11 +30,11 @@ struct SubImageLabels: View {
       }
     }.padding(.horizontal)
   }
-  
+
   private struct AddressView: View {
-    
+
     var address: String
-    
+
     var body: some View {
       Label(address, systemImage: "mappin.and.ellipse")
         .font(.caption)
@@ -43,9 +43,9 @@ struct SubImageLabels: View {
   }
 
   private struct DateView: View {
-    
+
     var date: String
-    
+
     var body: some View {
       Label(date, systemImage: "calendar")
         .font(.caption)
@@ -53,17 +53,15 @@ struct SubImageLabels: View {
     }
   }
 
-  
   func getDirectionsToLocation(location: DLocation) {
     let placemark = MKPlacemark(coordinate: location.getCLLocation().coordinate)
     let mapItem = MKMapItem(placemark: placemark)
     mapItem.name = location.localizedName
-    
+
     mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking])
   }
-  
-}
 
+}
 
 struct SubImageLabels_Previews: PreviewProvider {
     static var previews: some View {

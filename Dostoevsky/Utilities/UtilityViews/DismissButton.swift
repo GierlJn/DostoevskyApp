@@ -2,7 +2,7 @@ import SwiftUI
 
 struct XDismissButton: View {
     var body: some View {
-        ZStack{
+        ZStack {
             Circle()
                 .frame(width: 30, height: 30)
                 .foregroundColor(.gray)

@@ -4,9 +4,9 @@
 ////
 ////  Created by Julian Gierl on 30.08.21.
 ////
-//import SwiftUI
+// import SwiftUI
 //
-//struct LocationDetailPushView: View {
+// struct LocationDetailPushView: View {
 //    
 //    @ObservedObject var viewModel: LocationDetailViewModel
 //    var selectedLocation: DLocation
@@ -115,10 +115,10 @@
 //            viewModel.setup(location: selectedLocation)
 //        })
 //    }
-//}
+// }
 //
 //
-//private struct BannerImageView: View {
+// private struct BannerImageView: View {
 //    
 //    var image: UIImage
 //    
@@ -128,9 +128,9 @@
 //            .scaledToFill()
 //            .frame(height: 120)
 //    }
-//}
+// }
 //
-//private struct AddressView: View {
+// private struct AddressView: View {
 //    
 //    var address: String
 //    
@@ -139,10 +139,10 @@
 //            .font(.caption)
 //            .foregroundColor(.secondary)
 //    }
-//}
+// }
 //
 //
-//private struct LocationActionButton: View {
+// private struct LocationActionButton: View {
 //    
 //    var color: Color
 //    var imageName: String
@@ -161,9 +161,9 @@
 //            
 //        }
 //    }
-//}
+// }
 //
-//private struct InfoView: View {
+// private struct InfoView: View {
 //    
 //    var color: Color
 //    var text: String
@@ -180,10 +180,10 @@
 //            
 //        }
 //    }
-//}
+// }
 //
 //
-//private struct DescriptionView: View {
+// private struct DescriptionView: View {
 //    
 //    var text: String
 //    
@@ -194,12 +194,12 @@
 //            .frame(height: 70)
 //            .padding(.horizontal)
 //    }
-//}
+// }
 //
-//struct LocationDetailPushView_Previews: PreviewProvider{
+// struct LocationDetailPushView_Previews: PreviewProvider{
 //    static var previews: some View{
 //        NavigationView{
 //            LocationDetailPushView(viewModel: LocationDetailViewModel(), selectedLocation: DLocation(record: MockData.createLocationRecord()))
 //        }
 //    }
-//}
+// }

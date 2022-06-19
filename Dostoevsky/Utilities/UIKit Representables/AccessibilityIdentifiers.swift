@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AccessibilityIdentifier{
+public struct AccessibilityIdentifier {
   static let dismissButton = "dismissButton"
   static let  tabBar = "tabBar"
   static let  map = "map"

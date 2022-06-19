@@ -7,9 +7,9 @@
 
 import Foundation
 
-class BookListViewModel: ObservableObject{
-  func sortLocations(locations: [DLocation], sortType: SortType, appState: AppState)->[DLocation]{
-    switch sortType{
+class BookListViewModel: ObservableObject {
+  func sortLocations(locations: [DLocation], sortType: SortType, appState: AppState) -> [DLocation] {
+    switch sortType {
     case .date:
       return locations.sorted(by: { $0.id < $1.id })
     case .rating:
@@ -28,5 +28,5 @@ class BookListViewModel: ObservableObject{
       }
     )}
   }
-  
+
 }

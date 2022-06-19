@@ -7,22 +7,20 @@
 
 import SwiftUI
 
-
 struct LeadingLocationCell: View {
     @ObservedObject var viewModel: AppState
-    
+
     var location: DLocation
 
     var body: some View {
-      
-        HStack{
+
+        HStack {
           CellTitleVStack(alignment: .trailing, location: location).padding(.trailing)
-          
-          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: PersistanceManager.isFavorite(location))
+
+          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner,
+                        rating: viewModel.getRatingForLocation(location: location).rating,
+                        isFavorite: PersistanceManager.isFavorite(location))
         }
         .padding(.vertical)
     }
 }
-
-
-

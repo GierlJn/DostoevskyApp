@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Color{
+extension Color {
   static let brandCategory1 = Color("category1")
   static let brandCategory2 = Color("category2")
   static let brandCategory3 = Color("category3")
@@ -19,7 +19,7 @@ extension Color{
   static let accentLight = Color("accentColorLight")
 }
 
-extension UIColor{
+extension UIColor {
   static let brandCategory1 = UIColor(named: "category1")
   static let brandCategory2 = UIColor(named: "category2")
   static let brandCategory3 = UIColor(named: "category3")

@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-struct CellImageView: View{
+struct CellImageView: View {
   var image: UIImage
   var rating: Int
   var isFavorite: Bool
-  
-  var body: some View{
-    ZStack{
+
+  var body: some View {
+    ZStack {
        Image(uiImage: image)
            .resizable()
            .frame(width: 60, height: 60)
            .clipShape(Circle())
            .padding(.vertical, 8)
-     
-       
+
        Text("\(rating)")
                .font(.system(size: 11, weight: .bold))
                .frame(width: 26, height: 18)
@@ -28,8 +27,8 @@ struct CellImageView: View{
                .foregroundColor(.white)
                .clipShape(Capsule())
                .offset(x: 20, y: -28)
-     
-     if isFavorite{
+
+     if isFavorite {
        Image(systemName: "heart.fill")
            .resizable()
            .frame(width: 15, height: 15 )
@@ -40,7 +39,6 @@ struct CellImageView: View{
    }
   }
 }
-
 
 struct CellImageView_Previews: PreviewProvider {
     static var previews: some View {

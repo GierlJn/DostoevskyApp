@@ -7,39 +7,37 @@
 
 import SwiftUI
 
-
-
 struct OnBoardView: View {
-  
+
   @State var animatedOpacity: Double = 0
   @State var offset: CGFloat = 150
   @EnvironmentObject var appState: AppState
-  
+
   var body: some View {
-    ZStack{
-      GeometryReader{ reader in
-        VStack(spacing: 0){
-          Color.black.frame(height:reader.size.height*0.2)
+    ZStack {
+      GeometryReader { reader in
+        VStack(spacing: 0) {
+          Color.black.frame(height: reader.size.height*0.2)
           LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .top, endPoint: .bottom)
-            .frame(height:reader.size.height*0.8)
+            .frame(height: reader.size.height*0.8)
         }
         .allowsHitTesting(false)
       }.ignoresSafeArea(edges: .horizontal)
-      VStack{
+      VStack {
           Text(L10n.Onboard.header)
           .font(.title).bold().underline()
           .foregroundColor(.white)
           .padding(.top)
           .minimumScaleFactor(0.7)
           .offset(x: 0, y: offset)
-        
+
         if !CommandLine.arguments.contains("--UITests") {
           Text("Fyodor Mikhailovich Dostoyevsky lived in the city about 28 years in total. His characters inhabit the streets of the city and come to life on the pages of his books.")
             .foregroundColor(.white)
             .padding()
             .opacity(animatedOpacity)
         }
-        
+
         Button(action: {
           appState.showsOnboard = false
         }, label: {
@@ -56,7 +54,7 @@ struct OnBoardView: View {
         .accentColor(.black)
         .padding(.top)
         .opacity(animatedOpacity)
-        
+
         Spacer()
       }
       .padding()
@@ -65,7 +63,7 @@ struct OnBoardView: View {
       if CommandLine.arguments.contains("--UITests") {
         offset = 0
         animatedOpacity = 1
-      }else{
+      } else {
         withAnimation(.linear(duration: 0.5).delay(3)) {
           offset = 0
         }

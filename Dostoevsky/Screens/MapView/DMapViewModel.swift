@@ -8,27 +8,27 @@
 import SwiftUI
 import MapKit
 
-class DMapViewModel: NSObject, ObservableObject{
+class DMapViewModel: NSObject, ObservableObject {
   @Published var filter: FilterOptions = .beforeExile
   @Published var alertItem: AlertItem?
   var deviceLocationManager: CLLocationManager?
-  
+
   func checkIfLocationServicesIsEnabled() {
-    if CLLocationManager.locationServicesEnabled(){
+    if CLLocationManager.locationServicesEnabled() {
       deviceLocationManager = CLLocationManager()
       deviceLocationManager?.delegate = self
-    }else{
+    } else {
       alertItem = AlertContext.locationDisabled
     }
   }
-  
+
   private func checkLocationAuthorization() {
     guard let deviceLocationManager = deviceLocationManager else {
       return
     }
-    
-    switch deviceLocationManager.authorizationStatus{
-      
+
+    switch deviceLocationManager.authorizationStatus {
+
     case .notDetermined:
       deviceLocationManager.requestWhenInUseAuthorization()
     case .restricted:
@@ -44,7 +44,7 @@ class DMapViewModel: NSObject, ObservableObject{
   }
 }
 
-extension DMapViewModel: CLLocationManagerDelegate{
+extension DMapViewModel: CLLocationManagerDelegate {
   func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
     checkLocationAuthorization()
   }

@@ -8,16 +8,16 @@
 import CloudKit
 import UIKit
 
-extension CKAsset{
+extension CKAsset {
     func convertToUIImage() -> UIImage {
-        
+
         let placeholder = PlaceholderImage.banner
-        
+
         guard let fileUrl = self.fileURL else { return placeholder }
-        do{
+        do {
             let data = try Data(contentsOf: fileUrl)
             return UIImage(data: data) ?? placeholder
-        }catch{
+        } catch {
             return placeholder
         }
     }

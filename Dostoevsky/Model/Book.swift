@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct Book: Codable, Hashable{
+struct Book: Codable, Hashable {
   let en, ru: String
-  
-  var localizedName: String{
+
+  var localizedName: String {
     isRussian() ? ru : en
   }
-  
-  var image: Image{
+
+  var image: Image {
     return Image(en)
   }
 }

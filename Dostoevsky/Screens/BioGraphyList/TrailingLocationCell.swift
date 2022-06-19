@@ -9,13 +9,15 @@ import SwiftUI
 
 struct TrailingLocationCell: View {
     @ObservedObject var viewModel: AppState
-    
+
     var location: DLocation
-  
+
     var body: some View {
-        HStack{
-          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner, rating: viewModel.getRatingForLocation(location: location).rating, isFavorite: location.isFavorite)
-          
+        HStack {
+          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner,
+                        rating: viewModel.getRatingForLocation(location: location).rating,
+                        isFavorite: location.isFavorite)
+
           CellTitleVStack(alignment: .leading, location: location)
             .padding(.leading)
         }
@@ -24,12 +26,9 @@ struct TrailingLocationCell: View {
 
 }
 
-
 struct MirroredLocationCell_Previews: PreviewProvider {
 
     static var previews: some View {
       TrailingLocationCell(viewModel: AppState(), location: MockData.createMockLocation())
     }
 }
-
-

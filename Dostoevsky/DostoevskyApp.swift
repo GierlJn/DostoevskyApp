@@ -8,9 +8,8 @@
 import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-  
-  
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         if CommandLine.arguments.contains("--UITests") {
           print("isuitest")
           }
@@ -19,7 +18,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 public func isRussian() -> Bool {
-    return NSLocale.preferredLanguages[0].range(of:"ru") != nil
+    return NSLocale.preferredLanguages[0].range(of: "ru") != nil
 }
 
 @main
@@ -28,14 +27,14 @@ struct DostoevskyApp: App {
   @StateObject var appState = AppState()
   var body: some Scene {
     WindowGroup {
-        Group{
-          if appState.showsOnboard{
+        Group {
+          if appState.showsOnboard {
             OnBoardView().environmentObject(appState)
-          }else{
+          } else {
             AppTabView().environmentObject(appState)
           }
         }.preferredColorScheme(.dark)
-        .onAppear{
+        .onAppear {
           if CommandLine.arguments.contains("--UITests") {
           UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
           }

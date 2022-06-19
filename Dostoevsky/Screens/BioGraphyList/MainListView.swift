@@ -7,32 +7,30 @@
 
 import SwiftUI
 
-
-
 struct MainListView: View {
-  
+
   @EnvironmentObject var viewModel: AppState
   @State var categories = Categories.allCases
   @State var sortSettings = [SortType.date, SortType.date]
-  
+
   var body: some View {
-    VStack{
-      List{
-        if !sortedLocations(section: 0, sortType: sortSettings[0]).isEmpty{
-          Section(header: HStack{
-            HStack{
+    VStack {
+      List {
+        if !sortedLocations(section: 0, sortType: sortSettings[0]).isEmpty {
+          Section(header: HStack {
+            HStack {
                 Text(L10n.Map.Filter.Option.beforeexile)
               Spacer()
-              Menu(L10n.Compactlist.Action.sort){
-                  Picker(selection: $sortSettings[0], label: Text(L10n.Compactlist.Action.sort)){
+              Menu(L10n.Compactlist.Action.sort) {
+                  Picker(selection: $sortSettings[0], label: Text(L10n.Compactlist.Action.sort)) {
                       Text(L10n.Compactlist.Sort.Option.date).tag(SortType.date)
                       Text(L10n.Compactlist.Sort.Option.rating).tag(SortType.rating)
                       Text(L10n.Compactlist.Sort.Option.favorites).tag(SortType.favorite)
                 }
               }
             }
-          }){
-            ForEach(sortedLocations(section: 0, sortType: sortSettings[0]), id: (\.self)){ location in
+          }) {
+            ForEach(sortedLocations(section: 0, sortType: sortSettings[0]), id: (\.self)) { location in
               Button {
                 DispatchQueue.main.async {
                   viewModel.selectedLocation = location
@@ -41,26 +39,26 @@ struct MainListView: View {
               } label: {
                 LocationCell(viewModel: viewModel, location: location)
               }
-              
+
             }
           }
         }
-        
-        if !sortedLocations(section: 1, sortType: sortSettings[1]).isEmpty{
-        Section(header: HStack{
-          HStack{
+
+        if !sortedLocations(section: 1, sortType: sortSettings[1]).isEmpty {
+        Section(header: HStack {
+          HStack {
               Text(L10n.Map.Filter.Option.afterexile)
             Spacer()
-            Menu(L10n.Compactlist.Action.sort){
-              Picker(selection: $sortSettings[1], label: Text(L10n.Compactlist.Action.sort)){
+            Menu(L10n.Compactlist.Action.sort) {
+              Picker(selection: $sortSettings[1], label: Text(L10n.Compactlist.Action.sort)) {
                   Text(L10n.Compactlist.Sort.Option.date).tag(SortType.date)
                   Text(L10n.Compactlist.Sort.Option.rating).tag(SortType.rating)
                   Text(L10n.Compactlist.Sort.Option.favorites).tag(SortType.favorite)
               }
             }
           }
-        }){
-          ForEach(sortedLocations(section: 1, sortType: sortSettings[1]), id: (\.self)){ location in
+        }) {
+          ForEach(sortedLocations(section: 1, sortType: sortSettings[1]), id: (\.self)) { location in
             Button {
               DispatchQueue.main.async {
                 viewModel.selectedLocation = location
@@ -72,24 +70,24 @@ struct MainListView: View {
             }
           }
         }
-        
+
       }
     }
-    
+
     .background(
       LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
     )
     .accentColor(.white)
     .navigationBarHidden(true)
-    
+
   }
-  
-  func sortedLocations(section: Int, sortType: SortType)->[DLocation]{
+
+  func sortedLocations(section: Int, sortType: SortType) -> [DLocation] {
     sortLocations(locations: filteredLocations(for: Categories.allCases[section]), sortType: sortType)
   }
-  
-  func sortLocations(locations: [DLocation], sortType: SortType)->[DLocation]{
-    switch sortType{
+
+  func sortLocations(locations: [DLocation], sortType: SortType) -> [DLocation] {
+    switch sortType {
     case .date:
       return locations.sorted(by: { $0.id < $1.id })
     case .rating:
@@ -100,10 +98,8 @@ struct MainListView: View {
       }
     }
   }
-  
-  func filteredLocations(for category: Categories)->[DLocation]{
-    viewModel.locations.filter{$0.definedCategory == category}
+
+  func filteredLocations(for category: Categories) -> [DLocation] {
+    viewModel.locations.filter {$0.definedCategory == category}
   }
 }
-
-
