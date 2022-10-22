@@ -1,55 +1,80 @@
-//
-//  BookOverViewList.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 11.03.22.
-//
-
 import SwiftUI
 
 struct BookOverViewList: View {
-
-  @State var books = BookManager.books
-
-  var body: some View {
-    NavigationView {
-      Group {
-        if books.isEmpty {
-          EmptyView()
-        } else {
-          ScrollView(showsIndicators: false) {
-            ForEach(books, id: \.self) { book in
-              VStack(alignment: .leading) {
-                NavigationLink {
-                  BooksListView(book: book)
-                } label: {
-                  VStack {
-                    book.image
-                      .resizable()
-                      .frame(height: 200)
-                      .clipShape(RoundedRectangle(cornerRadius: 12))
-                      .padding(.vertical, 20)
-
-                    Text(book.localizedName)
-                      .font(.title)
-                      .fontWeight(.bold)
-                      .foregroundColor(.white)
-                      .lineLimit(1)
-                      .minimumScaleFactor(0.75)
-                      .padding(.horizontal)
-                  }
+    
+    @State var books = BookManager.books
+    @AppStorage("premium") var premium = false
+    @EnvironmentObject var viewModel: AppState
+    
+    var body: some View {
+        NavigationView {
+            Group {
+                if books.isEmpty {
+                    EmptyView()
+                } else {
+                    ScrollView(showsIndicators: false) {
+                        ForEach(books, id: \.self) { book in
+                            VStack(alignment: .leading) {
+                                if viewModel.isSubscriptionPurchased {
+                                    NavigationLink {
+                                        BooksListView(book: book)
+                                    } label: {
+                                        VStack {
+                                            book.image
+                                                .resizable()
+                                                .frame(height: 200)
+                                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                                                .padding(.vertical, 20)
+                                            
+                                            Text(book.localizedName)
+                                                .font(.title)
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.white)
+                                                .lineLimit(1)
+                                                .minimumScaleFactor(0.75)
+                                                .padding(.horizontal)
+                                        }
+                                    }
+                                } else {
+                                    Button {
+                                        guard let subscription = viewModel.subscription else {
+                                            return
+                                        }
+                                        Task {
+                                            try? await viewModel.purchase(subscription)
+                                        }
+                                        
+                                
+                                    } label: {
+                                        VStack {
+                                            book.image
+                                                .resizable()
+                                                .frame(height: 200)
+                                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                                                .padding(.vertical, 20)
+                                            
+                                            Text(book.localizedName)
+                                                .font(.title)
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.white)
+                                                .lineLimit(1)
+                                                .minimumScaleFactor(0.75)
+                                                .padding(.horizontal)
+                                        }
+                                        .opacity(0.5)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .padding()
                 }
-              }
             }
-          }
-          .padding()
+            .background(
+                LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            )
+            .navigationBarHidden(false)
+            .navigationTitle("Books")
         }
-      }
-      .background(
-        LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
-      )
-      .navigationBarHidden(false)
-      .navigationTitle("Books")
     }
-  }
 }

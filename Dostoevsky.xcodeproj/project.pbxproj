@@ -61,6 +61,8 @@
 		B9DF3C9F26DD6DC70052B466 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */; };
 		B9DF3CA126DD6F900052B466 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */; };
 		B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */; };
+		B9E45B392904413900A84895 /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9E45B382904413900A84895 /* Products.plist */; };
+		B9E45B3B2904464000A84895 /* premium.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B9E45B3A2904464000A84895 /* premium.storekit */; };
 		B9F3413B27D91A90007E2616 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413A27D91A90007E2616 /* TimeLineView.swift */; };
 		B9F3413D27D91AA2007E2616 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413C27D91AA2007E2616 /* Categories.swift */; };
 		B9F3413F27D9212C007E2616 /* LeadingLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413E27D9212C007E2616 /* LeadingLocationCell.swift */; };
@@ -139,6 +141,8 @@
 		B9DF3C9E26DD6DC70052B466 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		B9DF3CA026DD6F900052B466 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		B9E45B382904413900A84895 /* Products.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
+		B9E45B3A2904464000A84895 /* premium.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = premium.storekit; sourceTree = "<group>"; };
 		B9F3413A27D91A90007E2616 /* TimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
 		B9F3413C27D91AA2007E2616 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		B9F3413E27D9212C007E2616 /* LeadingLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingLocationCell.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 		B9CB947E27D22432009EC12A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B9E45B382904413900A84895 /* Products.plist */,
 				B993B77427EE4638008485CA /* BookManager.swift */,
 				B953CC6E27CF6EC600D5AC1A /* locations.json */,
 				B9DD351127DB841800A63B4D /* books.json */,
@@ -282,6 +287,7 @@
 				B9F3413C27D91AA2007E2616 /* Categories.swift */,
 				B9CB484A27DF4B4C00D3C289 /* Book.swift */,
 				B993B77627EE4705008485CA /* BookType.swift */,
+				B9E45B3A2904464000A84895 /* premium.storekit */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -475,8 +481,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E45B3B2904464000A84895 /* premium.storekit in Resources */,
 				B99F89B027E3AA4D003860C3 /* Localizable.strings in Resources */,
 				B9DD351227DB841800A63B4D /* books.json in Resources */,
+				B9E45B392904413900A84895 /* Products.plist in Resources */,
 				B9DF3C8D26DD624E0052B466 /* Preview Assets.xcassets in Resources */,
 				B953CC6F27CF6EC600D5AC1A /* locations.json in Resources */,
 				B9DF3C8A26DD624E0052B466 /* Assets.xcassets in Resources */,
@@ -489,7 +497,7 @@
 		B9FF85EE285F2B79009BE363 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -500,7 +508,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};

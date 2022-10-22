@@ -72,7 +72,7 @@ struct AppTabView: View {
                 viewModel.setup()
             }
         }
-        .accentColor(.customAccentColor)
+        .accentColor(.orange)
         .overlay(viewModel.isLoadingData ? LoadingView() : nil)
         .sheet(item: $viewModel.showDetail, content: { _ in
             LocationDetailView(locationDetailViewModel: LocationDetailViewModel(selectedLocation: viewModel.selectedLocation!,
