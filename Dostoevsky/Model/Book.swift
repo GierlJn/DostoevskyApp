@@ -11,7 +11,7 @@ struct Book: Codable, Hashable {
   let en, ru: String
 
   var localizedName: String {
-    isRussian() ? ru : en
+    isRussianLanguage() ? ru : en
   }
 
   var image: Image {

@@ -7,9 +7,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
 }
 
-public func isRussian() -> Bool {
+public func isRussianLanguage() -> Bool {
     return NSLocale.preferredLanguages[0].range(of: "ru") != nil
 }
+
 
 @main
 struct DostoevskyApp: App {

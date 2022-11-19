@@ -33,23 +33,23 @@ struct DLocation: Identifiable, Hashable, Codable {
   }
 
   var localizedDescription: String {
-    isRussian() ? description.ru : description.en
+    isRussianLanguage() ? description.ru : description.en
   }
 
   var localizedAddress: String {
-    isRussian() ? address.ru : address.en
+    isRussianLanguage() ? address.ru : address.en
   }
 
   var localizedDate: String? {
-    isRussian() ? date?.ru : date?.en
+    isRussianLanguage() ? date?.ru : date?.en
   }
 
   var localizedName: String {
-    isRussian() ? name.ru : name.en
+    isRussianLanguage() ? name.ru : name.en
   }
 
   var localizedBook: String? {
-    isRussian() ? books?.ru.first : books?.en.first
+    isRussianLanguage() ? books?.ru.first : books?.en.first
   }
 
   var bookType: BookType? {

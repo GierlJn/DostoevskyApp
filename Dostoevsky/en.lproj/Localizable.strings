@@ -19,3 +19,4 @@
 "about.useractions.sharesheet.text" = "Check out this cool app!";
 "onboard.header" = "Dostoevsky's Petersburg";
 "onboard.action" = "Explore";
+"buyPremium.priceOffer" = "Unlock all features for %@/%s.";

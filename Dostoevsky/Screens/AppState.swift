@@ -65,6 +65,26 @@ class AppState: ObservableObject {
         updateListenerTask?.cancel()
     }
     
+    let storeCountry = SKPaymentQueue.default().storefront?.countryCode
+    
+    var offerPrice: String? {
+        switch storeCountry {
+        case "RUS":
+            return "200"
+        case "DEU", "USA":
+            return "4,99"
+        default:
+            return nil
+        }
+    }
+    
+    var productPrice: String {
+        guard let fetchedPremiumProduct else {
+            return "2,99 $"
+        }
+        return String(fetchedPremiumProduct.displayPrice)
+    }
+    
     func listenForTransactions() -> Task<Void, Error> {
         return Task.detached {
             //Iterate through any transactions that don't come from a direct call to `purchase()`.
@@ -90,6 +110,7 @@ class AppState: ObservableObject {
             }
 
             fetchedPremiumProduct = premiumProduct
+
         } catch {
             print("Failed product request from the App Store server: \(error)")
         }

@@ -423,10 +423,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9DF3C9126DD624E0052B466 /* Build configuration list for PBXNativeTarget "Dostoevsky" */;
 			buildPhases = (
+				B94DA1FB29292F6C008CBE37 /* SwiftGen */,
 				B9DF3C7E26DD624D0052B466 /* Sources */,
 				B9DF3C7F26DD624D0052B466 /* Frameworks */,
 				B9DF3C8026DD624D0052B466 /* Resources */,
-				B9FF85EE285F2B79009BE363 /* ShellScript */,
+				B9FF85EE285F2B79009BE363 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -500,7 +501,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B9FF85EE285F2B79009BE363 /* ShellScript */ = {
+		B94DA1FB29292F6C008CBE37 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Dostoevsky/Localizable.strings",
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Strings.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=$PATH:/opt/homebrew/bin\nswiftgen\n";
+		};
+		B9FF85EE285F2B79009BE363 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 8;
@@ -510,6 +531,7 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (

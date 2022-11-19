@@ -14,7 +14,16 @@ struct BuyPremiumView: View {
                 Label("Lets you save favourite locations, so you can look them up on the map", systemImage: "checkmark")
             }
             Spacer()
-            Text("One time payment for 4.99")
+            HStack(spacing: 2) {
+                Text("Unlock all features for: ")
+                if let offerPrice = viewModel.offerPrice {
+                    Text(offerPrice)
+                        .strikethrough()
+                }
+                
+                Text(viewModel.productPrice)
+            }
+            
             Button {
                 Task {
                     try? await viewModel.purchasePremium()
@@ -40,6 +49,6 @@ struct BuyPremiumView: View {
 
 struct BuyPremiumView_Previews: PreviewProvider {
     static var previews: some View {
-        BuyPremiumView()
+        BuyPremiumView().environmentObject(AppState())
     }
 }
