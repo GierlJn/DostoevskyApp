@@ -46,7 +46,7 @@ struct DMapview: View {
         })
         .onAppear {
             if !CommandLine.arguments.contains("--UITests") {
-                mapViewModel.checkIfLocationServicesIsEnabled()
+                mapViewModel.setupLocationDelegate()
             }
         }
         .overlay(PickerView(viewModel: mapViewModel), alignment: .bottomTrailing)

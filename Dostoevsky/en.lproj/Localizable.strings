@@ -10,7 +10,7 @@
 "map.filter.option.beforeexile" = "Before exile";
 "map.filter.option.afterexile" = "After exile";
 book.title.premiumActive = "Books";
-book.title.noPremium = "Books (Available with Premium)";
+book.title.noPremium = "Books (Premium)";
 "book.title.crimeandpunishment" = "Crime and Punishment";
 "book.title.humiliatedandinsulted" = "Humiliated and Insulted";
 "about.email.sectionheader" = "We missed something?";

@@ -4,12 +4,12 @@ import MapKit
 class DMapViewModel: NSObject, ObservableObject {
     @Published var filter: FilterOptions = .beforeExile
     @Published var alertItem: AlertItem?
-    var deviceLocationManager: CLLocationManager!
+    let deviceLocationManager: CLLocationManager = CLLocationManager()
     
-    
-    func checkIfLocationServicesIsEnabled() {
-        deviceLocationManager = CLLocationManager()
-        deviceLocationManager.delegate = self
+    func setupLocationDelegate() {
+        if deviceLocationManager.delegate == nil {
+            deviceLocationManager.delegate = self
+        }
     }
     
     private func updateLocationServiceStatus() {

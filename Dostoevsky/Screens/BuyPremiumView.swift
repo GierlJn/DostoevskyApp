@@ -65,7 +65,7 @@ struct BuyPremiumView: View {
         .foregroundColor(.white)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .alert(item: $alert, content: { alertItem in
-            Alert(title: alertItem.title, dismissButton: .default(Text("Ok"), action: {
+            Alert(title: alertItem.title, dismissButton: .default(Text(L10n.General.dismissButton), action: {
                 dismiss()
             }))
         })

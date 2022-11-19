@@ -93,8 +93,8 @@ internal enum L10n {
       internal static let crimeandpunishment = L10n.tr("Localizable", "book.title.crimeandpunishment", fallback: "Crime and Punishment")
       /// Humiliated and Insulted
       internal static let humiliatedandinsulted = L10n.tr("Localizable", "book.title.humiliatedandinsulted", fallback: "Humiliated and Insulted")
-      /// Books (Available with Premium)
-      internal static let noPremium = L10n.tr("Localizable", "book.title.noPremium", fallback: "Books (Available with Premium)")
+      /// Books (Premium)
+      internal static let noPremium = L10n.tr("Localizable", "book.title.noPremium", fallback: "Books (Premium)")
       /// Books
       internal static let premiumActive = L10n.tr("Localizable", "book.title.premiumActive", fallback: "Books")
     }
