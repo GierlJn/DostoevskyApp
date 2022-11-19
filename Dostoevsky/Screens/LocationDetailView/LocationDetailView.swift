@@ -49,7 +49,7 @@ struct LocationDetailView: View {
             ZStack {
                 Capsule()
                 
-                    .foregroundColor(Color(.secondarySystemBackground))
+                    .foregroundColor(Color.detailActionBarBackground)
                 
                 HStack {
                     Button {
@@ -60,7 +60,12 @@ struct LocationDetailView: View {
                     }
                     
                     Button {
-                        locationDetailViewModel.favoriteButtonTapped()
+                        if viewModel.premiumActive {
+                            locationDetailViewModel.favoriteButtonTapped()
+                        } else {
+                            viewModel.showBuyPremiumSheet.toggle()
+                        }
+                        
                     } label: {
                         LocationActionButton(color: Color.customAccentColor, imageName: locationDetailViewModel.isFavorite ? "heart.fill" : "heart")
                             .padding(.leading)
@@ -75,6 +80,7 @@ struct LocationDetailView: View {
             .frame(width: 300, height: 60)
             .padding(.bottom)
         }
+        .foregroundColor(.white)
         .background(
             LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing))
         .accentColor(.white)
@@ -247,5 +253,12 @@ private struct ImageSlider: View {
             }
             .tabViewStyle(PageTabViewStyle())
         }
+    }
+}
+
+struct LocationDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        LocationDetailView(locationDetailViewModel: .init(selectedLocation: .preview, appStateViewModel: .init()))
+            .environmentObject(AppState())
     }
 }

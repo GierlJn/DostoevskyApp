@@ -9,6 +9,8 @@ import Foundation
 import MapKit
 
 struct DLocation: Identifiable, Hashable, Codable {
+    static var preview: DLocation = .init(id: 1, name: .init(en: "Preview address", ru: "Preview Address"), category: 1, description: .init(en: "Preview address", ru: "Preview Address"), imageList: [], location: "Preview location", address: .init(en: "address", ru: "address"), date: .init(en: "address", ru: "address"), books: nil)
+    
   static func == (lhs: DLocation, rhs: DLocation) -> Bool {
     lhs.id == rhs.id
   }

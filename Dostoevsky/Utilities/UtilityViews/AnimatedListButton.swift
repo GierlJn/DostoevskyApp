@@ -1,9 +1,3 @@
-//
-//  AnimatedListButton.swift
-//  SwiftUICustomViews
-//
-//  Created by Julian Gierl on 21.03.22.
-//
 import SwiftUI
 
 struct AnimatedListButton: View {

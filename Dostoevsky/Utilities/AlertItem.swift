@@ -1,10 +1,3 @@
-//
-//  AlertItem.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 23.03.22.
-//
-
 import SwiftUI
 
 struct AlertItem: Identifiable {

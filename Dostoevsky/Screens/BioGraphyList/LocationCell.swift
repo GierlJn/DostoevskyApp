@@ -1,10 +1,3 @@
-//
-//  LocationCell.swift
-//  Grab
-//
-//  Created by Julian Gierl on 25.08.21.
-//
-
 import SwiftUI
 
 struct LocationCell: View {
@@ -26,11 +19,14 @@ struct LocationCell: View {
                     .minimumScaleFactor(0.75)
 
                 if let date = location.localizedDate {
-                    Text(date)
-                        .font(.body)
-                        .fontWeight(.none)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.6)
+                    VStack {
+                        Text(date)
+                            .font(.body)
+                            .fontWeight(.none)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.6)
+                    }
+                    
                 } else if let book = location.localizedBook {
                   Text(book)
                     .font(.body)

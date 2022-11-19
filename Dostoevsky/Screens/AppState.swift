@@ -22,6 +22,7 @@ extension Collection where Element == String {
 
 public enum StoreError: Error {
     case failedVerification
+    case productMissing
 }
 
 class AppState: ObservableObject {
@@ -41,9 +42,10 @@ class AppState: ObservableObject {
     
     @AppStorage("onboard") var showsOnboard = true
     
-    @Published private(set) var subscription: Product?
-    @Published private(set) var purchasedSubscription: Product?
+    @Published private(set) var fetchedPremiumProduct: Product?
+    @Published var premiumActive = false
     
+    @Published var showBuyPremiumSheet = false
     var updateListenerTask: Task<Void, Error>? = nil
     
     init() {
@@ -52,6 +54,10 @@ class AppState: ObservableObject {
         Task {
             await requestProducts()
             await updateCustomerProductStatus()
+        }
+        
+        if locations.isEmpty {
+            setup()
         }
     }
     
@@ -78,12 +84,12 @@ class AppState: ObservableObject {
     @MainActor
     func requestProducts() async {
         do {
-            let storeProducts = try await Product.products(for: ["dostoevsky.premium"])
+            let storeProducts = try await Product.products(for: ["dostoevsky.premium1"])
             guard let premiumProduct = storeProducts.first else {
                 return
             }
 
-            subscription = premiumProduct
+            fetchedPremiumProduct = premiumProduct
         } catch {
             print("Failed product request from the App Store server: \(error)")
         }
@@ -93,15 +99,21 @@ class AppState: ObservableObject {
     func updateCustomerProductStatus() async {
         for await result in Transaction.currentEntitlements {
             do {
-                //Check whether the transaction is verified. If it isn’t, catch `failedVerification` error.
                 let transaction = try checkVerified(result)
-
-                if subscription?.id == transaction.productID {
-                    purchasedSubscription = subscription
+                if fetchedPremiumProduct?.id == transaction.productID {
+                    premiumActive = true
                 }
             } catch {
                 print(error)
             }
+        }
+    }
+    
+    func purchasePremium() async throws {
+        if let fetchedPremiumProduct {
+            _ = try await purchase(fetchedPremiumProduct)
+        } else {
+            throw StoreError.productMissing
         }
     }
     
@@ -127,15 +139,6 @@ class AppState: ObservableObject {
         default:
             return nil
         }
-    }
-    
-    var isSubscriptionPurchased: Bool {
-        purchasedSubscription == subscription
-    }
-
-    func isPurchased(_ product: Product) async throws -> Bool {
-        //Determine whether the user purchases a given product.
-        purchasedSubscription == subscription
     }
     
     func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {

@@ -1,10 +1,3 @@
-//
-//  GradientButton.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 16.03.22.
-//
-
 import SwiftUI
 
 struct GradientButtonStyle: ButtonStyle {

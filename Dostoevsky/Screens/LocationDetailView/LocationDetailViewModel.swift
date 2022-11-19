@@ -1,10 +1,3 @@
-//
-//  LocationDetailViewModel.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 05.03.22.
-//
-
 import SwiftUI
 
 class LocationDetailViewModel: ObservableObject {

@@ -1,10 +1,3 @@
-//
-//  AboutView.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 14.03.22.
-//
-
 import SwiftUI
 import StoreKit
 import MessageUI

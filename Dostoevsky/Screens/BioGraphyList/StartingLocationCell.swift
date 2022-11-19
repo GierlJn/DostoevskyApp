@@ -17,8 +17,11 @@ struct StartingLocationCell: View {
       CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner,
                     rating: viewModel.getRatingForLocation(location: location).rating,
                     isFavorite: location.isFavorite)
+        
         CellTitleVStack(alignment: .center, location: location)
           .padding(.leading)
+        Text(location.localizedDescription)
+            .font(.caption)
 
     }
   }

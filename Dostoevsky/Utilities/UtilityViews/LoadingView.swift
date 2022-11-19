@@ -1,10 +1,3 @@
-//
-//  LoadingView.swift
-//  Grab
-//
-//  Created by Julian Gierl on 28.08.21.
-//
-
 import SwiftUI
 
 struct LoadingView: View {

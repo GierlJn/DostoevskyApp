@@ -63,6 +63,8 @@
 		B9DF3CA326DD763E0052B466 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */; };
 		B9E45B392904413900A84895 /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9E45B382904413900A84895 /* Products.plist */; };
 		B9E45B3B2904464000A84895 /* premium.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B9E45B3A2904464000A84895 /* premium.storekit */; };
+		B9EF1DBB2928FA31008E7F30 /* CGPoint+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EF1DBA2928FA31008E7F30 /* CGPoint+Ext.swift */; };
+		B9EF1DBD29290F8B008E7F30 /* BuyPremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EF1DBC29290F8B008E7F30 /* BuyPremiumView.swift */; };
 		B9F3413B27D91A90007E2616 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413A27D91A90007E2616 /* TimeLineView.swift */; };
 		B9F3413D27D91AA2007E2616 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413C27D91AA2007E2616 /* Categories.swift */; };
 		B9F3413F27D9212C007E2616 /* LeadingLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3413E27D9212C007E2616 /* LeadingLocationCell.swift */; };
@@ -143,6 +145,8 @@
 		B9DF3CA226DD763E0052B466 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		B9E45B382904413900A84895 /* Products.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
 		B9E45B3A2904464000A84895 /* premium.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = premium.storekit; sourceTree = "<group>"; };
+		B9EF1DBA2928FA31008E7F30 /* CGPoint+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Ext.swift"; sourceTree = "<group>"; };
+		B9EF1DBC29290F8B008E7F30 /* BuyPremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPremiumView.swift; sourceTree = "<group>"; };
 		B9F3413A27D91A90007E2616 /* TimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
 		B9F3413C27D91AA2007E2616 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		B9F3413E27D9212C007E2616 /* LeadingLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingLocationCell.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				B929627527C4EE2800391364 /* AppState.swift */,
+				B9EF1DBC29290F8B008E7F30 /* BuyPremiumView.swift */,
 				B929629D27C5023600391364 /* AppTabView.swift */,
 				B9A5D9A227E256BD006C417A /* AboutView */,
 				B9BB567D27DF23A300B7017C /* OnBoard */,
@@ -311,6 +316,7 @@
 				B9CB947F27D224B5009EC12A /* UtilityViews */,
 				B9CB947D27D22411009EC12A /* Extensions */,
 				B957E81627EB0F5600545F6D /* AlertItem.swift */,
+				B9EF1DBA2928FA31008E7F30 /* CGPoint+Ext.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 				B9A5D9A427E259E5006C417A /* GradientButtonStyle.swift in Sources */,
 				B993B77727EE4705008485CA /* BookType.swift in Sources */,
 				B9BB567C27DE461100B7017C /* CellImageView.swift in Sources */,
+				B9EF1DBB2928FA31008E7F30 /* CGPoint+Ext.swift in Sources */,
 				B91641E027C7C79C0026C4D7 /* LoadingView.swift in Sources */,
 				B929627627C4EE2800391364 /* AppState.swift in Sources */,
 				B929627227C4D9F300391364 /* DAnnotation.swift in Sources */,
@@ -554,6 +561,7 @@
 				B96CFDAF27D3BD9B00A42152 /* UIImage+Ext.swift in Sources */,
 				B9DD351A27DB932D00A63B4D /* BooksListView.swift in Sources */,
 				B9D68BD227C788A200CB4AA9 /* RatingManager.swift in Sources */,
+				B9EF1DBD29290F8B008E7F30 /* BuyPremiumView.swift in Sources */,
 				B953CC7327CF736100D5AC1A /* Bundle+Ext.swift in Sources */,
 				B96CFDAD27D3B37700A42152 /* Rating.swift in Sources */,
 				B904B95C27CC046800646CEE /* PersistenceManager.swift in Sources */,

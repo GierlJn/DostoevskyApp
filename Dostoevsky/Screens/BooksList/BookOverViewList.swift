@@ -3,7 +3,6 @@ import SwiftUI
 struct BookOverViewList: View {
     
     @State var books = BookManager.books
-    @AppStorage("premium") var premium = false
     @EnvironmentObject var viewModel: AppState
     
     var body: some View {
@@ -15,7 +14,7 @@ struct BookOverViewList: View {
                     ScrollView(showsIndicators: false) {
                         ForEach(books, id: \.self) { book in
                             VStack(alignment: .leading) {
-                                if viewModel.isSubscriptionPurchased {
+                                if viewModel.premiumActive {
                                     NavigationLink {
                                         BooksListView(book: book)
                                     } label: {
@@ -37,14 +36,7 @@ struct BookOverViewList: View {
                                     }
                                 } else {
                                     Button {
-                                        guard let subscription = viewModel.subscription else {
-                                            return
-                                        }
-                                        Task {
-                                            try? await viewModel.purchase(subscription)
-                                        }
-                                        
-                                
+                                        viewModel.showBuyPremiumSheet.toggle()
                                     } label: {
                                         VStack {
                                             book.image
