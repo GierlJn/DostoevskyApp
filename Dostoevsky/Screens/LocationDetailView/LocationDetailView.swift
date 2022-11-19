@@ -1,9 +1,3 @@
-//
-//  LocationDetailView.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 30.08.21.
-//
 import SwiftUI
 import MapKit
 
@@ -12,6 +6,7 @@ struct LocationDetailView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AppState
     @ObservedObject var locationDetailViewModel: LocationDetailViewModel
+    @State var showPremiumBuySheet = false
     
     var body: some View {
         
@@ -53,19 +48,17 @@ struct LocationDetailView: View {
                 
                 HStack {
                     Button {
-                        viewModel.getDirectionsToLocation(location: locationDetailViewModel.selectedLocation)
+                        if viewModel.premiumActive {
+                            viewModel.getDirectionsToLocation(location: locationDetailViewModel.selectedLocation)
+                        } else {
+                            showPremiumBuySheet.toggle()
+                        }
                     } label: {
                         LocationActionButton(color: Color.customAccentColor, imageName: "location.fill")
                             .padding(.leading)
                     }
-                    
                     Button {
-                        if viewModel.premiumActive {
-                            locationDetailViewModel.favoriteButtonTapped()
-                        } else {
-                            viewModel.showBuyPremiumSheet.toggle()
-                        }
-                        
+                        locationDetailViewModel.favoriteButtonTapped()
                     } label: {
                         LocationActionButton(color: Color.customAccentColor, imageName: locationDetailViewModel.isFavorite ? "heart.fill" : "heart")
                             .padding(.leading)
@@ -80,6 +73,9 @@ struct LocationDetailView: View {
             .frame(width: 300, height: 60)
             .padding(.bottom)
         }
+        .sheet(isPresented: $showPremiumBuySheet, content: {
+            BuyPremiumView()
+        })
         .foregroundColor(.white)
         .background(
             LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing))

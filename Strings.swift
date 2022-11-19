@@ -100,12 +100,12 @@ internal enum L10n {
     }
   }
   internal enum BuyPremium {
-    /// Unlocks all the places from Dostoevskys Crime and Punishment
-    internal static let feature1 = L10n.tr("Localizable", "buyPremium.feature1", fallback: "Unlocks all the places from Dostoevskys Crime and Punishment")
-    /// Unlocks all the places from Dostoevskys Humiliated and Insulted
-    internal static let feature2 = L10n.tr("Localizable", "buyPremium.feature2", fallback: "Unlocks all the places from Dostoevskys Humiliated and Insulted")
-    /// Lets you save favourite locations, so you can look them up fast
-    internal static let feature3 = L10n.tr("Localizable", "buyPremium.feature3", fallback: "Lets you save favourite locations, so you can look them up fast")
+    /// Unlocks all the places from Dostoevskys Crime and Punishment.
+    internal static let feature1 = L10n.tr("Localizable", "buyPremium.feature1", fallback: "Unlocks all the places from Dostoevskys Crime and Punishment.")
+    /// Unlocks all the places from Dostoevskys Humiliated and Insulted.
+    internal static let feature2 = L10n.tr("Localizable", "buyPremium.feature2", fallback: "Unlocks all the places from Dostoevskys Humiliated and Insulted.")
+    /// Lets you navigate to a place with one click.
+    internal static let feature3 = L10n.tr("Localizable", "buyPremium.feature3", fallback: "Lets you navigate to a place with one click.")
     /// Unlock all features for %@/%s.
     internal static func priceOffer(_ p1: Any, _ p2: UnsafePointer<CChar>) -> String {
       return L10n.tr("Localizable", "buyPremium.priceOffer", String(describing: p1), p2, fallback: "Unlock all features for %@/%s.")

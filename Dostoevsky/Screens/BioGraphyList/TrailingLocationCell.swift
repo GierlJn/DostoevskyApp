@@ -19,6 +19,8 @@ struct TrailingLocationCell: View {
             .padding(.horizontal)
             Text(location.localizedDescription)
                 .font(.caption)
+                .multilineTextAlignment(.leading)
+                .allowsTightening(true)
         }
 
     }

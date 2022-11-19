@@ -22,7 +22,8 @@ struct StartingLocationCell: View {
           .padding(.leading)
         Text(location.localizedDescription)
             .font(.caption)
-
+            .allowsTightening(true)
+            .multilineTextAlignment(.leading)
     }
   }
 
@@ -44,7 +45,7 @@ struct CellTitleVStack: View {
       Text(location.localizedName)
         .font(.title2)
         .fontWeight(.semibold)
-        .lineLimit(1)
+        .lineLimit(2)
         .minimumScaleFactor(0.75)
 
       if let date = location.localizedDate {

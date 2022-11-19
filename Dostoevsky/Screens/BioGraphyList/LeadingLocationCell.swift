@@ -18,6 +18,8 @@ struct LeadingLocationCell: View {
             .padding(.vertical)
             Text(location.localizedDescription)
                 .font(.caption)
+                .multilineTextAlignment(.leading)
+                .allowsTightening(true)
         }
         
     }
