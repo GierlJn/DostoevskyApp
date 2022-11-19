@@ -9,6 +9,8 @@
 "map.filter.option.favorites" = "Favorites";
 "map.filter.option.beforeexile" = "Before exile";
 "map.filter.option.afterexile" = "After exile";
+book.title.premiumActive = "Books";
+book.title.noPremium = "Books (Available with Premium)";
 "book.title.crimeandpunishment" = "Crime and Punishment";
 "book.title.humiliatedandinsulted" = "Humiliated and Insulted";
 "about.email.sectionheader" = "We missed something?";
@@ -17,6 +19,37 @@
 "about.useractions.action.rate" = "Rate App";
 "about.useractions.action.share" = "Share App";
 "about.useractions.sharesheet.text" = "Check out this cool app!";
+"about.buyPremium" = "Premium";
 "onboard.header" = "Dostoevsky's Petersburg";
 "onboard.action" = "Explore";
-"buyPremium.priceOffer" = "Unlock all features for %@/%s.";
+buyPremium.priceOffer = "Unlock all features for %@/%s.";
+buyPremium.title = "Premium upgrade";
+buyPremium.feature1 = "Unlocks all the places from Dostoevskys Crime and Punishment";
+buyPremium.feature2 = "Unlocks all the places from Dostoevskys Humiliated and Insulted";
+buyPremium.feature3 = "Lets you save favourite locations, so you can look them up fast";
+buyPremium.unlockAllFeatures = "Unlock all features for: ";
+buyPremium.action.upgrade = "Upgrade now";
+buyPremium.action.restore = "Already bought? Restore your purchase";
+
+alerts.premiumPurchased.title = "Purchase succesful!";
+alerts.premiumPurchased.message = "Enjoy using all features.";
+
+alerts.purchasedFailed.title = "Purchase failed";
+alerts.failedVerification.message = "The transaction was not succesful.\nYour purchase could not be verified by the App Store.";
+
+alerts.pending.message = "The purchase is pending, and requires additional action.";
+alerts.purchaseError.message = "The purchase was not successful.\nPlease try again.";
+
+general.dismissButton = "Ok";
+
+alerts.unableToGetLocations.title = "Locations Error";
+alerts.unableToGetLocations.message = "Unable to retrieve locations at this time. \n Please try again.";
+
+alerts.locationRestricted.title = "Locations Restricted";
+alerts.locationRestricted.message = "Your location is restricted.";
+
+alerts.locationDenied.title = "Locations Denied";
+alerts.locationDenied.message = "The app has no permission to access your location. \nYou can change that in your phones settings.";
+
+alerts.locationDisabled.title = "Locations Disabled";
+alerts.locationDisabled.message = "Your phones location services are disabled. \nYou can change that in your phones settings.";

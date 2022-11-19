@@ -6,12 +6,13 @@ struct AboutView: View {
     @State var isShowingSheet = false
     @State var result: Result<MFMailComposeResult, Error>?
     @State var isShowingMailView = false
+    @EnvironmentObject var viewModel: AppState
     
     var body: some View {
         VStack(alignment: .leading) {
             
             Form {
-                Section(result == nil ? L10n.About.Email.sectionheader : "\(String(describing: result))") {
+                Section(L10n.About.Email.sectionheader) {
                     Button {
                         self.isShowingMailView.toggle()
                     } label: {
@@ -24,13 +25,19 @@ struct AboutView: View {
                     Button {
                         SKStoreReviewController.requestReviewInCurrentScene()
                     } label: {
-                        Label(L10n.About.Useractions.Action.rate, systemImage: "star")
+                        Label(L10n.About.Useractions.Action.rate, systemImage: "hand.thumbsup")
                     }
                     Button {
                         isShowingSheet = true
                     } label: {
                         Label(L10n.About.Useractions.Action.share, systemImage: "square.and.arrow.up")
                     }
+                    Button {
+                        viewModel.showBuyPremiumSheet.toggle()
+                    } label: {
+                        Label(L10n.About.buyPremium, systemImage: "star")
+                    }
+
                     
                 }
             }

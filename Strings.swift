@@ -11,6 +11,8 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
   internal enum About {
+    /// Premium
+    internal static let buyPremium = L10n.tr("Localizable", "about.buyPremium", fallback: "Premium")
     internal enum Email {
       /// E-mail us
       internal static let action = L10n.tr("Localizable", "about.email.action", fallback: "E-mail us")
@@ -32,18 +34,91 @@ internal enum L10n {
       }
     }
   }
+  internal enum Alerts {
+    internal enum FailedVerification {
+      /// The transaction was not succesful.
+      /// Your purchase could not be verified by the App Store.
+      internal static let message = L10n.tr("Localizable", "alerts.failedVerification.message", fallback: "The transaction was not succesful.\nYour purchase could not be verified by the App Store.")
+    }
+    internal enum LocationDenied {
+      /// The app has no permission to access your location. 
+      /// You can change that in your phones settings.
+      internal static let message = L10n.tr("Localizable", "alerts.locationDenied.message", fallback: "The app has no permission to access your location. \nYou can change that in your phones settings.")
+      /// Locations Denied
+      internal static let title = L10n.tr("Localizable", "alerts.locationDenied.title", fallback: "Locations Denied")
+    }
+    internal enum LocationDisabled {
+      /// Your phones location services are disabled. 
+      /// You can change that in your phones settings.
+      internal static let message = L10n.tr("Localizable", "alerts.locationDisabled.message", fallback: "Your phones location services are disabled. \nYou can change that in your phones settings.")
+      /// Locations Disabled
+      internal static let title = L10n.tr("Localizable", "alerts.locationDisabled.title", fallback: "Locations Disabled")
+    }
+    internal enum LocationRestricted {
+      /// Your location is restricted.
+      internal static let message = L10n.tr("Localizable", "alerts.locationRestricted.message", fallback: "Your location is restricted.")
+      /// Locations Restricted
+      internal static let title = L10n.tr("Localizable", "alerts.locationRestricted.title", fallback: "Locations Restricted")
+    }
+    internal enum Pending {
+      /// The purchase is pending, and requires additional action.
+      internal static let message = L10n.tr("Localizable", "alerts.pending.message", fallback: "The purchase is pending, and requires additional action.")
+    }
+    internal enum PremiumPurchased {
+      /// Enjoy using all features.
+      internal static let message = L10n.tr("Localizable", "alerts.premiumPurchased.message", fallback: "Enjoy using all features.")
+      /// Purchase succesful!
+      internal static let title = L10n.tr("Localizable", "alerts.premiumPurchased.title", fallback: "Purchase succesful!")
+    }
+    internal enum PurchaseError {
+      /// The purchase was not successful.
+      /// Please try again.
+      internal static let message = L10n.tr("Localizable", "alerts.purchaseError.message", fallback: "The purchase was not successful.\nPlease try again.")
+    }
+    internal enum PurchasedFailed {
+      /// Purchase failed
+      internal static let title = L10n.tr("Localizable", "alerts.purchasedFailed.title", fallback: "Purchase failed")
+    }
+    internal enum UnableToGetLocations {
+      /// Unable to retrieve locations at this time. 
+      ///  Please try again.
+      internal static let message = L10n.tr("Localizable", "alerts.unableToGetLocations.message", fallback: "Unable to retrieve locations at this time. \n Please try again.")
+      /// Locations Error
+      internal static let title = L10n.tr("Localizable", "alerts.unableToGetLocations.title", fallback: "Locations Error")
+    }
+  }
   internal enum Book {
     internal enum Title {
       /// Crime and Punishment
       internal static let crimeandpunishment = L10n.tr("Localizable", "book.title.crimeandpunishment", fallback: "Crime and Punishment")
       /// Humiliated and Insulted
       internal static let humiliatedandinsulted = L10n.tr("Localizable", "book.title.humiliatedandinsulted", fallback: "Humiliated and Insulted")
+      /// Books (Available with Premium)
+      internal static let noPremium = L10n.tr("Localizable", "book.title.noPremium", fallback: "Books (Available with Premium)")
+      /// Books
+      internal static let premiumActive = L10n.tr("Localizable", "book.title.premiumActive", fallback: "Books")
     }
   }
   internal enum BuyPremium {
+    /// Unlocks all the places from Dostoevskys Crime and Punishment
+    internal static let feature1 = L10n.tr("Localizable", "buyPremium.feature1", fallback: "Unlocks all the places from Dostoevskys Crime and Punishment")
+    /// Unlocks all the places from Dostoevskys Humiliated and Insulted
+    internal static let feature2 = L10n.tr("Localizable", "buyPremium.feature2", fallback: "Unlocks all the places from Dostoevskys Humiliated and Insulted")
+    /// Lets you save favourite locations, so you can look them up fast
+    internal static let feature3 = L10n.tr("Localizable", "buyPremium.feature3", fallback: "Lets you save favourite locations, so you can look them up fast")
     /// Unlock all features for %@/%s.
     internal static func priceOffer(_ p1: Any, _ p2: UnsafePointer<CChar>) -> String {
       return L10n.tr("Localizable", "buyPremium.priceOffer", String(describing: p1), p2, fallback: "Unlock all features for %@/%s.")
+    }
+    /// Premium upgrade
+    internal static let title = L10n.tr("Localizable", "buyPremium.title", fallback: "Premium upgrade")
+    /// Unlock all features for: 
+    internal static let unlockAllFeatures = L10n.tr("Localizable", "buyPremium.unlockAllFeatures", fallback: "Unlock all features for: ")
+    internal enum Action {
+      /// Already bought? Restore your purchase
+      internal static let restore = L10n.tr("Localizable", "buyPremium.action.restore", fallback: "Already bought? Restore your purchase")
+      /// Upgrade now
+      internal static let upgrade = L10n.tr("Localizable", "buyPremium.action.upgrade", fallback: "Upgrade now")
     }
   }
   internal enum Compactlist {
@@ -61,6 +136,10 @@ internal enum L10n {
         internal static let rating = L10n.tr("Localizable", "compactlist.sort.option.rating", fallback: "Rating")
       }
     }
+  }
+  internal enum General {
+    /// Ok
+    internal static let dismissButton = L10n.tr("Localizable", "general.dismissButton", fallback: "Ok")
   }
   internal enum Map {
     internal enum Filter {

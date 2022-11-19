@@ -66,7 +66,7 @@ struct BookOverViewList: View {
                 LinearGradient(gradient: Gradient(colors: [.backgroundStart, .backgroundEnd, .backgroundStart]), startPoint: .topLeading, endPoint: .bottomTrailing)
             )
             .navigationBarHidden(false)
-            .navigationTitle("Books")
+            .navigationTitle(viewModel.premiumActive ? L10n.Book.Title.premiumActive : L10n.Book.Title.noPremium)
         }
     }
 }

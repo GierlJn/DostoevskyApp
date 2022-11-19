@@ -23,6 +23,8 @@ extension Collection where Element == String {
 public enum StoreError: Error {
     case failedVerification
     case productMissing
+    case userCancelled
+    case pending
 }
 
 class AppState: ObservableObject {
@@ -70,8 +72,8 @@ class AppState: ObservableObject {
     var offerPrice: String? {
         switch storeCountry {
         case "RUS":
-            return "200"
-        case "DEU", "USA":
+            return "500"
+        case "DEU", "USA", "FRA":
             return "4,99"
         default:
             return nil
@@ -83,6 +85,10 @@ class AppState: ObservableObject {
             return "2,99 $"
         }
         return String(fetchedPremiumProduct.displayPrice)
+    }
+    
+    func restore() async -> Bool {
+        return ((try? await AppStore.sync()) != nil)
     }
     
     func listenForTransactions() -> Task<Void, Error> {
@@ -155,8 +161,10 @@ class AppState: ObservableObject {
             await transaction.finish()
 
             return transaction
-        case .userCancelled, .pending:
-            return nil
+        case .userCancelled:
+            throw StoreError.userCancelled
+        case .pending:
+            throw StoreError.pending
         default:
             return nil
         }
