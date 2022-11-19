@@ -43,9 +43,7 @@ struct LocationDetailView: View {
             }
             ZStack {
                 Capsule()
-                
                     .foregroundColor(Color.detailActionBarBackground)
-                
                 HStack {
                     Button {
                         if viewModel.premiumActive {
@@ -55,22 +53,25 @@ struct LocationDetailView: View {
                         }
                     } label: {
                         LocationActionButton(color: Color.customAccentColor, imageName: "location.fill")
-                            .padding(.leading)
+                            
                     }
                     Button {
                         locationDetailViewModel.favoriteButtonTapped()
                     } label: {
                         LocationActionButton(color: Color.customAccentColor, imageName: locationDetailViewModel.isFavorite ? "heart.fill" : "heart")
-                            .padding(.leading)
+                            
                     }
-                    
-                    Spacer()
-                    
-                    RatingView(locationDetailViewModel: locationDetailViewModel)
-                        .padding(.horizontal)
+                    Text("\(locationDetailViewModel.locationRating.rating)")
+                        .foregroundColor(.white)
+                        .frame(width: 17, height: 17)
+
+//                    Spacer()
+//
+//                    RatingView(locationDetailViewModel: locationDetailViewModel)
+//                        .padding(.horizontal)
                 }
             }
-            .frame(width: 300, height: 60)
+            .frame(width: 240, height: 60)
             .padding(.bottom)
         }
         .sheet(isPresented: $showPremiumBuySheet, content: {
@@ -87,6 +88,7 @@ struct LocationDetailView: View {
             XDismissButton()
         }, alignment: .topTrailing)
     }
+    
 }
 
 private struct RatingView: View {
@@ -204,7 +206,7 @@ private struct LocationActionButton: View {
     }
 }
 
-private struct InfoView: View {
+struct InfoView: View {
     
     var color: Color
     @ObservedObject var locationDetailViewModel: LocationDetailViewModel
@@ -212,7 +214,7 @@ private struct InfoView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
-                .foregroundColor(.customAccentColor)
+                .foregroundColor(color)
                 .frame(width: 70, height: 35)
             
             Text("\(locationDetailViewModel.locationRating.rating)")
