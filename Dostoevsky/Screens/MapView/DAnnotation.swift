@@ -10,6 +10,14 @@ import SwiftUI
 struct DAnnotation: View {
     var location: DLocation
     var isFavorite: Bool
+    var isRask: Bool {
+        if case 3 = location.category, let books = location.books {
+            if books.en.contains("Crime and Punishment") {
+                return true
+            }
+        }
+        return false
+    }
 
     var body: some View {
             ZStack {
@@ -40,7 +48,7 @@ struct DAnnotation: View {
                       .resizable()
                       .frame(width: 15, height: 15 )
                       .foregroundColor(Color.red)
-                      .offset(x: 16, y: -7)
+                      .offset(x: isRask ? -15 : 16, y: isRask ? -3 : -7)
                       .shadow(radius: 8)
                 }
             }
@@ -49,7 +57,9 @@ struct DAnnotation: View {
 
 
 struct DAnnoation_Previews: PreviewProvider {
+    static var rask: DLocation = .init(id: 0, name: .init(en: "", ru: ""), category: 3, description: .init(en: "", ru: ""), imageList: [], location: "", address: .init(en: "", ru: ""), date: nil, books: .init(en: ["Crime and Punishment"], ru: []))
+    
     static var previews: some View {
-        DAnnotation(location: .preview, isFavorite: true)
+        DAnnotation(location: rask, isFavorite: true)
     }
 }
