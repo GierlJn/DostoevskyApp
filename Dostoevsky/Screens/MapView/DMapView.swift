@@ -32,7 +32,7 @@ struct DMapview: View {
                     }
                 })) { location in
                     MapAnnotation(coordinate: location.getCLLocation().coordinate) {
-                        DAnnotation(location: location)
+                        DAnnotation(location: location, isFavorite: PersistanceManager.isFavorite(location))
                             .onTapGesture {
                                 viewModel.selectedLocation = location
                                 viewModel.showDetail = ActiveStatus.active

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DAnnotation: View {
     var location: DLocation
+    var isFavorite: Bool
 
     var body: some View {
             ZStack {
@@ -34,6 +35,21 @@ struct DAnnotation: View {
                 default:
                     EmptyView()
                 }
+                if isFavorite {
+                  Image(systemName: "heart.fill")
+                      .resizable()
+                      .frame(width: 15, height: 15 )
+                      .foregroundColor(Color.red)
+                      .offset(x: 16, y: -7)
+                      .shadow(radius: 8)
+                }
             }
+    }
+}
+
+
+struct DAnnoation_Previews: PreviewProvider {
+    static var previews: some View {
+        DAnnotation(location: .preview, isFavorite: true)
     }
 }
