@@ -8,12 +8,12 @@ struct LeadingLocationCell: View {
     var body: some View {
         VStack {
             HStack {
-              CellTitleVStack(alignment: .trailing, location: location)
+                CellTitleVStack(alignment: .trailing, location: location)
                     .padding(.trailing)
                 
-              CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner,
-                            rating: viewModel.getRatingForLocation(location: location).rating,
-                            isFavorite: PersistanceManager.isFavorite(location))
+                CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner,
+                              rating: viewModel.getRatingForLocation(location: location).rating,
+                              isFavorite: PersistanceManager.isFavorite(location))
             }
             .padding(.vertical)
             Text(location.localizedDescription)
@@ -21,6 +21,5 @@ struct LeadingLocationCell: View {
                 .multilineTextAlignment(.leading)
                 .allowsTightening(true)
         }
-        
     }
 }

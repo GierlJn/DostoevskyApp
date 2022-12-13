@@ -1,15 +1,7 @@
-//
-//  DMapView.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 21.02.22.
-//
-
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct DMapview: View {
-    
     @EnvironmentObject var viewModel: AppState
     @StateObject var mapViewModel = DMapViewModel()
     @State var numberOfPeople = 0
@@ -65,8 +57,9 @@ struct PickerView: View {
             Text(L10n.Map.Filter.Option.afterexile).tag(FilterOptions.afterExile)
             if appViewModel.premiumActive {
                 Text(L10n.Book.Title.crimeandpunishment).tag(FilterOptions.crime)
-                Text(L10n.Book.Title.humiliatedandinsulted).tag(FilterOptions.humililated)}
+                Text(L10n.Book.Title.humiliatedandinsulted).tag(FilterOptions.humililated)
             }
+        }
         .padding(.horizontal)
         .background(RoundedRectangle(cornerRadius: 12)
             .foregroundColor(.accentLight))

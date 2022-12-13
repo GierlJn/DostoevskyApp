@@ -1,14 +1,6 @@
-//
-//  DostoevskyUITestsLaunchTests.swift
-//  DostoevskyUITests
-//
-//  Created by Julian Gierl on 14.03.22.
-//
-
 import XCTest
 
 class DostoevskyUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

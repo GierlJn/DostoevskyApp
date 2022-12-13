@@ -1,12 +1,5 @@
-//
-//  ShareSheet.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 14.03.22.
-//
-
-import UIKit
 import SwiftUI
+import UIKit
 
 struct ShareSheet: UIViewControllerRepresentable {
     typealias Callback = (_ activityType: UIActivity.ActivityType?,
@@ -18,16 +11,15 @@ struct ShareSheet: UIViewControllerRepresentable {
     let excludedActivityTypes: [UIActivity.ActivityType]? = nil
     let callback: Callback? = nil
 
-    func makeUIViewController(context: Context) -> UIActivityViewController {
-        let controller = UIActivityViewController(
-            activityItems: activityItems,
-            applicationActivities: applicationActivities)
+    func makeUIViewController(context _: Context) -> UIActivityViewController {
+        let controller = UIActivityViewController(activityItems: activityItems,
+                                                  applicationActivities: applicationActivities)
         controller.excludedActivityTypes = excludedActivityTypes
         controller.completionWithItemsHandler = callback
         return controller
     }
 
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
+    func updateUIViewController(_: UIActivityViewController, context _: Context) {
         // nothing to do here
     }
 }

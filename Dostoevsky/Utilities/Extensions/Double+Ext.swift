@@ -1,10 +1,3 @@
-//
-//  Double+Ext.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 04.03.22.
-//
-
 import Foundation
 
 extension Double {

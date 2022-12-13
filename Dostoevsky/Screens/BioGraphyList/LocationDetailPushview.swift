@@ -7,40 +7,40 @@
 // import SwiftUI
 //
 // struct LocationDetailPushView: View {
-//    
+//
 //    @ObservedObject var viewModel: LocationDetailViewModel
 //    var selectedLocation: DLocation
-//    
+//
 //    var body: some View {
-//        
+//
 //        ZStack {
 //            if viewModel.selectedLocation != nil{
 //                VStack(spacing: 32) {
 //                    BannerImageView(image: viewModel.selectedLocation!.createBannerImage())
 //                        .padding(.top,32)
 //                        .padding(.bottom,16)
-//                    
+//
 //                    HStack {
 //                        Button {
 //                            viewModel.getDirectionsToLocation()
 //                        } label: {
 //                            AddressView(address: viewModel.selectedLocation!.streetName)
 //                        }
-//                        
+//
 //                        Spacer()
-//                        
+//
 //                    }
 //                    .padding(.horizontal)
-//                    
+//
 //                    DescriptionView(text: viewModel.selectedLocation!.description)
 //                    Spacer()
 //                    ZStack {
 //                        Capsule()
 //                            .frame(height: 80)
 //                            .foregroundColor(Color(.secondarySystemBackground))
-//                        
+//
 //                        HStack(spacing: 20) {
-//                            
+//
 //                            Button {
 //                                if viewModel.disableRating {
 //                                    return
@@ -58,22 +58,22 @@
 //                                default:
 //                                    print("not")
 //                                }
-//                                
-//                                
-//                                
+//
+//
+//
 //                                viewModel.updateSelectedLocation()
 //                                viewModel.updateLocationRating()
 //                            } label: {
 //                                LocationActionButton(color: .brandPrimary, imageName: "minus").opacity(viewModel.ratingState == -1 ? 0.5 : 1)
 //                            }
-//                            
+//
 //                            InfoView(color: .brandPrimary, text: "\(viewModel.selectedLocation!.rating)")
-//                            
+//
 //                            Button {
 //                                if viewModel.disableRating {
 //                                    return
 //                                }
-//                                
+//
 //                                switch viewModel.ratingState{
 //                                case -1:
 //                                    viewModel.selectedLocation!.rating += 1
@@ -87,8 +87,8 @@
 //                                default:
 //                                    print("not")
 //                                }
-//                                
-//                                
+//
+//
 //                                viewModel.updateSelectedLocation()
 //                                viewModel.updateLocationRating()
 //                            } label: {
@@ -96,21 +96,21 @@
 //                            }
 //                        }
 //                        .padding(.horizontal)
-//                        
+//
 //                    }
-//                    
+//
 //                }
 //            }
-//            
-//            
-//            
-//            
+//
+//
+//
+//
 //        }
-//        
+//
 //        .navigationTitle(viewModel.selectedLocation?.name ?? "")
 //        .navigationBarTitleDisplayMode(.automatic)
-//        
-//        
+//
+//
 //        .onAppear(perform: {
 //            viewModel.setup(location: selectedLocation)
 //        })
@@ -119,9 +119,9 @@
 //
 //
 // private struct BannerImageView: View {
-//    
+//
 //    var image: UIImage
-//    
+//
 //    var body: some View {
 //        Image(uiImage: image)
 //            .resizable()
@@ -131,9 +131,9 @@
 // }
 //
 // private struct AddressView: View {
-//    
+//
 //    var address: String
-//    
+//
 //    var body: some View {
 //        Label(address, systemImage: "mappin.and.ellipse")
 //            .font(.caption)
@@ -143,50 +143,50 @@
 //
 //
 // private struct LocationActionButton: View {
-//    
+//
 //    var color: Color
 //    var imageName: String
-//    
+//
 //    var body: some View {
 //        ZStack {
 //            Circle()
 //                .foregroundColor(color)
 //                .frame(width: 60, height: 60)
-//            
+//
 //            Image(systemName: imageName)
 //                .resizable()
 //                .scaledToFit()
 //                .foregroundColor(.white)
 //                .frame(width: 22, height: 22)
-//            
+//
 //        }
 //    }
 // }
 //
 // private struct InfoView: View {
-//    
+//
 //    var color: Color
 //    var text: String
-//    
+//
 //    var body: some View {
 //        ZStack {
 //            RoundedRectangle(cornerRadius: 12)
 //                .foregroundColor(color)
 //                .frame(width: 70, height: 50)
-//            
+//
 //            Text(text)
 //                .foregroundColor(.white)
 //                .frame(width: 22, height: 22)
-//            
+//
 //        }
 //    }
 // }
 //
 //
 // private struct DescriptionView: View {
-//    
+//
 //    var text: String
-//    
+//
 //    var body: some View {
 //        Text(text)
 //            .lineLimit(3)

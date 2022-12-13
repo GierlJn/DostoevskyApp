@@ -14,7 +14,6 @@ struct TrailingLocationCell: View {
                 
                 CellTitleVStack(alignment: .leading, location: location)
                     .padding(.leading)
-                
             }
             .padding(.horizontal)
             Text(location.localizedDescription)
@@ -22,13 +21,10 @@ struct TrailingLocationCell: View {
                 .multilineTextAlignment(.leading)
                 .allowsTightening(true)
         }
-
     }
-    
 }
 
 struct MirroredLocationCell_Previews: PreviewProvider {
-    
     static var previews: some View {
         TrailingLocationCell(viewModel: AppState(), location: MockData.createMockLocation())
     }

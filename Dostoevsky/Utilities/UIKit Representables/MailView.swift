@@ -1,21 +1,12 @@
-//
-//  MailView.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 14.03.22.
-//
-
+import MessageUI
 import SwiftUI
 import UIKit
-import MessageUI
 
 struct MailView: UIViewControllerRepresentable {
-
     @Environment(\.presentationMode) var presentation
     @Binding var result: Result<MFMailComposeResult, Error>?
 
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
-
         @Binding var presentation: PresentationMode
         @Binding var result: Result<MFMailComposeResult, Error>?
 
@@ -25,7 +16,7 @@ struct MailView: UIViewControllerRepresentable {
             _result = result
         }
 
-        func mailComposeController(_ controller: MFMailComposeViewController,
+        func mailComposeController(_: MFMailComposeViewController,
                                    didFinishWith result: MFMailComposeResult,
                                    error: Error?) {
             defer {
@@ -40,8 +31,8 @@ struct MailView: UIViewControllerRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(presentation: presentation,
-                           result: $result)
+        Coordinator(presentation: presentation,
+                    result: $result)
     }
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
@@ -50,8 +41,6 @@ struct MailView: UIViewControllerRepresentable {
         return vc
     }
 
-    func updateUIViewController(_ uiViewController: MFMailComposeViewController,
-                                context: UIViewControllerRepresentableContext<MailView>) {
-
-    }
+    func updateUIViewController(_: MFMailComposeViewController,
+                                context _: UIViewControllerRepresentableContext<MailView>) {}
 }

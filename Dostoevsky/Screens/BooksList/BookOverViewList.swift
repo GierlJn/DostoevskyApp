@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct BookOverViewList: View {
-    
     @State var books = BookManager.books
     @EnvironmentObject var viewModel: AppState
     

@@ -1,10 +1,10 @@
-import SwiftUI
 import MapKit
+import SwiftUI
 
 class DMapViewModel: NSObject, ObservableObject {
     @Published var filter: FilterOptions = .beforeExile
     @Published var alertItem: AlertItem?
-    let deviceLocationManager: CLLocationManager = CLLocationManager()
+    let deviceLocationManager: CLLocationManager = .init()
     
     func setupLocationDelegate() {
         if deviceLocationManager.delegate == nil {
@@ -29,7 +29,7 @@ class DMapViewModel: NSObject, ObservableObject {
 }
 
 extension DMapViewModel: CLLocationManagerDelegate {
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    func locationManagerDidChangeAuthorization(_: CLLocationManager) {
         updateLocationServiceStatus()
     }
 }

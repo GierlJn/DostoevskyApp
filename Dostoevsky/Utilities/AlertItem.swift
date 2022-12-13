@@ -7,7 +7,7 @@ struct AlertItem: Identifiable {
     let dismiss: Alert.Button
 }
 
-struct AlertContext {
+enum AlertContext {
     static let unableToGetLocations = AlertItem(title: Text(L10n.Alerts.UnableToGetLocations.title),
                                                 message: Text(L10n.Alerts.UnableToGetLocations.message),
                                                 dismiss: .default(Text(L10n.General.dismissButton)))

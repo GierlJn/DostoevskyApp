@@ -5,11 +5,10 @@ struct LocationCell: View {
 
     var location: DLocation
     var body: some View {
-
         HStack {
-          CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner,
-                        rating: viewModel.getRatingForLocation(location: location).rating,
-                        isFavorite: PersistanceManager.isFavorite(location))
+            CellImageView(image: UIImage.loadImages(location.imageList).first ?? PlaceholderImage.banner,
+                          rating: viewModel.getRatingForLocation(location: location).rating,
+                          isFavorite: PersistanceManager.isFavorite(location))
 
             VStack(alignment: .leading) {
                 Text(location.localizedName)
@@ -28,16 +27,14 @@ struct LocationCell: View {
                     }
                     
                 } else if let book = location.localizedBook {
-                  Text(book)
-                    .font(.body)
-                    .fontWeight(.none)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.6)
-
+                    Text(book)
+                        .font(.body)
+                        .fontWeight(.none)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.6)
                 }
 
             }.padding(.leading)
         }
     }
-
 }

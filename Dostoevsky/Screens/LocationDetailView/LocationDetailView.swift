@@ -1,15 +1,13 @@
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct LocationDetailView: View {
-    
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AppState
     @ObservedObject var locationDetailViewModel: LocationDetailViewModel
     @State var showPremiumBuySheet = false
     
     var body: some View {
-        
         VStack {
             ScrollView {
                 VStack(spacing: 16) {
@@ -30,7 +28,6 @@ struct LocationDetailView: View {
                                 
                                 Spacer()
                             }
-                            
                         }
                     }.frame(height: 350)
                     
@@ -38,7 +35,6 @@ struct LocationDetailView: View {
                     
                     DescriptionView(text: locationDetailViewModel.selectedLocation.localizedDescription)
                         .padding(.top)
-                    
                 }
             }
             ZStack {
@@ -53,13 +49,11 @@ struct LocationDetailView: View {
                         }
                     } label: {
                         LocationActionButton(color: Color.customAccentColor, imageName: "location.fill")
-                            
                     }
                     Button {
                         locationDetailViewModel.favoriteButtonTapped()
                     } label: {
                         LocationActionButton(color: Color.customAccentColor, imageName: locationDetailViewModel.isFavorite ? "heart.fill" : "heart")
-                            
                     }
                     Text("\(locationDetailViewModel.locationRating.rating)")
                         .foregroundColor(.white)
@@ -88,7 +82,6 @@ struct LocationDetailView: View {
             XDismissButton()
         }, alignment: .topTrailing)
     }
-    
 }
 
 private struct RatingView: View {
@@ -96,7 +89,6 @@ private struct RatingView: View {
     @ObservedObject var locationDetailViewModel: LocationDetailViewModel
     var body: some View {
         HStack(spacing: 20) {
-            
             MinusButton(locationDetailViewModel: locationDetailViewModel)
             
             InfoView(color: .brandPrimary, locationDetailViewModel: locationDetailViewModel)
@@ -134,10 +126,9 @@ private struct MinusButton: View {
         } label: {
             LocationActionButton(color: .customAccentColor,
                                  imageName: "minus")
-            .opacity(locationDetailViewModel.ratingState == -1 ? 0.5 : 1)
+                .opacity(locationDetailViewModel.ratingState == -1 ? 0.5 : 1)
         }
     }
-    
 }
 
 private struct PlusButton: View {
@@ -168,25 +159,21 @@ private struct PlusButton: View {
         } label: {
             LocationActionButton(color: .customAccentColor,
                                  imageName: "plus")
-            .opacity(locationDetailViewModel.ratingState == 1 ? 0.5 : 1)
+                .opacity(locationDetailViewModel.ratingState == 1 ? 0.5 : 1)
         }
     }
-    
 }
 
 private struct BannerImageView: View {
-    
     var image: UIImage
     
     var body: some View {
         Image(uiImage: image)
             .resizable()
-        
     }
 }
 
 private struct LocationActionButton: View {
-    
     var color: Color
     var imageName: String
     
@@ -201,13 +188,11 @@ private struct LocationActionButton: View {
                 .scaledToFit()
                 .foregroundColor(.white)
                 .frame(width: 17.5, height: 17.5)
-            
         }
     }
 }
 
 struct InfoView: View {
-    
     var color: Color
     @ObservedObject var locationDetailViewModel: LocationDetailViewModel
     
@@ -220,13 +205,11 @@ struct InfoView: View {
             Text("\(locationDetailViewModel.locationRating.rating)")
                 .foregroundColor(.white)
                 .frame(width: 17, height: 17)
-            
         }
     }
 }
 
 private struct DescriptionView: View {
-    
     var text: String
     
     var body: some View {
@@ -246,7 +229,6 @@ private struct ImageSlider: View {
                 ForEach(images, id: \.self) { item in
                     Image(uiImage: item)
                         .resizable()
-                    
                 }
             }
             .tabViewStyle(PageTabViewStyle())

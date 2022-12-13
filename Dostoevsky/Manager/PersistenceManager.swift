@@ -1,10 +1,3 @@
-//
-//  PersistenceManager.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 27.02.22.
-//
-
 import Foundation
 
 enum DError: String, Error {
@@ -21,29 +14,28 @@ enum PersistanceActionType {
 }
 
 enum PersistanceManager {
-
-    static private let defaults = UserDefaults.standard
+    private static let defaults = UserDefaults.standard
 
     enum Keys { static let favorites = "favorites" }
 
-    static func updateWith(favoriteId: String, actionType: PersistanceActionType, completed: @escaping(Result<[String], Error>)->Void) {
+    static func updateWith(favoriteId: String, actionType: PersistanceActionType, completed: @escaping (Result<[String], Error>) -> Void) {
         retrieveFavoriteIds { result in
             switch result {
             case .success(var oldFavorites):
                 switch actionType {
                 case .add:
-                    guard !oldFavorites.contains(favoriteId)else {
+                    guard !oldFavorites.contains(favoriteId) else {
                         completed(.failure(DError.alreadyInFavorites))
                         return
                     }
                     oldFavorites.append(favoriteId)
-                    var _ = save(favoriteIds: oldFavorites)
+                    _ = save(favoriteIds: oldFavorites)
                     completed(.success(oldFavorites))
                 case .remove:
                     oldFavorites.removeAll { loc in
                         loc == favoriteId
                     }
-                    var _ = save(favoriteIds: oldFavorites)
+                    _ = save(favoriteIds: oldFavorites)
                     completed(.success(oldFavorites))
                 }
 
@@ -53,17 +45,17 @@ enum PersistanceManager {
         }
     }
 
-  static func isFavorite(_ loc: DLocation) -> Bool {
-    guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else { return false }
-    do {
-      let favorites = try JSONDecoder().decode([String].self, from: favoritesData)
-      return favorites.contains(loc.name.en)
-    } catch {
-      return false
+    static func isFavorite(_ loc: DLocation) -> Bool {
+        guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else { return false }
+        do {
+            let favorites = try JSONDecoder().decode([String].self, from: favoritesData)
+            return favorites.contains(loc.name.en)
+        } catch {
+            return false
+        }
     }
-  }
 
-    static func retrieveFavoriteIds(completed: @escaping(Result<[String], Error>) -> Void) {
+    static func retrieveFavoriteIds(completed: @escaping (Result<[String], Error>) -> Void) {
         guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
             completed(.success([]))
             return
@@ -85,7 +77,5 @@ enum PersistanceManager {
         } catch {
             return .unableToFavorite
         }
-
     }
-
 }

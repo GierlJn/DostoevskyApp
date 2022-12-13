@@ -1,10 +1,3 @@
-//
-//  UIImage+Ext.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 05.03.22.
-//
-
 import UIKit
 
 extension UIImage {

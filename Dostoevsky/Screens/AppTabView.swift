@@ -1,15 +1,14 @@
 import SwiftUI
 
 struct AppTabView: View {
-
     @EnvironmentObject var viewModel: AppState
     @State var buttonPressed = false
     var body: some View {
         TabView {
             TimeLineView().environmentObject(viewModel)
-            .tabItem {
-                Label(L10n.Tabbar.Label.biography, systemImage: "building")
-            }
+                .tabItem {
+                    Label(L10n.Tabbar.Label.biography, systemImage: "building")
+                }
 
             BookOverViewList()
                 .tabItem {
@@ -30,7 +29,6 @@ struct AppTabView: View {
                 .tabItem {
                     Label(L10n.Tabbar.Label.about, systemImage: "info")
                 }
-
         }
         .accessibilityIdentifier(AccessibilityIdentifier.tabBar)
         .sheet(isPresented: $viewModel.showBuyPremiumSheet, content: {

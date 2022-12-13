@@ -58,8 +58,6 @@ struct BuyPremiumView: View {
                 Text(L10n.BuyPremium.Action.restore)
             }
             .font(.caption)
-
-
         }
         .padding()
         .foregroundColor(.white)

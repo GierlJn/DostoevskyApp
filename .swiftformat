@@ -1,0 +1,11 @@
+#format options
+--patternlet inline
+--wraparguments after-first
+--wrapcollections before-first
+--trimwhitespace nonblank-lines
+--ifdef outdent
+--header strip
+# file options
+--exclude **/Generated
+# rules
+--disable trailingCommas,trailingClosures,wrapMultilineStatementBraces

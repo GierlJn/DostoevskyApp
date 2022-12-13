@@ -1,16 +1,14 @@
 import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        return true
+    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        true
     }
 }
 
 public func isRussianLanguage() -> Bool {
-    return NSLocale.preferredLanguages[0].range(of: "ru") != nil
+    NSLocale.preferredLanguages[0].range(of: "ru") != nil
 }
-
 
 @main
 struct DostoevskyApp: App {
@@ -22,7 +20,7 @@ struct DostoevskyApp: App {
                 .fullScreenCover(isPresented: $appState.showsOnboard) {
                     OnBoardView().environmentObject(appState)
                 }
-            .preferredColorScheme(.dark)
+                .preferredColorScheme(.dark)
                 .onAppear {
                     if CommandLine.arguments.contains("--UITests") {
                         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)

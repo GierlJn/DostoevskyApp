@@ -1,7 +1,7 @@
-import MapKit
 import CloudKit
-import SwiftUI
+import MapKit
 import StoreKit
+import SwiftUI
 
 enum SortType: CaseIterable {
     case date, rating, favorite
@@ -11,12 +11,12 @@ enum ActiveStatus: String, CaseIterable, Identifiable {
     case active
     case inactive
     
-    var id: String { self.rawValue }
+    var id: String { rawValue }
 }
 
-extension Collection where Element == String {
+extension Collection<String> {
     func hasName(_ id: String) -> Bool {
-        self.contains(where: { $0 == "\(id)"})
+        contains(where: { $0 == "\(id)" })
     }
 }
 
@@ -28,7 +28,6 @@ public enum StoreError: Error {
 }
 
 class AppState: ObservableObject {
-    
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.933181,
                                                                               longitude: 30.338418),
                                                span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
@@ -48,7 +47,7 @@ class AppState: ObservableObject {
     @Published var premiumActive = false
     
     @Published var showBuyPremiumSheet = false
-    var updateListenerTask: Task<Void, Error>? = nil
+    var updateListenerTask: Task<Void, Error>?
     
     init() {
         updateListenerTask = listenForTransactions()
@@ -88,19 +87,19 @@ class AppState: ObservableObject {
     }
     
     func restore() async -> Bool {
-        return ((try? await AppStore.sync()) != nil)
+        (try? await AppStore.sync()) != nil
     }
     
     func listenForTransactions() -> Task<Void, Error> {
-        return Task.detached {
-            //Iterate through any transactions that don't come from a direct call to `purchase()`.
+        Task.detached {
+            // Iterate through any transactions that don't come from a direct call to `purchase()`.
             for await result in Transaction.updates {
                 do {
                     let transaction = try self.checkVerified(result)
                     await self.updateCustomerProductStatus()
                     await transaction.finish()
                 } catch {
-                    //StoreKit has a transaction that fails verification. Don't deliver content to the user.
+                    // StoreKit has a transaction that fails verification. Don't deliver content to the user.
                     print("Transaction failed verification")
                 }
             }
@@ -145,19 +144,19 @@ class AppState: ObservableObject {
     }
     
     func purchase(_ product: Product) async throws -> StoreKit.Transaction? {
-        //Begin purchasing the `Product` the user selects.
+        // Begin purchasing the `Product` the user selects.
         let result = try await product.purchase()
 
         switch result {
         case .success(let verification):
-            //Check whether the transaction is verified. If it isn't,
-            //this function rethrows the verification error.
+            // Check whether the transaction is verified. If it isn't,
+            // this function rethrows the verification error.
             let transaction = try checkVerified(verification)
 
-            //The transaction is verified. Deliver content to the user.
+            // The transaction is verified. Deliver content to the user.
             await updateCustomerProductStatus()
 
-            //Always finish a transaction.
+            // Always finish a transaction.
             await transaction.finish()
 
             return transaction
@@ -171,13 +170,13 @@ class AppState: ObservableObject {
     }
     
     func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
-        //Check whether the JWS passes StoreKit verification.
+        // Check whether the JWS passes StoreKit verification.
         switch result {
         case .unverified:
-            //StoreKit parses the JWS, but it fails verification.
+            // StoreKit parses the JWS, but it fails verification.
             throw StoreError.failedVerification
         case .verified(let safe):
-            //The result is verified. Return the unwrapped value.
+            // The result is verified. Return the unwrapped value.
             return safe
         }
     }
@@ -193,7 +192,7 @@ class AppState: ObservableObject {
     }
     
     func updateRatingForSelectedLocation(selectedLocation: DLocation, rating: Rating) {
-        ratings.removeAll { $0.id == rating.id}
+        ratings.removeAll { $0.id == rating.id }
         ratings.append(rating)
         CloudKitManager.shared.fetchRecordN(with: selectedLocation.id) { result in
             switch result {
@@ -218,7 +217,7 @@ class AppState: ObservableObject {
     
     func setup() {
         isLoadingData = true
-        self.locations = Bundle.main.decode([DLocation].self, from: "locations.json")
+        locations = Bundle.main.decode([DLocation].self, from: "locations.json")
         CloudKitManager.shared.getLocationRatings { [self] result in
             DispatchQueue.main.async {
                 self.isLoadingData = false
@@ -230,7 +229,6 @@ class AppState: ObservableObject {
                 }
             }
         }
-        
     }
     
     func getDirectionsToLocation(location: DLocation) {

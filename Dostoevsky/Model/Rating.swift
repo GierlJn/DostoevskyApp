@@ -1,10 +1,3 @@
-//
-//  Rating.swift
-//  Dostoevsky
-//
-//  Created by Julian Gierl on 05.03.22.
-//
-
 import CloudKit
 
 enum RecordTypes {
@@ -12,7 +5,6 @@ enum RecordTypes {
 }
 
 struct Rating: Identifiable, Hashable {
-
     enum Keys {
         static let rating = "rating"
         static let locationId = "locationId"
